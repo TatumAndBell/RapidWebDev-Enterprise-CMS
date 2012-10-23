@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a1d658ec-b577-4c00-8ad8-d3c7d99a51af" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50682/Services/HierarchyService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HierarchyService.xsd" MetadataType="Schema" ID="5fd7a2f3-759c-4eb7-8452-15575bec6364" SourceId="1" SourceUrl="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HierarchyService1.xsd" MetadataType="Schema" ID="ec615fbd-1c3f-4a34-8ca4-e67cbe44d2dd" SourceId="1" SourceUrl="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd5" />
+    <MetadataFile FileName="HierarchyService2.xsd" MetadataType="Schema" ID="2b7b7200-08bd-4328-883e-ccd240124bdf" SourceId="1" SourceUrl="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd4" />
+    <MetadataFile FileName="HierarchyService3.xsd" MetadataType="Schema" ID="64b50677-0dd7-4bfa-a123-7c58259c9a1b" SourceId="1" SourceUrl="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd3" />
+    <MetadataFile FileName="HierarchyService4.xsd" MetadataType="Schema" ID="ed5d929b-4189-40f9-a5a8-8b53d696e849" SourceId="1" SourceUrl="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HierarchyService5.xsd" MetadataType="Schema" ID="2b93d3f8-ba2e-4584-9961-e279c3fa33c4" SourceId="1" SourceUrl="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HierarchyService.disco" MetadataType="Disco" ID="8385614c-1997-4d8b-9f70-6ad9f0a66391" SourceId="1" SourceUrl="http://localhost:50682/Services/HierarchyService.svc?disco" />
+    <MetadataFile FileName="HierarchyService.wsdl" MetadataType="Wsdl" ID="edbb2365-16b7-4c17-9769-fc7696926253" SourceId="1" SourceUrl="http://localhost:50682/Services/HierarchyService.svc?wsdl" />
+    <MetadataFile FileName="HierarchyService1.wsdl" MetadataType="Wsdl" ID="9deed0e7-303b-44cb-925b-548eb1b4a6b7" SourceId="1" SourceUrl="http://localhost:50682/Services/HierarchyService.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

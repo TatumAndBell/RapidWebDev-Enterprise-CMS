@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7dfac3c0-79f6-4180-a94d-ca9bff5c153f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50682/Services/SequenceService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SequenceService.xsd" MetadataType="Schema" ID="bb177ff0-8035-4460-912e-eaa007ed940c" SourceId="1" SourceUrl="http://localhost:50682/Services/SequenceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SequenceService.wsdl" MetadataType="Wsdl" ID="349f2066-3ed9-4805-a449-95913c8ccee4" SourceId="1" SourceUrl="http://localhost:50682/Services/SequenceService.svc?wsdl" />
+    <MetadataFile FileName="SequenceService1.xsd" MetadataType="Schema" ID="95601df5-2e84-44fe-94c8-3fce925b8cf1" SourceId="1" SourceUrl="http://localhost:50682/Services/SequenceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SequenceService1.wsdl" MetadataType="Wsdl" ID="f6817c6a-5dc0-4324-a27a-dfac0fc1ea81" SourceId="1" SourceUrl="http://localhost:50682/Services/SequenceService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SequenceService2.xsd" MetadataType="Schema" ID="0baf686f-5ed1-49c2-bf59-5db1c9e9812e" SourceId="1" SourceUrl="http://localhost:50682/Services/SequenceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SequenceService.disco" MetadataType="Disco" ID="15dbe800-7e4d-4f2e-b4aa-71e50da4e580" SourceId="1" SourceUrl="http://localhost:50682/Services/SequenceService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

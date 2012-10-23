@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ExceptionMaster.master.cs" Inherits="RapidWebDev.Web.ExceptionMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title><%= Resources.Common.ExceptionPageTitle%></title>
+</head>
+<body class="content">
+    <form id="formException" runat="server">
+		<script type="text/javascript">
+			$(window).load(function()
+			{
+				resizeWin();
+			});
+			
+			$(window).resize(function()
+			{
+				resizeWin();
+			});
+			
+			function resizeWin()
+			{			
+				var h = document.documentElement.clientHeight;
+				$("#pagecontainer").height(h - 125);
+			}
+			
+			function gotoLogin()
+			{
+				var pageUrl = '<%= System.IO.Path.Combine(Kit.WebSiteBaseUrl, "LogOn.aspx") %>';
+				if(window.parent != null) window.parent.location.href = pageUrl; else window.location.href = pageUrl;
+			}
+		</script>
+	    
+		<table id="pagecontainer" cellpadding="0" cellspacing="0" style="width:900px; margin:auto;">
+			<tr>
+				<td>
+					<My:Container Frame="true" runat="server">
+						<h4><asp:Label ID="LabelPageTitle" runat="server" /></h4>
+						<table cellpadding="0" cellspacing="0" style="margin:8px">
+							<tr>
+								<td><img src="/resources/images/error.gif" alt="" /></td>
+								<td style="padding:6px; vertical-align:top; color:Black">
+									<asp:ContentPlaceHolder ID="Body" runat="server" />
+								</td>
+							</tr>
+						</table>
+					</My:Container>
+				</td>
+			</tr>
+		</table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://www.rapidwebdev.org/schemas/dynamicpage" ObjectId="ExtensionFieldMetadataManagement" Type="RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataManagement, RapidWebDev.ExtensionModel.Web">
+	<Title>$Resources.ExtensionModel.ExtensionFieldMetadataManagement, RapidWebDev.Web$</Title>
+	<PermissionValue>ExtensionFieldMetadataManagement.$MetadataDataTypeName$</PermissionValue>
+	<Panels>		
+		<ButtonPanel Id="ButtonPanelExtensionFieldMetadataManagement$MetadataDataTypeName$" ButtonAlignment="Left">
+			<Button CommandArgument="New" Type="NewImage" ToolTip="$Resources.ExtensionModel.AddField, RapidWebDev.Web$" />
+			<Button CommandArgument="Preview" Type="CustomImage" ImageUrl="/resources/images/view.gif" ToolTip="$Resources.ExtensionModel.Preview, RapidWebDev.Web$" />
+		</ButtonPanel>
+		
+		<GridViewPanel Id="GridViewPanelExtensionFieldMetadataManagement$MetadataDataTypeName$"
+			HeaderText="$Resources.ExtensionModel.AllFields, RapidWebDev.Web$"
+			EntityName="$Resources.ExtensionModel.Field, RapidWebDev.Web$"
+			EnabledCheckBoxField="true"
+			PageSize="999"
+			PrimaryKeyFieldName="Name"
+			DefaultSortField="Ordinal"
+			DefaultSortDirection="ASC">
+			<ViewButton />
+			<EditButton />
+			<DeleteButton />
+			<Fields>
+				<Field FieldName="Name" HeaderText="$Resources.ExtensionModel.FieldName, RapidWebDev.Web$" />
+				<Field FieldName="Type" HeaderText="$Resources.ExtensionModel.FieldType, RapidWebDev.Web$">
+					<Transform-Switch>
+						<Case Value="String">$Resources.ExtensionModel.String, RapidWebDev.Web$</Case>
+						<Case Value="DateTime">$Resources.ExtensionModel.DateTime, RapidWebDev.Web$</Case>
+						<Case Value="Integer">$Resources.ExtensionModel.Integer, RapidWebDev.Web$</Case>
+						<Case Value="Decimal">$Resources.ExtensionModel.Decimal, RapidWebDev.Web$</Case>
+						<Case Value="Enumeration">$Resources.ExtensionModel.Enumeration, RapidWebDev.Web$</Case>
+						<Case Value="Hierarchy">$Resources.ExtensionModel.Hierarchy, RapidWebDev.Web$</Case>
+					</Transform-Switch>
+				</Field>
+				<Field FieldName="FieldGroup" HeaderText="$Resources.ExtensionModel.FieldGroup, RapidWebDev.Web$" />
+				<Field FieldName="Priviledge" HeaderText="$Resources.ExtensionModel.Priviledge, RapidWebDev.Web$">
+					<Transform-Switch>
+						<Case Value="Public">&lt;span style="color:green"&gt;$Resources.ExtensionModel.Public, RapidWebDev.Web$&lt;/span&gt;</Case>
+						<Case Value="EditProtectedOnly">&lt;span style="color:blue"&gt;$Resources.ExtensionModel.EditProtectedOnly, RapidWebDev.Web$&lt;/span&gt;</Case>
+						<Case Value="BothEditAndViewProtected">&lt;span style="color:red"&gt;$Resources.ExtensionModel.BothEditAndViewProtected, RapidWebDev.Web$&lt;/span&gt;</Case>
+					</Transform-Switch>
+				</Field>
+				<Field FieldName="Inherited" HeaderText="$Resources.ExtensionModel.Inherited, RapidWebDev.Web$">
+					<Transform-Switch>
+						<Case Value="True">$Resources.ExtensionModel.Yes, RapidWebDev.Web$</Case>
+						<Case Value="False">$Resources.ExtensionModel.No, RapidWebDev.Web$</Case>
+					</Transform-Switch>
+				</Field>
+				<Field FieldName="Ordinal" HeaderText="$Resources.ExtensionModel.Ordinal, RapidWebDev.Web$" />
+				<RowView FieldName="Description" />
+			</Fields>
+		</GridViewPanel>
+		
+		<DetailPanel Id="DetailPanelExtensionFieldMetadataManagement$MetadataDataTypeName$" HeaderText="$Resources.ExtensionModel.FieldProfile, RapidWebDev.Web$" ShowMessageAfterSavedSuccessfully="false">
+			<Type>RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataDetailPanel, RapidWebDev.ExtensionModel.Web</Type>
+			<SkinPath>~/Templates/ExtensionModel/FieldMetadata.ascx</SkinPath>
+			<SaveAndAddAnotherButton />
+			<SaveAndCloseButton />
+			<CancelButton />
+		</DetailPanel>
+
+		<AggregatePanel Id="AggregatePanelExtensionFieldMetadataManagement$MetadataDataTypeName$" HeaderText="$Resources.ExtensionModel.Preview, RapidWebDev.Web$" ShowMessageAfterSavedSuccessfully="false">
+			<Type>RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataAggregatePanel, RapidWebDev.ExtensionModel.Web</Type>
+			<SkinPath>~/Templates/ExtensionModel/FieldMetadataPreview.ascx</SkinPath>
+			<CancelButton Text="$Resources.ExtensionModel.Close, RapidWebDev.Web$" />
+		</AggregatePanel>
+	</Panels>
+</Page>

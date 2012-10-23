@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://www.rapidwebdev.org/schemas/restfulservicepermissions"
+    xmlns="http://www.rapidwebdev.org/schemas/restfulservicepermissions"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="RestfulServicePermission">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ServiceContract" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>WCF service contract.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OperationContract" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>WCF operation contract.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Name" type="RequiredString" use="required">
+										<xs:annotation>
+											<xs:documentation>WCF operation contract name.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="PermissionValue" type="RequiredString" use="required">
+										<xs:annotation>
+											<xs:documentation>WCF operation contract permission value which overrides all default permission values.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="Name" type="RequiredString" use="required">
+							<xs:annotation>
+								<xs:documentation>WCF service contract name.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="DefaultPermissionValue" type="RequiredString" use="optional">
+							<xs:annotation>
+								<xs:documentation>The default permission value for operation contract in the service contract. It overrides the default permission value from overall configuration level.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="DefaultPermissionValue" type="RequiredString" use="required">
+				<xs:annotation>
+					<xs:documentation>The default permission value for all operation contracts in the configuration.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="RequiredString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

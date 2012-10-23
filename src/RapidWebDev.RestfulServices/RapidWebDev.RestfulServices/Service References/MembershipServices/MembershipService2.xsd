@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50682/Services/MembershipService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:50682/Services/MembershipService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:50682/Services/MembershipService.svc?xsd=xsd5" namespace="http://www.rapidwebdev.org/common" />
+  <xs:element name="SaveJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.rapidwebdev.org/platform" minOccurs="0" name="user" nillable="true" type="q1:UserObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UserObject">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://www.rapidwebdev.org/platform" base="q2:AbstractExtensionBizObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicationId" type="ser:guid" />
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsApproved" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsLockedOut" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOnline" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastActivityDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastLockoutDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastLoginDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastPasswordChangedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastUpdatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MobilePin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrganizationId" type="ser:guid" />
+          <xs:element minOccurs="0" name="PasswordQuestion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" type="ser:guid" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q3="http://www.rapidwebdev.org/platform" name="UserObject" nillable="true" type="q3:UserObject" />
+  <xs:complexType name="AbstractExtensionBizObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtensionDataTypeId" type="ser:guid" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Properties" nillable="true" type="q4:ArrayOfKeyValueOfstringanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q5="http://www.rapidwebdev.org/platform" name="AbstractExtensionBizObject" nillable="true" type="q5:AbstractExtensionBizObject" />
+  <xs:element name="SaveJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.rapidwebdev.org/platform" minOccurs="0" name="user" nillable="true" type="q6:UserObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveXmlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkGetJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.rapidwebdev.org/platform" minOccurs="0" name="userIds" nillable="true" type="q7:IdCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="IdCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q8="http://www.rapidwebdev.org/platform" name="IdCollection" nillable="true" type="q8:IdCollection" />
+  <xs:element name="BulkGetJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.rapidwebdev.org/platform" minOccurs="0" name="BulkGetJsonResult" nillable="true" type="q9:ArrayOfUserObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfUserObject">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="UserObject" nillable="true" type="q10:UserObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q11="http://www.rapidwebdev.org/platform" name="ArrayOfUserObject" nillable="true" type="q11:ArrayOfUserObject" />
+  <xs:element name="BulkGetXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.rapidwebdev.org/platform" minOccurs="0" name="userIds" nillable="true" type="q12:IdCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkGetXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://www.rapidwebdev.org/platform" minOccurs="0" name="BulkGetXmlResult" nillable="true" type="q13:ArrayOfUserObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByNameJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByNameJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetByNameJsonResult" nillable="true" type="q14:UserObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByNameXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByNameXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetByNameXmlResult" nillable="true" type="q15:UserObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetByIdJsonResult" nillable="true" type="q16:UserObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetByIdXmlResult" nillable="true" type="q17:UserObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangePasswordJsonResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangePasswordXmlResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryUsersJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element xmlns:q18="http://www.rapidwebdev.org/common" minOccurs="0" name="predicate" nillable="true" type="q18:WebServiceQueryPredicate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryUsersJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://www.rapidwebdev.org/platform" minOccurs="0" name="QueryUsersJsonResult" nillable="true" type="q19:UserQueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UserQueryResult">
+    <xs:sequence>
+      <xs:element xmlns:q20="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="UserObject" nillable="true" type="q20:UserObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q21="http://www.rapidwebdev.org/platform" name="UserQueryResult" nillable="true" type="q21:UserQueryResult" />
+  <xs:element name="QueryUsersXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element xmlns:q22="http://www.rapidwebdev.org/common" minOccurs="0" name="predicate" nillable="true" type="q22:WebServiceQueryPredicate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryUsersXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://www.rapidwebdev.org/platform" minOccurs="0" name="QueryUsersXmlResult" nillable="true" type="q23:UserQueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

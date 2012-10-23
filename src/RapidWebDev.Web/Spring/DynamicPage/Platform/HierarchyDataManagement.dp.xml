@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://www.rapidwebdev.org/schemas/dynamicpage" ObjectId="HierarchyDataManagement" Type="RapidWebDev.Platform.Web.DynamicPage.HierarchyDataManagement, RapidWebDev.Platform">
+	<Title>$HierarchyType$ $Resources.Membership.Management, RapidWebDev.Web$</Title>
+	<PermissionValue>$HierarchyType$Management</PermissionValue>
+	<Panels>
+		<QueryPanel HeaderText="$Resources.Membership.Query, RapidWebDev.Web$ $HierarchyType$">
+			<TextBox FieldName="Name" Label="$Resources.Membership.Name, RapidWebDev.Web$: " />
+			<HierarchySelector FieldName="ParentHierarchyDataId" 
+				Cascading="None" Operator="In" FieldValueType="System.Guid"
+				Label="$Resources.Membership.ParentHierarchyData, RapidWebDev.Web$: "
+				Title="$HierarchyType$ $Resources.Membership.Selector, RapidWebDev.Web$"> 
+				<HierarchyService HierarchyType="$HierarchyType$" />
+			</HierarchySelector>
+		</QueryPanel>
+
+		<ButtonPanel ButtonAlignment="Left">
+			<Button CommandArgument="New" Type="NewImage" ToolTip="$Resources.Membership.Add, RapidWebDev.Web$" />
+			<Button CommandArgument="ShowHierarchyDataTreeView" Type="CustomImage" ImageUrl="~/resources/images/query.png" ToolTip="$Resources.Membership.ShowHierarchyDataTreeView, RapidWebDev.Web$" />
+		</ButtonPanel>
+
+		<GridViewPanel HeaderText="$Resources.Membership.QueryResults, RapidWebDev.Web$"
+			EntityName="$HierarchyType$"
+			EnabledCheckBoxField="true"
+			PageSize="25"
+			PrimaryKeyFieldName="HierarchyDataId"
+			DefaultSortField="LastUpdatedDate"
+			DefaultSortDirection="DESC">
+			<ViewButton />
+			<EditButton />
+			<DeleteButton />
+			<Fields>
+				<Field FieldName="Name" HeaderText="$Resources.Membership.Name, RapidWebDev.Web$" />
+				<Field FieldName="ParentHierarchyDataId" HeaderText="$Resources.Membership.ParentHierarchyData, RapidWebDev.Web$">
+					<Transform-Callback Type="RapidWebDev.Platform.Web.DynamicPage.GridViewFieldValueTransformCallback.ShowHierarchyDataName, RapidWebDev.Platform" />
+				</Field>
+				<Field FieldName="LastUpdatedBy" HeaderText="$Resources.Membership.ModifiedBy, RapidWebDev.Web$" Align="Center">
+					<Transform-Callback Type="RapidWebDev.Platform.Web.DynamicPage.GridViewFieldValueTransformCallback.ShowUserDisplayName, RapidWebDev.Platform"/>
+				</Field>
+				<Field FieldName="LastUpdatedDate" HeaderText="$Resources.Membership.ModifiedOn, RapidWebDev.Web$" Align="Center" Width="150" />
+				<RowView FieldName="Description" />
+			</Fields>
+		</GridViewPanel>
+
+		<DetailPanel HeaderText="$HierarchyType$ $Resources.Membership.Profile, RapidWebDev.Web$" ShowMessageAfterSavedSuccessfully="false">
+			<Type>RapidWebDev.Platform.Web.DynamicPage.HierarchyDataDetailPanel, RapidWebDev.Platform</Type>
+			<SkinPath>~/Templates/Platform/HierarchyData.ascx</SkinPath>
+			<SaveAndAddAnotherButton />
+			<SaveAndCloseButton />
+			<CancelButton />
+		</DetailPanel>
+
+		<AggregatePanel HeaderText="$HierarchyType$ $Resources.Membership.Preview, RapidWebDev.Web$" CommandArgument="ShowHierarchyDataTreeView" ShowMessageAfterSavedSuccessfully="false">
+			<Type>RapidWebDev.Platform.Web.DynamicPage.HierarchyDataAggregatePanel, RapidWebDev.Platform</Type>
+			<SkinPath>~/Templates/Platform/HierarchyDataAggregate.ascx</SkinPath>
+			<CancelButton Text="$Resources.Membership.Close, RapidWebDev.Web$" />
+		</AggregatePanel>
+	</Panels>
+</Page>

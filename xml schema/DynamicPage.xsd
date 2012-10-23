@@ -1,0 +1,1328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.rapidwebdev.org/schemas/dynamicpage" elementFormDefault="qualified" xmlns="http://www.rapidwebdev.org/schemas/dynamicpage" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vs="http://schemas.microsoft.com/Visual-Studio-Intellisense" attributeFormDefault="unqualified" vs:ishtmlschema="false" vs:iscasesensitive="true" vs:requireattributequotes="true" vs:defaultnamespacequalifier="" vs:defaultnsprefix="">
+	<xs:element name="Page" type="DynamicPageConfiguration" />
+
+	<xs:complexType name="DynamicPageConfiguration">
+		<xs:sequence>
+			<xs:element name="Title" type="RequiredString">
+				<xs:annotation>
+					<xs:documentation>
+						Web page title, required.
+						The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" or request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PermissionValue" type="RequiredString">
+				<xs:annotation>
+					<xs:documentation>
+						Web page access permission value, required. The attribute has 2 concrete values as,
+						1) "EveryOne" - means all authenticated users can access this page with full permissions.
+						2) "Anonymous" - means all users included unauthenticated can access this page with full permissions.
+						Otherwise the explicit configured PermissionValue indicates whether the user can access the page with only view permission.
+						There will extra permission derived from explicit permission value as following,
+						1) "[PermissionValue].New" - whether the user can create a new entity if the button with "new" command argument is configured.
+						2) "[PermissionValue].Update" - whether the user can update an existed entity if "Edit" button in grid is configured.
+						3) "[PermissionValue].Delete" - whether the user can delete an entity if "Delete" button in grid is configured.
+						4) "[PermissionValue].[CommandArgument]" - whether the user can do operations with specified command argument if aggregate panel is configured. 
+							The infrastructure doesn't render the button with command argument if the user doesn't permission on that command argument here. 
+						
+						Take an example, a dynamic page with new, update, delete and another 2 command configured and the permission value is set to "OrganizationManagement".
+						The configured 2 command argument are "GenerateReport" and "BulkDelete".
+						There will be 6 permission values for this page as "OrganizationManagement", "OrganizationManagement.New", "OrganizationManagement.Update", "OrganizationManagement.Delete", "OrganizationManagement.GenerateReport", "OrganizationManagement.BulkDelete".
+						If an user doesn't have the permission neither "OrganizationManagement.New" nor "OrganizationManagement.BulkDelete", he cannot see the button "New" and "BulkDelete" in UI as he cannot do such operation.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="JavaScriptUrls" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						The external JavaScript references you want to register into web page.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="JavaScriptUrl" type="RequiredString" minOccurs="1" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>
+									The external JavaScript URL reference you want to register into web page.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Panels">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="Panel" minOccurs="1" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="ObjectId" type="RequiredString" use="required">
+			<xs:annotation>
+				<xs:documentation>Configure object identifier of the web page. It will be looked up by query string parameter ObjectId.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Type" type="RequiredString" use="required">
+			<xs:annotation>
+				<xs:documentation>Full name of type implements interface RapidWebDev.UI.DynamicPages.IDynamicPage.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ProcessCallbackType" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					The infrastructure allows to configure a callback instance to process the dynamic page configuration at runtime. 
+					Here should configure assembly qualified name of the type which implements interface RapidWebDev.UI.DynamicPages.IDynamicPageConfigurationProcessCallback.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:element name="Panel" type="BasePanelConfiguration" abstract="true" />
+	<xs:element name="QueryPanel" type="QueryPanelConfiguration" substitutionGroup="Panel">
+		<xs:annotation>
+			<xs:documentation>
+				Query panel is used for users to input query criteria.
+				There allows only maximum one query panel in a dynamic page.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GridViewPanel" type="GridViewPanelConfiguration" substitutionGroup="Panel">
+		<xs:annotation>
+			<xs:documentation>
+				GridView panel to display the query result items.
+				There allows only maximum one gridview panel in a dynamic page.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DetailPanel" type="DetailPanelConfiguration" substitutionGroup="Panel">
+		<xs:annotation>
+			<xs:documentation>
+				Detail panel is located in popup modal dialog is used to create/edit/view the single clicked record.
+				There allows only maximum one detail panel in a dynamic page.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AggregatePanel" type="AggregatePanelConfiguration" substitutionGroup="Panel">
+		<xs:annotation>
+			<xs:documentation>
+				Aggregate panel is located in popup modal dialog which is used for custom operations to multiple selected records in gridview.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ButtonPanel" type="ButtonPanelConfiguration" substitutionGroup="Panel">
+		<xs:annotation>
+			<xs:documentation>
+				Button panel groups a collection of buttons which do operations against multiple selected gridview records.
+				The IDynamicPage.OnButtonClicked method will be invoked when a "Callback" button in the panel is clicked.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="BasePanelConfiguration" abstract="true">
+		<xs:attribute name="Id" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>Unique panel ID in this dynamic page. There generates random ID if the attribute is not specified.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="HeaderText" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Query section header text, required.
+					The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" or request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="ButtonPanelConfiguration">
+		<xs:complexContent>
+			<xs:extension base="BasePanelConfiguration">
+				<xs:sequence>
+					<xs:element name="Button" type="ButtonConfiguration" minOccurs="1" maxOccurs="unbounded" />
+				</xs:sequence>
+				<xs:attribute name="ButtonAlignment" type="HorizontalAlignTypes" use="optional" default="NotSet">
+					<xs:annotation>
+						<xs:documentation>Indicates how buttons aligned in the panel.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="QueryPanelConfiguration">
+		<xs:complexContent>
+			<xs:extension base="BasePanelConfiguration">
+				<xs:sequence>
+					<xs:element ref="Control" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Query field control which used to be assemblied to a database query criteria expression.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="QueryFieldConfiguration" abstract="true">
+		<xs:attribute name="Label" type="RequiredString" use="required">
+			<xs:annotation>
+				<xs:documentation>
+					The control rendering label, required.
+					The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" and request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="FieldName" type="RequiredString" use="required">
+			<xs:annotation>
+				<xs:documentation>Field name and control value will be assemblied together as a database query criteria expression.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Operator" type="QueryFieldOperators" use="optional" default="Auto">
+			<xs:annotation>
+				<xs:documentation>Criteria operator between field name and control value. The default value is Auto.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="FieldValueType" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>If FieldValueType specified, the control value will be implicitly converted into the specified type before assembly it into database query criteria expression.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Occupation" type="xs:integer" use="optional" default="-1">
+			<xs:annotation>
+				<xs:documentation>
+					The attribute decide how many cells the query control occupied in rendered panel.
+					The default value is -1 which means the occupation is decided by Operator.
+					If Occupation is auto decided, it is 1 always except 2 for Between, whole line in the panel for In/NotIn.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:simpleType name="QueryFieldOperators">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Auto">
+				<xs:annotation>
+					<xs:documentation>
+						There will generate operator for special typed fields. E.g,
+						"Equal" for CheckBox, ComboBox, Radio, RadioGroup and Custom.
+						"Like" for TextBox.
+						"Between" for Date, DateTime, Integer, Decimal.
+						"In" for CheckBoxGroup.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Equal" />
+			<xs:enumeration value="StartsWith">
+				<xs:annotation>
+					<xs:documentation>StartsWith only works on string typed field. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Like">
+				<xs:annotation>
+					<xs:documentation>Like only works on string typed field. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="In">
+				<xs:annotation>
+					<xs:documentation>In only works for CheckBoxGroup query field control. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NotIn">
+				<xs:annotation>
+					<xs:documentation>NotIn only works for CheckBoxGroup query field control. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GreaterThan" />
+			<xs:enumeration value="GreaterEqualThan" />
+			<xs:enumeration value="LessThan" />
+			<xs:enumeration value="LessEqualThan" />
+			<xs:enumeration value="Between">
+				<xs:annotation>
+					<xs:documentation>Between usually used for DateTime, Date, Integer and Decimal fields. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="GridViewPanelConfiguration">
+		<xs:complexContent>
+			<xs:extension base="BasePanelConfiguration">
+				<xs:sequence>
+					<xs:element name="ViewButton" type="GridViewRowButtonConfiguration" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Display view button in gridview row if ViewButton element is configured.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="EditButton" type="GridViewRowButtonConfiguration" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Display edit button in gridview row if EditButton element is configured.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="DeleteButton" type="GridViewRowButtonConfiguration" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								Display delete button in gridview row if DeleteButton element is configured.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Fields">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Field" minOccurs="1" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:all>
+											<xs:element ref="Transform" minOccurs="0" />
+											<xs:element name="ExtJs-Renderer" type="xs:string" minOccurs="0">
+												<xs:annotation>
+													<xs:documentation>
+														If not specified, the default renderer uses the raw data value from server.
+														The function to use to process the cell's raw data to return HTML markup for the grid view.
+														The render function is called with the following parameters:
+														# value : Object, the data value for the cell.
+														# metadata : Object, an object in which you may set the following attributes:
+														* css : String, A CSS class name to add to the cell's TD element.
+														* attr : String, An HTML attribute definition string to apply to the data container element within the table cell (e.g. 'style="color:red;"').
+														# record : Ext.data.record, The Ext.data.Record from which the data was extracted.
+														# rowIndex : Number, Row index
+														# colIndex : Number, Column index
+														# store : Ext.data.Store, The Ext.data.Store object from which the Record was extracted.
+														The more description about the callback JavaScript function refer to ExtJs API Documentation, ColumnModel ->  setRenderer
+													</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:all>
+										<xs:attribute name="FieldName" type="RequiredString" use="required">
+											<xs:annotation>
+												<xs:documentation>The bound field name. If FieldType is UserLink/OrganizationLink, the field name should be composed of (Id). Required.</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="HeaderText" type="RequiredString" use="required">
+											<xs:annotation>
+												<xs:documentation>
+													The column header text. Required.
+													The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" and request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+												</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="SortingFieldName" type="RequiredString" use="optional">
+											<xs:annotation>
+												<xs:documentation>
+													The sorting field name. If no value specified, it uses FieldName for sorting by default.
+													The explicit sorting field is used for the requirement that sorts by a field different to displaying field.
+												</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="Sortable" type="xs:boolean" use="optional" default="true">
+											<xs:annotation>
+												<xs:documentation>True indicates the column is sortable. The default value is True.</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="Resizable" type="xs:boolean" use="optional" default="true">
+											<xs:annotation>
+												<xs:documentation>False to disable column resizing (defaults to true).</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="Css" type="RequiredString" use="optional">
+											<xs:annotation>
+												<xs:documentation>Set custom CSS for all table cells in the column (excluding headers). Defaults to undefined.</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="Width" type="xs:integer" use="optional">
+											<xs:annotation>
+												<xs:documentation>The initial width in pixels of the column (defaults to auto).</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="Align" type="HorizontalAlignTypes" use="optional">
+											<xs:annotation>
+												<xs:documentation>(optional) Set the CSS text-align property of the column. Defaults to undefined. </xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="Hidden" type="xs:boolean" use="optional" default="false">
+											<xs:annotation>
+												<xs:documentation>(optional) True to hide the column initially. Defaults to false. </xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="RowView" type="GridViewFieldRowView" minOccurs="0" maxOccurs="1">
+									<xs:annotation>
+										<xs:documentation>A config object that will be used to create the grid's UI row view.</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="EntityName" type="RequiredString" use="required">
+					<xs:annotation>
+						<xs:documentation>The entity name displaying in grid view. Required.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="PrimaryKeyFieldName" use="required" type="RequiredString">
+					<xs:annotation>
+						<xs:documentation>The primary key field name of the entity. Required.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="PageSize" type="xs:integer" use="optional" default="25">
+					<xs:annotation>
+						<xs:documentation>Page size of grid view. The default value is 25. Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="EnabledCheckBoxField" use="optional" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>True to enable checkbox field as first column of grid view. The default value is false. Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="ExecuteQueryWhenLoaded" use="optional" type="xs:boolean" default="true">
+					<xs:annotation>
+						<xs:documentation>True to execute query when the web page is loaded. The default value is true. Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="EnabledColumnMove" use="optional" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>True to enable drag and drop reorder of columns (defaults to false). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="EnabledColumnResize" use="optional" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>False to turn off column resizing for the whole grid (defaults to false). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Height" use="optional" type="xs:integer" default="500">
+					<xs:annotation>
+						<xs:documentation>The height of grid panel (defaults to 500). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="DefaultSortField" use="optional" type="RequiredString">
+					<xs:annotation>
+						<xs:documentation>The default sort field name which should be included in Fields. Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="DefaultSortDirection" use="optional" default="ASC">
+					<xs:annotation>
+						<xs:documentation>The candidate values are ASC | DESC (defaults to ASC). Optional.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="RequiredString">
+							<xs:enumeration value="ASC" />
+							<xs:enumeration value="DESC" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="GridViewFieldRowView">
+		<xs:annotation>
+			<xs:documentation>A config object that will be used to create the grid's UI row view.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="FieldName" use="required" type="RequiredString">
+			<xs:annotation>
+				<xs:documentation>(required) The field displayed in row view of grid.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Css" use="optional" type="RequiredString">
+			<xs:annotation>
+				<xs:documentation>Apply custom CSS classes to row view during rendering. Optional.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TagName" use="optional" type="RequiredString" default="p">
+			<xs:annotation>
+				<xs:documentation>(optional) The HTML tag wraps the field value from specified field name. The default tag name is "p".</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:element name="Transform" type="GridViewFieldValueTransform" abstract="false" />
+	<xs:element name="Transform-ToString-Parameter" type="GridViewFieldValueTransformToStringParameter" substitutionGroup="Transform">
+		<xs:annotation>
+			<xs:documentation>
+				The format parameter for converting the field value to string. E.g, DateTime.Now.ToString(string format).
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Transform-VariableString" type="GridViewFieldValueTransformVariableString" substitutionGroup="Transform">
+		<xs:annotation>
+			<xs:documentation>
+				Output string in the rendered cell.
+				It supports variables defined like "http://www.rapidwebdev.org/article.aspx?id=$Id$".
+				The variable should be an accessible property of the object in data source, or existed variable in IApplicationContext.TempVariables, or an existed globalization resources path.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Transform-Callback" type="GridViewFieldValueTransformCallback" substitutionGroup="Transform">
+		<xs:annotation>
+			<xs:documentation>
+				Use callback implementation to process output field value.
+				The implementation must implement the interface IGridViewFieldValueTransformCallback.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Transform-Switch" type="GridViewFieldValueTransformSwitch" substitutionGroup="Transform">
+		<xs:annotation>
+			<xs:documentation>
+				Like a switch...case... syntax in C# language.
+				If field value matches a Case, attribute Output of the Case will be rendered.
+				If no Case matched, the field value will be output directly as default.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="GridViewFieldValueTransform" abstract="true" />
+	<xs:complexType name="GridViewFieldValueTransformToStringParameter">
+		<xs:annotation>
+			<xs:documentation>
+				The format parameter for converting the field value to string. E.g, DateTime.Now.ToString(string format).
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="GridViewFieldValueTransform">
+				<xs:attribute name="Value" type="RequiredString" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GridViewFieldValueTransformVariableString">
+		<xs:annotation>
+			<xs:documentation>
+				Output string in the rendered cell.
+				It supports variables defined like "http://www.rapidwebdev.org/article.aspx?id=$Id$".
+				The variable should be an accessible property of the object in data source, or existed variable in IApplicationContext.TempVariables, or an existed globalization resources path.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="GridViewFieldValueTransform">
+				<xs:attribute name="Value" type="RequiredString" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GridViewFieldValueTransformCallback">
+		<xs:annotation>
+			<xs:documentation>
+				Use callback implementation to process output field value.
+				The implementation must implement the interface IGridViewFieldValueTransformCallback.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="GridViewFieldValueTransform">
+				<xs:attribute name="Type" type="RequiredString" use="required">
+					<xs:annotation>
+						<xs:documentation>The implementation must implement the interface IGridViewFieldValueTransformCallback.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GridViewFieldValueTransformSwitch">
+		<xs:annotation>
+			<xs:documentation>
+				Like a switch...case... syntax in C# language.
+				If field value matches a Case, attribute Output of the Case will be rendered.
+				If no Case matched, the field value will be output directly as default.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="GridViewFieldValueTransform">
+				<xs:sequence>
+					<xs:element name="Case" type="GridViewFieldValueTransformSwitchCase" maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="GridViewFieldValueTransformSwitchCase" mixed="true">
+		<xs:annotation>
+			<xs:documentation>
+				The output text when field value matched the switch case value.
+				The inner text of this node supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" and request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Value" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The matching field value.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="CaseSensitive" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>Case sensitive while matching the field value. The default value is False.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="FormPanelButton">
+		<xs:annotation>
+			<xs:documentation>The button configured in form panel, e.g. Detail Panel or Aggregate Panel.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Text" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>Button text</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ToolTip" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>Button tooltip</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IsFormDefaultButton" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>Whether the button is the default button of the form, defaults to false.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="DetailPanelConfiguration">
+		<xs:annotation>
+			<xs:documentation>Detail panel is used to create/edit/view the clicked single record.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="BasePanelConfiguration">
+				<xs:sequence>
+					<xs:element name="Type" type="RequiredString">
+						<xs:annotation>
+							<xs:documentation>The type should implement IDetailPanelPage for custom business logics.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="SkinPath" type="RequiredString">
+						<xs:annotation>
+							<xs:documentation>Specify an ASCX template to render panel UI. Here supports both relative(~/) and abosolute path.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="SaveAndAddAnotherButton" type="FormPanelButton" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Configure "Save and Add Another" button to add a new entity in detail panel and reset the form after the new entity is saved successfully.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="SaveAndCloseButton" type="FormPanelButton" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Configure "Save and Close" button to add/update an entity in detail panel and close the dialog after the entity is saved successfully.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="CancelButton" type="FormPanelButton" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Configure "Cancel" button to cancel changes to an entity in detail panel.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="SetFocusOnFirstInputControlAutomatically" type="xs:boolean" use="optional" default="true">
+					<xs:annotation>
+						<xs:documentation>True to set focus on first input control automatically when the detail panel is loaded, defaults to true.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Width" type="xs:integer" use="optional" default="960">
+					<xs:annotation>
+						<xs:documentation>The width of form panel (defaults to 960). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Height" type="xs:integer" use="optional" default="600">
+					<xs:annotation>
+						<xs:documentation>The height of form panel (defaults to 600). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Resizable" type="xs:boolean" use="optional" default="false">
+					<xs:annotation>
+						<xs:documentation>True indicates the form panel is resizable (defaults to false). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Draggable" type="xs:boolean" use="optional" default="false">
+					<xs:annotation>
+						<xs:documentation>True indicates the form panel is draggable (defaults to false). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="ShowMessageAfterSavedSuccessfully" type="xs:boolean" use="optional" default="true">
+					<xs:annotation>
+						<xs:documentation>True indicates show message box in UI after saved successfully (defaults to true). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="AggregatePanelConfiguration">
+		<xs:annotation>
+			<xs:documentation>Aggregate panel is used to process custom operation against the multiple selected records in the query grid.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="BasePanelConfiguration">
+				<xs:sequence>
+					<xs:element name="Type" type="RequiredString">
+						<xs:annotation>
+							<xs:documentation>The type should implement the interface IAggregatePanelPage for custom business logics.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="SkinPath" type="RequiredString">
+						<xs:annotation>
+							<xs:documentation>Specify an ASCX template to render panel UI. Here supports both relative(~/) and abosolute path.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="SaveButton" type="FormPanelButton" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Configure "Save" button to process a custom operation against multiple selected records in aggregate panel.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="CancelButton" type="FormPanelButton" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Configure "Cancel" button to cancel a custom operation in aggregate panel.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="SetFocusOnFirstInputControlAutomatically" type="xs:boolean" use="optional" default="true">
+					<xs:annotation>
+						<xs:documentation>True to set focus on first input control automatically when the aggregate panel is loaded, defaults to true.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="CommandArgument" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The command argument of the aggregate panel</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Width" type="xs:integer" use="optional" default="960">
+					<xs:annotation>
+						<xs:documentation>The width of form panel (defaults to 960). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Height" type="xs:integer" use="optional" default="600">
+					<xs:annotation>
+						<xs:documentation>The height of form panel (defaults to 600). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Resizable" type="xs:boolean" use="optional" default="false">
+					<xs:annotation>
+						<xs:documentation>True indicates the form panel is resizable (defaults to false). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Draggable" type="xs:boolean" use="optional" default="false">
+					<xs:annotation>
+						<xs:documentation>True indicates the form panel is draggable (defaults to false). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="ShowMessageAfterSavedSuccessfully" type="xs:boolean" use="optional" default="true">
+					<xs:annotation>
+						<xs:documentation>True indicates show message box in UI after saved successfully (defaults to true). Optional.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="Control" type="QueryFieldConfiguration" abstract="true" />
+	<xs:element name="CheckBox" type="CheckBoxQueryFieldConfiguration" substitutionGroup="Control" />
+	<xs:element name="CheckBoxGroup" type="CheckBoxGroupQueryFieldConfiguration" substitutionGroup="Control" />
+	<xs:element name="ComboBox" type="ComboBoxQueryFieldConfiguration" substitutionGroup="Control" />
+	<xs:element name="Date" type="DateQueryFieldConfiguration" substitutionGroup="Control" />
+	<xs:element name="DateTime" type="DateTimeQueryFieldConfiguration" substitutionGroup="Control" />
+	<xs:element name="Integer" type="IntegerQueryFieldConfiguration" substitutionGroup="Control" />
+	<xs:element name="Decimal" type="DecimalQueryFieldConfiguration" substitutionGroup="Control" />
+	<xs:element name="TextBox" type="TextBoxQueryFieldConfiguration" substitutionGroup="Control" />
+	<xs:element name="RadioGroup" type="RadioGroupQueryFieldConfiguration" substitutionGroup="Control" />
+	<xs:element name="HierarchySelector" type="HierarchySelectorQueryFieldConfiguration" substitutionGroup="Control" />
+	<xs:element name="Custom" type="CustomQueryFieldConfiguration" substitutionGroup="Control" />
+
+	<xs:complexType name="CheckBoxQueryFieldConfiguration">
+		<xs:complexContent>
+			<xs:extension base="QueryFieldConfiguration">
+				<xs:attribute name="Text" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>
+							CheckBox display text, optional.
+							The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" and request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Checked" type="xs:boolean" use="optional" default="false">
+					<xs:annotation>
+						<xs:documentation>True indicates the checkbox is checked as default. The default value is false.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CheckBoxGroupQueryFieldConfiguration">
+		<xs:complexContent>
+			<xs:extension base="QueryFieldConfiguration">
+				<xs:sequence>
+					<xs:element name="Item" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="Text" type="xs:string" use="optional">
+								<xs:annotation>
+									<xs:documentation>
+										CheckBox display text, optional.
+										The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" and request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+									</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="Value" type="xs:string" use="optional">
+								<xs:annotation>
+									<xs:documentation>CheckBox value.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="Checked" type="xs:boolean" use="optional" default="false">
+								<xs:annotation>
+									<xs:documentation>True indicates the checkbox is checked as default. The default value is false.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ComboBoxQueryFieldConfiguration">
+		<xs:complexContent>
+			<xs:extension base="QueryFieldConfiguration">
+				<xs:choice minOccurs="1">
+					<xs:element name="StaticDataSource" type="ComboBoxItemsConfiguration">
+						<xs:annotation>
+							<xs:documentation>ComboBox control static selection items.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="DynamicDataSource" type="ComboBoxDynamicDataSourceConfiguration">
+						<xs:annotation>
+							<xs:documentation>ComboBox control dynamic selection items populated from remote HTTP calls.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+				<xs:attribute name="Editable" type="xs:boolean" use="optional" default="false">
+					<xs:annotation>
+						<xs:documentation>False to prevent the user from typing text directly into the field, just like a traditional select (defaults to true)</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="ForceSelection" type="xs:boolean" use="optional" default="false">
+					<xs:annotation>
+						<xs:documentation>True to restrict the selected value to one of the values in the list, false to allow the user to set arbitrary text into the field (defaults to false)</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="MinChars" type="xs:integer" use="optional" default="2">
+					<xs:annotation>
+						<xs:documentation>The minimum number of characters the user must type before autocomplete and typeahead activate (defaults to 2 if remote or 0 if local, does not apply if editable = false)</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="OnSelectedIndexChanged" type="RequiredString" use="optional">
+					<xs:annotation>
+						<xs:documentation>
+							The JavaScript client event when the selected item changed. The signature of javascript callback method should be as: "void MethodName(newValue);"
+							An example, "function onXYZSelectedIndexChanged(newValue) { ... }".
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ComboBoxItemsConfiguration">
+		<xs:sequence>
+			<xs:element name="Item" type="ComboBoxItemConfiguration" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ComboBoxItemConfiguration">
+		<xs:attribute name="Text" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					ComboBox item display text, optional.
+					The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" and request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Value" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>ComboBox item value.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Checked" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>True indicates the combobox item is checked as default. The default value is false.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="ComboBoxDynamicDataSourceConfiguration">
+		<xs:sequence>
+			<xs:element name="XTemplate" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						The template string used to display each item in the dropdown list. Use this to create custom UI layouts for items in the list.
+						The configured template string should not be encoded as <![CDATA[<tpl for='.'><div class='search-item'><h3>{topic_title}</h3></div></tpl>]]>.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType mixed="true">
+					<xs:sequence>
+						<xs:any processContents="skip" namespace="##any" />
+					</xs:sequence>
+					<xs:attribute name="ItemSelector" use="required" type="RequiredString">
+						<xs:annotation>
+							<xs:documentation>
+								This setting is required if a custom XTemplate has been specified which assigns a class other than ".x-combo-list-item" to dropdown list items.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Param" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>An name-value pair which are to be sent as parameters on any HTTP request</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="Name" type="RequiredString" use="required">
+						<xs:annotation>
+							<xs:documentation>
+								The request parameter name sent to HTTP server.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="Value" type="xs:string" use="optional" default="">
+						<xs:annotation>
+							<xs:documentation>
+								The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" and request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+								The variable is used when the request parameter value is not fixed but based on business scenarios at runtime.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Url" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>The URL from which to load data through an HttpProxy/ScriptTagProxy.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Proxy" use="optional" default="HttpProxy">
+			<xs:annotation>
+				<xs:documentation>
+					Note that if you are retrieving data from a page that is in a domain that is NOT the same as the originating domain of the running page, you must use ScriptTagProxy rather than HttpProxy.
+					The content passed back from a server resource requested by a ScriptTagProxy must be executable JavaScript source code because it is used as the source inside a script tag.
+					If you choose ScriptTagProxy, the http server MUST wrap the returned JSON string within "(JSON String);".
+					Defaults to HttpProxy.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="HttpProxy" />
+					<xs:enumeration value="ScriptTagProxy" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Method" use="optional" default="GET">
+			<xs:annotation>
+				<xs:documentation>The http access method, GET/POST, defaults to GET.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="GET" />
+					<xs:enumeration value="POST" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Root" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>The name of the property which contains the Array of row objects in remote call result. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="TextField" type="RequiredString" use="optional" default="Text">
+			<xs:annotation>
+				<xs:documentation>The underlying field name of displaying text to bind to this ComboBox.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ValueField" type="RequiredString" use="optional" default="Value">
+			<xs:annotation>
+				<xs:documentation>The underlying field name of selection value to bind to this ComboBox.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="QueryParam" type="RequiredString" use="optional" default="query">
+			<xs:annotation>
+				<xs:documentation>Name of the query as it will be passed on the querystring (defaults to 'query').</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="DateQueryFieldConfiguration">
+		<xs:complexContent>
+			<xs:extension base="QueryFieldConfiguration">
+				<xs:attribute name="MaxValue" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The maximum allowed date.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="MinValue" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The minimum allowed date.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="DefaultDate" type="DefaultDateValues" use="optional" default="None">
+					<xs:annotation>
+						<xs:documentation>The default date of the field.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="DateTimeQueryFieldConfiguration">
+		<xs:complexContent>
+			<xs:extension base="QueryFieldConfiguration">
+				<xs:attribute name="MaxValue" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The maximum allowed datetime.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="MinValue" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The minimum allowed datetime.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="DefaultDate" type="DefaultDateValues" use="optional" default="None">
+					<xs:annotation>
+						<xs:documentation>The default date of the field.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="DefaultTime" type="DefaultTimeValues" use="optional" default="None">
+					<xs:annotation>
+						<xs:documentation>The default time of the field.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="IntegerQueryFieldConfiguration">
+		<xs:complexContent>
+			<xs:extension base="QueryFieldConfiguration">
+				<xs:attribute name="AllowNegative" type="xs:boolean" use="optional" default="true">
+					<xs:annotation>
+						<xs:documentation>False to prevent entering a negative sign (defaults to true) </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="DecimalQueryFieldConfiguration">
+		<xs:complexContent>
+			<xs:extension base="QueryFieldConfiguration">
+				<xs:attribute name="AllowNegative" type="xs:boolean" use="optional" default="true">
+					<xs:annotation>
+						<xs:documentation>False to prevent entering a negative sign (defaults to true) </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="DecimalPrecision" type="xs:int" use="optional" default="2">
+					<xs:annotation>
+						<xs:documentation>The maximum precision to display after the decimal separator (defaults to 2) </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="TextBoxQueryFieldConfiguration">
+		<xs:complexContent>
+			<xs:extension base="QueryFieldConfiguration" />
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="RadioGroupQueryFieldConfiguration">
+		<xs:complexContent>
+			<xs:extension base="QueryFieldConfiguration">
+				<xs:sequence>
+					<xs:element name="Item" type="RadioQueryFieldConfiguration" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="RadioQueryFieldConfiguration">
+		<xs:attribute name="Value" type="xs:string" use="optional" default="" />
+		<xs:attribute name="Text" type="xs:string" use="optional" default="">
+			<xs:annotation>
+				<xs:documentation>
+					The radio button display text.
+					The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" and request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Checked" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>True indicates the radio is checked as default. The default value is false.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="CustomQueryFieldConfiguration">
+		<xs:complexContent>
+			<xs:extension base="QueryFieldConfiguration">
+				<xs:attribute name="Type" type="RequiredString" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							The custom query field control type which implements the interface IQueryFieldControl.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="ResolverName" type="RequiredString" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							The resolver used to resolve server-side control value from http post parameters for the query field control.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="HierarchySelectorQueryFieldConfiguration">
+		<xs:complexContent>
+			<xs:extension base="QueryFieldConfiguration">
+				<xs:choice minOccurs="1">
+					<xs:element name="HierarchyService">
+						<xs:annotation>
+							<xs:documentation>Pull hierarchy data from HierarchyService of RapidWebDev.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:attribute name="HierarchyType" type="RequiredString" use="required">
+								<xs:annotation>
+									<xs:documentation>The hierarchy type of hierarchy data from HierarchyService of RapidWebDev.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="ExternalService">
+						<xs:annotation>
+							<xs:documentation>
+								Pull hierarchy json data from an external public service out of RapidWebDev.
+								The service should return an array of hierarchy objects in flat that each hierarchy object has a property ParentValue which references its parent.
+							</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:attribute name="ServiceUrl" type="RequiredString" use="required">
+								<xs:annotation>
+									<xs:documentation>External public hierarchy service Url.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="TextField" type="RequiredString" use="required">
+								<xs:annotation>
+									<xs:documentation>Field name of hierarchy data text.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="ValueField" type="RequiredString" use="required">
+								<xs:annotation>
+									<xs:documentation>Field name of hierarchy data value.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="ParentValueField" type="RequiredString" use="required">
+								<xs:annotation>
+									<xs:documentation>Field name indicates which hierarchy node is the parent of this one in the returned array from the service.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+				<xs:attribute name="Title" type="RequiredString" use="required">
+					<xs:annotation>
+						<xs:documentation>The title is displayed on the UI, which indicates for selection. Like "Select Area" for geography hierarchy data.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Cascading" use="optional" default="Full">
+					<xs:annotation>
+						<xs:documentation>The title is displayed on the UI, which indicates for selection. Like "Select Area" for geography hierarchy data.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="RequiredString">
+							<xs:enumeration value="None">
+								<xs:annotation>
+									<xs:documentation>No impact to other tree node when a tree node is checked/unchecked.</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+							<xs:enumeration value="Full">
+								<xs:annotation>
+									<xs:documentation>Fully cascading check/uncheck the parent and children when a node is checked/unchecked.</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+							<xs:enumeration value="Standard">
+								<xs:annotation>
+									<xs:documentation>
+										The parent will be checked when a node is checked. The children will be unchecked when the parent node is unchecked.
+										Standard means there allows the parent node been checked without any children checked, but all the ancestors have to be checked when a child is checked.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="GridViewRowButtonConfiguration">
+		<xs:attribute name="ToolTip" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Button tooltip.
+					The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" and request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="DisplayAsImage" type="xs:boolean" use="optional" default="true">
+			<xs:annotation>
+				<xs:documentation>True to display button as an image icon in gridview row instead of flat link (defaults to true). </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="ButtonConfiguration">
+		<xs:all>
+			<xs:element name="OnClientClick" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						The JavaScript block executed in the browser when the user clicks the button before executing Action.
+						The request is sent to the server only when the configured JavaScript block setting the variable "returnValue" to true.
+						A sample javascript code block likes "returnValue = window.confirm('Are you sure to delete the record?');"
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GridSelectionRequired" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Validate whether the user has selected any data in grid before sending request to web services. </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="WarningMessage" type="RequiredString" use="required">
+						<xs:annotation>
+							<xs:documentation>
+								Warning message popup to user if there is no grid data selected when the user clicks the button.
+								The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" and request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+							</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:all>
+		<xs:attribute name="CommandArgument" type="RequiredString" use="required">
+			<xs:annotation>
+				<xs:documentation>
+					Specify command argument so that the IAggregate instance can catch the event of button click.
+					The integrated concrete command arguments are listed as following. Besides, you can specify any custom command arguments.
+					1) "New" - to create a new entity. It popups a blank detail panel when the button with command argument equals to "New" been clicked.
+					2) "Delete", "Update", "View" are protected which cannot be configured here. They have been used by grid view.
+					3) "Print" - to popup a window to print the found records.
+					4) "DownloadExcel" - to download an excel document file with all found records.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Text" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Button display text if linkbutton type is Text.
+					The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" and request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ToolTip" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Button tooltip.
+					The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" and request context variables as "$VariableName$" (included in IApplicationContext.TempVariables["VariableName"]).
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ImageUrl" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>generic button image url if linkbutton type is CustomImage</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Type" type="ButtonRenderTypes" use="optional" default="Button">
+			<xs:annotation>
+				<xs:documentation>button type, the default value is to show text only.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Css" type="RequiredString" use="optional" default="buttonpanel-button">
+			<xs:annotation>
+				<xs:documentation>Class name applied to the button.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:simpleType name="ButtonRenderTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Button" />
+			<xs:enumeration value="NewImage" />
+			<xs:enumeration value="EditImage" />
+			<xs:enumeration value="DeleteImage" />
+			<xs:enumeration value="ViewImage" />
+			<xs:enumeration value="PrintImage" />
+			<xs:enumeration value="DownloadExcelImage" />
+			<xs:enumeration value="CustomImage" />
+			<xs:enumeration value="PrintImage" />
+			<xs:enumeration value="DownloadExcelImage" />
+			<xs:enumeration value="Link" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="HorizontalAlignTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Center" />
+			<xs:enumeration value="Left" />
+			<xs:enumeration value="NotSet" />
+			<xs:enumeration value="Right" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="VerticalAlignTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bottom" />
+			<xs:enumeration value="Middle" />
+			<xs:enumeration value="NotSet" />
+			<xs:enumeration value="Top" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DefaultDateValues">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None" />
+			<xs:enumeration value="FirstDayOfWeek" />
+			<xs:enumeration value="FirstDayOfMonth" />
+			<xs:enumeration value="FirstDayOfYeay" />
+			<xs:enumeration value="Today" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DefaultTimeValues">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None" />
+			<xs:enumeration value="Now" />
+			<xs:enumeration value="H0" />
+			<xs:enumeration value="H1" />
+			<xs:enumeration value="H2" />
+			<xs:enumeration value="H3" />
+			<xs:enumeration value="H4" />
+			<xs:enumeration value="H5" />
+			<xs:enumeration value="H6" />
+			<xs:enumeration value="H7" />
+			<xs:enumeration value="H8" />
+			<xs:enumeration value="H9" />
+			<xs:enumeration value="H10" />
+			<xs:enumeration value="H11" />
+			<xs:enumeration value="H12" />
+			<xs:enumeration value="H13" />
+			<xs:enumeration value="H14" />
+			<xs:enumeration value="H15" />
+			<xs:enumeration value="H16" />
+			<xs:enumeration value="H17" />
+			<xs:enumeration value="H18" />
+			<xs:enumeration value="H19" />
+			<xs:enumeration value="H20" />
+			<xs:enumeration value="H21" />
+			<xs:enumeration value="H22" />
+			<xs:enumeration value="H23" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="RequiredString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

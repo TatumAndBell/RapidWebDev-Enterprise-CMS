@@ -1,0 +1,6 @@
+﻿insert into dbo.aspnet_SchemaVersions(Feature,CompatibleSchemaVersion,IsCurrentVersion) values('common',1,1)
+insert into dbo.aspnet_SchemaVersions(Feature,CompatibleSchemaVersion,IsCurrentVersion) values('health monitoring',1,1)
+insert into dbo.aspnet_SchemaVersions(Feature,CompatibleSchemaVersion,IsCurrentVersion) values('membership',1,1)
+insert into dbo.aspnet_SchemaVersions(Feature,CompatibleSchemaVersion,IsCurrentVersion) values('personalization',1,1)
+insert into dbo.aspnet_SchemaVersions(Feature,CompatibleSchemaVersion,IsCurrentVersion) values('profile',1,1)
+insert into dbo.aspnet_SchemaVersions(Feature,CompatibleSchemaVersion,IsCurrentVersion) values('role manager',1,1)

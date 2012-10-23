@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Statistics xmlns="http://www.rapidwebdev.org/schemas/statistics/property" Id="FullProperties">
+	<Property-String Id="Name" Name="Name" Description="Product Name" Method="Contains" PropertyName="ProductName" />
+	<Property-String Id="Manufactory" Name="Manufactory" Description="Product Manufactory" Method="Equals" PropertyName="Manufactory">
+		<SelectionItems-Static>
+			<Item Text="Intel" Value="Intel" />
+			<Item Text="AMD" Value="AMD" />
+		</SelectionItems-Static>
+	</Property-String>
+	<Property-String Id="Category" Name="Category" Description="Product Category" Method="Equals" PropertyName="Category">
+		<SelectionItems-Dynamic CallbackType="RapidWebDev.Tests.Statistics.ProductCategorySelectionItemsFactory, RapidWebDev.Tests" />
+	</Property-String>
+	<Property-Date Id="DesignedOn" Name="DesignedOn" PropertyName="DesignedOn" />
+	<Property-DateTime Id="ProducedOn" Name="ProducedOn" PropertyName="ProducedOn" />
+	<Property-Decimal Id="Price" Name="Price" PropertyName="Price" />
+	<Property-Integer Id="Repository" Name="Repository" PropertyName="Repository" />
+	<Property-Enumerable Id="FunctionalZone" Name="FunctionalZone" PropertyName="FunctionalZones">
+		<SelectionItems-Static>
+			<Item Text="CPU" Value="CPU" />
+			<Item Text="Memory" Value="Memory" />
+		</SelectionItems-Static>
+	</Property-Enumerable>
+	<Property-Comparison Id="TwoColumnComparisonPercentage" Name="Two Column Comparison Percentage" />
+	<Property-Total Id="Summary" Name="Summary" />
+	<Property-Runtime Id="ByWarehouse" Name="By Warehouse" CallbackType="RapidWebDev.Tests.Statistics.WarehoursePropertyFactory, RapidWebDev.Tests" />
+</Statistics>

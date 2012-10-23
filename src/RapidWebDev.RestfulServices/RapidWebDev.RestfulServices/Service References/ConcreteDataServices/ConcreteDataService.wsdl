@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://www.rapidwebdev.org/platform" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.rapidwebdev.org/platform/Imports">
+      <xsd:import schemaLocation="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd0" namespace="http://www.rapidwebdev.org/platform" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/RapidWebDev.ExtensionModel" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd4" namespace="http://www.rapidwebdev.org/extensionmodel" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd5" namespace="http://www.rapidwebdev.org/common" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConcreteDataService_SaveJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveJson" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_SaveJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_SaveXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveXml" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_SaveXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_GetByIdJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdJson" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_GetByIdJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_GetByIdXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdXml" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_GetByIdXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_GetByNameJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByNameJson" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_GetByNameJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByNameJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_GetByNameXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByNameXml" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_GetByNameXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByNameXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_FindByKeywordJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByKeywordJson" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_FindByKeywordJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByKeywordJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_FindByKeywordXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByKeywordXml" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_FindByKeywordXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByKeywordXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_FindConcreteDataTypesJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindConcreteDataTypesJson" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_FindConcreteDataTypesJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindConcreteDataTypesJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_FindConcreteDataTypesXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindConcreteDataTypesXml" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_FindConcreteDataTypesXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindConcreteDataTypesXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_QueryConcreteDataJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryConcreteDataJson" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_QueryConcreteDataJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryConcreteDataJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_QueryConcreteDataXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryConcreteDataXml" />
+  </wsdl:message>
+  <wsdl:message name="ConcreteDataService_QueryConcreteDataXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryConcreteDataXmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConcreteDataService">
+    <wsdl:operation name="SaveJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/SaveJson" message="tns:ConcreteDataService_SaveJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/SaveJsonResponse" message="tns:ConcreteDataService_SaveJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/SaveXml" message="tns:ConcreteDataService_SaveXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/SaveXmlResponse" message="tns:ConcreteDataService_SaveXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByIdJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/GetByIdJson" message="tns:ConcreteDataService_GetByIdJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/GetByIdJsonResponse" message="tns:ConcreteDataService_GetByIdJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByIdXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/GetByIdXml" message="tns:ConcreteDataService_GetByIdXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/GetByIdXmlResponse" message="tns:ConcreteDataService_GetByIdXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByNameJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/GetByNameJson" message="tns:ConcreteDataService_GetByNameJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/GetByNameJsonResponse" message="tns:ConcreteDataService_GetByNameJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByNameXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/GetByNameXml" message="tns:ConcreteDataService_GetByNameXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/GetByNameXmlResponse" message="tns:ConcreteDataService_GetByNameXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByKeywordJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/FindByKeywordJson" message="tns:ConcreteDataService_FindByKeywordJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/FindByKeywordJsonResponse" message="tns:ConcreteDataService_FindByKeywordJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByKeywordXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/FindByKeywordXml" message="tns:ConcreteDataService_FindByKeywordXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/FindByKeywordXmlResponse" message="tns:ConcreteDataService_FindByKeywordXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindConcreteDataTypesJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/FindConcreteDataTypesJson" message="tns:ConcreteDataService_FindConcreteDataTypesJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/FindConcreteDataTypesJsonResponse" message="tns:ConcreteDataService_FindConcreteDataTypesJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindConcreteDataTypesXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/FindConcreteDataTypesXml" message="tns:ConcreteDataService_FindConcreteDataTypesXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/FindConcreteDataTypesXmlResponse" message="tns:ConcreteDataService_FindConcreteDataTypesXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryConcreteDataJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/QueryConcreteDataJson" message="tns:ConcreteDataService_QueryConcreteDataJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/QueryConcreteDataJsonResponse" message="tns:ConcreteDataService_QueryConcreteDataJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryConcreteDataXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/QueryConcreteDataXml" message="tns:ConcreteDataService_QueryConcreteDataXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/ConcreteDataService/QueryConcreteDataXmlResponse" message="tns:ConcreteDataService_QueryConcreteDataXml_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

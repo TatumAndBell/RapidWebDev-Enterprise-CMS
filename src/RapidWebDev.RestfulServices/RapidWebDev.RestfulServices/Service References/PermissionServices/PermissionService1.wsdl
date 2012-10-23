@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://www.rapidwebdev.org/platform" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.rapidwebdev.org/platform/Imports">
+      <xsd:import schemaLocation="http://localhost:50682/Services/PermissionService.svc?xsd=xsd0" namespace="http://www.rapidwebdev.org/platform" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/PermissionService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/PermissionService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PermissionService_SetRolePermissionsByJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetRolePermissionsByJson" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_SetRolePermissionsByJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetRolePermissionsByJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_SetRolePermissionsByXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetRolePermissionsByXml" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_SetRolePermissionsByXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetRolePermissionsByXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_SetUserPermissionsByJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserPermissionsByJson" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_SetUserPermissionsByJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserPermissionsByJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_SetUserPermissionsByXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserPermissionsByXml" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_SetUserPermissionsByXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserPermissionsByXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_FindUserPermissionsByJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserPermissionsByJson" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_FindUserPermissionsByJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserPermissionsByJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_FindUserPermissionsByXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserPermissionsByXml" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_FindUserPermissionsByXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserPermissionsByXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_FindRolePermissionsByJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRolePermissionsByJson" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_FindRolePermissionsByJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRolePermissionsByJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_FindRolePermissionsByXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRolePermissionsByXml" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_FindRolePermissionsByXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRolePermissionsByXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_DoesTheUserHasPermissionJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoesTheUserHasPermissionJson" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_DoesTheUserHasPermissionJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoesTheUserHasPermissionJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_DoesTheUserHasPermissionXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoesTheUserHasPermissionXml" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_DoesTheUserHasPermissionXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoesTheUserHasPermissionXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_DoesTheCurrentUserHavePermissionJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoesTheCurrentUserHavePermissionJson" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_DoesTheCurrentUserHavePermissionJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoesTheCurrentUserHavePermissionJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_DoesTheCurrentUserHavePermissionXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoesTheCurrentUserHavePermissionXml" />
+  </wsdl:message>
+  <wsdl:message name="PermissionService_DoesTheCurrentUserHavePermissionXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoesTheCurrentUserHavePermissionXmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PermissionService">
+    <wsdl:operation name="SetRolePermissionsByJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/SetRolePermissionsByJson" message="tns:PermissionService_SetRolePermissionsByJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/SetRolePermissionsByJsonResponse" message="tns:PermissionService_SetRolePermissionsByJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRolePermissionsByXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/SetRolePermissionsByXml" message="tns:PermissionService_SetRolePermissionsByXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/SetRolePermissionsByXmlResponse" message="tns:PermissionService_SetRolePermissionsByXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserPermissionsByJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/SetUserPermissionsByJson" message="tns:PermissionService_SetUserPermissionsByJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/SetUserPermissionsByJsonResponse" message="tns:PermissionService_SetUserPermissionsByJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserPermissionsByXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/SetUserPermissionsByXml" message="tns:PermissionService_SetUserPermissionsByXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/SetUserPermissionsByXmlResponse" message="tns:PermissionService_SetUserPermissionsByXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUserPermissionsByJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/FindUserPermissionsByJson" message="tns:PermissionService_FindUserPermissionsByJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/FindUserPermissionsByJsonResponse" message="tns:PermissionService_FindUserPermissionsByJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUserPermissionsByXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/FindUserPermissionsByXml" message="tns:PermissionService_FindUserPermissionsByXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/FindUserPermissionsByXmlResponse" message="tns:PermissionService_FindUserPermissionsByXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRolePermissionsByJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/FindRolePermissionsByJson" message="tns:PermissionService_FindRolePermissionsByJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/FindRolePermissionsByJsonResponse" message="tns:PermissionService_FindRolePermissionsByJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRolePermissionsByXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/FindRolePermissionsByXml" message="tns:PermissionService_FindRolePermissionsByXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/FindRolePermissionsByXmlResponse" message="tns:PermissionService_FindRolePermissionsByXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoesTheUserHasPermissionJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/DoesTheUserHasPermissionJson" message="tns:PermissionService_DoesTheUserHasPermissionJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/DoesTheUserHasPermissionJsonResponse" message="tns:PermissionService_DoesTheUserHasPermissionJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoesTheUserHasPermissionXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/DoesTheUserHasPermissionXml" message="tns:PermissionService_DoesTheUserHasPermissionXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/DoesTheUserHasPermissionXmlResponse" message="tns:PermissionService_DoesTheUserHasPermissionXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoesTheCurrentUserHavePermissionJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/DoesTheCurrentUserHavePermissionJson" message="tns:PermissionService_DoesTheCurrentUserHavePermissionJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/DoesTheCurrentUserHavePermissionJsonResponse" message="tns:PermissionService_DoesTheCurrentUserHavePermissionJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoesTheCurrentUserHavePermissionXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/DoesTheCurrentUserHavePermissionXml" message="tns:PermissionService_DoesTheCurrentUserHavePermissionXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/PermissionService/DoesTheCurrentUserHavePermissionXmlResponse" message="tns:PermissionService_DoesTheCurrentUserHavePermissionXml_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

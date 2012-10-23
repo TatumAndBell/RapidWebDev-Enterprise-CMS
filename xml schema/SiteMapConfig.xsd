@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SiteMap" targetNamespace="http://www.rapidwebdev.org/schemas/sitemap" elementFormDefault="qualified" xmlns="http://www.rapidwebdev.org/schemas/sitemap" xmlns:mstns="http://tempuri.org/SiteMapConfig.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="SiteMap" type="SiteMapConfig" />
+
+	<xs:complexType name="SiteMapConfig">
+		<xs:sequence>
+			<xs:element name="Domain" type="SiteMapDomain" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						The infrastructure groups sitemap by organization domain.
+						In a complex enterprise application, there typically should have multiple organization domains, e.g. "Internal Organizations" (department/branch/filiale), "Customers", "Vendors".
+						We assume that there are different sitemap set for users in each organization domain.
+						Take an example, the administrator of "Internal Organizations" is allowed to "Manage Customers", "Manage Vendors", "Manage Internal Users".
+						But the administrator of "Customers" is allowed to "Search Ordered Products", "Manage Customer Profile" and "Manage Customer Users".
+						In this example, you should configure two "Domain" elements "Internal Organizations" and "Customers".
+						Then configure sitemap items "Manage Customers", "Manage Vendors", "Manage Internal Users" into the domain "Internal Organizations" and "Search Ordered Products", "Manage Customer Profile", "Manage Customer Users" into "Customers".
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SiteMapDomain">
+		<xs:sequence>
+			<xs:element name="Item" type="SiteMapItemConfig" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="Value" type="RequiredString" use="required">
+			<xs:annotation>
+				<xs:documentation>The organization domain value defined in PlatformConfiguration. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SiteMapItemConfig">
+		<xs:sequence>
+			<xs:element name="Item" type="SiteMapItemConfig" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Child sitemap items of current sitemap item.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Id" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>No need to explicitly set a value here. It's used for system to generate a random value to render navigation menu.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Type" type="SiteMapItemTypes" use="optional" default="Item">
+			<xs:annotation>
+				<xs:documentation>Defaults to "SimplePermission"</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Text" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					SiteMap item displaying text.
+					The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" which allows to be rendered depends on the clients globalization setting.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Value" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>SiteMap item permission value. The sitemap item is rendered only if the user has the permission value.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ClientSideCommand" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>Client side javascript is executed when the user clicks the sitemap link.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="PageUrl" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>The frame page opens a tab for the page when the user clicks the sitemap link.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IconClassName" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Configure a css class name to navigation segment to render a icon before segment header text.
+					An css example: ".settings { background-image:url(...); }"
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:simpleType name="SiteMapItemTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Item">
+				<xs:annotation>
+					<xs:documentation>
+						Item means that the permission Api checks whether the user has permission value explicitly equals to sitemap value.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Separator">
+				<xs:annotation>
+					<xs:documentation>
+						Indicates the sitemap is a separator but not a navigation menu.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="RequiredString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

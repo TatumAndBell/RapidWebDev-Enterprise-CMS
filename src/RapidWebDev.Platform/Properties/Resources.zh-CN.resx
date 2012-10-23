@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="AnonymousUser" xml:space="preserve">
+    <value>匿名用户</value>
+  </data>
+  <data name="CannotDeleteOrganizationTypeWithOrganizations" xml:space="preserve">
+    <value>组织类型{1}已经关联了{0}个组织，无法被删除。</value>
+  </data>
+  <data name="CodeCannotUpdate" xml:space="preserve">
+    <value>代码不能被更新。</value>
+  </data>
+  <data name="ConcreteDataNameCannotBeEmpty" xml:space="preserve">
+    <value>数据的名称不能为空。</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="DisplayNameCannotBeEmpty" xml:space="preserve">
+    <value>显示名称不能为空。</value>
+  </data>
+  <data name="DuplicateConcreteDataName" xml:space="preserve">
+    <value>数据名称"{0}"重复。</value>
+  </data>
+  <data name="DuplicateDisplayName" xml:space="preserve">
+    <value>显示名称{0}已经存在。</value>
+  </data>
+  <data name="DuplicateHierarchyDataName" xml:space="preserve">
+    <value>层次节点的名称重复。</value>
+  </data>
+  <data name="DuplicateHierarchyTypeName" xml:space="preserve">
+    <value>重复的层次结构类型名称。</value>
+  </data>
+  <data name="DuplicateOrganizationCode" xml:space="preserve">
+    <value>组织代码{0}已经存在。</value>
+  </data>
+  <data name="DuplicateOrganizationName" xml:space="preserve">
+    <value>组织名称{0}已经存在。</value>
+  </data>
+  <data name="DuplicateOrganizationTypeName" xml:space="preserve">
+    <value>组织类型名称{0}已经存在。</value>
+  </data>
+  <data name="DuplicateRoleName" xml:space="preserve">
+    <value>角色{0}名称已经存在，在同一个组织类型域中角色名称必须唯一。</value>
+  </data>
+  <data name="DuplicateUserName" xml:space="preserve">
+    <value>用户名称"{0}"已经存在。</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="ExistedAreaCode" xml:space="preserve">
+    <value>地区代码{0}已经被使用。</value>
+  </data>
+  <data name="ExistedAreaName" xml:space="preserve">
+    <value>地区名称{0}已经被使用。</value>
+  </data>
+  <data name="ExistedDisplayName" xml:space="preserve">
+    <value>显示名称已经被使用。</value>
+  </data>
+  <data name="ExistedOrganizationCode" xml:space="preserve">
+    <value>组织代码{0}已经被使用。</value>
+  </data>
+  <data name="ExistedOrganizationName" xml:space="preserve">
+    <value>组织名称{0}已经被使用。</value>
+  </data>
+  <data name="ExistedOrganizationTypeName" xml:space="preserve">
+    <value>组织类型{0}已经被使用。</value>
+  </data>
+  <data name="ExistedRoleName" xml:space="preserve">
+    <value>角色{0}已经被使用。</value>
+  </data>
+  <data name="ExistedUserEmail" xml:space="preserve">
+    <value>用户邮箱已经被使用。</value>
+  </data>
+  <data name="ExistedUserName" xml:space="preserve">
+    <value>用户名已经被使用。</value>
+  </data>
+  <data name="HasChildArea" xml:space="preserve">
+    <value>存在下级地区</value>
+  </data>
+  <data name="HasNoChildArea" xml:space="preserve">
+    <value>不存在下级地区</value>
+  </data>
+  <data name="HierarchyDataNameCannotBeEmpty" xml:space="preserve">
+    <value>层次节点的名称不能为空。</value>
+  </data>
+  <data name="HierarchyTypeCannotBeChanged" xml:space="preserve">
+    <value>节点的层次结构类型不能变更。</value>
+  </data>
+  <data name="InvalidApplicationID" xml:space="preserve">
+    <value>无效的应用程序ID"{0}".</value>
+  </data>
+  <data name="InvalidAreaID" xml:space="preserve">
+    <value>无效的地区ID</value>
+  </data>
+  <data name="InvalidAuthentication" xml:space="preserve">
+    <value>用户身份信息无效。</value>
+  </data>
+  <data name="InvalidConcreteDataID" xml:space="preserve">
+    <value>无效的数据ID。</value>
+  </data>
+  <data name="InvalidConcreteDataType" xml:space="preserve">
+    <value>请求的参数ConcreteDataType值"{0}"无效。</value>
+  </data>
+  <data name="InvalidDisplayName" xml:space="preserve">
+    <value>显示名称的长度必须大于0并小于256个字符。</value>
+  </data>
+  <data name="InvalidDomain" xml:space="preserve">
+    <value>请求的参数Domain值"{0}"无效。</value>
+  </data>
+  <data name="InvalidHierarchyAssociatedWithOrganization" xml:space="preserve">
+    <value>组织关联的"{0}"层次结构"{1}"无效。</value>
+  </data>
+  <data name="InvalidHierarchyDataId" xml:space="preserve">
+    <value>层次节点的ID标识无效。</value>
+  </data>
+  <data name="InvalidHierarchyType" xml:space="preserve">
+    <value>层次结构类型"{0}"无效。</value>
+  </data>
+  <data name="InvalidOldPasswordWhenChangePassword" xml:space="preserve">
+    <value>旧密码无效。</value>
+  </data>
+  <data name="InvalidOrganizationCredential" xml:space="preserve">
+    <value>用户所属单位的凭证无效。</value>
+  </data>
+  <data name="InvalidOrganizationDomain" xml:space="preserve">
+    <value>单位的域无效。</value>
+  </data>
+  <data name="InvalidOrganizationID" xml:space="preserve">
+    <value>无效的组织ID。</value>
+  </data>
+  <data name="InvalidOrganizationTypeDomain" xml:space="preserve">
+    <value>无效的组织类型业务域"{0}"</value>
+  </data>
+  <data name="InvalidOrganizationTypeID" xml:space="preserve">
+    <value>无效的组织类型ID。</value>
+  </data>
+  <data name="InvalidParentAreaID" xml:space="preserve">
+    <value>无效的上级地区ID。</value>
+  </data>
+  <data name="InvalidParentHierarchyDataId" xml:space="preserve">
+    <value>上层节点的ID标识无效。</value>
+  </data>
+  <data name="InvalidParentOrganizationID" xml:space="preserve">
+    <value>无效的上级组织ID。</value>
+  </data>
+  <data name="InvalidPasswordFormat" xml:space="preserve">
+    <value>无效的密码格式。</value>
+  </data>
+  <data name="InvalidRoleID" xml:space="preserve">
+    <value>无效的角色ID。</value>
+  </data>
+  <data name="InvalidUserCredential" xml:space="preserve">
+    <value>用户凭证无效。</value>
+  </data>
+  <data name="InvalidUserEmail" xml:space="preserve">
+    <value>用户邮箱不能大于256个字符。</value>
+  </data>
+  <data name="InvalidUserID" xml:space="preserve">
+    <value>无效的用户ID"{0}"。</value>
+  </data>
+  <data name="InvalidUserName" xml:space="preserve">
+    <value>用户名的长度必须大于0并小于256个字符。</value>
+  </data>
+  <data name="NoParentArea" xml:space="preserve">
+    <value>无上级地区</value>
+  </data>
+  <data name="OrganizationCannotBeEmpty" xml:space="preserve">
+    <value>组织不能为空。</value>
+  </data>
+  <data name="OrganizationCodeCannotBeEmpty" xml:space="preserve">
+    <value>组织代码不能为空。</value>
+  </data>
+  <data name="OrganizationNameCannotBeEmpty" xml:space="preserve">
+    <value>组织名称不能为空。</value>
+  </data>
+  <data name="OrganizationProfile" xml:space="preserve">
+    <value>单位简介</value>
+  </data>
+  <data name="OrganizationStatusCannotBeHigherThanParent" xml:space="preserve">
+    <value>组织"{2}"的状态不能被设置为"{3}"，因为它的上级组织"{0}"状态为"{1}"。</value>
+  </data>
+  <data name="OrganizationStatusNotSpecified" xml:space="preserve">
+    <value>组织的状态未指定。</value>
+  </data>
+  <data name="OrganizationTypeCannotBeEmpty" xml:space="preserve">
+    <value>组织类型不能为空。</value>
+  </data>
+  <data name="OrganizationTypeDomainCannotBeEmpty" xml:space="preserve">
+    <value>域不能为空。</value>
+  </data>
+  <data name="OrganizationTypeNameCannotBeEmpty" xml:space="preserve">
+    <value>组织类型名称不能为空。</value>
+  </data>
+  <data name="ParentArea" xml:space="preserve">
+    <value>上级地区：{0}</value>
+  </data>
+  <data name="ParentOrganizationCircularReference" xml:space="preserve">
+    <value>设置的上级组织产生了循环引用：{0}。</value>
+  </data>
+  <data name="PasswordAnswerCannotBeEmpty" xml:space="preserve">
+    <value>密码答案不能为空。</value>
+  </data>
+  <data name="PasswordAnswerInvalidLength" xml:space="preserve">
+    <value>密码答案的长度不能超过256个字符。</value>
+  </data>
+  <data name="PasswordAnswerTooLong" xml:space="preserve">
+    <value>密码答案的长度超长。</value>
+  </data>
+  <data name="PasswordCannotBeEmpty" xml:space="preserve">
+    <value>密码不能为空。</value>
+  </data>
+  <data name="PasswordFormatIsInvalid" xml:space="preserve">
+    <value>密码格式无效，不符合规则"{0}"。</value>
+  </data>
+  <data name="PasswordInvalid" xml:space="preserve">
+    <value>密码不能为空或超过128个字符。</value>
+  </data>
+  <data name="PasswordLengthLessThanRequired" xml:space="preserve">
+    <value>密码长度不应少于{0}个字符。</value>
+  </data>
+  <data name="PasswordLessThanMinLength" xml:space="preserve">
+    <value>密码的长度小于系统规定的最小长度{0}个字符。</value>
+  </data>
+  <data name="PasswordLessThanMinRequiredNonAlphanumericCharacters" xml:space="preserve">
+    <value>密码至少应包含{0}个非阿拉伯字母和数字字符。</value>
+  </data>
+  <data name="PasswordNotEqualToConfirmPassword" xml:space="preserve">
+    <value>密码和确认密码不相同。</value>
+  </data>
+  <data name="PasswordQuestionCannotBeEmpty" xml:space="preserve">
+    <value>密码问题不能为空。</value>
+  </data>
+  <data name="PasswordQuestionInvalidLength" xml:space="preserve">
+    <value>密码问题的长度不应超过256个字符。</value>
+  </data>
+  <data name="PasswordTooLong" xml:space="preserve">
+    <value>密码太长。</value>
+  </data>
+  <data name="RoleNameCannotBeEmpty" xml:space="preserve">
+    <value>角色不能为空。</value>
+  </data>
+  <data name="UnauthorizedAccess" xml:space="preserve">
+    <value>访问未授权。</value>
+  </data>
+  <data name="UserEmailCannotBeEmpty" xml:space="preserve">
+    <value>用户邮箱不能为空。</value>
+  </data>
+  <data name="UserEmailCannotBeGreaterThan256Characters" xml:space="preserve">
+    <value>用户邮箱的长度不应超过256个字符。</value>
+  </data>
+  <data name="UserHasBeenLockedOut" xml:space="preserve">
+    <value>由于密码错误多次，该用户已经被锁定。</value>
+  </data>
+  <data name="UserNameCannotBeEmpty" xml:space="preserve">
+    <value>用户名不能为空。</value>
+  </data>
+  <data name="UserProfile" xml:space="preserve">
+    <value>用户简介</value>
+  </data>
+</root>

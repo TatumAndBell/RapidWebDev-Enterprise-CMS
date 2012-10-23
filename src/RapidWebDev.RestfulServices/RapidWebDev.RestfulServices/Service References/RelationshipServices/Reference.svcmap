@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9bbf75e5-eb16-4de5-a116-75f6f6d2091d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50682/Services/RelationshipService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RelationshipService.wsdl" MetadataType="Wsdl" ID="60832f63-49cf-4fb3-a8d7-3a28b8d1fb4c" SourceId="1" SourceUrl="http://localhost:50682/Services/RelationshipService.svc?wsdl" />
+    <MetadataFile FileName="RelationshipService.xsd" MetadataType="Schema" ID="a23af271-1d60-45bb-bc79-3f51f53a82b3" SourceId="1" SourceUrl="http://localhost:50682/Services/RelationshipService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RelationshipService1.wsdl" MetadataType="Wsdl" ID="980f8b59-e698-4507-8ce8-956eae1b07c8" SourceId="1" SourceUrl="http://localhost:50682/Services/RelationshipService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="RelationshipService1.xsd" MetadataType="Schema" ID="65dcbb85-6a81-4884-84f9-700864876e24" SourceId="1" SourceUrl="http://localhost:50682/Services/RelationshipService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RelationshipService.disco" MetadataType="Disco" ID="644eaa77-079b-41fa-81aa-2f5c4bc6a35c" SourceId="1" SourceUrl="http://localhost:50682/Services/RelationshipService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

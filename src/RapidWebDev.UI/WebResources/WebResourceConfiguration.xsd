@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.rapidwebdev.org/schemas/ui/resources" elementFormDefault="qualified" xmlns="http://www.rapidwebdev.org/schemas/ui/resources" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Resources">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Template" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Resource templates which can be referenced.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="Resource" minOccurs="0" maxOccurs="unbounded" />
+						</xs:sequence>
+						<xs:attribute name="Id" type="RequiredString" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Style" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>CSS style files</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="ResourceItem" maxOccurs="unbounded" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Script" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>JavaScript files</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="ResourceItem" maxOccurs="unbounded" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Description" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ResourceItem" type="ResourceItem" abstract="true" />
+	<xs:element name="ResourceGroup" type="ResourceGroup" substitutionGroup="ResourceItem" />
+	<xs:element name="Resource" type="Resource" substitutionGroup="ResourceItem" />
+	<xs:element name="ImportTemplate" type="ImportTemplate" substitutionGroup="ResourceItem" />
+
+	<xs:complexType name="ResourceItem" abstract="true">
+		<xs:anyAttribute processContents="skip">
+			<xs:annotation>
+				<xs:documentation>The unknown attributes are configured as filters which decide whether to render the resource to client.</xs:documentation>
+			</xs:annotation>
+		</xs:anyAttribute>
+	</xs:complexType>
+
+	<xs:complexType name="ResourceGroup">
+		<xs:annotation>
+			<xs:documentation>
+				The attributes of group are applied to the included resources.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ResourceItem">
+				<xs:sequence>
+					<xs:element name="Resource" type="Resource" minOccurs="1" maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="Resource">
+		<xs:annotation>
+			<xs:documentation>The resource is to be rendered to client.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ResourceItem">
+				<xs:attribute name="Path" type="RequiredString" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							The relative/absolute path of resource file in the server.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ImportTemplate">
+		<xs:annotation>
+			<xs:documentation>The resource is to be rendered to client.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ResourceItem">
+				<xs:attribute name="TemplateId" type="RequiredString" use="required">
+					<xs:annotation>
+						<xs:documentation>Reference resource template by id.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:simpleType name="RequiredString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

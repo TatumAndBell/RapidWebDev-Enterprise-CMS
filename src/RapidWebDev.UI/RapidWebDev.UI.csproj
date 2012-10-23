@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AAC9A9DA-A239-47C1-ABEE-D6994B7701BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RapidWebDev.UI</RootNamespace>
+    <AssemblyName>RapidWebDev.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\RapidWebDev.public.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\RapidWebDev.UI.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\RapidWebDev.UI.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.DynamicProxy, Version=1.1.5.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\Castle.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Spring.Aop">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="AjaxControlToolkit, Version=3.0.20229.22065, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="antlr.runtime, Version=2.7.6.2, Culture=neutral, PublicKeyToken=65e474d141e25e07">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Linq.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3624dc708c4455be">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\Linq.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Button.cs" />
+    <Compile Include="Controls\CheckBox.cs" />
+    <Compile Include="Controls\CheckBoxGroup.cs" />
+    <Compile Include="Controls\ComboBox.cs" />
+    <Compile Include="Controls\HierarchySelector.cs" />
+    <Compile Include="Controls\DateTimePicker.cs" />
+    <Compile Include="Controls\DatePicker.cs" />
+    <Compile Include="Controls\RadioGroup.cs" />
+    <Compile Include="Controls\DecimalTextBox.cs" />
+    <Compile Include="Controls\IntegerTextBox.cs" />
+    <Compile Include="Controls\IEditableControl.cs" />
+    <Compile Include="Controls\JSScript.cs" />
+    <Compile Include="Controls\TabContainer.cs" />
+    <Compile Include="Controls\TextBox.cs" />
+    <Compile Include="Controls\TreeView.cs" />
+    <Compile Include="Controls\ModalWindowHandler.cs" />
+    <Compile Include="DynamicPages\BindingAttribute.cs" />
+    <Compile Include="DynamicPages\Configurations\HierarchySelectorConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\DetailPanelConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\FormPanelButtonConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\FramePageConfigurationSection.cs" />
+    <Compile Include="DynamicPages\AggregatePanelPage.cs" />
+    <Compile Include="DynamicPages\IRequestHandler.cs" />
+    <Compile Include="DynamicPages\Resolvers\HierarchySelectorControlValueResolver.cs" />
+    <Compile Include="DynamicPages\TableXColumnsQueryPanelLayout.cs" />
+    <Compile Include="DynamicPages\IQueryPanelLayout.cs" />
+    <Compile Include="DynamicPages\DetailPanelPage.cs" />
+    <Compile Include="DynamicPages\DynamicPage.cs" />
+    <Compile Include="DynamicPages\IDynamicComponent.cs" />
+    <Compile Include="DynamicPages\IAggregatePanelPage.cs" />
+    <Compile Include="DynamicPages\IDetailPanelPage.cs" />
+    <Compile Include="DynamicPages\IDynamicPageConfigurationProcessCallback.cs" />
+    <Compile Include="DynamicPages\IDynamicPagePrinter.cs" />
+    <Compile Include="DynamicPages\PrintAndExcel\ExtGridConfigurationResolver.cs" />
+    <Compile Include="DynamicPages\PrintAndExcel\DataSource.cs">
+      <DependentUpon>DataSource.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicPages\PrintAndExcel\DynamicPagePrinter.cs" />
+    <Compile Include="DynamicPages\PrintAndExcel\ExtGridColumnConfiguration.cs" />
+    <Compile Include="DynamicPages\PrintAndExcel\ExtGridConfiguration.cs" />
+    <Compile Include="FieldNameTransformUtility.cs" />
+    <Compile Include="IPermissionBridge.cs" />
+    <Compile Include="ISiteMapItem.cs" />
+    <Compile Include="QueryStringUtility.cs" />
+    <Compile Include="DynamicPages\ButtonPanel.cs" />
+    <Compile Include="DynamicPages\Configurations\BasePanelConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\ButtonConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\ButtonRenderTypes.cs" />
+    <Compile Include="ConfigurationParser.cs" />
+    <Compile Include="DynamicPages\Configurations\ControlConfigurationTypes.cs" />
+    <Compile Include="DynamicPages\Configurations\BaseLayoutConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\ButtonPanelConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\CheckBoxGroupItemConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\GridViewRowButtonConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\DefaultTimeValues.cs" />
+    <Compile Include="DynamicPages\Configurations\DecimalConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\DefaultDateValues.cs" />
+    <Compile Include="DynamicPages\Configurations\GeneralButtonConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\CustomConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\GridViewFieldRowViewConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\GridViewPanelConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\GridViewFieldConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\GridViewFieldValueTransformConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\GridViewFieldValueTransformSwitchCase.cs" />
+    <Compile Include="DynamicPages\Configurations\GridViewFieldValueTransformTypes.cs" />
+    <Compile Include="DynamicPages\Configurations\IGridViewFieldValueTransformCallback.cs" />
+    <Compile Include="DynamicPages\Configurations\QueryPanelConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\QueryFieldOperators.cs" />
+    <Compile Include="DynamicPages\Configurations\AggregatePanelConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\DateTimeConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\RadioGroupConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\IntegerConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\CheckBoxGroupConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\CheckBoxConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\DateConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\ComboBoxDynamicDataSourceConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\ComboBoxItemConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\ComboBoxConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\TextBoxConfiguration.cs" />
+    <Compile Include="DynamicPages\Configurations\QueryFieldConfiguration.cs" />
+    <Compile Include="DynamicPages\Resolvers\ComboBoxControlValueResolver.cs" />
+    <Compile Include="DynamicPages\Resolvers\ControlValueResolveException.cs" />
+    <Compile Include="DynamicPages\Resolvers\RadioGroupControlValueResolver.cs" />
+    <Compile Include="DynamicPages\Resolvers\DecimalControlValueResolver.cs" />
+    <Compile Include="DynamicPages\Resolvers\IntegerControlValueResolver.cs" />
+    <Compile Include="DynamicPages\Resolvers\DateTimeControlValueResolver.cs" />
+    <Compile Include="DynamicPages\Resolvers\DateControlValueResolver.cs" />
+    <Compile Include="DynamicPages\Resolvers\TextBoxControlValueResolver.cs" />
+    <Compile Include="DynamicPages\Resolvers\IControlValueResolverFactory.cs" />
+    <Compile Include="DynamicPages\Resolvers\ControlValueResolverFactory.cs" />
+    <Compile Include="DynamicPages\Resolvers\IControlValueResolver.cs" />
+    <Compile Include="DynamicPages\Resolvers\CheckBoxControlValueResolver.cs" />
+    <Compile Include="DynamicPages\Resolvers\CheckBoxGroupControlValueResolver.cs" />
+    <Compile Include="Services\AbstractPanelPageHandler.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\TopNavigationMenuFramePageLayout.cs" />
+    <Compile Include="Services\LeftNavigationBarFramePageLayout.cs" />
+    <Compile Include="Services\IFramePageLayout.cs" />
+    <Compile Include="Services\HttpRequestHandler.cs" />
+    <Compile Include="Services\VerticalDynamicPageLayout.cs" />
+    <Compile Include="Services\DynamicPageDataToHtmlHandler.cs" />
+    <Compile Include="Services\DynamicPageDataToExcelHandler.cs" />
+    <Compile Include="Services\IDynamicPageLayout.cs" />
+    <Compile Include="WebResources\XmlConfigWebResourceManager.cs" />
+    <Compile Include="WebResources\IWebResourceManager.cs" />
+    <Compile Include="WebResources\DefaultWebResourceManager.cs" />
+    <Compile Include="WebResources\WebResource.cs" />
+    <Compile Include="Services\AggregatePanelPageHandler.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\FramePageHandler.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicPages\Configurations\BaseControlConfiguration.cs" />
+    <Compile Include="DynamicPages\DynamicPageContext.cs" />
+    <Compile Include="DynamicPages\GridViewPanel.cs" />
+    <Compile Include="DynamicPages\InlinePanel.cs" />
+    <Compile Include="DynamicPages\ModalPanel.cs" />
+    <Compile Include="Services\DetailPanelPageHandler.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services\DynamicPageHandler.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicPages\GridRowControlBindEventArgs.cs" />
+    <Compile Include="DynamicPages\Linq2SQLPredicateCompiler.cs" />
+    <Compile Include="DynamicPages\IPredicateCompiler.cs" />
+    <Compile Include="DynamicPages\QueryFieldControlFactory.cs" />
+    <Compile Include="DynamicPages\QueryPanel.cs" />
+    <Compile Include="DynamicPages\QueryParameterExpressionCollection.cs" />
+    <Compile Include="DynamicPages\IDynamicPage.cs" />
+    <Compile Include="DynamicPages\IQueryFieldControl.cs" />
+    <Compile Include="DynamicPages\QueryParameter.cs" />
+    <Compile Include="DynamicPages\QueryParameterExpression.cs" />
+    <Compile Include="DynamicPages\QueryResults.cs" />
+    <Compile Include="DynamicPages\SortExpression.cs" />
+    <Compile Include="DynamicPages\TemplatePanelChildControlsAttachedEventArgs.cs" />
+    <Compile Include="DynamicPages\TemplatePanel.cs" />
+    <Compile Include="IConfigurationParser.cs" />
+    <Compile Include="DynamicPages\Configurations\DynamicPageConfigurationParser.cs" />
+    <Compile Include="DynamicPages\Configurations\DynamicPageConfiguration.cs" />
+    <Compile Include="MessageTypes.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DynamicPageDataServiceHandler.cs" />
+    <Compile Include="Controls\Container.cs" />
+    <Compile Include="Controls\MessagePanel.cs">
+    </Compile>
+    <Compile Include="Controls\PopupSelectorControl.cs">
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\TemplatedWebControl.cs" />
+    <Compile Include="Controls\TemplateNotFoundException.cs" />
+    <Compile Include="Controls\BooleanIcon.cs" />
+    <Compile Include="WebUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RapidWebDev.Common\RapidWebDev.Common.csproj">
+      <Project>{29D45B1B-D03B-4C5F-8D8B-D765E3977339}</Project>
+      <Name>RapidWebDev.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWebDev.ExtensionModel\RapidWebDev.ExtensionModel.csproj">
+      <Project>{BC37B273-2F1A-4D9A-A927-633FD6BC3A66}</Project>
+      <Name>RapidWebDev.ExtensionModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DynamicPages\PrintAndExcel\DataSource.xsd" />
+    <EmbeddedResource Include="WebResources\WebResourceConfiguration.xsd" />
+    <EmbeddedResource Include="DynamicPages\Configurations\DynamicPage.xsd" />
+    <EmbeddedResource Include="Properties\Resources.zh-CN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DynamicPages\PrintAndExcel\DynamicPageExcelPrinter.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DynamicPages\PrintAndExcel\DynamicPageHtmlPrinter.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

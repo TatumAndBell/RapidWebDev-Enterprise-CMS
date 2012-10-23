@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resources xmlns="http://www.rapidwebdev.org/schemas/ui/resources">
+	<Template Id="CommonStyle">
+		<Resource Path="~/Resources/Css/ext-all.css" />
+		<Resource Path="~/Resources/Css/ux-all.css" />
+		<Resource Path="~/Resources/Css/xtheme-access.css" Theme="Access" />
+		<Resource Path="~/Resources/Css/xtheme-blue.css" Theme="Blue" />
+		<Resource Path="~/Resources/Css/xtheme-gray-extend.css" Theme="Gray-Extend" />
+		<Resource Path="~/Resources/Css/xtheme-gray.css" Theme="Gray" />
+		<Resource Path="~/Resources/Css/xtheme-tp.css" Theme="TP" />
+		<Resource Path="~/Resources/Css/global.css" />
+	</Template>
+	<Template Id="CommonScript">
+		<Resource Path="~/Resources/JavaScript/jquery.js" />
+		<Resource Path="~/Resources/JavaScript/ext-jquery-adapter.js" />
+		<Resource Path="~/Resources/JavaScript/ext-all.js" />
+		<Resource Path="~/Resources/JavaScript/ux-all.js" />
+		<Resource Path="~/Resources/JavaScript/ext-locale/ext-lang-zh_CN.js" Culture="zh-CN"/>
+		<Resource Path="~/Resources/JavaScript/MessageBox.js" />
+		<Resource Path="~/Resources/JavaScript/ModalWindowHandler.js" />
+	</Template>
+</Resources>

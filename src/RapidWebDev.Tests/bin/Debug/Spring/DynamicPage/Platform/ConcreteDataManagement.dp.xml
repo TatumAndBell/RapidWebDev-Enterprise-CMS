@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://www.rapidwebdev.org/schemas/dynamicpage" ObjectId="ConcreteDataManagement" Type="RapidWebDev.Platform.Web.DynamicPage.ConcreteDataManagement, RapidWebDev.Platform">
+	<Title>$ConcreteDataType$ $Resources.Membership.Management, RapidWebDev.Web$</Title>
+	<PermissionValue>$ConcreteDataType$Management</PermissionValue>
+	<Panels>
+		<QueryPanel HeaderText="$Resources.Membership.Query, RapidWebDev.Web$ $ConcreteDataType$">
+			<TextBox FieldName="Name" Label="$Resources.Membership.Name, RapidWebDev.Web$: " />
+			<TextBox FieldName="Value" Label="$Resources.Membership.Value, RapidWebDev.Web$: " />
+			<CheckBoxGroup FieldName="DeleteStatus" Label="$Resources.Membership.Status, RapidWebDev.Web$: " FieldValueType="RapidWebDev.Platform.DeleteStatus, RapidWebDev.Platform" Occupation="1">
+				<Item Checked="true" Text="$Resources.Membership.Enabled, RapidWebDev.Web$" Value="NotDeleted" />
+				<Item Text="$Resources.Membership.Disabled, RapidWebDev.Web$" Value="Deleted" />
+			</CheckBoxGroup>
+		</QueryPanel>
+		
+		<ButtonPanel ButtonAlignment="Left">
+			<Button CommandArgument="New" Type="NewImage" ToolTip="$Resources.Membership.Add, RapidWebDev.Web$" />
+		</ButtonPanel>
+		
+		<GridViewPanel HeaderText="$Resources.Membership.QueryResults, RapidWebDev.Web$"
+			EntityName="$ConcreteDataType$"
+			EnabledCheckBoxField="true"
+			PageSize="25"
+			PrimaryKeyFieldName="ConcreteDataId"
+			DefaultSortField="LastUpdatedDate"
+			DefaultSortDirection="DESC">
+			<ViewButton />
+			<EditButton />
+			<DeleteButton />
+			<Fields>
+				<Field FieldName="Name" HeaderText="$Resources.Membership.Name, RapidWebDev.Web$" />
+				<Field FieldName="Value" HeaderText="$Resources.Membership.Value, RapidWebDev.Web$" />
+				<Field FieldName="DeleteStatus" HeaderText="$Resources.Membership.Status, RapidWebDev.Web$" Width="60">
+					<Transform-Switch>
+						<Case Value="NotDeleted">&lt;span style='color:green'&gt;$Resources.Membership.Enabled, RapidWebDev.Web$&lt;/span&gt;</Case>
+						<Case Value="Deleted">&lt;span style='color:red'&gt;$Resources.Membership.Disabled, RapidWebDev.Web$&lt;/span&gt;</Case>
+					</Transform-Switch>
+				</Field>
+				<Field FieldName="LastUpdatedBy" HeaderText="$Resources.Membership.ModifiedBy, RapidWebDev.Web$" Align="Center">
+					<Transform-Callback Type="RapidWebDev.Platform.Web.DynamicPage.GridViewFieldValueTransformCallback.ShowUserDisplayName, RapidWebDev.Platform"/>
+				</Field>
+				<Field FieldName="LastUpdatedDate" HeaderText="$Resources.Membership.ModifiedOn, RapidWebDev.Web$" Align="Center" Width="150" />
+				<RowView FieldName="Description" />
+			</Fields>
+		</GridViewPanel>
+		
+		<DetailPanel HeaderText="$ConcreteDataType$ $Resources.Membership.Profile, RapidWebDev.Web$" ShowMessageAfterSavedSuccessfully="false">
+			<Type>RapidWebDev.Platform.Web.DynamicPage.ConcreteDataDetailPanel, RapidWebDev.Platform</Type>
+			<SkinPath>~/Templates/Platform/ConcreteData.ascx</SkinPath>
+			<SaveAndAddAnotherButton IsFormDefaultButton="true" />
+			<SaveAndCloseButton />
+			<CancelButton />
+		</DetailPanel>
+	</Panels>
+</Page>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c70f8b9b-c9ed-4d48-bc41-d99cf9ffca04" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50682/Services/ConcreteDataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ConcreteDataService.xsd" MetadataType="Schema" ID="d09bcbab-a696-4387-9c79-8940f2e08837" SourceId="1" SourceUrl="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ConcreteDataService1.xsd" MetadataType="Schema" ID="d4969311-1ec8-4478-81cd-fd98f6355c3c" SourceId="1" SourceUrl="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ConcreteDataService2.xsd" MetadataType="Schema" ID="32fb23ec-9c4d-4c09-bb98-d37595301a68" SourceId="1" SourceUrl="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ConcreteDataService3.xsd" MetadataType="Schema" ID="14029044-4eae-4553-bb3a-75e86fd71cb9" SourceId="1" SourceUrl="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ConcreteDataService.wsdl" MetadataType="Wsdl" ID="28d923f6-9ef4-4214-baa5-36f09eb5dad3" SourceId="1" SourceUrl="http://localhost:50682/Services/ConcreteDataService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ConcreteDataService4.xsd" MetadataType="Schema" ID="cf52e1e9-13ca-4244-86f1-c17049828588" SourceId="1" SourceUrl="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ConcreteDataService1.wsdl" MetadataType="Wsdl" ID="1c43542b-7a02-4743-9165-e39c261e94a7" SourceId="1" SourceUrl="http://localhost:50682/Services/ConcreteDataService.svc?wsdl" />
+    <MetadataFile FileName="ConcreteDataService5.xsd" MetadataType="Schema" ID="ad08a04d-1bb8-41c3-8991-760f22dcabe1" SourceId="1" SourceUrl="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ConcreteDataService.disco" MetadataType="Disco" ID="03e27ce3-ad1c-41af-a1ad-999d8defb4c9" SourceId="1" SourceUrl="http://localhost:50682/Services/ConcreteDataService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

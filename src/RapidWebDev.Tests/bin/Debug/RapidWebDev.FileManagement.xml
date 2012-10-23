@@ -1,0 +1,847 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RapidWebDev.FileManagement</name>
+    </assembly>
+    <members>
+        <member name="T:RapidWebDev.FileManagement.IconSize">
+            <summary>
+            Icon size enumeration.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.FileManagement.IconSize.Pixel50x50">
+            <summary>
+            50x50 pixels.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.FileManagement.IconSize.Pixel16x16">
+            <summary>
+            16x16 pixels.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.FileUploadObject">
+            <summary>
+            File uploading object
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileUploadObject.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>The id.</value>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileUploadObject.FileName">
+            <summary>
+            Gets or sets the file name only without directory information.
+            </summary>
+            <value>The file name without directory information.</value>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileUploadObject.Category">
+            <summary>
+            Gets or sets the category of file.
+            </summary>
+            <value>The category of file.</value>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileUploadObject.Description">
+            <summary>
+            Gets or sets the file description.
+            </summary>
+            <value>The file description.</value>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileUploadObject.Stream">
+            <summary>
+            Gets or sets the file stream.
+            </summary>
+            <value>The file stream.</value>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.FileIconApi">
+            <summary>
+            Api to resolve icon of files from assembly manifest resources.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.IFileIconApi">
+            <summary>
+            Api to resolve icon of the files.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileIconApi.ResolveIcon(System.String,RapidWebDev.FileManagement.IconSize)">
+            <summary>
+            Resolves icon of the file.
+            </summary>
+            <param name="fileExtensionName">The file extension name.</param>
+            <param name="iconSize">The icon size.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.FileIconApi.ResolveIcon(System.String,RapidWebDev.FileManagement.IconSize)">
+            <summary>
+            Resolves icon of the file.
+            </summary>
+            <param name="fileExtensionName">The file extension name.</param>
+            <param name="iconSize">The icon size.</param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.Linq.FileManagementApi">
+            <summary>
+            File Management service
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.IFileManagementApi">
+            <summary>
+            Api to manage file information.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileManagementApi.Save(RapidWebDev.FileManagement.FileUploadObject)">
+            <summary>
+            Save a file.
+            </summary>
+            <param name="fileUploadObject">The file uploading object which should include a readable file stream.</param>
+            <returns>returns file head of the saved file.</returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileManagementApi.Delete(System.Guid)">
+            <summary>
+            Delete the file by id.
+            </summary>
+            <param name="fileId">The file id.</param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileManagementApi.Delete(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Delete the files by ids.
+            </summary>
+            <param name="fileIds">The file ids.</param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileManagementApi.Load(System.Guid)">
+            <summary>
+            Load the file by id.
+            </summary>
+            <param name="fileId">The file id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileManagementApi.BulkGet(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Bulk get the files by ids.
+            </summary>
+            <param name="fileIds">The file ids.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileManagementApi.#ctor(RapidWebDev.Common.IApplicationContext,RapidWebDev.FileManagement.IFileStorageApi,RapidWebDev.FileManagement.IThumbnailApi)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.FileManagement.Linq.FileManagementApi"/> class.
+            </summary>
+            <param name="applicationContext">Application context.</param>
+            <param name="fileStorageApi">File storage api.</param>
+            <param name="thumbnailApi">Thumbnail api.</param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileManagementApi.Save(RapidWebDev.FileManagement.FileUploadObject)">
+            <summary>
+            Save a file.
+            </summary>
+            <param name="fileUploadObject">The file uploading object.</param>
+            <returns>returns file head of the saved file.</returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileManagementApi.Delete(System.Guid)">
+            <summary>
+            Delete the file by id.
+            </summary>
+            <param name="fileId">The file id.</param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileManagementApi.Delete(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Delete the files by ids.
+            </summary>
+            <param name="fileIds">The file ids.</param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileManagementApi.Load(System.Guid)">
+            <summary>
+            Loads the file by id.
+            </summary>
+            <param name="fileId">The file id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileManagementApi.BulkGet(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Bulk get the files by ids.
+            </summary>
+            <param name="fileIds">The file ids.</param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.FileHeadObject">
+            <summary>
+            File head object which includes basic information of a file but not the stream.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileHeadObject.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>The id.</value>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileHeadObject.FileName">
+            <summary>
+            Gets or sets the file name only without directory information.
+            </summary>
+            <value>The file name without directory information.</value>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileHeadObject.FileExtensionName">
+            <summary>
+            Gets or sets extension name of the file.
+            </summary>
+            <value>Extension name of the file.</value>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileHeadObject.Category">
+            <summary>
+            Gets or sets the category of file.
+            </summary>
+            <value>The category of file.</value>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileHeadObject.Description">
+            <summary>
+            Gets or sets the file description.
+            </summary>
+            <value>The file description.</value>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileHeadObject.BytesCount">
+            <summary>
+            Gets or sets size of the file in byte.
+            </summary>
+            <value>The bytes count.</value>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileHeadObject.Version">
+            <summary>
+            Gets/sets file version.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileHeadObject.CreatedOn">
+            <summary>
+            Gets or sets the time when the file is created.
+            </summary>
+            <value>The created on.</value>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileHeadObject.UpdatedOn">
+            <summary>
+            Gets or sets the time when the file is last updated.
+            </summary>
+            <value>The updated on.</value>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.IThumbnailApi">
+            <summary>
+            Api to manage thumbnails of files.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IThumbnailApi.GetThumbnailUrl(System.Guid,System.Drawing.Size)">
+            <summary>
+            Get relative thumbnail url (starts from ~/) for the file on the web server.
+            </summary>
+            <param name="fileId"></param>
+            <param name="thumbnailSize"></param>
+            <returns>return path of thumbnail file on the server.</returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IThumbnailApi.DeleteThumbnails(System.Guid)">
+            <summary>
+            Delete all thumbnails of the file. 
+            </summary>
+            <param name="fileId"></param>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.Web.FileWebObject">
+            <summary>
+            File object which is to be serialized to JSON for file management control.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileWebObject.#ctor">
+            <summary>
+            Empty constructor used for JavaScriptSerializer only.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileWebObject.#ctor(System.Guid,System.String,System.Int64)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="fileId"></param>
+            <param name="fileName"></param>
+            <param name="byteCount"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileWebObject.GetHashCode">
+            <summary>
+            Get hashcode of the object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileWebObject.Equals(System.Object)">
+            <summary>
+            Whether the current object equals to the argument.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileWebObject.FileName">
+            <summary>
+            File name.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileWebObject.Size">
+            <summary>
+            File size.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileWebObject.Id">
+            <summary>
+            File id.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileWebObject.DownloadUri">
+            <summary>
+            File download Uri
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileWebObject.IconUri">
+            <summary>
+            File icon Uri.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.Web.FileDownloadHttpHandler">
+            <summary>
+            Handler used to download file managed in file management.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileDownloadHttpHandler.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            Enables processing of HTTP Web requests by a custom HttpHandler that implements the <see cref="T:System.Web.IHttpHandler"/> interface.
+            </summary>
+            <param name="context">An <see cref="T:System.Web.HttpContext"/> object that provides references to the intrinsic server objects (for example, Request, Response, Session, and Server) used to service HTTP requests.</param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileDownloadHttpHandler.AddDownloadHeaders(System.Web.HttpContext,RapidWebDev.FileManagement.FileHeadObject)">
+            <summary>
+            Adds the correct response headers for a file download request.
+            </summary>
+            <param name="context">HttpContext</param>
+            <param name="fileHeadObject">The file object representing the file to stream.</param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileDownloadHttpHandler.BuildContentDispositionHeader(RapidWebDev.FileManagement.FileHeadObject,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Note that the httpContext param can legally be null.  See callers.
+            </summary>
+            <remarks>
+            The Content-Disposition HTTP response header gives us some control over how the client will react
+            to the file download.  In particular, whether or not the client will launch a "Save As" dialog when a file
+            is requested for dowload.  See RFC 1806 for detials.</remarks>
+            <remarks>We tried excluding "attachment" from the contentDisposition header for IE 5.5 to avoid
+            getting a double download prompt.  Except, this causes a problem for the case
+            where Office2K is installed on IE5.5 -- for that case we don't get any download prompt
+            unless we have the header.  So on IE5.5 we get a double download prompt.
+            </remarks>
+            <param name="fileHeadObject"></param>
+            <param name="userLanguage"></param>
+            <param name="capabilitiesType"></param>
+            <param name="majorVersion"></param>
+            <param name="platform"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileDownloadHttpHandler.IfRequestIsFromXPIE6Japanese(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns true if the request from WINXP IE6 set to Japanese language.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileDownloadHttpHandler.BuildDownloadNameForXPIE6Japanese(RapidWebDev.FileManagement.FileHeadObject)">
+            <summary>
+            Builds the optimum file name that can be displayed without exceeeding
+            header limit.
+            </summary>
+            <param name="fileHeadObject">original file head</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileDownloadHttpHandler.GetPlaceholderFileName(RapidWebDev.FileManagement.FileHeadObject)">
+            <summary>
+            If the filename contains high ASCII and client is non-English, the filename to use (w/o extension).
+            </summary>
+            <param name="fileHeadObject"></param>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.Web.FileUploadHttpHandler">
+            <summary>
+            Handler used to upload file in file management.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileUploadHttpHandler.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            Enables processing of HTTP Web requests by a custom HttpHandler that implements the <see cref="T:System.Web.IHttpHandler"/> interface.
+            </summary>
+            <param name="context">An <see cref="T:System.Web.HttpContext"/> object that provides references to the intrinsic server objects (for example, Request, Response, Session, and Server) used to service HTTP requests.</param>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileUploadHttpHandler.System#Web#IHttpHandler#IsReusable">
+            <summary>
+            You will need to configure this handler in the web.config file of your
+            web and register it with IIS before being able to use it. For more information
+            see the following link: http://go.microsoft.com/?linkid=8101007
+            </summary>
+            <value></value>
+            <returns>true if the <see cref="T:System.Web.IHttpHandler"/> instance is reusable; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.IFileStorageApi">
+            <summary>
+            Api to store file physically.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileStorageApi.Store(System.Guid,System.String,System.Guid,System.String,System.IO.Stream)">
+            <summary>
+            Store the file stream for the category in an application and return size of the file in byte.
+            </summary>
+            <param name="applicationId"></param>
+            <param name="category"></param>
+            <param name="fileId"></param>
+            <param name="fileExtensionName"></param>
+            <param name="fileStream"></param>
+            <returns>returns size of the file in byte.</returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileStorageApi.Load(RapidWebDev.FileManagement.FileHeadObject)">
+            <summary>
+            Load file stream for the file head object.
+            </summary>
+            <param name="fileHeadObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.FileStorageApi">
+            <summary>
+            Api to store file physically.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.FileStorageApi.#ctor(RapidWebDev.Common.IApplicationContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="applicationContext"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.FileStorageApi.Store(System.Guid,System.String,System.Guid,System.String,System.IO.Stream)">
+            <summary>
+            Store the file stream for the category in an application and return size of the file in byte.
+            </summary>
+            <param name="applicationId"></param>
+            <param name="category"></param>
+            <param name="fileId"></param>
+            <param name="fileExtensionName"></param>
+            <param name="fileStream"></param>
+            <returns>returns size of the file in byte.</returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.FileStorageApi.Load(RapidWebDev.FileManagement.FileHeadObject)">
+            <summary>
+            Load file stream for the file head object.
+            </summary>
+            <param name="fileHeadObject"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.FileStorageApi.FileSharedPath">
+            <summary>
+            Sets/gets file shared path.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.Web.FileManagementControl">
+            <summary>
+            FileManagement Control
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileManagementControl.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileManagementControl.GetChangeList">
+            <summary>
+            Get change list of managing files. The method should be called before saving.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileManagementControl.Save">
+            <summary>
+            Persist the managing files with the external object.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileManagementControl.OnPreRender(System.EventArgs)">
+            <summary>
+            Raises the System.Web.UI.Control.PreRender event.
+            </summary>
+            <param name="e">An System.EventArgs object that contains the event data.</param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileManagementControl.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the control to the specified HTML writer.
+            </summary>
+            <param name="writer">The System.Web.UI.HtmlTextWriter object that receives the control content.</param>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileManagementControl.Uploadable">
+            <summary>
+            True when the control is allowed to upload new files, defaults to True.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileManagementControl.Deletable">
+            <summary>
+            True when the control is allowed to delete existed files, defaults to True.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileManagementControl.ReadOnly">
+            <summary>
+            True when the control is readonly which cannot either upload new files or delete existed files, defaults to False.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileManagementControl.MultipleUpload">
+            <summary>
+            True when the control supports to upload multiple files, defaults to True.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileManagementControl.MaximumFileCount">
+            <summary>
+            Maximum files inner of the file management control, defaults to 10.
+            The property doesn't work if the property MultipleUpload equals to False.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileManagementControl.FileCategory">
+            <summary>
+            Category of the managed files by the control, defaults to null.
+            The control checks whether the user has permission "FileManagement.{Category}.Upload".
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileManagementControl.EnableFileRemoveConfirmation">
+            <summary>
+            Whether to show confirmation dialog for file removal, defaults to False.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileManagementControl.FileUploadDialogTitle">
+            <summary>
+            Title of file uploading dialog, defaults to the globalized message "Resources.FileUploadDialogTitle".
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileManagementControl.RelationshipType">
+            <summary>
+            The relationship type between the external object and managing files.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileManagementControl.ExternalObjectId">
+            <summary>
+            Sets/gets the external object id which the managing files are associated with.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileManagementControl.AssociatedFileCount">
+            <summary>
+            Gets count of associated files to the external object.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.Web.FileChangeTypes">
+            <summary>
+            File change types.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.FileManagement.Web.FileChangeTypes.Added">
+            <summary>
+            Added
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.FileManagement.Web.FileChangeTypes.Removed">
+            <summary>
+            Removed
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.Web.FileIconDownloadHttpHandler">
+            <summary>
+            Handler used to download file icon in file management.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Web.FileIconDownloadHttpHandler.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            Enables processing of HTTP Web requests by a custom HttpHandler that implements the <see cref="T:System.Web.IHttpHandler"/> interface.
+            </summary>
+            <param name="context">An <see cref="T:System.Web.HttpContext"/> object that provides references to the intrinsic server objects (for example, Request, Response, Session, and Server) used to service HTTP requests.</param>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Web.FileIconDownloadHttpHandler.IsReusable">
+            <summary>
+            You will need to configure this handler in the web.config file of your
+            web and register it with IIS before being able to use it. For more information
+            see the following link: http://go.microsoft.com/?linkid=8101007
+            </summary>
+            <value></value>
+            <returns>true if the <see cref="T:System.Web.IHttpHandler"/> instance is reusable; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.IFileBindingApi">
+            <summary>
+            Api to manage relationship between files and external objects.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileBindingApi.Bind(System.String,System.Guid,System.Guid)">
+            <summary>
+            Bind the file with id of the external object.
+            </summary>
+            <param name="relationshipType"></param>
+            <param name="externalObjectId"></param>
+            <param name="fileId"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileBindingApi.Bind(System.String,System.Guid,System.Collections.Generic.IEnumerable{System.Guid})">
+             <summary>
+            Bind the files with id of the external object.
+             </summary>
+             <param name="relationshipType"></param>
+             <param name="externalObjectId"></param>
+             <param name="fileIds"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileBindingApi.Unbind(System.Guid)">
+            <summary>
+            Unbind all files associated with id of the external object.
+            </summary>
+            <param name="externalObjectId"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileBindingApi.Unbind(System.Guid,System.String)">
+            <summary>
+            Unbind the files associated with id of the external object in special relationship type.
+            </summary>
+            <param name="externalObjectId"></param>
+            <param name="relationshipType"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileBindingApi.Unbind(System.Guid,System.Guid)">
+            <summary>
+            Unbind the file with id of the external object.
+            </summary>
+            <param name="externalObjectId"></param>
+            <param name="fileId"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileBindingApi.Unbind(System.Guid,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Unbind the files with id of the external object.
+            </summary>
+            <param name="externalObjectId"></param>
+            <param name="fileIds"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileBindingApi.DeleteBoundFiles(System.Guid)">
+            <summary>
+            Delete all files associated with id of the external object in any relationship types include both file entities and relationship.
+            </summary>
+            <param name="externalObjectId"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileBindingApi.DeleteBoundFiles(System.Guid,System.String)">
+            <summary>
+            Delete the files associated with id of the external object in special relationship type include both file entities and relationship.
+            </summary>
+            <param name="externalObjectId"></param>
+            <param name="relationshipType"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileBindingApi.FindBoundFiles(System.Guid)">
+            <summary>
+            Get all files bound to id of the external object in any relationship types.
+            </summary>
+            <param name="externalObjectId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileBindingApi.FindBoundFiles(System.Guid,System.String)">
+            <summary>
+            Get the files bound to id of the external object in special relationship type.
+            </summary>
+            <param name="externalObjectId"></param>
+            <param name="relationshipType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.IFileBindingApi.FindBoundFiles(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Get files bound to ids of the external objects.
+            </summary>
+            <param name="externalObjectIds"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.Linq.FileBindingApi">
+            <summary>
+            Api to manage relationship between files and external objects.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileBindingApi.#ctor(RapidWebDev.Common.IApplicationContext,RapidWebDev.FileManagement.IFileManagementApi)">
+            <summary>
+            Construct FileBindingApi instance.
+            </summary>
+            <param name="applicationContext"></param>
+            <param name="fileManagementApi"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileBindingApi.Bind(System.String,System.Guid,System.Guid)">
+            <summary>
+            Bind the file with id of the external object.
+            </summary>
+            <param name="relationshipType"></param>
+            <param name="externalObjectId"></param>
+            <param name="fileId"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileBindingApi.Bind(System.String,System.Guid,System.Collections.Generic.IEnumerable{System.Guid})">
+             <summary>
+            Bind the files with id of the external object.
+             </summary>
+             <param name="relationshipType"></param>
+             <param name="externalObjectId"></param>
+             <param name="fileIds"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileBindingApi.Unbind(System.Guid)">
+            <summary>
+            Unbind all files associated with id of the external object.
+            </summary>
+            <param name="externalObjectId"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileBindingApi.Unbind(System.Guid,System.String)">
+            <summary>
+            Unbind the files associated with id of the external object in special relationship type.
+            </summary>
+            <param name="externalObjectId"></param>
+            <param name="relationshipType"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileBindingApi.Unbind(System.Guid,System.Guid)">
+            <summary>
+            Unbind the file with id of the external object.
+            </summary>
+            <param name="externalObjectId"></param>
+            <param name="fileId"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileBindingApi.Unbind(System.Guid,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Unbind the files with id of the external object.
+            </summary>
+            <param name="externalObjectId"></param>
+            <param name="fileIds"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileBindingApi.DeleteBoundFiles(System.Guid)">
+            <summary>
+            Delete all files associated with id of the external object in any relationship types include both file entities and relationship.
+            </summary>
+            <param name="externalObjectId"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileBindingApi.DeleteBoundFiles(System.Guid,System.String)">
+            <summary>
+            Delete the files associated with id of the external object in special relationship type include both file entities and relationship.
+            </summary>
+            <param name="externalObjectId"></param>
+            <param name="relationshipType"></param>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileBindingApi.FindBoundFiles(System.Guid)">
+            <summary>
+            Get all files bound to id of the external object in any relationship types.
+            </summary>
+            <param name="externalObjectId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileBindingApi.FindBoundFiles(System.Guid,System.String)">
+            <summary>
+            Get the files bound to id of the external object in special relationship type.
+            </summary>
+            <param name="externalObjectId"></param>
+            <param name="relationshipType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.FileManagement.Linq.FileBindingApi.FindBoundFiles(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Get files bound to ids of the external objects.
+            </summary>
+            <param name="externalObjectIds"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.FileManagement.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.FileCategoryCannotBeEmpty">
+            <summary>
+              Looks up a localized string similar to The property &quot;FileCategory&quot; of FileManagementControl cannot be empty..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.FileCategoryQueryStringParameterNotFound">
+            <summary>
+              Looks up a localized string similar to The querystring parameter &quot;category&quot; not found..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.FileNotFound">
+            <summary>
+              Looks up a localized string similar to The file cannot be found in the server..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.FileRemoveConfirmationMessage">
+            <summary>
+              Looks up a localized string similar to Are you sure to remove this file?.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.FileUploadDialogTitle">
+            <summary>
+              Looks up a localized string similar to File Upload Dialog.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.FileUploadToolTip">
+            <summary>
+              Looks up a localized string similar to Click the button below to select uploading file locally..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.InvalidExternalObjectId">
+            <summary>
+              Looks up a localized string similar to Invalid external object id..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.InvalidFileDownloadUri">
+            <summary>
+              Looks up a localized string similar to The request Uri doesn&apos;t follow the file download Uri template &quot;FileDownload.svc/fileid/{fileid}&quot;..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.InvalidFileId">
+            <summary>
+              Looks up a localized string similar to Invalid file id..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.InvalidFileSharedPath">
+            <summary>
+              Looks up a localized string similar to The property &quot;FileSharedPath&quot; of FileStorageApi is not configured..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.InvalidQueryStringParameterExt">
+            <summary>
+              Looks up a localized string similar to The query string parameter &quot;ext&quot; is not specified..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.NoPermissionToDownloadFiles">
+            <summary>
+              Looks up a localized string similar to You don&apos;t have permission to download files..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.NoPermissionToUploadFiles">
+            <summary>
+              Looks up a localized string similar to You don&apos;t have permission to upload files..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.ShowUploadDialogButtonText">
+            <summary>
+              Looks up a localized string similar to Upload More.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.UnknownError">
+            <summary>
+              Looks up a localized string similar to Unknown error occurs in the server..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.UnreadableFileStream">
+            <summary>
+              Looks up a localized string similar to The uploading file stream is not readable..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.UploadButtonText">
+            <summary>
+              Looks up a localized string similar to Upload.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.UploadCancelButtonText">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.FileManagement.Properties.Resources.UploadingFileNotFound">
+            <summary>
+              Looks up a localized string similar to No uploaded file found..
+            </summary>
+        </member>
+    </members>
+</doc>

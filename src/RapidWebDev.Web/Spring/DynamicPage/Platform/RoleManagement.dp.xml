@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://www.rapidwebdev.org/schemas/dynamicpage" ObjectId="RoleManagement" Type="RapidWebDev.Platform.Web.DynamicPage.RoleManagement, RapidWebDev.Platform">
+	<Title>$Domain.Text$ $Resources.Membership.Role, RapidWebDev.Web$ $Resources.Membership.Management, RapidWebDev.Web$</Title>
+	<PermissionValue>$Domain.Value$.RoleManagement</PermissionValue>
+	<Panels>
+		<QueryPanel Id="$Domain.Value$" HeaderText="$Resources.Membership.Query, RapidWebDev.Web$ $Domain.Text$ $Resources.Membership.Role, RapidWebDev.Web$">
+			<TextBox FieldName="RoleName" Label="$Resources.Membership.Role_Name, RapidWebDev.Web$: " />
+			<CheckBoxGroup FieldName="Predefined" FieldValueType="System.Boolean" Label="$Resources.Membership.Predefined, RapidWebDev.Web$: " Occupation="1">
+				<Item Text="&lt;span style='color:green'&gt;$Resources.Membership.Yes, RapidWebDev.Web$&lt;/span&gt;" Value="true" />
+				<Item Text="&lt;span style='color:red'&gt;$Resources.Membership.No, RapidWebDev.Web$&lt;/span&gt;" Value="false" />
+			</CheckBoxGroup>
+		</QueryPanel>
+		
+		<ButtonPanel Id="$Domain.Value$" ButtonAlignment="Left">
+			<Button CommandArgument="New" Type="NewImage" ToolTip="$Resources.Membership.Add, RapidWebDev.Web$" />
+		</ButtonPanel>
+		
+		<GridViewPanel Id="$Domain.Value$"
+			HeaderText="$Resources.Membership.QueryResults, RapidWebDev.Web$"
+			EntityName="$Domain.Text$ $Resources.Membership.Role, RapidWebDev.Web$"
+			EnabledCheckBoxField="true"
+			PageSize="25"
+			PrimaryKeyFieldName="RoleId"
+			DefaultSortField="RoleName"
+			DefaultSortDirection="ASC">
+			<ViewButton />
+			<EditButton />
+			<DeleteButton />
+			<Fields>
+				<Field FieldName="RoleName" HeaderText="$Resources.Membership.Role_Name, RapidWebDev.Web$" />
+				<Field FieldName="Predefined" HeaderText="$Resources.Membership.Predefined, RapidWebDev.Web$">
+					<Transform-Switch>
+						<Case Value="True">&lt;span style='color:green'&gt;$Resources.Membership.Yes, RapidWebDev.Web$&lt;/span&gt;</Case>
+						<Case Value="False">&lt;span style='color:red'&gt;$Resources.Membership.No, RapidWebDev.Web$&lt;/span&gt;</Case>
+					</Transform-Switch>
+				</Field>
+				<RowView FieldName="Description" />
+			</Fields>
+		</GridViewPanel>
+		
+		<DetailPanel Id="$Domain.Value$" HeaderText="$Domain.Text$ $Resources.Membership.Role, RapidWebDev.Web$ $Resources.Membership.Profile, RapidWebDev.Web$" ShowMessageAfterSavedSuccessfully="false">
+			<Type>RapidWebDev.Platform.Web.DynamicPage.RoleDetailPanel, RapidWebDev.Platform</Type>
+			<SkinPath>~/Templates/Platform/Role.ascx</SkinPath>
+			<SaveAndAddAnotherButton />
+			<SaveAndCloseButton />
+			<CancelButton />
+		</DetailPanel>
+	</Panels>
+</Page>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resources xmlns="http://www.rapidwebdev.org/schemas/ui/resources">
+	<Style>
+		<ImportTemplate TemplateId="CommonStyle" />
+	</Style>
+	<Script>
+		<ImportTemplate TemplateId="CommonScript" />
+		<Resource Path="~/Resources/JavaScript/GridViewPanel.js" />
+		<Resource Path="~/Resources/JavaScript/ButtonPanel.js" />
+	</Script>
+</Resources>

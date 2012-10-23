@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50682/Services/RoleService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:50682/Services/RoleService.svc?xsd=xsd2" namespace="http://www.rapidwebdev.org/common" />
+  <xs:element name="SaveJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.rapidwebdev.org/platform" minOccurs="0" name="roleObject" nillable="true" type="q1:RoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RoleObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Predefined" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RoleId" type="ser:guid" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q2="http://www.rapidwebdev.org/platform" name="RoleObject" nillable="true" type="q2:RoleObject" />
+  <xs:element name="SaveJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://www.rapidwebdev.org/platform" minOccurs="0" name="roleObject" nillable="true" type="q3:RoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveXmlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HardDeleteJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HardDeleteJsonResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HardDeleteXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HardDeleteXmlResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetUserToRolesJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://www.rapidwebdev.org/platform" minOccurs="0" name="roleIds" nillable="true" type="q4:IdCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="IdCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q5="http://www.rapidwebdev.org/platform" name="IdCollection" nillable="true" type="q5:IdCollection" />
+  <xs:element name="SetUserToRolesJsonResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetUserToRolesXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://www.rapidwebdev.org/platform" minOccurs="0" name="roleIds" nillable="true" type="q6:IdCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetUserToRolesXmlResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByNameJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="roleName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByNameJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetByNameJsonResult" nillable="true" type="q7:RoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByNameXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="roleName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByNameXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetByNameXmlResult" nillable="true" type="q8:RoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetByIdJsonResult" nillable="true" type="q9:RoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetByIdXmlResult" nillable="true" type="q10:RoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkGetJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.rapidwebdev.org/platform" minOccurs="0" name="roleIds" nillable="true" type="q11:IdCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkGetJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.rapidwebdev.org/platform" minOccurs="0" name="BulkGetJsonResult" nillable="true" type="q12:ArrayOfRoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfRoleObject">
+    <xs:sequence>
+      <xs:element xmlns:q13="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="RoleObject" nillable="true" type="q13:RoleObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q14="http://www.rapidwebdev.org/platform" name="ArrayOfRoleObject" nillable="true" type="q14:ArrayOfRoleObject" />
+  <xs:element name="BulkGetXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://www.rapidwebdev.org/platform" minOccurs="0" name="roleIds" nillable="true" type="q15:IdCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkGetXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://www.rapidwebdev.org/platform" minOccurs="0" name="BulkGetXmlResult" nillable="true" type="q16:ArrayOfRoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAllJson">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAllJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindAllJsonResult" nillable="true" type="q17:ArrayOfRoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAllXml">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAllXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindAllXmlResult" nillable="true" type="q18:ArrayOfRoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByOrganizationIdJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByOrganizationIdJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindByOrganizationIdJsonResult" nillable="true" type="q19:ArrayOfRoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByOrganizationIdXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByOrganizationIdXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindByOrganizationIdXmlResult" nillable="true" type="q20:ArrayOfRoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByUserIdJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByUserIdJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindByUserIdJsonResult" nillable="true" type="q21:ArrayOfRoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByUserIdXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByUserIdXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindByUserIdXmlResult" nillable="true" type="q22:ArrayOfRoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByOrganizationTypeJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationTypeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByOrganizationTypeJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindByOrganizationTypeJsonResult" nillable="true" type="q23:ArrayOfRoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByOrganizationTypeXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationTypeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByOrganizationTypeXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindByOrganizationTypeXmlResult" nillable="true" type="q24:ArrayOfRoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByDomainJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="domain" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByDomainJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindByDomainJsonResult" nillable="true" type="q25:ArrayOfRoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByDomainXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="domain" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByDomainXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindByDomainXmlResult" nillable="true" type="q26:ArrayOfRoleObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserInRoleByIdJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserInRoleByIdJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsUserInRoleByIdJsonResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserInRoleByIdXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserInRoleByIdXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsUserInRoleByIdXmlResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserInRoleByNameJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="roleName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserInRoleByNameJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsUserInRoleByNameJsonResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserInRoleByNameXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="roleName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserInRoleByNameXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsUserInRoleByNameXmlResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryRolesJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element xmlns:q27="http://www.rapidwebdev.org/common" minOccurs="0" name="predicate" nillable="true" type="q27:WebServiceQueryPredicate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryRolesJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://www.rapidwebdev.org/platform" minOccurs="0" name="QueryRolesJsonResult" nillable="true" type="q28:RoleQueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RoleQueryResult">
+    <xs:sequence>
+      <xs:element xmlns:q29="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="RoleObject" nillable="true" type="q29:RoleObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q30="http://www.rapidwebdev.org/platform" name="RoleQueryResult" nillable="true" type="q30:RoleQueryResult" />
+  <xs:element name="QueryRolesXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element xmlns:q31="http://www.rapidwebdev.org/common" minOccurs="0" name="predicate" nillable="true" type="q31:WebServiceQueryPredicate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryRolesXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://www.rapidwebdev.org/platform" minOccurs="0" name="QueryRolesXmlResult" nillable="true" type="q32:RoleQueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

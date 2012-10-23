@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{624FAD02-CBAD-48AD-9B1C-614AEF70A024}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RapidWebDev.FileManagement</RootNamespace>
+    <AssemblyName>RapidWebDev.FileManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\RapidWebDev.FileManagement.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\RapidWebDev.FileManagement.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="antlr.runtime, Version=2.7.6.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Linq.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3624dc708c4455be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\Linq.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Web\FileWebObject.cs" />
+    <Compile Include="FileStorageApi.cs" />
+    <Compile Include="FileHeadObject.cs" />
+    <Compile Include="FileUploadObject.cs" />
+    <Compile Include="IconSize.cs" />
+    <Compile Include="IFileStorageApi.cs" />
+    <Compile Include="Linq\FileBindingApi.cs" />
+    <Compile Include="Linq\FileManagementDataContext.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileManagementDataContext.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\FileManagementApi.cs" />
+    <Compile Include="IFileIconApi.cs" />
+    <Compile Include="FileIconApi.cs" />
+    <Compile Include="IFileBindingApi.cs" />
+    <Compile Include="IFileManagementApi.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="IThumbnailApi.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\FileUploadHttpHandler.cs" />
+    <Compile Include="Web\FileDownloadHttpHandler.cs" />
+    <Compile Include="Web\FileIconDownloadHttpHandler.cs" />
+    <Compile Include="Web\FileManagementControl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\FileManagementDataContext.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>FileManagementDataContext.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\FileManagementDataContext.dbml.layout">
+      <DependentUpon>FileManagementDataContext.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\FileIcons\Large\ai.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\bmp.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\dgn.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\doc.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\docm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\docx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\dot.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\dotm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\dotx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\dwf.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\dwfx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\dwg.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\dxf.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\exe.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\gif.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\htm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\html.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\jpg.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\mht.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\misc.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\pdf.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\png.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\pot.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\potm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\potx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\pps.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\ppsm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\ppsx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\ppt.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\pptm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\pptx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\psd.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\rvt.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\tif.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\tiff.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\txt.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\vsd.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\xls.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\xlsb.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\xlsm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\xlsx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\xlt.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\xltm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\xltx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Large\zip.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\ai.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\bmp.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\dgn.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\doc.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\docm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\docx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\dot.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\dotm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\dotx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\dwf.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\dwfx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\dwg.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\dxf.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\exe.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\gif.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\htm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\html.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\jpg.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\mht.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\misc.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\pdf.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\png.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\pot.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\potm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\potx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\pps.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\ppsm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\ppsx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\ppt.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\pptm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\pptx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\psd.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\rvt.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\tif.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\tiff.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\txt.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\vsd.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\xls.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\xlsb.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\xlsm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\xlsx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\xlt.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\xltm.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\xltx.gif" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\zip.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\FileIcons\Large\wav.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="Resources\FileIcons\Small\wav.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RapidWebDev.Common\RapidWebDev.Common.csproj">
+      <Project>{29D45B1B-D03B-4C5F-8D8B-D765E3977339}</Project>
+      <Name>RapidWebDev.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWebDev.UI\RapidWebDev.UI.csproj">
+      <Project>{AAC9A9DA-A239-47C1-ABEE-D6994B7701BC}</Project>
+      <Name>RapidWebDev.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

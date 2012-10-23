@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CandidateStatisticProperties xmlns="http://www.rapidwebdev.org/schemas/extensionmodel/statistic" Name="UserCandidcateProperties">
+	<Property PropertyLabel="Name" PropertyName="Name" PropertyType="String">
+		<Algorithm Type="Contains"/>
+	</Property>
+	<Property PropertyLabel="Name1" PropertyName="Name1" PropertyType="String">
+		<Algorithm Type="Contained"/>
+	</Property>
+	<Property PropertyLabel="Name2" PropertyName="Name2" PropertyType="String">
+		<Algorithm Type="Equals"/>
+	</Property>
+	<Property PropertyLabel="Name3" PropertyName="Name3" PropertyType="String">
+		<Algorithm Type="Between"/>
+	</Property>
+	<Property PropertyLabel="Name4" PropertyName="Name4" PropertyType="String">
+		<Algorithm Type="Aggregate"/>
+	</Property>
+	<Property PropertyLabel="Creation Date" PropertyName="CreationDate" PropertyType="DateTime">
+		<Algorithm Type="Between"/>
+	</Property>
+	<Property PropertyLabel="Create Date1" PropertyName="CreateDate1" PropertyType="DateTime">
+		<Algorithm Type="Contains"/>
+	</Property>
+	<Property PropertyLabel="Create Date2" PropertyName="CreateDate2" PropertyType="DateTime">
+		<Algorithm Type="Contained"/>
+	</Property>
+	<Property PropertyLabel="Create Date3" PropertyName="CreateDate3" PropertyType="DateTime">
+		<Algorithm Type="Equals"/>
+	</Property>
+
+	<Property PropertyLabel="Create Date4" PropertyName="CreateDate4" PropertyType="DateTime">
+		<Algorithm Type="Aggregate"/>
+	</Property>
+
+	<Property PropertyLabel="Score" PropertyName="Score" PropertyType="Integer">
+		<Algorithm Type="Equals" />
+	</Property>
+
+	<Property PropertyLabel="Score1" PropertyName="Score1" PropertyType="Integer">
+		<Algorithm Type="Between" />
+	</Property>
+
+	<Property PropertyLabel="Price" PropertyName="Price" PropertyType="Decimal">
+		<Algorithm Type="Between" />
+	</Property>
+
+	<Property PropertyLabel="Price1" PropertyName="Price1" PropertyType="Decimal">
+		<Algorithm Type="Equals" />
+	</Property>
+
+
+	<Property PropertyLabel="Selector" PropertyName="Selector" PropertyType="Enumerable">
+		<Algorithm Type="Contains"/>
+		<Items>
+			<Item Text="Item1" Value="Item1"/>
+			<Item Text="Item2" Value="Item2"/>
+			<Item Text="Item3" Value="Item3"/>
+			<Item Text="Item4" Value="Item4"/>
+		</Items>
+	</Property>
+
+</CandidateStatisticProperties>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Permissions" targetNamespace="http://www.rapidwebdev.org/schemas/permissions" elementFormDefault="qualified" xmlns="http://www.rapidwebdev.org/schemas/permissions" xmlns:mstns="http://tempuri.org/PermissionConfig.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Permissions" type="PermissionConfigs" />
+
+	<xs:complexType name="PermissionConfigs">
+		<xs:sequence>
+			<xs:element name="Domain" type="PermissionDomain" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+						The infrastructure groups permissions by organization domain.
+						In a complex enterprise application, there typically should have multiple organization domains, e.g. "Internal Organizations" (department/branch/filiale), "Customers", "Vendors".
+						We assume that there are different permissions set for users in each organization domain.
+						Take an example, the administrator of "Internal Organizations" is allowed to set permission "Manage Customers", "Manage Vendors", "Manage Internal Users" to any users internally.
+						But the administrator of "Customers" is allowed to set permission "Search Ordered Products", "Manage Customer Profile" and "Manage Customer Users" to any customer users.
+						In this example, you should configure two "Domain" elements "Internal Organizations" and "Customers".
+						Then configure "Manage Customers", "Manage Vendors", "Manage Internal Users" into the domain "Internal Organizations" and "Search Ordered Products", "Manage Customer Profile", "Manage Customer Users" into "Customers".
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PermissionDomain">
+		<xs:sequence>
+			<xs:element name="Permission" type="PermissionConfig" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="Value" type="RequiredString" use="required">
+			<xs:annotation>
+				<xs:documentation>The organization domain value defined in PlatformConfiguration. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="PermissionConfig">
+		<xs:sequence>
+			<xs:element name="ImplicitPermission" type="ImplicitPermissionConfig" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>This is helpful in the case that we don't want to set every permission to users/roles in UI when we develop a view to assign permission. In UI view, when we assign permission X to users/roles, they have all implicit permissions which belong to the permission X immediately. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Permission" type="PermissionConfig" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="Value" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>The permission value which will be associated with users or roles saving into database. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Text" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					The permission displaying text.
+					The attribute value supports globalization variable as "$Namespace.ClassName.PropertyName, AssemblyName$" which allows to be rendered depends on the clients globalization setting.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="ImplicitPermissionConfig">
+		<xs:annotation>
+			<xs:documentation>
+				This is helpful in the case that we don't want to set every permission to users/roles in UI when we develop a view to assign permission. In UI view, when we assign permission X to users/roles, they have all implicit permissions which belong to the permission X immediately.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Value" type="RequiredString" use="required">
+			<xs:annotation>
+				<xs:documentation>The permission value owned by users or roles implicitly.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:simpleType name="RequiredString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

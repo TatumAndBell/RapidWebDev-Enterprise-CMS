@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSource" targetNamespace="http://www.rapidwebdev.org/schemas/dynamicpage/printandexcel" elementFormDefault="qualified" xmlns="http://www.rapidwebdev.org/schemas/dynamicpage/printandexcel" xmlns:mstns="http://tempuri.org/DataSource.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="DataSource">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Schema" type="RequiredString" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element name="Data" type="Data" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute name="Name" type="RequiredString" use="required" />
+			<xs:attribute name="Author" type="RequiredString" use="required" />
+			<xs:attribute name="CreatedOn" type="xs:dateTime" use="required" />
+			<xs:attribute name="Description" type="RequiredString" use="optional" />
+			<xs:attribute name="LogoUrl" type="RequiredString" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="Data">
+		<xs:sequence>
+			<xs:element name="Property" type="DataProperty" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="Description" type="xs:string" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="DataProperty">
+		<xs:attribute name="Name" type="RequiredString" use="required" />
+		<xs:attribute name="Value" type="RequiredString" use="required" />
+	</xs:complexType>
+
+	<xs:simpleType name="RequiredString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd5" namespace="http://www.rapidwebdev.org/common" />
+  <xs:element name="SaveJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.rapidwebdev.org/platform" minOccurs="0" name="hierarchyDataObject" nillable="true" type="q1:HierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="HierarchyDataObject">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://www.rapidwebdev.org/platform" base="q2:AbstractExtensionBizObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" type="ser:guid" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HierarchyType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="LastUpdatedBy" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="LastUpdatedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentHierarchyDataId" nillable="true" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q3="http://www.rapidwebdev.org/platform" name="HierarchyDataObject" nillable="true" type="q3:HierarchyDataObject" />
+  <xs:complexType name="AbstractExtensionBizObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtensionDataTypeId" type="ser:guid" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Properties" nillable="true" type="q4:ArrayOfKeyValueOfstringanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q5="http://www.rapidwebdev.org/platform" name="AbstractExtensionBizObject" nillable="true" type="q5:AbstractExtensionBizObject" />
+  <xs:element name="SaveJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.rapidwebdev.org/platform" minOccurs="0" name="hierarchyDataObject" nillable="true" type="q6:HierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveXmlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchyDataByIdJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyDataId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchyDataByIdJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetHierarchyDataByIdJsonResult" nillable="true" type="q7:HierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchyDataByIdXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyDataId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchyDataByIdXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetHierarchyDataByIdXmlResult" nillable="true" type="q8:HierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchyDataByNameJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hierarchyDataName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchyDataByNameJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetHierarchyDataByNameJsonResult" nillable="true" type="q9:HierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchyDataByNameXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hierarchyDataName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHierarchyDataByNameXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetHierarchyDataByNameXmlResult" nillable="true" type="q10:HierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetImmediateChildrenJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentHierarchyDataId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetImmediateChildrenJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetImmediateChildrenJsonResult" nillable="true" type="q11:ArrayOfHierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfHierarchyDataObject">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="HierarchyDataObject" nillable="true" type="q12:HierarchyDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q13="http://www.rapidwebdev.org/platform" name="ArrayOfHierarchyDataObject" nillable="true" type="q13:ArrayOfHierarchyDataObject" />
+  <xs:element name="GetImmediateChildrenXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentHierarchyDataId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetImmediateChildrenXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetImmediateChildrenXmlResult" nillable="true" type="q14:ArrayOfHierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllChildrenJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentHierarchyDataId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllChildrenJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetAllChildrenJsonResult" nillable="true" type="q15:ArrayOfHierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllChildrenXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentHierarchyDataId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllChildrenXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetAllChildrenXmlResult" nillable="true" type="q16:ArrayOfHierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllHierarchyDataJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllHierarchyDataJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetAllHierarchyDataJsonResult" nillable="true" type="q17:ArrayOfHierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllHierarchyDataXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllHierarchyDataXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetAllHierarchyDataXmlResult" nillable="true" type="q18:ArrayOfHierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HardDeleteHierarchyDataJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyDataId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HardDeleteHierarchyDataJsonResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HardDeleteHierarchyDataXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyDataId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HardDeleteHierarchyDataXmlResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByKeywordJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maxReturnedCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByKeywordJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindByKeywordJsonResult" nillable="true" type="q19:ArrayOfHierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByKeywordXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hierarchyType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maxReturnedCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByKeywordXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindByKeywordXmlResult" nillable="true" type="q20:ArrayOfHierarchyDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryHierarchyDataJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element xmlns:q21="http://www.rapidwebdev.org/common" minOccurs="0" name="predicate" nillable="true" type="q21:WebServiceQueryPredicate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryHierarchyDataJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://www.rapidwebdev.org/platform" minOccurs="0" name="QueryHierarchyDataJsonResult" nillable="true" type="q22:HierarchyDataQueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="HierarchyDataQueryResult">
+    <xs:sequence>
+      <xs:element xmlns:q23="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="HierarchyDataObject" nillable="true" type="q23:HierarchyDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q24="http://www.rapidwebdev.org/platform" name="HierarchyDataQueryResult" nillable="true" type="q24:HierarchyDataQueryResult" />
+  <xs:element name="QueryHierarchyDataXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element xmlns:q25="http://www.rapidwebdev.org/common" minOccurs="0" name="predicate" nillable="true" type="q25:WebServiceQueryPredicate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryHierarchyDataXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://www.rapidwebdev.org/platform" minOccurs="0" name="QueryHierarchyDataXmlResult" nillable="true" type="q26:HierarchyDataQueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

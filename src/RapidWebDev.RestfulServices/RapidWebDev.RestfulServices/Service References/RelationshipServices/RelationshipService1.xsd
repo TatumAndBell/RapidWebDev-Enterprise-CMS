@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50682/Services/RelationshipService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="SaveJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectXId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="objectYId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RelationshipType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Ordinal" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveJsonResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectXId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="objectYId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RelationshipType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Ordinal" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveXmlResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectXId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="objectYId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="relationshipType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveJsonResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectXId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="objectYId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="relationshipType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveXmlResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOneToOneJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="relationshipType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOneToOneJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOneToOneJsonResult" nillable="true" type="q1:RelationshipObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RelationshipObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ordinal" type="xs:int" />
+      <xs:element minOccurs="0" name="ReferenceObjectId" type="ser:guid" />
+      <xs:element minOccurs="0" name="RelationshipType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q2="http://www.rapidwebdev.org/platform" name="RelationshipObject" nillable="true" type="q2:RelationshipObject" />
+  <xs:element name="GetOneToOneXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="relationshipType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOneToOneXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOneToOneXmlResult" nillable="true" type="q3:RelationshipObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManyToOneJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="relationshipType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManyToOneJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetManyToOneJsonResult" nillable="true" type="q4:RelationshipObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManyToOneXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="relationshipType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetManyToOneXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetManyToOneXmlResult" nillable="true" type="q5:RelationshipObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOneToManyJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="relationshipType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOneToManyJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOneToManyJsonResult" nillable="true" type="q6:ArrayOfRelationshipObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfRelationshipObject">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="RelationshipObject" nillable="true" type="q7:RelationshipObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q8="http://www.rapidwebdev.org/platform" name="ArrayOfRelationshipObject" nillable="true" type="q8:ArrayOfRelationshipObject" />
+  <xs:element name="GetOneToManyXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="relationshipType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOneToManyXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOneToManyXmlResult" nillable="true" type="q9:ArrayOfRelationshipObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAllRelationshipJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAllRelationshipJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindAllRelationshipJsonResult" nillable="true" type="q10:ArrayOfRelationshipObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAllRelationshipXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAllRelationshipXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindAllRelationshipXmlResult" nillable="true" type="q11:ArrayOfRelationshipObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

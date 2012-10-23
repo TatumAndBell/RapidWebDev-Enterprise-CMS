@@ -1,0 +1,253 @@
+html { font-size:9pt; font-family: tahoma, arial, helvetica, sans-serif; }		
+body.dynamicpagebody { overflow: hidden;  }
+body.detailpanelpagebody { overflow: auto; }
+body.aggregatepanelpagebody { overflow: auto; }
+
+a, a:active, a:link, a:visited { text-decoration: none; color: #3A81E6; }
+a:hover { color: #dd3409; }
+		
+.layout { margin: 4px }
+.layout .c1 { text-align:right; padding: 1px; padding-right:4px; width: 80px; }
+.layout .c2 { padding: 1px }
+
+.checkboxgroup span { padding-left:3px }
+table.checkboxgroup { display:inline-block; *display: inline; }
+.radiogroup span { padding-left:3px }
+.red, .required { color: red; }
+.required.ext { position:relative; left: 155px; z-index: 0 }
+.textboxShort { width: 147px; }
+.textboxMedium { width: 277px; }
+.textboxLong { width: 94%; }
+.textarea { height: 52px; }
+label { margin-right: 4px; margin-left: 1px; cursor:pointer; }
+
+h4
+{
+	color: #444444;
+	font-size: 100%;
+	background-image:url("../images/h4.png");
+	background-repeat:no-repeat;
+	background-position: 0 1px;
+	padding-left: 16px;
+	margin:0 0 6px 0;
+}
+
+/************** Statistic Report Start ******************/
+.statisticreport-preview-table
+{
+    width: 100%;
+    border:solid 1px #cccccc;
+}
+
+.statisticreport-preview-table th, .statisticreport-preview-table td
+{
+    border-top: solid 1px #cccccc;
+    border-right: solid 1px #cccccc;
+    border-bottom: solid 1px #cccccc;
+    padding: 4px;
+}
+
+.statisticreport-preview-table th.c1, .statisticreport-preview-table td.c1
+{
+    border-left: solid 1px #cccccc;
+    background-color: #f0f0f0;
+}
+
+.statisticreport-preview-table th
+{
+    background-color: #f0f0f0;
+}
+/************** Statistic Report End ******************/
+
+/************** GridView Preview Fragment Start ******************/
+p.grid-preview-fragment { padding:2px 2px 2px 6px; color: Gray }
+/************** GridView Preview Fragment End ******************/
+
+/************** SelectionFieldMetadataControl Start ******************/
+.x-a11y-focusframe-side { display:none !important; }
+.selectionFieldMetadataControl-icon-add { background-image: url(/resources/images/new.gif) !important; }
+.selectionFieldMetadataControl-icon-delete { background-image: url(/resources/images/delete.gif) !important; }  
+/************** SelectionFieldMetadataControl End ******************/
+
+/************** ExtJS HotFix Start ******************/
+.x-tree-node-icon { display:none; }    
+.x-tree-node-cb { padding:0; margin:0; vertical-align: middle; }
+.ext-ie TD .x-form-text { top: 0px !important; }
+.x-form-field-wrap { display: inline-block; *display:inline;}
+.x-form-date-trigger, .x-form-arrow-trigger { *margin-top:-1px }
+.x-item-disabled { filter: none !important; } 
+.x-btn { vertical-align: middle; }
+html>/**/body .x-btn { vertical-align: top }
+/************** ExtJS HotFix End ******************/
+
+/************** Navigation Start ******************/
+.navigation, .navigation a:link, .navigation a:visited { text-decoration: none; color: #333333; font-family: calibri, tahoma, arial, helvetica, sans-serif; }
+.navigation .parent { color: darkblue; }
+.navigation a:active { color: black; }
+.navigation a:hover { color: #dd3409; }
+.navigation .parent { font-weight: bold; }
+.navigation .separator { height: 1px; margin: 6px auto 0 auto; width: 80%; border-top:1px dotted #cccccc;  }
+.navigation .nav1 { padding-left: 20px; padding-top:6px; background-image: url(../images/dot.png); background-repeat:no-repeat; background-position: 10px 10px; }
+.navigation .nav2 { padding-left: 32px; padding-top:6px; background-image: url(../images/dot.png); background-repeat:no-repeat; background-position: 22px 10px; }
+.navigation .nav3 { padding-left: 44px; padding-top:6px; background-image: url(../images/dot.png); background-repeat:no-repeat; background-position: 34px 10px; }
+.navigation .nav4 { padding-left: 56px; padding-top:6px; background-image: url(../images/dot.png); background-repeat:no-repeat; background-position: 46px 10px; }
+.navigation .nav4 { padding-left: 68px; padding-top:6px; background-image: url(../images/dot.png); background-repeat:no-repeat; background-position: 58px 10px; }
+/************** Navigation End ******************/
+
+/************** ProgressBar Loading Start ******************/
+ #loading-mask
+ {
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:65535;
+	background-color:white;
+}
+
+ #loading
+ {
+	position:absolute;
+	left:45%;
+	top:40%;
+	padding:2px;
+	z-index:65536;
+	height:auto;
+}
+
+#loading #loading-indicator
+{
+	background:white;
+	color:#444;
+	font:bold 13px tahoma,arial,helvetica;
+	padding:10px;
+	margin:0;
+	height:auto;
+}
+/************** ProgressBar Loading End ******************/
+
+/************** ExtJs Grid Preview Fragment Start ******************/
+p.grid-preview-fragment { padding:2px; color: Gray }
+.gridHeadCheckBox { display: block; height: 14px; padding: 0px; margin: 0; }
+.x-grid3-cell-first div.x-grid3-hd-inner, .x-grid3-cell-first div.x-grid3-cell-inner{ *padding-left: 0px !important; }
+/************** ExtJs Grid Preview Fragment End ******************/
+
+/************** ExtJs DateTimePicker Start ******************/
+.minutecss
+{
+    vertical-align: middle;
+    border-top: 1px solid #a3bad9;
+    /*background: #dfecfb url(../../resources//images/default/shared/glass-bg.gif) repeat-x left top;	*/
+}
+.y-hour-middle,.y-hour-left,.y-hour-right {
+	font:bold 11px "sans serif", tahoma, verdana, helvetica;
+	overflow:hidden;
+}
+
+.y-hour-right, .y-hour-left {
+	width:18px;
+}
+.y-hour-right{
+	text-align:right;
+}
+.y-hour-middle {
+	padding-top:2px;
+	padding-bottom:2px;
+	cursor:pointer;
+}
+.y-hour-right a, .y-hour-left a{
+	display:block;
+	width:16px;
+	height:16px;
+	background-color:Transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor:pointer;
+}
+
+.y-hour-right a {
+	background-image: url(../images/arrowRight.gif);
+	margin-right:2px;
+}
+.y-hour-left a{
+	background-image: url(../images/arrowLeft.gif);
+	margin-left:2px;
+}    
+.y-minute-middle,.y-minute-left,.y-minute-right {
+	font:bold 11px "sans serif", tahoma, verdana, helvetica;
+	overflow:hidden;
+}
+
+.y-minute-right, .y-minute-left {
+	width:18px;
+}
+.y-minute-right{
+	text-align:right;
+}
+.y-minute-middle {
+	padding-top:2px;
+	padding-bottom:2px;
+	cursor:pointer;
+}
+.y-minute-right a, .y-minute-left a{
+	display:block;
+	width:16px;
+	height:16px;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor:pointer;
+}
+
+.y-minute-right a {
+	background-image: url(../images/arrowright.gif);
+	margin-right:2px;
+}
+.y-minute-left a{
+	background-image: url(../images/arrowleft.gif);
+	margin-left:2px;
+}    
+/************** ExtJs DateTimePicker End ******************/
+
+/************** Detail Panel Start ******************/
+.detailpanel { margin: 6px; }
+/************** Detail Panel End ******************/
+
+/************** Aggregate Panel Start ******************/
+.aggregatepanel { margin: 6px; }
+/************** Aggregate Panel End ******************/
+
+/************ Table with 6 columns Style Begin****************/
+.table2col, .table6col { width: 100%; font-size: 9pt; font-family: tahoma, arial, helvetica, sans-serif; }
+.table6col .c1 { width: 10%; padding: 4px 2px 2px 2px; text-align:right; }
+.table6col .c2 { width: 23%; padding:2px; }
+.table2col .span, .table6col .span { padding:2px; }
+
+.table2col .c1 { width: 40%; padding: 4px 2px 2px 2px; text-align:right; } 
+.table2col .c2 { width: 60%; padding:2px; }
+/************ Table with 6 columns Style End****************/
+
+/************ OrganizationDetailPanel.ParentOrganizationSelector START *******************/
+.search-item
+{
+    font:normal 11px tahoma, arial, helvetica, sans-serif;
+    padding:3px 10px 3px 10px;
+    border:1px solid #fff;
+    border-bottom:1px solid #eeeeee;
+    white-space:normal;
+    color: gray;
+}
+.search-item .subject 
+{
+    display: block;
+    font:inherit;
+    color: #000;
+}
+/************ OrganizationDetailPanel.ParentOrganizationSelector End *******************/
+
+/************ FileManagementControl START *******************/
+.filemanagementcontrol { margin: 2px; border:#3a81e6 1px solid; padding: 4px; }
+.filemanagementcontrol ul.filelist li { background-image: url('/resources/images/dot.png'); background-repeat: no-repeat; background-position: 0 8px; padding-left: 9px; margin-bottom: 4px; line-height: 18px; }
+/************ FileManagementControl End *******************/
+
+.dynamicpage .x-grid3-cell-first .x-grid3-cell-inner { padding-left: 5px !important; }

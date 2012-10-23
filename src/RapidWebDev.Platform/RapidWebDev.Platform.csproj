@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20DA36DC-D074-4CFF-B12F-5A3A915DD030}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RapidWebDev.Platform</RootNamespace>
+    <AssemblyName>RapidWebDev.Platform</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\RapidWebDev.public.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\RapidWebDev.Platform.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\RapidWebDev.Platform.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.IdentityModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="AjaxControlToolkit, Version=3.0.20229.22065, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Linq.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3624dc708c4455be">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\Linq.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnonymousIdentity.cs" />
+    <Compile Include="Linq\OrganizationApi.OrganizationType.cs" />
+    <Compile Include="SaaS\SaaSClientTimeZoneLoader.cs" />
+    <Compile Include="SaaS\SaaSWebResourceManager.cs" />
+    <Compile Include="SaaS\SaaSFramePageLayout.cs" />
+    <Compile Include="Web\DynamicPage\ConcreteDataDetailPanel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlFilePermissionConfigurationReader.cs" />
+    <Compile Include="IPermissionConfigurationReader.cs" />
+    <Compile Include="ISiteMapApi.cs" />
+    <Compile Include="Initialization\ApplicationInstaller.cs" />
+    <Compile Include="ApplicationObject.cs" />
+    <Compile Include="ConcreteDataObject.cs" />
+    <Compile Include="DeleteStatus.cs" />
+    <Compile Include="HierarchyDataObject.cs" />
+    <Compile Include="IConcreteDataApi.cs" />
+    <Compile Include="IHierarchyApi.cs" />
+    <Compile Include="Initialization\DefaultApplicationNameRouter.cs" />
+    <Compile Include="Initialization\IApplicationNameRouter.cs" />
+    <Compile Include="Initialization\OrganizationDomain.cs" />
+    <Compile Include="Initialization\IPlatformConfiguration.cs" />
+    <Compile Include="Initialization\RwdSqlRoleProvider.cs" />
+    <Compile Include="IRelationshipApi.cs" />
+    <Compile Include="Linq\ConcreteDataApi.cs" />
+    <Compile Include="Linq\MembershipDbProvider.cs" />
+    <Compile Include="Linq\OrganizationApi.Organization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Linq\HierarchyApi.cs" />
+    <Compile Include="Linq\RelationshipApi.cs" />
+    <Compile Include="Initialization\RwdSqlMembershipProvider.cs" />
+    <Compile Include="OrganizationDomainObject.cs" />
+    <Compile Include="OrganizationPermissionTypes.cs" />
+    <Compile Include="PermissionObject.cs" />
+    <Compile Include="Services\ApplicationService.cs" />
+    <Compile Include="Services\ConcreteDataService.cs" />
+    <Compile Include="Services\IApplicationService.cs" />
+    <Compile Include="Services\IConcreteDataService.cs" />
+    <Compile Include="Services\IdCollection.cs" />
+    <Compile Include="Services\IMembershipService.cs" />
+    <Compile Include="Services\IPermissionService.cs" />
+    <Compile Include="Services\IRelationshipService.cs" />
+    <Compile Include="Services\ISequenceService.cs" />
+    <Compile Include="Services\MembershipService.cs" />
+    <Compile Include="Services\PermissionService.cs" />
+    <Compile Include="Services\RapidWebServiceAuthorizationManager.cs" />
+    <Compile Include="Services\RelationshipService.cs" />
+    <Compile Include="Services\SequenceService.cs" />
+    <Compile Include="Services\ServicesHelper.cs" />
+    <Compile Include="SiteMapApi.cs" />
+    <Compile Include="RelationshipObject.cs" />
+    <Compile Include="Services\HierarchyService.cs" />
+    <Compile Include="Services\IHierarchyService.cs" />
+    <Compile Include="Services\IRoleService.cs" />
+    <Compile Include="Services\RoleService.cs" />
+    <Compile Include="OrganizationObject.cs" />
+    <Compile Include="OrganizationStatus.cs" />
+    <Compile Include="OrganizationTypeObject.cs" />
+    <Compile Include="Services\IOrganizationService.cs" />
+    <Compile Include="Services\OrganizationService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IApplicationApi.cs" />
+    <Compile Include="PlatformModule.cs" />
+    <Compile Include="Initialization\CredentialInstaller.cs" />
+    <Compile Include="Initialization\IInstallerManager.cs" />
+    <Compile Include="Initialization\InstallerManager.cs" />
+    <Compile Include="IPermissionApi.cs" />
+    <Compile Include="Linq\ApplicationApi.cs" />
+    <Compile Include="Linq\MembershipDataContext.extensions.cs" />
+    <Compile Include="Linq\PermissionApi.cs" />
+    <Compile Include="ISequenceNoApi.cs" />
+    <Compile Include="IOrganizationApi.cs" />
+    <Compile Include="Initialization\IInstaller.cs" />
+    <Compile Include="IRoleApi.cs" />
+    <Compile Include="Linq\MembershipApi.cs" />
+    <Compile Include="Linq\SequenceNoApi.cs" />
+    <Compile Include="Linq\RoleApi.cs" />
+    <Compile Include="PermissionConfig.cs">
+      <DependentUpon>PermissionConfig.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionConst.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RoleObject.cs" />
+    <Compile Include="Initialization\PlatformConfiguration.cs" />
+    <Compile Include="SiteMapConfig.cs">
+      <DependentUpon>SiteMapConfig.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SiteMapConfig.extensions.cs" />
+    <Compile Include="UserObject.cs" />
+    <Compile Include="HttpAuthenticationContext.cs" />
+    <Compile Include="IAuthenticationContext.cs" />
+    <Compile Include="IMembershipApi.cs" />
+    <Compile Include="Linq\MembershipDataContext.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MembershipDataContext.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginResults.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Controls\HierarchyTreeView.cs" />
+    <Compile Include="Web\Controls\OrganizationLink.cs" />
+    <Compile Include="Web\Controls\OrganizationSelector.cs" />
+    <Compile Include="Web\Controls\PermissionTreeView.cs" />
+    <Compile Include="Web\Controls\UserLink.cs" />
+    <Compile Include="Web\DynamicPage\ConcreteDataManagement.cs" />
+    <Compile Include="Web\DynamicPage\GridViewFieldValueTransformCallback\ShowHierarchyDataName.cs" />
+    <Compile Include="Web\DynamicPage\GridViewFieldValueTransformCallback\ShowConcreteDataName.cs" />
+    <Compile Include="Web\DynamicPage\GridViewFieldValueTransformCallback\ShowOrganizationName.cs" />
+    <Compile Include="Web\DynamicPage\GridViewFieldValueTransformCallback\ShowOrganizationTypesByIds.cs" />
+    <Compile Include="Web\DynamicPage\GridViewFieldValueTransformCallback\ShowUserDisplayName.cs" />
+    <Compile Include="Web\DynamicPage\GridViewFieldValueTransformCallback\ShowUserInRoles.cs" />
+    <Compile Include="Web\DynamicPage\HierarchyDataAggregatePanel.cs" />
+    <Compile Include="Web\DynamicPage\HierarchyDataDetailPanel.cs" />
+    <Compile Include="Web\DynamicPage\HierarchyDataManagement.cs" />
+    <Compile Include="Web\DynamicPage\OrganizationDetailPanel.cs" />
+    <Compile Include="Web\DynamicPage\OrganizationManagement.cs" />
+    <Compile Include="Web\DynamicPage\OrganizationTypeDetailPanel.cs" />
+    <Compile Include="Web\DynamicPage\OrganizationTypeManagement.cs" />
+    <Compile Include="Web\DynamicPage\PermissionBridge.cs" />
+    <Compile Include="Web\DynamicPage\RoleDetailPanel.cs" />
+    <Compile Include="Web\DynamicPage\RoleManagement.cs" />
+    <Compile Include="Web\DynamicPage\SetupContextTempVariablesUtility.cs" />
+    <Compile Include="Web\DynamicPage\UserDetailPanel.cs" />
+    <Compile Include="Web\DynamicPage\UserManagement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RapidWebDev.Common\RapidWebDev.Common.csproj">
+      <Project>{29D45B1B-D03B-4C5F-8D8B-D765E3977339}</Project>
+      <Name>RapidWebDev.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWebDev.ExtensionModel.Web\RapidWebDev.ExtensionModel.Web.csproj">
+      <Project>{15465DC2-9AF4-4E95-B942-B3247EB71EEE}</Project>
+      <Name>RapidWebDev.ExtensionModel.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWebDev.ExtensionModel\RapidWebDev.ExtensionModel.csproj">
+      <Project>{BC37B273-2F1A-4D9A-A927-633FD6BC3A66}</Project>
+      <Name>RapidWebDev.ExtensionModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWebDev.UI\RapidWebDev.UI.csproj">
+      <Project>{AAC9A9DA-A239-47C1-ABEE-D6994B7701BC}</Project>
+      <Name>RapidWebDev.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\MembershipDataContext.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MembershipDataContext.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\MembershipDataContext.dbml.layout">
+      <DependentUpon>MembershipDataContext.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.zh-CN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SiteMapConfig.xsd" />
+    <EmbeddedResource Include="PermissionConfig.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

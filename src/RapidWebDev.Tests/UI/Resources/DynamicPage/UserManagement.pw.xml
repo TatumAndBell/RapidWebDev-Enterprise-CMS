@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page ObjectId="UserManagement"
+	Type="RapidWebDev.Tests.UI.MockedUserManagement, RapidWebDev.Tests"
+	xmlns="http://www.rapidwebdev.org/schemas/dynamicpage">
+	<Title>User Management</Title>
+	<PermissionValue>UserManagement</PermissionValue>
+	<Panels>
+		<QueryPanel HeaderText="Query Users">
+			<TextBox FieldName="UserName" Label="Name: " />
+			<TextBox FieldName="DisplayName" Label="Display: " />
+			<ComboBox FieldName="Organization.OrganizationName" Label="Organization: " Operator="Like">
+				<DynamicDataSource
+					TextField="OrganizationName"
+					ValueField="OrganizationId"
+					QueryParam="OrganizationName"
+					Url="/Services/OrganizationServices.svc/Search" />
+			</ComboBox>
+			<ComboBox FieldName="UsersInRole.Role.RoleName" Label="Role: " Operator="Like">
+				<DynamicDataSource
+					TextField="RoleName"
+					ValueField="RoleId"
+					QueryParam="RoleName"
+					Url="/Services/RoleServices.svc/Search">
+					<XTemplate ItemSelector="div.search-item">
+						<tpl for=".">
+							<div class="search-item">
+								<h3>{topic_title}</h3>
+							</div>
+						</tpl>
+					</XTemplate>
+				</DynamicDataSource>
+			</ComboBox>
+			<CheckBoxGroup FieldName="IsApproved" Label="Status: ">
+				<Item Text="&lt;span style='color:green'&gt;Approved&lt;/span&gt;" Value="True" Checked="true" />
+				<Item Text="&lt;span style='color:red'&gt;Forbidden&lt;/span&gt;" Value="False" />
+			</CheckBoxGroup>
+		</QueryPanel>
+		<GridViewPanel EnabledCheckBoxField="true" HeaderText="Users Query Results" PageSize="25" PrimaryKeyFieldName="UserId" EntityName="User">
+			<ViewButton />
+			<EditButton />
+			<DeleteButton />
+			<Fields>
+				<Field FieldName="UserName" HeaderText="Name" />
+				<Field FieldName="DisplayName" HeaderText="Display" />
+				<Field FieldName="RoleNames" HeaderText="Roles" Sortable="false" />
+				<Field FieldName="OrganizationId" HeaderText="Organization">
+					<Transform-Callback Type="RapidWebDev.Platform.Web.DynamicPage.GridViewFieldValueTransformCallback.ShowOrganizationName, RapidWebDev.Platform" />
+				</Field>
+				<Field FieldName="IsApproved" HeaderText="Status" Width="70">
+					<Transform-Switch>
+						<Case Value="True" CaseSensitive="false">&lt;span style="color:green"&gt;Approved&lt;/span&gt;</Case>
+						<Case Value="False" CaseSensitive="false">&lt;span style="color:red"&gt;Forbidden&lt;/span&gt;</Case>
+					</Transform-Switch>
+				</Field>
+				<Field FieldName="IsLocked" HeaderText="Status" Width="70">
+					<Transform-Switch>
+						<Case Value="False" CaseSensitive="false">&lt;span style="color:green"&gt;Free&lt;/span&gt;</Case>
+						<Case Value="True" CaseSensitive="false">&lt;span style="color:red"&gt;Locked&lt;/span&gt;</Case>
+					</Transform-Switch>
+				</Field>
+				<Field FieldName="LastUpdatedDate" HeaderText="Last Updated" Width="145">
+					<Transform-ToString-Parameter Value="{0:yyyy/MM/dd HH:mm}" />
+				</Field>
+			</Fields>
+		</GridViewPanel>
+		<DetailPanel HeaderText="User Profile">
+			<Type>RapidWebDev.Platform.Web.DynamicPage.UserDetailPanel, RapidWebDev.Platform</Type>
+			<SkinPath>~/Membership/Templates/User.ascx</SkinPath>
+			<SaveAndCloseButton />
+			<CancelButton />
+		</DetailPanel>
+	</Panels>
+</Page>

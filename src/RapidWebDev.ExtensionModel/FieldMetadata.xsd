@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FieldMetadata"
+    targetNamespace="http://www.rapidwebdev.org/schemas/extensionmodel"
+    elementFormDefault="qualified"
+    xmlns="http://www.rapidwebdev.org/schemas/extensionmodel"
+    xmlns:mstns="http://tempuri.org/FieldMetadata.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="FieldMetadataBase" abstract="true" type="FieldMetadataBase" />
+	<xs:element name="StringFieldMetadata" type="StringFieldMetadata" substitutionGroup="FieldMetadataBase" />
+	<xs:element name="DateTimeFieldMetadata" type="DateTimeFieldMetadata" substitutionGroup="FieldMetadataBase" />
+	<xs:element name="DateFieldMetadata" type="DateFieldMetadata" substitutionGroup="FieldMetadataBase" />
+	<xs:element name="IntegerFieldMetadata" type="IntegerFieldMetadata" substitutionGroup="FieldMetadataBase" />
+	<xs:element name="DecimalFieldMetadata" type="DecimalFieldMetadata" substitutionGroup="FieldMetadataBase" />
+	<xs:element name="EnumerationFieldMetadata" type="EnumerationFieldMetadata" substitutionGroup="FieldMetadataBase" />
+	<xs:element name="HierarchyFieldMetadata" type="HierarchyFieldMetadata" substitutionGroup="FieldMetadataBase" />
+	
+	<xs:complexType name="FieldMetadataBase" abstract="true">
+		<xs:attribute name="Name" type="RequiredString" use="required">
+			<xs:annotation>
+				<xs:documentation>The extension field name.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="FieldGroup" type="RequiredString" use="optional">
+			<xs:annotation>
+				<xs:documentation>The extension field group.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IsRequired" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>True indicates the field value is required before saving.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Ordinal" type="xs:int" use="optional" default="10000">
+			<xs:annotation>
+				<xs:documentation>The ordinal of the field in object definition.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Priviledge" type="FieldPriviledges" use="optional" default="Public">
+			<xs:annotation>
+				<xs:documentation>The priviledge of the field in object definition.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:simpleType name="FieldPriviledges">
+		<xs:annotation>
+			<xs:documentation>The priviledge of the field in object definition.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Public">
+				<xs:annotation>
+					<xs:documentation>The field is public to everyone.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EditProtectedOnly">
+				<xs:annotation>
+					<xs:documentation>The field is visible to everyone but users can edit the field only when having the special editing permission.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BothEditAndViewProtected">
+				<xs:annotation>
+					<xs:documentation>The field is visible to users only when having the special editing and viewing permission.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="StringFieldMetadata">
+		<xs:annotation>
+			<xs:documentation>String typed field metadata.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="FieldMetadataBase">
+				<xs:attribute name="MaxLength" type="xs:int" use="optional">
+					<xs:annotation>
+						<xs:documentation>Max length of the field value.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="MinLength" type="xs:int" use="optional">
+					<xs:annotation>
+						<xs:documentation>Min length of the field value.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Regex" type="RequiredString" use="optional">
+					<xs:annotation>
+						<xs:documentation>The regular expression is used to validate the string field value.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Default" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The default field value if the field value is not specified before saving.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="DateFieldMetadata">
+		<xs:annotation>
+			<xs:documentation>Date typed field metadata.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="FieldMetadataBase">
+				<xs:all>
+					<xs:element name="DefaultValue" type="DateTimeValue" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The default value of the date field.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="MaxValue" type="DateTimeValue" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The max value of the date field.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="MinValue" type="DateTimeValue" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The min value of the date field.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="DateTimeFieldMetadata">
+		<xs:annotation>
+			<xs:documentation>DateTime typed field metadata.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="FieldMetadataBase">
+				<xs:all>
+					<xs:element name="DefaultValue" type="DateTimeValue" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The default value of the datetime field.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="MaxValue" type="DateTimeValue" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The max value of the datetime field.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="MinValue" type="DateTimeValue" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The min value of the datetime field.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="IntegerFieldMetadata">
+		<xs:annotation>
+			<xs:documentation>Integer typed field metadata.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="FieldMetadataBase">
+				<xs:attribute name="MaxValue" type="xs:int" use="optional">
+					<xs:annotation>
+						<xs:documentation>The max value of the integer field.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="MinValue" type="xs:int" use="optional">
+					<xs:annotation>
+						<xs:documentation>The min value of the integer field.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Default" type="xs:int" use="optional">
+					<xs:annotation>
+						<xs:documentation>The default value of the integer field.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="DecimalFieldMetadata">
+		<xs:annotation>
+			<xs:documentation>Decimal typed field metadata.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="FieldMetadataBase">
+				<xs:attribute name="MaxValue" type="xs:decimal" use="optional">
+					<xs:annotation>
+						<xs:documentation>The max value of the decimal field.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="MinValue" type="xs:decimal" use="optional">
+					<xs:annotation>
+						<xs:documentation>The min value of the decimal field.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Default" type="xs:decimal" use="optional">
+					<xs:annotation>
+						<xs:documentation>The default value of the decimal field.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="EnumerationFieldMetadata">
+		<xs:annotation>
+			<xs:documentation>
+				Enumeration typed field metadata. The field values are limited by defined enumeration items.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="FieldMetadataBase">
+				<xs:sequence>
+					<xs:element name="Items" type="SelectionItem" minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+				<xs:attribute name="SelectionMode" type="SelectionModes" use="optional" default="Multiple">
+					<xs:annotation>
+						<xs:documentation>The selection mode of the field, multiple/single.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="HierarchyFieldMetadata">
+		<xs:annotation>
+			<xs:documentation>
+				Hierarchy typed field metadata. The field values are limited by hierarchy metadata.
+				The candicate field values are located in hierarchy that each value is allowed to have a parent and multiple children.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="FieldMetadataBase">
+				<xs:sequence>
+					<xs:element name="Node" type="HierarchyNode" minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+				<xs:attribute name="SelectionMode" type="SelectionModes" use="optional" default="Multiple">
+					<xs:annotation>
+						<xs:documentation>The selection mode of the field, multiple/single.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="HierarchyNode">
+		<xs:sequence>
+			<xs:element name="Node" type="HierarchyNode" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="Name" type="RequiredString" use="required" />
+		<xs:attribute name="Value" type="xs:string" use="required" />
+		<xs:attribute name="Selected" type="xs:boolean" use="optional" default="false" />
+	</xs:complexType>
+
+	<xs:complexType name="SelectionItem">
+		<xs:attribute name="Name" type="RequiredString" use="required" />
+		<xs:attribute name="Value" type="xs:string" use="required" />
+		<xs:attribute name="Selected" type="xs:boolean" use="optional" default="false" />
+	</xs:complexType>
+
+	<xs:simpleType name="RequiredString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="DateTimeValue">
+		<xs:sequence>
+			<xs:element name="Value" minOccurs="0" type="xs:dateTime" />
+		</xs:sequence>
+		<xs:attribute name="DateTimeValueType" type="DateTimeValueTypes" use="optional" default="Custom" />
+	</xs:complexType>
+
+	<xs:simpleType name="DateTimeValueTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Now" />
+			<xs:enumeration value="Custom" />
+			<xs:enumeration value="FirstDayOfThisYear" />
+			<xs:enumeration value="FirstDayOfThisMonth" />
+			<xs:enumeration value="FirstDayOfThisWeek" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="SelectionModes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Multiple" />
+			<xs:enumeration value="Single" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

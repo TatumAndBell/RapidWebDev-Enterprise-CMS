@@ -1,0 +1,852 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RapidWebDev.ExtensionModel.Web</name>
+    </assembly>
+    <members>
+        <member name="T:RapidWebDev.ExtensionModel.Web.IExtensionFieldControlBuilder">
+            <summary>
+            The interface to build control for extension field.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.IExtensionFieldControlBuilder.BuildDataInputControl(RapidWebDev.ExtensionModel.IFieldMetadata)">
+            <summary>
+            Build data input control for specified field metadata.
+            </summary>
+            <param name="fieldMetadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.IExtensionFieldControlBuilder.BuildMetadataControl">
+            <summary>
+            Build a control to manage the field metadata.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.IExtensionFieldControlBuilder.Value">
+            <summary>
+            Sets/gets editor control value.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.IExtensionFieldControlBuilder.Metadata">
+            <summary>
+            Sets/gets field metadata in metadata management UI.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.IExtensionFieldControlBuilder.ReadOnly">
+            <summary>
+            Sets/gets true if the data input control is readonly.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.ExtensionDataInputControl">
+            <summary>
+            Extension Editable control.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.ExtensionDataInputControl.Control">
+            <summary>
+            Web control contains the editor for the field.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.ExtensionDataInputControl.OccupiedControlCells">
+            <summary>
+            How many table cells occupied which is used to render editor control.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder">
+            <summary>
+            The implementation class to build control for string typed extension field.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.AbstractExtensionFieldControlBuilder">
+            <summary>
+            The abstract implementation class to build control for supported typed extension field.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.AbstractExtensionFieldControlBuilder.BuildDataInputControl(RapidWebDev.ExtensionModel.IFieldMetadata)">
+            <summary>
+            Build data input control for specified field metadata.
+            </summary>
+            <param name="fieldMetadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.AbstractExtensionFieldControlBuilder.BuildMetadataControl">
+            <summary>
+            Build a control to manage the field metadata.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.AbstractExtensionFieldControlBuilder.CreateFieldMetadataTemplateControl(RapidWebDev.ExtensionModel.FieldType)">
+            <summary>
+            Build a control to manage the field metadata.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.AbstractExtensionFieldControlBuilder.ReadOnly">
+            <summary>
+            Sets/gets true if the data input control is readonly.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.AbstractExtensionFieldControlBuilder.Value">
+            <summary>
+            Sets/gets editor control value.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.AbstractExtensionFieldControlBuilder.Metadata">
+            <summary>
+            Sets/gets field metadata in metadata management UI.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.TextBoxName">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.TextBoxFieldGroup">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.DropDownListPriviledge">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.CheckBoxRequired">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.IntegerTextBoxOrdinal">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.TextBoxDefaultValue">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.IntegerTextBoxMinLength">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.IntegerTextBoxMaxLength">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.TextBoxRegex">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.TextBoxDescription">
+            <summary />
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.BuildDataInputControl(RapidWebDev.ExtensionModel.IFieldMetadata)">
+            <summary>
+            Build data input control for specified field metadata.
+            </summary>
+            <param name="fieldMetadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.BuildMetadataControl">
+            <summary>
+            Build a control to manage the field metadata.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.ReadOnly">
+            <summary>
+            Sets/gets true if the data input control is readonly.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.Value">
+            <summary>
+            Sets/gets editor control value.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.StringExtensionFieldControlBuilder.Metadata">
+            <summary>
+            Sets/gets field metadata in metadata management UI.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataDetailPanel">
+            <summary>
+            Extension field metadata detail panel page handler.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataDetailPanel.DropDownListFieldMetadataType">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataDetailPanel.PanelFieldMetadata">
+            <summary />
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataDetailPanel.Create">
+            <summary>
+            Create a new field metadata from detail panel and return the field name after created successfully.
+            The method needs to create a new entity and set control values to its properties then persist it.
+            </summary>
+            <returns>returns the field name after created successfully.</returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataDetailPanel.Update(System.String)">
+            <summary>
+            Update an existed field metadata from detail panel.
+            The method needs to load an existed entity by specified id and set control values to overwrite its original properties then persist it.
+            </summary>
+            <param name="entityId">this should be field name instead of id.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataDetailPanel.Reset">
+            <summary>
+            Reset all controls of the detail panel to initial state.
+            The method will be invoked when enables the detail panel to support creating entities continuously.
+            After an entity been created, the method will be invoked to reset form controls for another input.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataDetailPanel.LoadWritableEntity(System.String)">
+            <summary>
+            The method is designed to load entity by id to editable detail panel controls.
+            </summary>
+            <param name="entityId"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataDetailPanel.LoadReadOnlyEntity(System.String)">
+            <summary>
+            Make all editabel controls to be readonly.
+            </summary>
+            <param name="entityId"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataDetailPanel.OnLoad(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.DetailPanelPageEventArgs)">
+            <summary>
+            The method will be invoked when detail panel is loaded.
+            The implementation can resolve current visiting Page from the conversation as (HttpContext.Current.Handler as Page).
+            </summary>
+            <param name="sender">The web page which contains the detail panel.</param>
+            <param name="e">Callback event argument.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataDetailPanel.SetupContextTempVariables(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.SetupApplicationContextVariablesEventArgs)">
+            <summary>
+            Validate query string "MetadataDataTypeName" and setup metadata data type name to IAuthenticationContext.TempVariables.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataManagement">
+            <summary>
+            Extension field metadata management dynamic page handler.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataManagement.Query(RapidWebDev.UI.DynamicPages.QueryParameter)">
+            <summary>
+            Execute query for results binding to dynamic page grid.
+            </summary>
+            <param name="parameter">Query parameter.</param>
+            <returns>Returns query results.</returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataManagement.Delete(System.String)">
+            <summary>
+            Delete field metadata by id.
+            </summary>
+            <param name="entityId"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataManagement.OnGridRowControlsBind(RapidWebDev.UI.DynamicPages.GridRowControlBindEventArgs)">
+            <summary>
+            Cannot modify and delete the inherited fields from parents.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataManagement.SetupContextTempVariables(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.SetupApplicationContextVariablesEventArgs)">
+            <summary>
+            Validate query string "MetadataDataTypeName" and setup metadata data type name to IAuthenticationContext.TempVariables.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.ExtensionModelConfiguration">
+            <summary>
+            Configuration for ExtensionModel.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.ExtensionModelConfiguration.FieldMetadataControlTemplateDirectory">
+            <summary>
+            The directory which contains control templates used for managing field metadata.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataAggregatePanel">
+            <summary>
+            Extension field metadata aggregate panel page handler to preview editable form for the extension type.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataAggregatePanel.ExtensionDataFormPreview">
+            <summary />
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataAggregatePanel.OnLoad(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.AggregatePanelPageEventArgs)">
+            <summary>
+            Set MetadataTypeId to the form.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DynamicPage.ExtensionFieldMetadataAggregatePanel.SetupContextTempVariables(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.SetupApplicationContextVariablesEventArgs)">
+            <summary>
+            Validate query string "MetadataDataTypeName" and setup metadata data type name to IAuthenticationContext.TempVariables.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder">
+            <summary>
+            The implementation class to build control for decimal typed extension field.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.TextBoxName">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.TextBoxFieldGroup">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.DropDownListPriviledge">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.CheckBoxRequired">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.IntegerTextBoxOrdinal">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.DecimalTextBoxDefaultValue">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.DecimalTextBoxMinValue">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.DecimalTextBoxMaxValue">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.TextBoxDescription">
+            <summary />
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.BuildDataInputControl(RapidWebDev.ExtensionModel.IFieldMetadata)">
+            <summary>
+            Build data input control for specified field metadata.
+            </summary>
+            <param name="fieldMetadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.BuildMetadataControl">
+            <summary>
+            Build a control to manage the field metadata.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.ReadOnly">
+            <summary>
+            Sets/gets true if the data input control is readonly.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.Value">
+            <summary>
+            Sets/gets editor control value.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.DecimalExtensionFieldControlBuilder.Metadata">
+            <summary>
+            Sets/gets field metadata in metadata management UI.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder">
+            <summary>
+            The implementation class to build control for DateTime typed extension field.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder.TextBoxName">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder.TextBoxFieldGroup">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder.DropDownListPriviledge">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder.CheckBoxRequired">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder.IntegerTextBoxOrdinal">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder.DropDownListDefaultValue">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder.TextBoxDescription">
+            <summary />
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder.BuildDataInputControl(RapidWebDev.ExtensionModel.IFieldMetadata)">
+            <summary>
+            Build data input control for specified field metadata.
+            </summary>
+            <param name="fieldMetadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder.BuildMetadataControl">
+            <summary>
+            Build a control to manage the field metadata.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder.ReadOnly">
+            <summary>
+            Sets/gets true if the data input control is readonly.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder.Value">
+            <summary>
+            Sets/gets editor control value.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.DateTimeExtensionFieldControlBuilder.Metadata">
+            <summary>
+            Sets/gets field metadata in metadata management UI.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.HierarchyExtensionFieldControlBuilder">
+            <summary>
+            The implementation class to build control for hierarchy typed extension field.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.HierarchyExtensionFieldControlBuilder.BuildDataInputControl(RapidWebDev.ExtensionModel.IFieldMetadata)">
+            <summary>
+            Build data input control for specified field metadata.
+            </summary>
+            <param name="fieldMetadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.HierarchyExtensionFieldControlBuilder.BuildMetadataControl">
+            <summary>
+            Build a control to manage the field metadata.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.HierarchyExtensionFieldControlBuilder.ReadOnly">
+            <summary>
+            Sets/gets true if the data input control is readonly.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.HierarchyExtensionFieldControlBuilder.Value">
+            <summary>
+            Sets/gets editor control value.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.HierarchyExtensionFieldControlBuilder.Metadata">
+            <summary>
+            Sets/gets field metadata in metadata management UI.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.Controls.TableXColumnsExtensionDataFormLayout">
+            <summary>
+            The interface to generate layout of data input form for the special metadata type.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.Controls.IExtensionDataFormLayout">
+            <summary>
+            The interface to generate layout of data input form for the special metadata type.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.Controls.IExtensionDataFormLayout.Create(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{RapidWebDev.ExtensionModel.IFieldMetadata,RapidWebDev.ExtensionModel.Web.IExtensionFieldControlBuilder}})">
+            <summary>
+            Create layout control which contains data input form for the special metadata type.
+            </summary>
+            <param name="extensionFieldControlBuildersByFieldMetadata">Extension field control builders by field metadata.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.Controls.TableXColumnsExtensionDataFormLayout.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.Controls.TableXColumnsExtensionDataFormLayout.Create(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{RapidWebDev.ExtensionModel.IFieldMetadata,RapidWebDev.ExtensionModel.Web.IExtensionFieldControlBuilder}})">
+            <summary>
+            Create layout control which contains data input form for the special metadata type.
+            </summary>
+            <param name="extensionFieldControlBuildersByFieldMetadata">Extension field control builders by field metadata.</param>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Controls.TableXColumnsExtensionDataFormLayout.TableRowCssClass">
+            <summary>
+            Append a css class to each table row, defaults to empty.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Controls.TableXColumnsExtensionDataFormLayout.RenderTableElement">
+            <summary>
+            True to render &lt;table&gt; html element wraps the controls within table rows, defaults to false.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Controls.TableXColumnsExtensionDataFormLayout.TableCssClass">
+            <summary>
+            Append a css class to the table, defaults to empty.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Controls.TableXColumnsExtensionDataFormLayout.ColumnsNumber">
+            <summary>
+            Sets/gets column number of layout table, defaults to 6.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.Controls.ExtensionDataForm">
+            <summary>
+            Class to render a web form for users to input data for specified extension type.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.Controls.ExtensionDataForm.CreateDataInputForm(System.Guid)">
+            <summary>
+            Initialize field controls by metadata type id.
+            That means the property "ExtensionDataTypeId" has to be set before the control loaded.
+            If the property "ExtensionDataTypeId" equals to Guid.Empty, the <see cref="T:System.InvalidProgramException"/> will be thrown.
+            </summary>
+            <param name="extensionDataTypeId"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.Controls.ExtensionDataForm.ResetControlValuesToDefault">
+            <summary>
+            Reset control values to default by field metadata.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.Controls.ExtensionDataForm.SetControlValuesFromObjectProperties(RapidWebDev.ExtensionModel.IExtensionBizObject)">
+            <summary>
+            Set control value from extension business object.
+            </summary>
+            <param name="extensionBizObject"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.Controls.ExtensionDataForm.SetControlValuesFromObjectProperties(RapidWebDev.ExtensionModel.IExtensionObject)">
+            <summary>
+            Set control value from extension object.
+            </summary>
+            <param name="extensionObject"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.Controls.ExtensionDataForm.SetObjectPropertiesFromControlValues(RapidWebDev.ExtensionModel.IExtensionBizObject)">
+            <summary>
+            Set properties of the extension business object from controls.
+            </summary>
+            <param name="extensionBizObject"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.Controls.ExtensionDataForm.SetObjectPropertiesFromControlValues(RapidWebDev.ExtensionModel.IExtensionObject)">
+            <summary>
+            Set properties of the extension object from controls.
+            </summary>
+            <param name="extensionObject"></param>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Controls.ExtensionDataForm.ReadOnly">
+            <summary>
+            Sets or gets true if the data form is readonly, defaults to false.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Controls.ExtensionDataForm.IgnoreFieldPriviledge">
+            <summary>
+            Sets or gets true when want to ignore field priviledge in data input form, defaults to false.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Controls.ExtensionDataForm.ExtensionDataFormLayout">
+            <summary>
+            Sets or gets the stragety to create the layout of extension fields, defaults to the instance configured in Spring.NET IoC.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Controls.ExtensionDataForm.PermissionBridge">
+            <summary>
+            Sets or gets the stragety to check whether the current user having permission to the rendering fields, defaults to the instance configured in Spring.NET IoC.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder">
+            <summary>
+            The implementation class to build control for integer typed extension field.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.TextBoxName">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.TextBoxFieldGroup">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.DropDownListPriviledge">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.CheckBoxRequired">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.IntegerTextBoxOrdinal">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.IntegerTextBoxDefaultValue">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.IntegerTextBoxMinValue">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.IntegerTextBoxMaxValue">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.TextBoxDescription">
+            <summary />
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.BuildDataInputControl(RapidWebDev.ExtensionModel.IFieldMetadata)">
+            <summary>
+            Build data input control for specified field metadata.
+            </summary>
+            <param name="fieldMetadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.BuildMetadataControl">
+            <summary>
+            Build a control to manage the field metadata.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.ReadOnly">
+            <summary>
+            Sets/gets true if the data input control is readonly.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.Value">
+            <summary>
+            Sets/gets editor control value.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.IntegerExtensionFieldControlBuilder.Metadata">
+            <summary>
+            Sets/gets field metadata in metadata management UI.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.AddItem">
+            <summary>
+              Looks up a localized string similar to Add a item.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.Cancel">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.DefaultFieldGroupName">
+            <summary>
+              Looks up a localized string similar to Others.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.FieldHasBeenDeletedByOtherUsers">
+            <summary>
+              Looks up a localized string similar to Field &quot;{0}&quot; has been deleted by other users before your operation..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.FieldNameCannotBeEmpty">
+            <summary>
+              Looks up a localized string similar to Field name cannot be empty..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.FieldNameDoesExist">
+            <summary>
+              Looks up a localized string similar to Field name &quot;{0}&quot; does exist..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.InvalidMetadataTypeName">
+            <summary>
+              Looks up a localized string similar to The request query string parameter MetadataTypeName &quot;{0}&quot; is invalid..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.No">
+            <summary>
+              Looks up a localized string similar to No.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.RemoveItem">
+            <summary>
+              Looks up a localized string similar to Remove selected item.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.Save">
+            <summary>
+              Looks up a localized string similar to Save.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.Selected">
+            <summary>
+              Looks up a localized string similar to Selected.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.SelectFieldTypeBeforeSave">
+            <summary>
+              Looks up a localized string similar to Please select field type before saving..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.Summary">
+            <summary>
+              Looks up a localized string similar to Summary.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.Text">
+            <summary>
+              Looks up a localized string similar to Text.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.UnknownError">
+            <summary>
+              Looks up a localized string similar to Unknown error is occured and it has been logged, please try it later or contact the system administrator..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.Value">
+            <summary>
+              Looks up a localized string similar to Value.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Properties.Resources.Yes">
+            <summary>
+              Looks up a localized string similar to Yes.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder">
+            <summary>
+            The implementation class to build control for Selection typed extension field.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.TextBoxName">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.TextBoxFieldGroup">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.DropDownListPriviledge">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.CheckBoxRequired">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.IntegerTextBoxOrdinal">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.SelectionExtensionFieldControl">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.TextBoxDescription">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.ComboBoxSelectionMode">
+            <summary />
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.BuildDataInputControl(RapidWebDev.ExtensionModel.IFieldMetadata)">
+            <summary>
+            Build data input control for specified field metadata.
+            </summary>
+            <param name="fieldMetadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.BuildMetadataControl">
+            <summary>
+            Build a control to manage the field metadata.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.ReadOnly">
+            <summary>
+            Sets/gets true if the data input control is readonly.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.Value">
+            <summary>
+            Sets/gets editor control value.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.EnumerationExtensionFieldControlBuilder.Metadata">
+            <summary>
+            Sets/gets field metadata in metadata management UI.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.Controls.SelectionExtensionFieldControl">
+            <summary>
+            Control to manage selection field metadata.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.Controls.SelectionExtensionFieldControl.OnLoad(System.EventArgs)">
+            <summary>
+            Register the control to the page for requiring postback.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.Controls.SelectionExtensionFieldControl.OnPreRender(System.EventArgs)">
+            <summary>
+            Raises the System.Web.UI.Control.PreRender event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Controls.SelectionExtensionFieldControl.SelectionItems">
+            <summary>
+            Defined selection items.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.Controls.SelectionItem">
+            <summary>
+            Select item for SelectionExtensionFieldControl.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Controls.SelectionItem.Text">
+            <summary>
+            Select item text.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Controls.SelectionItem.Value">
+            <summary>
+            Select item value.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.Controls.SelectionItem.Selected">
+            <summary>
+            Default selection status.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder">
+            <summary>
+            The implementation class to build control for Date typed extension field.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder.TextBoxName">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder.TextBoxFieldGroup">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder.DropDownListPriviledge">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder.CheckBoxRequired">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder.IntegerTextBoxOrdinal">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder.DropDownListDefaultValue">
+            <summary />
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder.TextBoxDescription">
+            <summary />
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder.BuildDataInputControl(RapidWebDev.ExtensionModel.IFieldMetadata)">
+            <summary>
+            Build data input control for specified field metadata.
+            </summary>
+            <param name="fieldMetadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder.BuildMetadataControl">
+            <summary>
+            Build a control to manage the field metadata.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder.ReadOnly">
+            <summary>
+            Sets/gets true if the data input control is readonly.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder.Value">
+            <summary>
+            Sets/gets editor control value.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Web.DateExtensionFieldControlBuilder.Metadata">
+            <summary>
+            Sets/gets field metadata in metadata management UI.
+            </summary>
+        </member>
+    </members>
+</doc>

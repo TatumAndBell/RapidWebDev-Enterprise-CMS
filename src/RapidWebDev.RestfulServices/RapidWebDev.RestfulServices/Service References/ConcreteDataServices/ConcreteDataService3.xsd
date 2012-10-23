@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:50682/Services/ConcreteDataService.svc?xsd=xsd5" namespace="http://www.rapidwebdev.org/common" />
+  <xs:element name="SaveJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.rapidwebdev.org/platform" minOccurs="0" name="concreteDataObject" nillable="true" type="q1:ConcreteDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ConcreteDataObject">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://www.rapidwebdev.org/platform" base="q2:AbstractExtensionBizObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" type="ser:guid" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DeleteStatus" type="q2:DeleteStatus" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="LastUpdatedBy" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="LastUpdatedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q3="http://www.rapidwebdev.org/platform" name="ConcreteDataObject" nillable="true" type="q3:ConcreteDataObject" />
+  <xs:complexType name="AbstractExtensionBizObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtensionDataTypeId" type="ser:guid" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Properties" nillable="true" type="q4:ArrayOfKeyValueOfstringanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q5="http://www.rapidwebdev.org/platform" name="AbstractExtensionBizObject" nillable="true" type="q5:AbstractExtensionBizObject" />
+  <xs:simpleType name="DeleteStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotDeleted" />
+      <xs:enumeration value="Deleted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element xmlns:q6="http://www.rapidwebdev.org/platform" name="DeleteStatus" nillable="true" type="q6:DeleteStatus" />
+  <xs:element name="SaveJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.rapidwebdev.org/platform" minOccurs="0" name="concreteDataObject" nillable="true" type="q7:ConcreteDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveXmlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="concreteDataId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetByIdJsonResult" nillable="true" type="q8:ConcreteDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="concreteDataId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByIdXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetByIdXmlResult" nillable="true" type="q9:ConcreteDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByNameJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByNameJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetByNameJsonResult" nillable="true" type="q10:ConcreteDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByNameXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetByNameXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetByNameXmlResult" nillable="true" type="q11:ConcreteDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByKeywordJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="concreteDataType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="limit" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByKeywordJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindByKeywordJsonResult" nillable="true" type="q12:ArrayOfConcreteDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfConcreteDataObject">
+    <xs:sequence>
+      <xs:element xmlns:q13="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="ConcreteDataObject" nillable="true" type="q13:ConcreteDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q14="http://www.rapidwebdev.org/platform" name="ArrayOfConcreteDataObject" nillable="true" type="q14:ArrayOfConcreteDataObject" />
+  <xs:element name="FindByKeywordXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="concreteDataType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="limit" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindByKeywordXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindByKeywordXmlResult" nillable="true" type="q15:ArrayOfConcreteDataObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindConcreteDataTypesJson">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindConcreteDataTypesJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FindConcreteDataTypesJsonResult" nillable="true" type="q16:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindConcreteDataTypesXml">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindConcreteDataTypesXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FindConcreteDataTypesXmlResult" nillable="true" type="q17:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryConcreteDataJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element xmlns:q18="http://www.rapidwebdev.org/common" minOccurs="0" name="predicate" nillable="true" type="q18:WebServiceQueryPredicate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryConcreteDataJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://www.rapidwebdev.org/platform" minOccurs="0" name="QueryConcreteDataJsonResult" nillable="true" type="q19:ConcreteDataQueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ConcreteDataQueryResult">
+    <xs:sequence>
+      <xs:element xmlns:q20="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="ConcreteDataObject" nillable="true" type="q20:ConcreteDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q21="http://www.rapidwebdev.org/platform" name="ConcreteDataQueryResult" nillable="true" type="q21:ConcreteDataQueryResult" />
+  <xs:element name="QueryConcreteDataXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element xmlns:q22="http://www.rapidwebdev.org/common" minOccurs="0" name="predicate" nillable="true" type="q22:WebServiceQueryPredicate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryConcreteDataXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://www.rapidwebdev.org/platform" minOccurs="0" name="QueryConcreteDataXmlResult" nillable="true" type="q23:ConcreteDataQueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

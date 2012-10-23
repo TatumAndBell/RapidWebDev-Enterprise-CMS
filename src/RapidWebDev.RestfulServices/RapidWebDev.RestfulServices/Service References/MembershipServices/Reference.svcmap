@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="137215f9-5d6f-4276-a95d-d2febabf29d4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50682/Services/MembershipService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MembershipService.xsd" MetadataType="Schema" ID="23babee9-1fd9-4975-b43d-5bcbe564ace3" SourceId="1" SourceUrl="http://localhost:50682/Services/MembershipService.svc?xsd=xsd3" />
+    <MetadataFile FileName="MembershipService1.xsd" MetadataType="Schema" ID="6e8db77b-9dc4-41f2-9010-0f278af92bdc" SourceId="1" SourceUrl="http://localhost:50682/Services/MembershipService.svc?xsd=xsd5" />
+    <MetadataFile FileName="MembershipService2.xsd" MetadataType="Schema" ID="afa91ca6-0d82-4830-abc8-ed21946f87ec" SourceId="1" SourceUrl="http://localhost:50682/Services/MembershipService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MembershipService.disco" MetadataType="Disco" ID="bf6df3f2-76b9-4fe5-a107-b614cc97486b" SourceId="1" SourceUrl="http://localhost:50682/Services/MembershipService.svc?disco" />
+    <MetadataFile FileName="MembershipService3.xsd" MetadataType="Schema" ID="77b39198-46b6-458b-ba65-859144840d2b" SourceId="1" SourceUrl="http://localhost:50682/Services/MembershipService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MembershipService.wsdl" MetadataType="Wsdl" ID="15bf7ac2-fe91-45e3-826b-68e1f0fe4b6c" SourceId="1" SourceUrl="http://localhost:50682/Services/MembershipService.svc?wsdl" />
+    <MetadataFile FileName="MembershipService4.xsd" MetadataType="Schema" ID="37dbb103-156e-4765-82ca-629aa1c75f73" SourceId="1" SourceUrl="http://localhost:50682/Services/MembershipService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MembershipService5.xsd" MetadataType="Schema" ID="a673dc30-7775-4cc9-9820-4ef749764a44" SourceId="1" SourceUrl="http://localhost:50682/Services/MembershipService.svc?xsd=xsd4" />
+    <MetadataFile FileName="MembershipService1.wsdl" MetadataType="Wsdl" ID="2048fb6b-1c3a-4fb7-91e8-7745c8235d21" SourceId="1" SourceUrl="http://localhost:50682/Services/MembershipService.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

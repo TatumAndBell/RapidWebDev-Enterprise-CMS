@@ -1,0 +1,1 @@
+Please copy these xml schema files to "%ProgramFiles%\Microsoft Visual Studio 9.0\Xml\Schemas" so that you can get visual studio intelligence when you're editing the xml configurations.

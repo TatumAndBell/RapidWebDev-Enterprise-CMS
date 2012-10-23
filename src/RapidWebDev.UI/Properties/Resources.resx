@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DP_ControlElementNotSupported" xml:space="preserve">
+    <value>Not supported control configuration element {0}.</value>
+  </data>
+  <data name="DP_QueryPanelLayoutNotSupported" xml:space="preserve">
+    <value>The layout element {0} in query panel is not supported.</value>
+  </data>
+  <data name="DP_ConfiguredTransformCallbackTypeNotExists" xml:space="preserve">
+    <value>The configured IGridViewFieldValueTransformCallback implementation type {0} doesn't exist.</value>
+  </data>
+  <data name="DP_InvalidTableItemStyleConfiguration" xml:space="preserve">
+    <value>The value {0} of table item style {1} is invalid.</value>
+  </data>
+  <data name="DP_ConfiguredDynamicPageTypeNotExists" xml:space="preserve">
+    <value>The configured dynamic page type {0} for object {1} doesn't exist.</value>
+  </data>
+  <data name="DP_ConfigurationFileNotExists" xml:space="preserve">
+    <value>Specified configuration file [{0}] doesn't exist.</value>
+  </data>
+  <data name="DP_ConfigurationFileParsedIncorrect" xml:space="preserve">
+    <value>Errors occured while initializing configuration object from the configuration file {0}.</value>
+  </data>
+  <data name="DP_DuplicateConfigurationObject" xml:space="preserve">
+    <value>Duplicate configuration object [{0}].</value>
+  </data>
+  <data name="DP_InvalidConfigurationFileSchema" xml:space="preserve">
+    <value>Invalid configuration file [{0}] schema.</value>
+  </data>
+  <data name="Ctrl_CloseButtonText" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Ctrl_FlashUploadFeatureNotSpecified" xml:space="preserve">
+    <value>The feature of FlashUpload control is not specified.</value>
+  </data>
+  <data name="Ctrl_FlashUploadFileType" xml:space="preserve">
+    <value>File Type</value>
+  </data>
+  <data name="DPCtrl_CancelText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="DPCtrl_DeleteButtonClientConfirmMessage" xml:space="preserve">
+    <value>Are you sure to delete this record?</value>
+  </data>
+  <data name="DPCtrl_SaveText" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="DPCtrl_TemplateSkinFileNotExists" xml:space="preserve">
+    <value>The specified template skin file {0} doesn't exist.</value>
+  </data>
+  <data name="DP_BetweenValueMustBeEnumerableWithTwoItems" xml:space="preserve">
+    <value>The value for QueryFieldOperators.Between must implement IEnumerable with two items.</value>
+  </data>
+  <data name="DP_ControlTypeNotSupported" xml:space="preserve">
+    <value>The control type {0} is not supported.</value>
+  </data>
+  <data name="DP_MultipleDetailPanelConfigured" xml:space="preserve">
+    <value>There only allows maximum one detail panel configured in a dynamic page.</value>
+  </data>
+  <data name="DP_MultipleGridViewPanelConfigured" xml:space="preserve">
+    <value>There only allows maximum one gridview panel configured in a dynamic page.</value>
+  </data>
+  <data name="DP_MultipleQueryPanelConfigured" xml:space="preserve">
+    <value>There only allows maximum one query panel configured in a dynamic page.</value>
+  </data>
+  <data name="Ctrl_ComboBoxLoadingText" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Ctrl_DatePicker_DateFormatString" xml:space="preserve">
+    <value>Y-m-d</value>
+  </data>
+  <data name="Ctrl_DateTimePicker_ChooseHourText" xml:space="preserve">
+    <value>Choose hour</value>
+  </data>
+  <data name="Ctrl_DateTimePicker_ChooseMinuteText" xml:space="preserve">
+    <value>Choose Minute</value>
+  </data>
+  <data name="Ctrl_DateTimePicker_DateTimeFormatString" xml:space="preserve">
+    <value>Y-m-d H:i</value>
+  </data>
+  <data name="Ctrl_DateTimePicker_HourText" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="Ctrl_DateTimePicker_MinuteText" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="Ctrl_DateTimePicker_NextHourText" xml:space="preserve">
+    <value>Next Hour</value>
+  </data>
+  <data name="Ctrl_DateTimePicker_NextMinuteText" xml:space="preserve">
+    <value>Next Minute</value>
+  </data>
+  <data name="Ctrl_DateTimePicker_NowText" xml:space="preserve">
+    <value>Now</value>
+  </data>
+  <data name="Ctrl_DateTimePicker_PreviousHourText" xml:space="preserve">
+    <value>Previous Hour</value>
+  </data>
+  <data name="Ctrl_DateTimePicker_PreviousMinuteText" xml:space="preserve">
+    <value>Previous Minute</value>
+  </data>
+  <data name="Ctrl_PropertyConfigurationNotSpecified" xml:space="preserve">
+    <value>The property configuration is not specified.</value>
+  </data>
+  <data name="DPCtrl_QueryFieldControl_Between_Separator" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="DPCtrl_CustomControlTypeNotFound" xml:space="preserve">
+    <value>Configured Custom control type {0} not found.</value>
+  </data>
+  <data name="DPCtrl_InvalidCustomControlType" xml:space="preserve">
+    <value>Configured Custom control type {0} doesn't implement the interface IQueryFieldControl.</value>
+  </data>
+  <data name="DPCtrl_PostedValueControlIndexInvalid" xml:space="preserve">
+    <value>Control Index {0} of posted value is invalid.</value>
+  </data>
+  <data name="DPCtrl_QueryFieldControlNotSupport" xml:space="preserve">
+    <value>The specified query field control type {0} is not supported.</value>
+  </data>
+  <data name="Ctrl_QueryButtonText" xml:space="preserve">
+    <value>Query</value>
+  </data>
+  <data name="Ctrl_ResetButtonText" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="DPCtrl_Grid_ColumnHeadCheckBoxToolTip" xml:space="preserve">
+    <value>The checkbox checked in column header means that all records by the query includes not displayed ones in this grid page will be processed together.</value>
+  </data>
+  <data name="DPCtrl_Grid_DeleteConfirmMessageTemplate" xml:space="preserve">
+    <value>Are you sure to delete the {0}?</value>
+  </data>
+  <data name="DPCtrl_Grid_EmptyGridPanelMessageTemplate" xml:space="preserve">
+    <value>No {0} found by the query.</value>
+  </data>
+  <data name="DPCtrl_Grid_PagingDisplayMessageTemplate" xml:space="preserve">
+    <value>Displaying {EntityName} from {0} to {1} of total {2}.</value>
+  </data>
+  <data name="DPCtrl_Grid_PreviewButtonText" xml:space="preserve">
+    <value>Show Preview</value>
+  </data>
+  <data name="DP_ObjectIdNotConfigured" xml:space="preserve">
+    <value>The IDynamicPage instance with Id [{0}] is not configured.</value>
+  </data>
+  <data name="DPCtrl_EditText" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="DPCtrl_ViewText" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="DP_ControlValueConvertFailedMessage" xml:space="preserve">
+    <value>The post value {0} cannot be converted to {1} properly.</value>
+  </data>
+  <data name="DP_ControlValueResolverUnavailable" xml:space="preserve">
+    <value>The IControlValueResolver with name "{0}" is not configured properly.</value>
+  </data>
+  <data name="DP_GridFieldNameInvalid" xml:space="preserve">
+    <value>The framework cannot recognize specified field name {0} correctly.</value>
+  </data>
+  <data name="DP_IndexerGridFieldNameNotSupported" xml:space="preserve">
+    <value>Currently the framework doesn't support indexer property binding {0}. The workaround is to create an Dictionary typed property to store key-value pairs in indexer property.</value>
+  </data>
+  <data name="DPCtrl_SummaryText" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="DP_DuplicateAggregatePanelCommandArgumentConfigured" xml:space="preserve">
+    <value>Duplicate command argument "{0}" of aggregate panel configured in the dynamic page.</value>
+  </data>
+  <data name="DPCtrl_DeleteText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Ctrl_AspnetPager_AllText" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Ctrl_AspnetPager_InvalidPageIndex" xml:space="preserve">
+    <value>The page index is invalid.</value>
+  </data>
+  <data name="Ctrl_AspnetPager_OccurErrorWhenCreateControls" xml:space="preserve">
+    <value>Occurs error while creating controls. The detail exception is: </value>
+  </data>
+  <data name="Ctrl_AspnetPager_PageNumberOutOfIndex" xml:space="preserve">
+    <value>The page number is out of index.</value>
+  </data>
+  <data name="Ctrl_AspnetPager_SubmitText" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Ctrl_NoControlFoundByCallbackControlId" xml:space="preserve">
+    <value>No control found by the property "CallbackControlId".</value>
+  </data>
+  <data name="Ctrl_PropertyCallbackControlIdCannotBeNullOrEmpty" xml:space="preserve">
+    <value>The property "CallbackControlId" cannot be null or empty.</value>
+  </data>
+  <data name="Ctrl_PropertyObjectIdCannotBeNullOrEmpty" xml:space="preserve">
+    <value>The property "ObjectId" cannot be null or empty.</value>
+  </data>
+  <data name="Ctrl_QueryStringFeatureNotSpecified" xml:space="preserve">
+    <value>The query string "Feature" is not specified.</value>
+  </data>
+  <data name="Ctrl_QueryStringUploadingIdIdentifierNotSpecified" xml:space="preserve">
+    <value>The query string "UploadingIdentifier" is not specified.</value>
+  </data>
+  <data name="DP_VariableNotExistInCurrentContext" xml:space="preserve">
+    <value>The variable ${0}$ defined in "{1}" doesn't exist in IApplicationContext.TempVariables.</value>
+  </data>
+  <data name="DPCtrl_Grid_DeleteConfirmDialogTitle" xml:space="preserve">
+    <value>Delete Confirmation</value>
+  </data>
+  <data name="DP_ConfiguredDynamicPageTypeNotImplementIDynamicPage" xml:space="preserve">
+    <value>The configured dynamic page type {0} for object {1} doesn't implement the interface IDynamicPage.</value>
+  </data>
+  <data name="DP_ConfiguredFormPanelTypeNotExists" xml:space="preserve">
+    <value>The configured form panel type {0} for object {1} doesn't exist.</value>
+  </data>
+  <data name="DP_ConfiguredFormPanelTypeNotImplementIDynamicComponent" xml:space="preserve">
+    <value>The configured form panel type {0} for object {1} doesn't implement the interface IDynamicComponent.</value>
+  </data>
+  <data name="DP_InvalidAggregatePanelType" xml:space="preserve">
+    <value>The configured aggregate panel type "{0}" for the command argument "{1}" of the dynamic page is invalid or doesn't implement the interface IAggregatePanelPage.</value>
+  </data>
+  <data name="DP_DetailPanel_InvalidParentControlPath" xml:space="preserve">
+    <value>The specified ParentControlPath "{0}" is invalid in the template file.</value>
+  </data>
+  <data name="DP_SavedSuccessfullyMessage" xml:space="preserve">
+    <value>Saved successfully!</value>
+  </data>
+  <data name="DP_InformationText" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="DP_UnknownErrorDetail" xml:space="preserve">
+    <value>Unknown error is occured and it has been logged, please try it later or contact the system administrator.</value>
+  </data>
+  <data name="DP_WarningText" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="DP_UnauthorizedAccess" xml:space="preserve">
+    <value>The access is unauthorized due to you have not logged on or your authentication ticket has been expired.</value>
+  </data>
+  <data name="DPCtrl_SaveAndAddAnotherText" xml:space="preserve">
+    <value>Save &amp; Add Another</value>
+  </data>
+  <data name="DPCtrl_SaveAndCloseText" xml:space="preserve">
+    <value>Save &amp; Close</value>
+  </data>
+  <data name="FP_DefaultPageTitle" xml:space="preserve">
+    <value>RapidWebDev - The Key To Speed Up Your Business.</value>
+  </data>
+  <data name="Ctrl_OrganizationLink_OrganizationText" xml:space="preserve">
+    <value>Organization Profile</value>
+  </data>
+  <data name="Ctrl_UserLink_UserText" xml:space="preserve">
+    <value>User Profile</value>
+  </data>
+  <data name="DP_RowView_HeaderText" xml:space="preserve">
+    <value>Extra</value>
+  </data>
+  <data name="DP_Ascending" xml:space="preserve">
+    <value>Ascending</value>
+  </data>
+  <data name="DP_Descending" xml:space="preserve">
+    <value>Descending</value>
+  </data>
+  <data name="DP_PrintResultSortingDescription" xml:space="preserve">
+    <value>The records are sorted by "{0}" in {1}.</value>
+  </data>
+  <data name="DP_QueryFieldOperator_Auto" xml:space="preserve">
+    <value>compares with</value>
+  </data>
+  <data name="DP_QueryFieldOperator_Between" xml:space="preserve">
+    <value>is between</value>
+  </data>
+  <data name="DP_QueryFieldOperator_Equal" xml:space="preserve">
+    <value>equals to</value>
+  </data>
+  <data name="DP_QueryFieldOperator_GreaterEqualThan" xml:space="preserve">
+    <value>is greater equal than</value>
+  </data>
+  <data name="DP_QueryFieldOperator_GreaterThan" xml:space="preserve">
+    <value>is greater than</value>
+  </data>
+  <data name="DP_QueryFieldOperator_In" xml:space="preserve">
+    <value>is in</value>
+  </data>
+  <data name="DP_QueryFieldOperator_LessEqualThan" xml:space="preserve">
+    <value>is less equal than</value>
+  </data>
+  <data name="DP_QueryFieldOperator_LessThan" xml:space="preserve">
+    <value>is less than</value>
+  </data>
+  <data name="DP_QueryFieldOperator_Like" xml:space="preserve">
+    <value>likes</value>
+  </data>
+  <data name="DP_QueryFieldOperator_NotIn" xml:space="preserve">
+    <value>is not in</value>
+  </data>
+  <data name="DP_QueryFieldOperator_StartsWith" xml:space="preserve">
+    <value>starts with</value>
+  </data>
+  <data name="DP_DynamicPage_Print_HeadBar_Template" xml:space="preserve">
+    <value>Displaying {0} issues as at {1} by {2}.</value>
+  </data>
+  <data name="DP_InvalidDetailPanelType" xml:space="preserve">
+    <value>The configured detail panel type "{0}" of the dynamic page is invalid or doesn't implement the interface IDetailPanelPage.</value>
+  </data>
+  <data name="DPCtrl_LoadingText" xml:space="preserve">
+    <value>Loading, please wait for a while.</value>
+  </data>
+  <data name="DTCtrl_LoadRemoteDataFailed" xml:space="preserve">
+    <value>Load remote data failed.</value>
+  </data>
+  <data name="DPCtrl_Selector" xml:space="preserve">
+    <value>Selector</value>
+  </data>
+</root>

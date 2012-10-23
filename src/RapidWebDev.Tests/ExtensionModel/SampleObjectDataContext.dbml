@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Application.Framework" Class="SampleObjectDataContext" BaseType="RapidWebDev.ExtensionModel.Linq.ExtensionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=Application.Framework;Integrated Security=True" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ext_SampleObjects" Member="SampleObjects">
+    <Type Name="SampleObject">
+      <Column Name="ObjectId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="ExtensionDataTypeId" Modifier="Override" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ExtensionData" Modifier="Override" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

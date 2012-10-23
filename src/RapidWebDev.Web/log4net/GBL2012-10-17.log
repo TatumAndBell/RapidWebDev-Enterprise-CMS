@@ -1,0 +1,939 @@
+2012-10-17 20:58:45,249  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Keyword not supported: 'username'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(String connectionString, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(String value)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle._InvokeConstructor(IRuntimeMethodInfo method, Object[] args, SignatureStruct& signature, RuntimeType declaringType)
+   at System.RuntimeMethodHandle.InvokeConstructor(IRuntimeMethodInfo method, Object[] args, SignatureStruct signature, RuntimeType declaringType)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at RapidWebDev.Common.Data.DataContextFactory.ResolveDbConnectionReference(String connectionStringName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 271
+   at RapidWebDev.Common.Data.DataContextFactory.Create[T]() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 118
+   at RapidWebDev.Platform.Linq.ApplicationApi.Get(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 120
+   at RapidWebDev.Platform.Linq.ApplicationApi.Exists(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 141
+   at RapidWebDev.Platform.Initialization.ApplicationInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\ApplicationInstaller.cs:line 70
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 20:59:27,558  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/default.aspx
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Keyword not supported: 'username'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(String connectionString, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(String value)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   --- End of inner exception stack trace ---
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 20:59:49,093  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Keyword not supported: 'username'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(String connectionString, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(String value)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle._InvokeConstructor(IRuntimeMethodInfo method, Object[] args, SignatureStruct& signature, RuntimeType declaringType)
+   at System.RuntimeMethodHandle.InvokeConstructor(IRuntimeMethodInfo method, Object[] args, SignatureStruct signature, RuntimeType declaringType)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at RapidWebDev.Common.Data.DataContextFactory.ResolveDbConnectionReference(String connectionStringName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 271
+   at RapidWebDev.Common.Data.DataContextFactory.Create[T]() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 118
+   at RapidWebDev.Platform.Linq.ApplicationApi.Get(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 120
+   at RapidWebDev.Platform.Linq.ApplicationApi.Exists(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 141
+   at RapidWebDev.Platform.Initialization.ApplicationInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\ApplicationInstaller.cs:line 70
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:00:35,512  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/default.aspx
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Keyword not supported: 'username'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(String connectionString, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(String value)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   --- End of inner exception stack trace ---
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:03:00,085  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Keyword not supported: 'username'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(String connectionString, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(String value)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle._InvokeConstructor(IRuntimeMethodInfo method, Object[] args, SignatureStruct& signature, RuntimeType declaringType)
+   at System.RuntimeMethodHandle.InvokeConstructor(IRuntimeMethodInfo method, Object[] args, SignatureStruct signature, RuntimeType declaringType)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at RapidWebDev.Common.Data.DataContextFactory.ResolveDbConnectionReference(String connectionStringName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 271
+   at RapidWebDev.Common.Data.DataContextFactory.Create[T]() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 118
+   at RapidWebDev.Platform.Linq.ApplicationApi.Get(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 120
+   at RapidWebDev.Platform.Linq.ApplicationApi.Exists(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 141
+   at RapidWebDev.Platform.Initialization.ApplicationInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\ApplicationInstaller.cs:line 70
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:03:00,086  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/default.aspx
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Keyword not supported: 'username'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(String connectionString, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(String value)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   --- End of inner exception stack trace ---
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:04:38,066  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Keyword not supported: 'username'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(String connectionString, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(String value)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle._InvokeConstructor(IRuntimeMethodInfo method, Object[] args, SignatureStruct& signature, RuntimeType declaringType)
+   at System.RuntimeMethodHandle.InvokeConstructor(IRuntimeMethodInfo method, Object[] args, SignatureStruct signature, RuntimeType declaringType)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at RapidWebDev.Common.Data.DataContextFactory.ResolveDbConnectionReference(String connectionStringName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 271
+   at RapidWebDev.Common.Data.DataContextFactory.Create[T]() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 118
+   at RapidWebDev.Platform.Linq.ApplicationApi.Get(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 120
+   at RapidWebDev.Platform.Linq.ApplicationApi.Exists(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 141
+   at RapidWebDev.Platform.Initialization.ApplicationInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\ApplicationInstaller.cs:line 70
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:04:38,110  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/default.aspx
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Keyword not supported: 'username'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(String connectionString, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(String value)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   --- End of inner exception stack trace ---
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:04:56,568  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Keyword not supported: 'username'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(String connectionString, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(String value)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle._InvokeConstructor(IRuntimeMethodInfo method, Object[] args, SignatureStruct& signature, RuntimeType declaringType)
+   at System.RuntimeMethodHandle.InvokeConstructor(IRuntimeMethodInfo method, Object[] args, SignatureStruct signature, RuntimeType declaringType)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at RapidWebDev.Common.Data.DataContextFactory.ResolveDbConnectionReference(String connectionStringName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 271
+   at RapidWebDev.Common.Data.DataContextFactory.Create[T]() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 118
+   at RapidWebDev.Platform.Linq.ApplicationApi.Get(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 120
+   at RapidWebDev.Platform.Linq.ApplicationApi.Exists(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 141
+   at RapidWebDev.Platform.Initialization.ApplicationInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\ApplicationInstaller.cs:line 70
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:04:56,569  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/logon.aspx
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Keyword not supported: 'username'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(String connectionString, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(String value)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   --- End of inner exception stack trace ---
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:04:56,707  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Keyword not supported: 'username'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(String connectionString, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(String value)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle._InvokeConstructor(IRuntimeMethodInfo method, Object[] args, SignatureStruct& signature, RuntimeType declaringType)
+   at System.RuntimeMethodHandle.InvokeConstructor(IRuntimeMethodInfo method, Object[] args, SignatureStruct signature, RuntimeType declaringType)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at RapidWebDev.Common.Data.DataContextFactory.ResolveDbConnectionReference(String connectionStringName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 271
+   at RapidWebDev.Common.Data.DataContextFactory.Create[T]() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 118
+   at RapidWebDev.Platform.Linq.ApplicationApi.Get(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 120
+   at RapidWebDev.Platform.Linq.ApplicationApi.Exists(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 141
+   at RapidWebDev.Platform.Initialization.ApplicationInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\ApplicationInstaller.cs:line 70
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:04:56,708  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/favicon.ico
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: Keyword not supported: 'username'.
+   at System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   at System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   at System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(String connectionString, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at System.Data.SqlClient.SqlConnection.ConnectionString_Set(String value)
+   at System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   --- End of inner exception stack trace ---
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:05:49,030  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:05:49,073  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:06:33,000  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/LogOn.aspx
+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:06:33,054  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.InvalidOperationException: The transaction associated with the current connection has completed but has not been disposed.  The transaction must be disposed before the connection can be used to execute SQL statements.
+   at System.Data.SqlClient.SqlInternalConnectionTds.CheckEnlistedTransactionBinding()
+   at System.Data.SqlClient.TdsParser.TdsExecuteRPC(_SqlRPC[] rpcArray, Int32 timeout, Boolean inSchema, SqlNotificationRequest notificationRequest, TdsParserStateObject stateObj, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.ChangeDirector.StandardChangeDirector.DynamicInsert(TrackedObject item)
+   at System.Data.Linq.ChangeDirector.StandardChangeDirector.Insert(TrackedObject item)
+   at System.Data.Linq.ChangeProcessor.SubmitChanges(ConflictMode failureMode)
+   at System.Data.Linq.DataContext.SubmitChanges(ConflictMode failureMode)
+   at System.Data.Linq.DataContext.SubmitChanges()
+   at RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.AddType(String name, String category, String description, ObjectMetadataTypes objectMetadataType, Boolean isGlobal, Nullable`1 parentObjectMetadataId, Int32 version) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.ExtensionModel\Linq\DLinqMetadataApi.cs:line 108
+   at RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.AddType(String name, String category, String description, ObjectMetadataTypes objectMetadataType, Boolean isGlobal, Nullable`1 parentObjectMetadataId) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.ExtensionModel\Linq\DLinqMetadataApi.cs:line 63
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SetupMetadataTypeByDomain(Guid applicationId) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 153
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 69
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:06:33,079  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/logon.aspx
+
+System.InvalidOperationException: The transaction associated with the current connection has completed but has not been disposed.  The transaction must be disposed before the connection can be used to execute SQL statements.
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:06:49,441  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.InvalidOperationException: Internal .Net Framework Data Provider error 60.
+   at System.Data.SqlClient.SqlDelegatedTransaction.Initialize()
+   at System.Transactions.TransactionStatePSPEOperation.PSPEInitialize(InternalTransaction tx, IPromotableSinglePhaseNotification promotableSinglePhaseNotification)
+   at System.Transactions.TransactionStateActive.EnlistPromotableSinglePhase(InternalTransaction tx, IPromotableSinglePhaseNotification promotableSinglePhaseNotification, Transaction atomicTransaction)
+   at System.Transactions.Transaction.EnlistPromotableSinglePhase(IPromotableSinglePhaseNotification promotableSinglePhaseNotification)
+   at System.Data.SqlClient.SqlInternalConnection.EnlistNonNull(Transaction tx)
+   at System.Data.SqlClient.SqlInternalConnection.Enlist(Transaction tx)
+   at System.Data.SqlClient.SqlInternalConnectionTds.Activate(Transaction transaction)
+   at System.Data.ProviderBase.DbConnectionInternal.ActivateConnection(Transaction transaction)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at RapidWebDev.Common.Data.DataContextFactory.TryToOpenDbConnection(IDbConnection connection) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 316
+   at RapidWebDev.Common.Data.DataContextFactory.ResolveDbConnectionReference(String connectionStringName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 272
+   at RapidWebDev.Common.Data.DataContextFactory.Create[T]() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 118
+   at RapidWebDev.Platform.Linq.ApplicationApi.Get(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 120
+   at RapidWebDev.Platform.Linq.ApplicationApi.Exists(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 141
+   at RapidWebDev.Platform.Initialization.ApplicationInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\ApplicationInstaller.cs:line 70
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:06:49,449  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/LogOn.aspx
+
+System.InvalidOperationException: Internal .Net Framework Data Provider error 60.
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:07:11,018  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:07:11,019  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:07:11,019  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/logon.aspx
+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:07:11,187  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:07:11,188  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:07:11,189  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/favicon.ico
+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:08:08,188  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:08:08,189  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:08:08,190  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/logon.aspx
+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:08:08,289  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:08:08,290  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:08:08,290  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/favicon.ico
+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:10:20,089  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.Transactions.TransactionException: The operation is not valid for the state of the transaction. ---> System.TimeoutException: Transaction Timeout
+   --- End of inner exception stack trace ---
+   at System.Transactions.TransactionState.EnlistPromotableSinglePhase(InternalTransaction tx, IPromotableSinglePhaseNotification promotableSinglePhaseNotification, Transaction atomicTransaction)
+   at System.Transactions.Transaction.EnlistPromotableSinglePhase(IPromotableSinglePhaseNotification promotableSinglePhaseNotification)
+   at System.Data.SqlClient.SqlInternalConnection.EnlistNonNull(Transaction tx)
+   at System.Data.SqlClient.SqlInternalConnection.Enlist(Transaction tx)
+   at System.Data.SqlClient.SqlInternalConnectionTds.Activate(Transaction transaction)
+   at System.Data.ProviderBase.DbConnectionInternal.ActivateConnection(Transaction transaction)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at RapidWebDev.Common.Data.DataContextFactory.TryToOpenDbConnection(IDbConnection connection) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 316
+   at RapidWebDev.Common.Data.DataContextFactory.ResolveDbConnectionReference(String connectionStringName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 272
+   at RapidWebDev.Common.Data.DataContextFactory.Create[T]() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 118
+   at RapidWebDev.Platform.Linq.ApplicationApi.Get(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 120
+   at RapidWebDev.Platform.Linq.ApplicationApi.Exists(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 141
+   at RapidWebDev.Platform.Initialization.ApplicationInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\ApplicationInstaller.cs:line 70
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:10:20,109  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/LogOn.aspx
+
+System.Transactions.TransactionException: The operation is not valid for the state of the transaction. ---> System.TimeoutException: Transaction Timeout
+   --- End of inner exception stack trace ---
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:10:57,244  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:11:07,432  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:11:35,859  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/LogOn.aspx
+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 69
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:12:24,253  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:12:32,507  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:12:41,510  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/LogOn.aspx
+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 70
+   at RapidWebDev.Platform.PlatformModule.OnAuthenticateRequest(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 65
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:13:26,991  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:13:27,028  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:13:28,690  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/LogOn.aspx
+
+System.TypeInitializationException: The type initializer for 'Spring.Web.Support.ControlAccessor' threw an exception. ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: field
+   at System.Reflection.Emit.DynamicILGenerator.Emit(OpCode opcode, FieldInfo field)
+   at Spring.Web.Support.ControlAccessor.GetGetControlsDelegate()
+   at Spring.Web.Support.ControlAccessor..cctor()
+   --- End of inner exception stack trace ---
+   at Spring.Web.Support.ControlAccessor..ctor(Control control)
+   at Spring.Web.Support.ControlInterceptor.EnsureControlCollectionIntercepted(IApplicationContext defaultApplicationContext, Control control)
+   at Spring.Web.Support.ControlInterceptor.EnsureControlIntercepted(IApplicationContext defaultApplicationContext, Control control)
+   at Spring.Web.Support.AbstractHandlerFactory.ApplyDependencyInjectionInfrastructure(IHttpHandler handler, IApplicationContext applicationContext)
+   at Spring.Web.Support.AbstractHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   at Spring.Web.Support.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, VirtualPath path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.HttpApplication.MapHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:15:05,849  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/Services/ApplicationService.svc
+
+System.ServiceModel.ServiceActivationException: The service '/Services/ApplicationService.svc' cannot be activated due to an exception during compilation.  The exception message is: Could not load file or assembly 'RapidWebDev.Platform, Version=1.5.3.0, Culture=neutral, PublicKeyToken=2f591358dee58e19' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040). ---> System.IO.FileLoadException: Could not load file or assembly 'RapidWebDev.Platform, Version=1.5.3.0, Culture=neutral, PublicKeyToken=2f591358dee58e19' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, Boolean loadTypeFromPartialName)
+   at System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at System.ServiceModel.Configuration.ServiceAuthorizationElement.CreateBehavior()
+   at System.ServiceModel.Description.ConfigLoader.LoadBehaviors[T](ServiceModelExtensionCollectionElement`1 behaviorElement, KeyedByTypeCollection`1 behaviors, Boolean commonBehaviors)
+   at System.ServiceModel.Description.ConfigLoader.LoadServiceDescription(ServiceHostBase host, ServiceDescription description, ServiceElement serviceElement, Action`1 addBaseAddress)
+   at System.ServiceModel.ServiceHostBase.LoadConfigurationSectionInternal(ConfigLoader configLoader, ServiceDescription description, ServiceElement serviceSection)
+   at System.ServiceModel.ServiceHostBase.ApplyConfiguration()
+   at System.ServiceModel.ServiceHostBase.InitializeDescription(UriSchemeKeyedCollection baseAddresses)
+   at System.ServiceModel.ServiceHost.InitializeDescription(Type serviceType, UriSchemeKeyedCollection baseAddresses)
+   at System.ServiceModel.ServiceHost..ctor(Type serviceType, Uri[] baseAddresses)
+   at System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost(Type serviceType, Uri[] baseAddresses)
+   at System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost(String constructorString, Uri[] baseAddresses)
+   at System.ServiceModel.ServiceHostingEnvironment.HostingManager.CreateService(String normalizedVirtualPath)
+   at System.ServiceModel.ServiceHostingEnvironment.HostingManager.ActivateService(String normalizedVirtualPath)
+   at System.ServiceModel.ServiceHostingEnvironment.HostingManager.EnsureServiceAvailable(String normalizedVirtualPath)
+   --- End of inner exception stack trace ---
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.ExecuteSynchronous(HttpApplication context, String routeServiceVirtualPath, Boolean flowContext, Boolean ensureWFService)
+   at System.ServiceModel.Activation.HttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:16:18,943  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:16:18,967  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:16:19,100  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/Services/ApplicationService.svc
+
+System.ServiceModel.ServiceActivationException: The service '/Services/ApplicationService.svc' cannot be activated due to an exception during compilation.  The exception message is: Could not load file or assembly 'RapidWebDev.Platform, Version=1.5.3.0, Culture=neutral, PublicKeyToken=2f591358dee58e19' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040). ---> System.IO.FileLoadException: Could not load file or assembly 'RapidWebDev.Platform, Version=1.5.3.0, Culture=neutral, PublicKeyToken=2f591358dee58e19' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, Boolean loadTypeFromPartialName)
+   at System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at System.ServiceModel.Configuration.ServiceAuthorizationElement.CreateBehavior()
+   at System.ServiceModel.Description.ConfigLoader.LoadBehaviors[T](ServiceModelExtensionCollectionElement`1 behaviorElement, KeyedByTypeCollection`1 behaviors, Boolean commonBehaviors)
+   at System.ServiceModel.Description.ConfigLoader.LoadServiceDescription(ServiceHostBase host, ServiceDescription description, ServiceElement serviceElement, Action`1 addBaseAddress)
+   at System.ServiceModel.ServiceHostBase.LoadConfigurationSectionInternal(ConfigLoader configLoader, ServiceDescription description, ServiceElement serviceSection)
+   at System.ServiceModel.ServiceHostBase.ApplyConfiguration()
+   at System.ServiceModel.ServiceHostBase.InitializeDescription(UriSchemeKeyedCollection baseAddresses)
+   at System.ServiceModel.ServiceHost.InitializeDescription(Type serviceType, UriSchemeKeyedCollection baseAddresses)
+   at System.ServiceModel.ServiceHost..ctor(Type serviceType, Uri[] baseAddresses)
+   at System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost(Type serviceType, Uri[] baseAddresses)
+   at System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost(String constructorString, Uri[] baseAddresses)
+   at System.ServiceModel.ServiceHostingEnvironment.HostingManager.CreateService(String normalizedVirtualPath)
+   at System.ServiceModel.ServiceHostingEnvironment.HostingManager.ActivateService(String normalizedVirtualPath)
+   at System.ServiceModel.ServiceHostingEnvironment.HostingManager.EnsureServiceAvailable(String normalizedVirtualPath)
+   --- End of inner exception stack trace ---
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.ExecuteSynchronous(HttpApplication context, String routeServiceVirtualPath, Boolean flowContext, Boolean ensureWFService)
+   at System.ServiceModel.Activation.HttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:19:43,985  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:19:44,006  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:19:44,110  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/Services/ApplicationService.svc
+
+System.ServiceModel.ServiceActivationException: The service '/Services/ApplicationService.svc' cannot be activated due to an exception during compilation.  The exception message is: Could not load file or assembly 'RapidWebDev.Platform, Version=1.5.4.0, Culture=neutral, PublicKeyToken=2f591358dee58e19' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040). ---> System.IO.FileLoadException: Could not load file or assembly 'RapidWebDev.Platform, Version=1.5.4.0, Culture=neutral, PublicKeyToken=2f591358dee58e19' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, Boolean loadTypeFromPartialName)
+   at System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at System.ServiceModel.Configuration.ServiceAuthorizationElement.CreateBehavior()
+   at System.ServiceModel.Description.ConfigLoader.LoadBehaviors[T](ServiceModelExtensionCollectionElement`1 behaviorElement, KeyedByTypeCollection`1 behaviors, Boolean commonBehaviors)
+   at System.ServiceModel.Description.ConfigLoader.LoadServiceDescription(ServiceHostBase host, ServiceDescription description, ServiceElement serviceElement, Action`1 addBaseAddress)
+   at System.ServiceModel.ServiceHostBase.LoadConfigurationSectionInternal(ConfigLoader configLoader, ServiceDescription description, ServiceElement serviceSection)
+   at System.ServiceModel.ServiceHostBase.ApplyConfiguration()
+   at System.ServiceModel.ServiceHostBase.InitializeDescription(UriSchemeKeyedCollection baseAddresses)
+   at System.ServiceModel.ServiceHost.InitializeDescription(Type serviceType, UriSchemeKeyedCollection baseAddresses)
+   at System.ServiceModel.ServiceHost..ctor(Type serviceType, Uri[] baseAddresses)
+   at System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost(Type serviceType, Uri[] baseAddresses)
+   at System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost(String constructorString, Uri[] baseAddresses)
+   at System.ServiceModel.ServiceHostingEnvironment.HostingManager.CreateService(String normalizedVirtualPath)
+   at System.ServiceModel.ServiceHostingEnvironment.HostingManager.ActivateService(String normalizedVirtualPath)
+   at System.ServiceModel.ServiceHostingEnvironment.HostingManager.EnsureServiceAvailable(String normalizedVirtualPath)
+   --- End of inner exception stack trace ---
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.ExecuteSynchronous(HttpApplication context, String routeServiceVirtualPath, Boolean flowContext, Boolean ensureWFService)
+   at System.ServiceModel.Activation.HttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:20:28,670  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:20:28,690  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:20:28,799  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/Services/ApplicationService.svc
+
+System.ServiceModel.ServiceActivationException: The service '/Services/ApplicationService.svc' cannot be activated due to an exception during compilation.  The exception message is: Could not load type 'RapidWebDev.Platform.Services.RapidWebServiceAuthorizationManager' from assembly 'System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.. ---> System.TypeLoadException: Could not load type 'RapidWebDev.Platform.Services.RapidWebServiceAuthorizationManager' from assembly 'System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, Boolean loadTypeFromPartialName)
+   at System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at System.ServiceModel.Configuration.ServiceAuthorizationElement.CreateBehavior()
+   at System.ServiceModel.Description.ConfigLoader.LoadBehaviors[T](ServiceModelExtensionCollectionElement`1 behaviorElement, KeyedByTypeCollection`1 behaviors, Boolean commonBehaviors)
+   at System.ServiceModel.Description.ConfigLoader.LoadServiceDescription(ServiceHostBase host, ServiceDescription description, ServiceElement serviceElement, Action`1 addBaseAddress)
+   at System.ServiceModel.ServiceHostBase.LoadConfigurationSectionInternal(ConfigLoader configLoader, ServiceDescription description, ServiceElement serviceSection)
+   at System.ServiceModel.ServiceHostBase.ApplyConfiguration()
+   at System.ServiceModel.ServiceHostBase.InitializeDescription(UriSchemeKeyedCollection baseAddresses)
+   at System.ServiceModel.ServiceHost.InitializeDescription(Type serviceType, UriSchemeKeyedCollection baseAddresses)
+   at System.ServiceModel.ServiceHost..ctor(Type serviceType, Uri[] baseAddresses)
+   at System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost(Type serviceType, Uri[] baseAddresses)
+   at System.ServiceModel.Activation.ServiceHostFactory.CreateServiceHost(String constructorString, Uri[] baseAddresses)
+   at System.ServiceModel.ServiceHostingEnvironment.HostingManager.CreateService(String normalizedVirtualPath)
+   at System.ServiceModel.ServiceHostingEnvironment.HostingManager.ActivateService(String normalizedVirtualPath)
+   at System.ServiceModel.ServiceHostingEnvironment.HostingManager.EnsureServiceAvailable(String normalizedVirtualPath)
+   --- End of inner exception stack trace ---
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result)
+   at System.ServiceModel.Activation.HostedHttpRequestAsyncResult.ExecuteSynchronous(HttpApplication context, String routeServiceVirtualPath, Boolean flowContext, Boolean ensureWFService)
+   at System.ServiceModel.Activation.HttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:20:50,657  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:20:50,682  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:20:50,905  ERROR  RapidWebDev.Platform.Linq.MembershipDbProvider  [(null)]  -  RapidWebDev.Common.InvalidSaaSApplicationException: The application "localhost" doesn't exist.
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInvocation(InvocationExpression invoke)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitBinary(BinaryExpression b)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitBinary(BinaryExpression b)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitWhere(Expression sequence, LambdaExpression predicate)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSelect(Expression sequence, LambdaExpression selector)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitFirst(Expression sequence, LambdaExpression lambda, Boolean isFirst)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.ConvertOuter(Expression node)
+   at System.Data.Linq.SqlClient.SqlProvider.BuildQuery(Expression query, SqlNodeAnnotations annotations)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataQuery`1.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at RapidWebDev.Platform.Linq.MembershipDbProvider.Get(String userName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\MembershipDbProvider.cs:line 220
+
+2012-10-17 21:20:50,916  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/Services/ApplicationService.svc
+
+RapidWebDev.Common.InvalidSaaSApplicationException: The application "localhost" doesn't exist.
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInvocation(InvocationExpression invoke)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitBinary(BinaryExpression b)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitBinary(BinaryExpression b)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitWhere(Expression sequence, LambdaExpression predicate)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSelect(Expression sequence, LambdaExpression selector)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitFirst(Expression sequence, LambdaExpression lambda, Boolean isFirst)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.ConvertOuter(Expression node)
+   at System.Data.Linq.SqlClient.SqlProvider.BuildQuery(Expression query, SqlNodeAnnotations annotations)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataQuery`1.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at RapidWebDev.Platform.Linq.MembershipDbProvider.Get(String userName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\MembershipDbProvider.cs:line 231
+   at RapidWebDev.Platform.Linq.MembershipApi.Get(String userName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\MembershipApi.cs:line 196
+   at RapidWebDev.Platform.HttpAuthenticationContext.get_User() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\HttpAuthenticationContext.cs:line 146
+   at RapidWebDev.Platform.HttpAuthenticationContext.Act() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\HttpAuthenticationContext.cs:line 219
+   at RapidWebDev.Platform.PlatformModule.OnPostRequestHandlerExecute(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 75
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:22:57,523  ERROR  RapidWebDev.Platform.Initialization.CredentialInstaller  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 437
+
+2012-10-17 21:22:57,547  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.NullReferenceException: Object reference not set to an instance of an object.
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.EncodePassword(String password, String passwordSalt) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 595
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.ValidatePassword(String passwordSalt, String password, String& encodedPassword) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 586
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.SaveUser(Guid applicationId, UserObject userObject, String password, String passwordAnswer) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 505
+   at RapidWebDev.Platform.Initialization.CredentialInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\CredentialInstaller.cs:line 84
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:23:00,221  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/LogOn.aspx
+
+System.TypeInitializationException: The type initializer for 'Spring.Web.Support.ControlAccessor' threw an exception. ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: field
+   at System.Reflection.Emit.DynamicILGenerator.Emit(OpCode opcode, FieldInfo field)
+   at Spring.Web.Support.ControlAccessor.GetGetControlsDelegate()
+   at Spring.Web.Support.ControlAccessor..cctor()
+   --- End of inner exception stack trace ---
+   at Spring.Web.Support.ControlAccessor.GetChildControlCollection()
+   at Spring.Web.Support.ControlAccessor.get_Controls()
+   at Spring.Web.Support.ControlInterceptor.EnsureControlCollectionIntercepted(IApplicationContext defaultApplicationContext, Control control)
+   at Spring.Web.Support.ControlInterceptor.EnsureControlIntercepted(IApplicationContext defaultApplicationContext, Control control)
+   at Spring.Web.Support.AbstractHandlerFactory.ApplyDependencyInjectionInfrastructure(IHttpHandler handler, IApplicationContext applicationContext)
+   at Spring.Web.Support.AbstractHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   at Spring.Web.Support.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, VirtualPath path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.HttpApplication.MapHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:23:06,675  ERROR  RapidWebDev.Platform.Linq.MembershipDbProvider  [(null)]  -  RapidWebDev.Common.InvalidSaaSApplicationException: The application "localhost" doesn't exist.
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInvocation(InvocationExpression invoke)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitBinary(BinaryExpression b)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitBinary(BinaryExpression b)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitWhere(Expression sequence, LambdaExpression predicate)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSelect(Expression sequence, LambdaExpression selector)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitFirst(Expression sequence, LambdaExpression lambda, Boolean isFirst)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.ConvertOuter(Expression node)
+   at System.Data.Linq.SqlClient.SqlProvider.BuildQuery(Expression query, SqlNodeAnnotations annotations)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataQuery`1.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at RapidWebDev.Platform.Linq.MembershipDbProvider.Get(String userName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\MembershipDbProvider.cs:line 220
+
+2012-10-17 21:23:06,676  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/Services/ApplicationService.svc
+
+RapidWebDev.Common.InvalidSaaSApplicationException: The application "localhost" doesn't exist.
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInvocation(InvocationExpression invoke)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitBinary(BinaryExpression b)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitBinary(BinaryExpression b)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitWhere(Expression sequence, LambdaExpression predicate)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSelect(Expression sequence, LambdaExpression selector)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitFirst(Expression sequence, LambdaExpression lambda, Boolean isFirst)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.ConvertOuter(Expression node)
+   at System.Data.Linq.SqlClient.SqlProvider.BuildQuery(Expression query, SqlNodeAnnotations annotations)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataQuery`1.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at RapidWebDev.Platform.Linq.MembershipDbProvider.Get(String userName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\MembershipDbProvider.cs:line 231
+   at RapidWebDev.Platform.Linq.MembershipApi.Get(String userName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\MembershipApi.cs:line 196
+   at RapidWebDev.Platform.HttpAuthenticationContext.get_User() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\HttpAuthenticationContext.cs:line 146
+   at RapidWebDev.Platform.HttpAuthenticationContext.Act() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\HttpAuthenticationContext.cs:line 219
+   at RapidWebDev.Platform.PlatformModule.OnPostRequestHandlerExecute(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 75
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:23:08,952  ERROR  RapidWebDev.Platform.Linq.MembershipDbProvider  [(null)]  -  RapidWebDev.Common.InvalidSaaSApplicationException: The application "localhost" doesn't exist.
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInvocation(InvocationExpression invoke)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitBinary(BinaryExpression b)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitBinary(BinaryExpression b)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitWhere(Expression sequence, LambdaExpression predicate)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSelect(Expression sequence, LambdaExpression selector)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitFirst(Expression sequence, LambdaExpression lambda, Boolean isFirst)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.ConvertOuter(Expression node)
+   at System.Data.Linq.SqlClient.SqlProvider.BuildQuery(Expression query, SqlNodeAnnotations annotations)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataQuery`1.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at RapidWebDev.Platform.Linq.MembershipDbProvider.Get(String userName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\MembershipDbProvider.cs:line 220
+
+2012-10-17 21:23:08,952  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/Services/ApplicationService.svc
+
+RapidWebDev.Common.InvalidSaaSApplicationException: The application "localhost" doesn't exist.
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInvocation(InvocationExpression invoke)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitBinary(BinaryExpression b)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitBinary(BinaryExpression b)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitExpression(Expression exp)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitWhere(Expression sequence, LambdaExpression predicate)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSelect(Expression sequence, LambdaExpression selector)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitFirst(Expression sequence, LambdaExpression lambda, Boolean isFirst)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitSequenceOperatorCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitMethodCall(MethodCallExpression mc)
+   at System.Data.Linq.SqlClient.QueryConverter.VisitInner(Expression node)
+   at System.Data.Linq.SqlClient.QueryConverter.ConvertOuter(Expression node)
+   at System.Data.Linq.SqlClient.SqlProvider.BuildQuery(Expression query, SqlNodeAnnotations annotations)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataQuery`1.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at RapidWebDev.Platform.Linq.MembershipDbProvider.Get(String userName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\MembershipDbProvider.cs:line 231
+   at RapidWebDev.Platform.Linq.MembershipApi.Get(String userName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\MembershipApi.cs:line 196
+   at RapidWebDev.Platform.HttpAuthenticationContext.get_User() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\HttpAuthenticationContext.cs:line 146
+   at RapidWebDev.Platform.HttpAuthenticationContext.Act() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\HttpAuthenticationContext.cs:line 219
+   at RapidWebDev.Platform.PlatformModule.OnPostRequestHandlerExecute(Object sender, EventArgs e) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\PlatformModule.cs:line 75
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:23:17,415  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/LogOn.aspx
+
+System.TypeInitializationException: The type initializer for 'Spring.Web.Support.ControlAccessor' threw an exception. ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: field
+   at System.Reflection.Emit.DynamicILGenerator.Emit(OpCode opcode, FieldInfo field)
+   at Spring.Web.Support.ControlAccessor.GetGetControlsDelegate()
+   at Spring.Web.Support.ControlAccessor..cctor()
+   --- End of inner exception stack trace ---
+   at Spring.Web.Support.ControlAccessor.GetChildControlCollection()
+   at Spring.Web.Support.ControlAccessor.get_Controls()
+   at Spring.Web.Support.ControlInterceptor.EnsureControlCollectionIntercepted(IApplicationContext defaultApplicationContext, Control control)
+   at Spring.Web.Support.ControlInterceptor.EnsureControlIntercepted(IApplicationContext defaultApplicationContext, Control control)
+   at Spring.Web.Support.AbstractHandlerFactory.ApplyDependencyInjectionInfrastructure(IHttpHandler handler, IApplicationContext applicationContext)
+   at Spring.Web.Support.AbstractHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   at Spring.Web.Support.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, VirtualPath path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.HttpApplication.MapHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:24:37,328  ERROR  RapidWebDev.Platform.Initialization.InstallerManager  [(null)]  -  System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, SqlConnection owningObject)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, TimeoutTimer timeout, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at RapidWebDev.Common.Data.DataContextFactory.TryToOpenDbConnection(IDbConnection connection) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 316
+   at RapidWebDev.Common.Data.DataContextFactory.ResolveDbConnectionReference(String connectionStringName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 272
+   at RapidWebDev.Common.Data.DataContextFactory.Create[T]() in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Common\Data\DataContextFactory.cs:line 118
+   at RapidWebDev.Platform.Linq.ApplicationApi.Get(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 120
+   at RapidWebDev.Platform.Linq.ApplicationApi.Exists(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Linq\ApplicationApi.cs:line 141
+   at RapidWebDev.Platform.Initialization.ApplicationInstaller.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\ApplicationInstaller.cs:line 70
+   at RapidWebDev.Platform.Initialization.InstallerManager.Install(String applicationName) in C:\Users\tvuolo\Downloads\RapidWebDev Source 1.54\src\RapidWebDev.Platform\Initialization\InstallerManager.cs:line 59
+
+2012-10-17 21:24:38,388  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/LogOn.aspx
+
+System.TypeInitializationException: The type initializer for 'Spring.Web.Support.ControlAccessor' threw an exception. ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: field
+   at System.Reflection.Emit.DynamicILGenerator.Emit(OpCode opcode, FieldInfo field)
+   at Spring.Web.Support.ControlAccessor.GetGetControlsDelegate()
+   at Spring.Web.Support.ControlAccessor..cctor()
+   --- End of inner exception stack trace ---
+   at Spring.Web.Support.ControlAccessor..ctor(Control control)
+   at Spring.Web.Support.ControlInterceptor.EnsureControlCollectionIntercepted(IApplicationContext defaultApplicationContext, Control control)
+   at Spring.Web.Support.ControlInterceptor.EnsureControlIntercepted(IApplicationContext defaultApplicationContext, Control control)
+   at Spring.Web.Support.AbstractHandlerFactory.ApplyDependencyInjectionInfrastructure(IHttpHandler handler, IApplicationContext applicationContext)
+   at Spring.Web.Support.AbstractHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   at Spring.Web.Support.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, VirtualPath path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.HttpApplication.MapHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2012-10-17 21:24:54,328  ERROR  ASP.global_asax  [(null)]  -  http://localhost:50682/LogOn.aspx
+
+System.TypeInitializationException: The type initializer for 'Spring.Web.Support.ControlAccessor' threw an exception. ---> System.ArgumentNullException: Value cannot be null.
+Parameter name: field
+   at System.Reflection.Emit.DynamicILGenerator.Emit(OpCode opcode, FieldInfo field)
+   at Spring.Web.Support.ControlAccessor.GetGetControlsDelegate()
+   at Spring.Web.Support.ControlAccessor..cctor()
+   --- End of inner exception stack trace ---
+   at Spring.Web.Support.ControlAccessor..ctor(Control control)
+   at Spring.Web.Support.ControlInterceptor.EnsureControlCollectionIntercepted(IApplicationContext defaultApplicationContext, Control control)
+   at Spring.Web.Support.ControlInterceptor.EnsureControlIntercepted(IApplicationContext defaultApplicationContext, Control control)
+   at Spring.Web.Support.AbstractHandlerFactory.ApplyDependencyInjectionInfrastructure(IHttpHandler handler, IApplicationContext applicationContext)
+   at Spring.Web.Support.AbstractHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   at Spring.Web.Support.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String physicalPath)
+   at System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, VirtualPath path, String pathTranslated, Boolean useAppConfig)
+   at System.Web.HttpApplication.MapHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)

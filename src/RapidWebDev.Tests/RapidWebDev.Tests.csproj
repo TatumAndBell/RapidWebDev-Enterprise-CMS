@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99C25C9B-6783-4195-9B3C-3E4CDD1E4279}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RapidWebDev.Tests</RootNamespace>
+    <AssemblyName>RapidWebDev.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data">
+      <HintPath>..\..\..\Spring.NET-2.0.0-M1\Spring.NET\bin\net\4.0\release\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Linq.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3624dc708c4455be">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\Linq.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.3.9345, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.5.0.1337, Culture=neutral, PublicKeyToken=0b3305902db7183f">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartAssemblies\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CodeDomTests.cs" />
+    <Compile Include="Common\GlobalizationKitTests.cs" />
+    <Compile Include="Common\Linq2SQLDataContextTests.cs" />
+    <Compile Include="Common\LinqPredicateTests.cs" />
+    <Compile Include="Common\RwdTransactionScopeTests.cs" />
+    <Compile Include="Common\ValidationScopeTests.cs" />
+    <Compile Include="DynamicPage\ConcreteDataDetailPanelTest.cs" />
+    <Compile Include="DynamicPage\ConcreteDataManagementTest.cs" />
+    <Compile Include="DynamicPage\HierarchyDataAggregatePanelPageTest.cs" />
+    <Compile Include="DynamicPage\HierarchyDataDetailPanelTest.cs" />
+    <Compile Include="DynamicPage\HierarchyDataManagementTest.cs" />
+    <Compile Include="DynamicPage\OrganizationDetailPanelPageTest.cs" />
+    <Compile Include="DynamicPage\OrganizationManagementDynamicPageTest.cs" />
+    <Compile Include="DynamicPage\OrganizationTypeDetailPanelTest.cs" />
+    <Compile Include="DynamicPage\OrganizationTypeManagementTest.cs" />
+    <Compile Include="DynamicPage\RoleDetailPanelTest.cs" />
+    <Compile Include="DynamicPage\RoleManagementTest.cs" />
+    <Compile Include="DynamicPage\UserDetailPanelTest.cs" />
+    <Compile Include="DynamicPage\UserManagementTest.cs" />
+    <Compile Include="ExtensionModel\ExtensionObjectSerializerTests.cs" />
+    <Compile Include="ExtensionModel\IntegrationTests.cs" />
+    <Compile Include="ExtensionModel\MetadataApiTests.cs" />
+    <Compile Include="ExtensionModel\MockExtensionObject4Serializer.cs" />
+    <Compile Include="ExtensionModel\FieldMetadataValidationTests.cs" />
+    <Compile Include="ExtensionModel\SampleObjectDataContext.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleObjectDataContext.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionModel\SampleObjectDataContext.extension.cs" />
+    <Compile Include="FileManagement\FileBindingApiTests.cs" />
+    <Compile Include="FileManagement\FileManagementApiTests.cs" />
+    <Compile Include="FileManagement\MemoryFileStorageApi.cs" />
+    <Compile Include="Platform\ApplicationApiTests.cs" />
+    <Compile Include="Platform\ConcreteDataApiTests.cs" />
+    <Compile Include="Platform\RelationshipApiTests.cs" />
+    <Compile Include="Platform\HierarchyApiTests.cs" />
+    <Compile Include="Platform\SiteMapApiTests.cs" />
+    <Compile Include="Platform\MembershipApiTests.cs" />
+    <Compile Include="Platform\OrganizationApiTests.cs" />
+    <Compile Include="Platform\PermissionApiTests.cs" />
+    <Compile Include="Platform\RoleApiTests.cs" />
+    <Compile Include="Platform\SequenceNoApiTests.cs" />
+    <Compile Include="MockedApplicationNameRouter.cs" />
+    <Compile Include="MockedAuthenticationContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetupFixture.cs" />
+    <Compile Include="UI\DynamicPageConfigurationTests.cs" />
+    <Compile Include="UI\MockedUserManagement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="all.config" />
+    <None Include="App.config" />
+    <Content Include="applicationName.config" />
+    <None Include="ExtensionModel\SampleObjectDataContext.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SampleObjectDataContext.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="platform.config" />
+    <Content Include="log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RapidWebDev.Common\RapidWebDev.Common.csproj">
+      <Project>{29D45B1B-D03B-4C5F-8D8B-D765E3977339}</Project>
+      <Name>RapidWebDev.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWebDev.ExtensionModel.Web\RapidWebDev.ExtensionModel.Web.csproj">
+      <Project>{15465DC2-9AF4-4E95-B942-B3247EB71EEE}</Project>
+      <Name>RapidWebDev.ExtensionModel.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWebDev.ExtensionModel\RapidWebDev.ExtensionModel.csproj">
+      <Project>{BC37B273-2F1A-4D9A-A927-633FD6BC3A66}</Project>
+      <Name>RapidWebDev.ExtensionModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWebDev.FileManagement\RapidWebDev.FileManagement.csproj">
+      <Project>{624FAD02-CBAD-48AD-9B1C-614AEF70A024}</Project>
+      <Name>RapidWebDev.FileManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWebDev.Mocks\RapidWebDev.Mocks.csproj">
+      <Project>{9A1F8FB0-AED5-4670-B0F0-2BD7F017C28A}</Project>
+      <Name>RapidWebDev.Mocks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWebDev.Platform\RapidWebDev.Platform.csproj">
+      <Project>{20DA36DC-D074-4CFF-B12F-5A3A915DD030}</Project>
+      <Name>RapidWebDev.Platform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWebDev.UI\RapidWebDev.UI.csproj">
+      <Project>{AAC9A9DA-A239-47C1-ABEE-D6994B7701BC}</Project>
+      <Name>RapidWebDev.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RapidWebDev.Web\RapidWebDev.Web.csproj">
+      <Project>{E91C2FD3-8AB6-4522-87BB-CE9345923D63}</Project>
+      <Name>RapidWebDev.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestData\206.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\ObjectMetadataXmlFile.em.xml" />
+    <Content Include="TestData\StatisticsConfig-FullProperties.xml" />
+    <Content Include="UI\Resources\DynamicPage\UserManagement.pw.xml" />
+    <Content Include="UI\Resources\DynamicPage\UserManagement.WithVariables.pw.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExtensionModel\SampleObjectDataContext.dbml.layout">
+      <DependentUpon>SampleObjectDataContext.dbml</DependentUpon>
+    </None>
+    <None Include="TestData\permissions.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\siteMap.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

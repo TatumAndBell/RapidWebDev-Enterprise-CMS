@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://www.rapidwebdev.org/platform" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.rapidwebdev.org/platform/Imports">
+      <xsd:import schemaLocation="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd0" namespace="http://www.rapidwebdev.org/platform" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/RapidWebDev.ExtensionModel" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd4" namespace="http://www.rapidwebdev.org/extensionmodel" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/HierarchyService.svc?xsd=xsd5" namespace="http://www.rapidwebdev.org/common" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="HierarchyService_SaveJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveJson" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_SaveJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_SaveXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveXml" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_SaveXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetHierarchyDataByIdJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHierarchyDataByIdJson" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetHierarchyDataByIdJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHierarchyDataByIdJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetHierarchyDataByIdXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHierarchyDataByIdXml" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetHierarchyDataByIdXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHierarchyDataByIdXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetHierarchyDataByNameJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHierarchyDataByNameJson" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetHierarchyDataByNameJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHierarchyDataByNameJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetHierarchyDataByNameXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHierarchyDataByNameXml" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetHierarchyDataByNameXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHierarchyDataByNameXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetImmediateChildrenJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImmediateChildrenJson" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetImmediateChildrenJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImmediateChildrenJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetImmediateChildrenXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImmediateChildrenXml" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetImmediateChildrenXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImmediateChildrenXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetAllChildrenJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChildrenJson" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetAllChildrenJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChildrenJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetAllChildrenXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChildrenXml" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetAllChildrenXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChildrenXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetAllHierarchyDataJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllHierarchyDataJson" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetAllHierarchyDataJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllHierarchyDataJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetAllHierarchyDataXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllHierarchyDataXml" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_GetAllHierarchyDataXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllHierarchyDataXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_HardDeleteHierarchyDataJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:HardDeleteHierarchyDataJson" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_HardDeleteHierarchyDataJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HardDeleteHierarchyDataJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_HardDeleteHierarchyDataXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:HardDeleteHierarchyDataXml" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_HardDeleteHierarchyDataXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HardDeleteHierarchyDataXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_FindByKeywordJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByKeywordJson" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_FindByKeywordJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByKeywordJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_FindByKeywordXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByKeywordXml" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_FindByKeywordXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByKeywordXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_QueryHierarchyDataJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryHierarchyDataJson" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_QueryHierarchyDataJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryHierarchyDataJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_QueryHierarchyDataXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryHierarchyDataXml" />
+  </wsdl:message>
+  <wsdl:message name="HierarchyService_QueryHierarchyDataXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryHierarchyDataXmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HierarchyService">
+    <wsdl:operation name="SaveJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/SaveJson" message="tns:HierarchyService_SaveJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/SaveJsonResponse" message="tns:HierarchyService_SaveJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/SaveXml" message="tns:HierarchyService_SaveXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/SaveXmlResponse" message="tns:HierarchyService_SaveXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHierarchyDataByIdJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetHierarchyDataByIdJson" message="tns:HierarchyService_GetHierarchyDataByIdJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetHierarchyDataByIdJsonResponse" message="tns:HierarchyService_GetHierarchyDataByIdJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHierarchyDataByIdXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetHierarchyDataByIdXml" message="tns:HierarchyService_GetHierarchyDataByIdXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetHierarchyDataByIdXmlResponse" message="tns:HierarchyService_GetHierarchyDataByIdXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHierarchyDataByNameJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetHierarchyDataByNameJson" message="tns:HierarchyService_GetHierarchyDataByNameJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetHierarchyDataByNameJsonResponse" message="tns:HierarchyService_GetHierarchyDataByNameJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHierarchyDataByNameXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetHierarchyDataByNameXml" message="tns:HierarchyService_GetHierarchyDataByNameXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetHierarchyDataByNameXmlResponse" message="tns:HierarchyService_GetHierarchyDataByNameXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImmediateChildrenJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetImmediateChildrenJson" message="tns:HierarchyService_GetImmediateChildrenJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetImmediateChildrenJsonResponse" message="tns:HierarchyService_GetImmediateChildrenJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImmediateChildrenXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetImmediateChildrenXml" message="tns:HierarchyService_GetImmediateChildrenXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetImmediateChildrenXmlResponse" message="tns:HierarchyService_GetImmediateChildrenXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChildrenJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetAllChildrenJson" message="tns:HierarchyService_GetAllChildrenJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetAllChildrenJsonResponse" message="tns:HierarchyService_GetAllChildrenJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChildrenXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetAllChildrenXml" message="tns:HierarchyService_GetAllChildrenXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetAllChildrenXmlResponse" message="tns:HierarchyService_GetAllChildrenXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllHierarchyDataJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetAllHierarchyDataJson" message="tns:HierarchyService_GetAllHierarchyDataJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetAllHierarchyDataJsonResponse" message="tns:HierarchyService_GetAllHierarchyDataJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllHierarchyDataXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetAllHierarchyDataXml" message="tns:HierarchyService_GetAllHierarchyDataXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/GetAllHierarchyDataXmlResponse" message="tns:HierarchyService_GetAllHierarchyDataXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HardDeleteHierarchyDataJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/HardDeleteHierarchyDataJson" message="tns:HierarchyService_HardDeleteHierarchyDataJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/HardDeleteHierarchyDataJsonResponse" message="tns:HierarchyService_HardDeleteHierarchyDataJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HardDeleteHierarchyDataXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/HardDeleteHierarchyDataXml" message="tns:HierarchyService_HardDeleteHierarchyDataXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/HardDeleteHierarchyDataXmlResponse" message="tns:HierarchyService_HardDeleteHierarchyDataXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByKeywordJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/FindByKeywordJson" message="tns:HierarchyService_FindByKeywordJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/FindByKeywordJsonResponse" message="tns:HierarchyService_FindByKeywordJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByKeywordXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/FindByKeywordXml" message="tns:HierarchyService_FindByKeywordXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/FindByKeywordXmlResponse" message="tns:HierarchyService_FindByKeywordXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryHierarchyDataJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/QueryHierarchyDataJson" message="tns:HierarchyService_QueryHierarchyDataJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/QueryHierarchyDataJsonResponse" message="tns:HierarchyService_QueryHierarchyDataJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryHierarchyDataXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/QueryHierarchyDataXml" message="tns:HierarchyService_QueryHierarchyDataXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/HierarchyService/QueryHierarchyDataXmlResponse" message="tns:HierarchyService_QueryHierarchyDataXml_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

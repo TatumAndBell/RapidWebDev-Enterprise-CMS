@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://www.rapidwebdev.org/schemas/dynamicpage" ObjectId="OrganizationTypeManagement" Type="RapidWebDev.Platform.Web.DynamicPage.OrganizationTypeManagement, RapidWebDev.Platform">
+	<Title>$Domain.Text$ $Resources.Membership.Type, RapidWebDev.Web$ $Resources.Membership.Management, RapidWebDev.Web$</Title>
+	<PermissionValue>$Domain.Value$TypeManagement</PermissionValue>
+	<Panels>
+		<QueryPanel HeaderText="$Resources.Membership.Query, RapidWebDev.Web$ $Domain.Text$ $Resources.Membership.Type, RapidWebDev.Web$">
+			<TextBox FieldName="Name" Label="$Resources.Membership.OrganizationType_Name, RapidWebDev.Web$: " />
+			<CheckBoxGroup FieldName="Predefined" FieldValueType="System.Boolean" Label="$Resources.Membership.Predefined, RapidWebDev.Web$: " Occupation="1">
+				<Item Text="&lt;span style='color:green'&gt;Yes&lt;/span&gt;" Value="true" />
+				<Item Text="&lt;span style='color:red'&gt;No&lt;/span&gt;" Value="false" />
+			</CheckBoxGroup>
+			<CheckBoxGroup FieldName="DeleteStatus" Label="$Resources.Membership.Status, RapidWebDev.Web$: " FieldValueType="RapidWebDev.Platform.DeleteStatus, RapidWebDev.Platform" Occupation="1">
+				<Item Checked="true" Text="$Resources.Membership.Enabled, RapidWebDev.Web$" Value="NotDeleted" />
+				<Item Text="$Resources.Membership.Disabled, RapidWebDev.Web$" Value="Deleted" />
+			</CheckBoxGroup>
+		</QueryPanel>
+
+		<ButtonPanel ButtonAlignment="Left">
+			<Button CommandArgument="New" Type="NewImage" ToolTip="$Resources.Membership.Add, RapidWebDev.Web$" />
+		</ButtonPanel>
+
+		<GridViewPanel HeaderText="$Resources.Membership.QueryResults, RapidWebDev.Web$"
+			EntityName="$Domain.Text$ $Resources.Membership.Type, RapidWebDev.Web$"
+			EnabledCheckBoxField="true"
+			PageSize="25"
+			PrimaryKeyFieldName="OrganizationTypeId"
+			DefaultSortField="LastUpdatedDate"
+			DefaultSortDirection="DESC">
+			<ViewButton />
+			<EditButton />
+			<DeleteButton />
+			<Fields>
+				<Field FieldName="Name" HeaderText="$Resources.Membership.OrganizationType_Name, RapidWebDev.Web$" />
+				<Field FieldName="Predefined" HeaderText="$Resources.Membership.Predefined, RapidWebDev.Web$">
+					<Transform-Switch>
+						<Case Value="True">&lt;span style='color:green'&gt;$Resources.Membership.Yes, RapidWebDev.Web$&lt;/span&gt;</Case>
+						<Case Value="False">&lt;span style='color:red'&gt;$Resources.Membership.No, RapidWebDev.Web$&lt;/span&gt;</Case>
+					</Transform-Switch>
+				</Field>
+				<Field FieldName="DeleteStatus" HeaderText="$Resources.Membership.Status, RapidWebDev.Web$">
+					<Transform-Switch>
+						<Case Value="NotDeleted">$Resources.Membership.Enabled, RapidWebDev.Web$</Case>
+						<Case Value="Deleted">$Resources.Membership.Disabled, RapidWebDev.Web$</Case>
+					</Transform-Switch>
+				</Field>
+				<Field FieldName="LastUpdatedDate" HeaderText="$Resources.Membership.ModifiedOn, RapidWebDev.Web$" Align="Center" Width="150" />
+				<RowView FieldName="Description" />
+			</Fields>
+		</GridViewPanel>
+
+		<DetailPanel HeaderText="$Domain.Text$ $Resources.Membership.Type, RapidWebDev.Web$ $Resources.Membership.Profile, RapidWebDev.Web$" ShowMessageAfterSavedSuccessfully="false">
+			<Type>RapidWebDev.Platform.Web.DynamicPage.OrganizationTypeDetailPanel, RapidWebDev.Platform</Type>
+			<SkinPath>~/Templates/Platform/OrganizationType.ascx</SkinPath>
+			<SaveAndAddAnotherButton />
+			<SaveAndCloseButton />
+			<CancelButton />
+		</DetailPanel>
+	</Panels>
+</Page>

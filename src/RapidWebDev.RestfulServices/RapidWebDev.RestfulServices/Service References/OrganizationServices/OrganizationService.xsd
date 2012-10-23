@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50682/Services/OrganizationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:50682/Services/OrganizationService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:50682/Services/OrganizationService.svc?xsd=xsd5" namespace="http://www.rapidwebdev.org/common" />
+  <xs:element name="ListDomainsJson">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListDomainsJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.rapidwebdev.org/platform" minOccurs="0" name="ListDomainsJsonResult" nillable="true" type="q1:ArrayOfOrganizationDomainObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfOrganizationDomainObject">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="OrganizationDomainObject" nillable="true" type="q2:OrganizationDomainObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q3="http://www.rapidwebdev.org/platform" name="ArrayOfOrganizationDomainObject" nillable="true" type="q3:ArrayOfOrganizationDomainObject" />
+  <xs:complexType name="OrganizationDomainObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q4="http://www.rapidwebdev.org/platform" name="OrganizationDomainObject" nillable="true" type="q4:OrganizationDomainObject" />
+  <xs:element name="ListDomainsXml">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListDomainsXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://www.rapidwebdev.org/platform" minOccurs="0" name="ListDomainsXmlResult" nillable="true" type="q5:ArrayOfOrganizationDomainObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveOrganizationTypeJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.rapidwebdev.org/platform" minOccurs="0" name="organizationTypeObject" nillable="true" type="q6:OrganizationTypeObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="OrganizationTypeObject">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://www.rapidwebdev.org/platform" minOccurs="0" name="DeleteStatus" type="q7:DeleteStatus" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastUpdatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrganizationTypeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Predefined" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q8="http://www.rapidwebdev.org/platform" name="OrganizationTypeObject" nillable="true" type="q8:OrganizationTypeObject" />
+  <xs:simpleType name="DeleteStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotDeleted" />
+      <xs:enumeration value="Deleted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element xmlns:q9="http://www.rapidwebdev.org/platform" name="DeleteStatus" nillable="true" type="q9:DeleteStatus" />
+  <xs:element name="SaveOrganizationTypeJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveOrganizationTypeJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveOrganizationTypeXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.rapidwebdev.org/platform" minOccurs="0" name="organizationTypeObject" nillable="true" type="q10:OrganizationTypeObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveOrganizationTypeXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveOrganizationTypeXmlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationTypeByIdJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationTypeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationTypeByIdJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOrganizationTypeByIdJsonResult" nillable="true" type="q11:OrganizationTypeObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationTypeByIdXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationTypeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationTypeByIdXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOrganizationTypeByIdXmlResult" nillable="true" type="q12:OrganizationTypeObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationTypeByNameJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationTypeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationTypeByNameJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOrganizationTypeByNameJsonResult" nillable="true" type="q13:OrganizationTypeObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationTypeByNameXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationTypeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationTypeByNameXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOrganizationTypeByNameXmlResult" nillable="true" type="q14:OrganizationTypeObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindOrganizationTypesJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="domain" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindOrganizationTypesJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindOrganizationTypesJsonResult" nillable="true" type="q15:ArrayOfOrganizationTypeObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfOrganizationTypeObject">
+    <xs:sequence>
+      <xs:element xmlns:q16="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="OrganizationTypeObject" nillable="true" type="q16:OrganizationTypeObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q17="http://www.rapidwebdev.org/platform" name="ArrayOfOrganizationTypeObject" nillable="true" type="q17:ArrayOfOrganizationTypeObject" />
+  <xs:element name="FindOrganizationTypesXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="domain" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindOrganizationTypesXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://www.rapidwebdev.org/platform" minOccurs="0" name="FindOrganizationTypesXmlResult" nillable="true" type="q18:ArrayOfOrganizationTypeObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveOrganizationJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://www.rapidwebdev.org/platform" minOccurs="0" name="organizationObject" nillable="true" type="q19:OrganizationObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="OrganizationObject">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://www.rapidwebdev.org/platform" base="q20:AbstractExtensionBizObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" type="ser:guid" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HasChild" type="xs:boolean" />
+          <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Hierarchies" nillable="true" type="q21:ArrayOfKeyValueOfstringguid" />
+          <xs:element minOccurs="0" name="LastUpdatedBy" type="ser:guid" />
+          <xs:element minOccurs="0" name="LastUpdatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="OrganizationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrganizationId" type="ser:guid" />
+          <xs:element minOccurs="0" name="OrganizationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrganizationTypeId" type="ser:guid" />
+          <xs:element minOccurs="0" name="ParentOrganizationId" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="Status" type="q20:OrganizationStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q22="http://www.rapidwebdev.org/platform" name="OrganizationObject" nillable="true" type="q22:OrganizationObject" />
+  <xs:complexType name="AbstractExtensionBizObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtensionDataTypeId" type="ser:guid" />
+      <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Properties" nillable="true" type="q23:ArrayOfKeyValueOfstringanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q24="http://www.rapidwebdev.org/platform" name="AbstractExtensionBizObject" nillable="true" type="q24:AbstractExtensionBizObject" />
+  <xs:simpleType name="OrganizationStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Disabled" />
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Enabled">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element xmlns:q25="http://www.rapidwebdev.org/platform" name="OrganizationStatus" nillable="true" type="q25:OrganizationStatus" />
+  <xs:element name="SaveOrganizationJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveOrganizationJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveOrganizationXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://www.rapidwebdev.org/platform" minOccurs="0" name="organizationObject" nillable="true" type="q26:OrganizationObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveOrganizationXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveOrganizationXmlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByIdJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByIdJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOrganizationByIdJsonResult" nillable="true" type="q27:OrganizationObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByIdXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByIdXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOrganizationByIdXmlResult" nillable="true" type="q28:OrganizationObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByCodeJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByCodeJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOrganizationByCodeJsonResult" nillable="true" type="q29:OrganizationObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByCodeXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByCodeXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOrganizationByCodeXmlResult" nillable="true" type="q30:OrganizationObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByNameJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByNameJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOrganizationByNameJsonResult" nillable="true" type="q31:OrganizationObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByNameXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="organizationName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationByNameXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://www.rapidwebdev.org/platform" minOccurs="0" name="GetOrganizationByNameXmlResult" nillable="true" type="q32:OrganizationObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkGetOrganizationsByIdsJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://www.rapidwebdev.org/platform" minOccurs="0" name="organizationIdList" nillable="true" type="q33:IdCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="IdCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q34="http://www.rapidwebdev.org/platform" name="IdCollection" nillable="true" type="q34:IdCollection" />
+  <xs:element name="BulkGetOrganizationsByIdsJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://www.rapidwebdev.org/platform" minOccurs="0" name="BulkGetOrganizationsByIdsJsonResult" nillable="true" type="q35:ArrayOfOrganizationObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfOrganizationObject">
+    <xs:sequence>
+      <xs:element xmlns:q36="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="OrganizationObject" nillable="true" type="q36:OrganizationObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q37="http://www.rapidwebdev.org/platform" name="ArrayOfOrganizationObject" nillable="true" type="q37:ArrayOfOrganizationObject" />
+  <xs:element name="BulkGetOrganizationsByIdsXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://www.rapidwebdev.org/platform" minOccurs="0" name="organizationIdList" nillable="true" type="q38:IdCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkGetOrganizationsByIdsXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://www.rapidwebdev.org/platform" minOccurs="0" name="BulkGetOrganizationsByIdsXmlResult" nillable="true" type="q39:ArrayOfOrganizationObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="domain" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="q" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sortField" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sortDirection" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="start" type="xs:int" />
+        <xs:element minOccurs="0" name="limit" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://www.rapidwebdev.org/platform" minOccurs="0" name="SearchJsonResult" nillable="true" type="q40:OrganizationQueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="OrganizationQueryResult">
+    <xs:sequence>
+      <xs:element xmlns:q41="http://www.rapidwebdev.org/platform" minOccurs="0" maxOccurs="unbounded" name="OrganizationObject" nillable="true" type="q41:OrganizationObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q42="http://www.rapidwebdev.org/platform" name="OrganizationQueryResult" nillable="true" type="q42:OrganizationQueryResult" />
+  <xs:element name="SearchXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="domain" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgTypeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="q" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sortField" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sortDirection" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="start" type="xs:int" />
+        <xs:element minOccurs="0" name="limit" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://www.rapidwebdev.org/platform" minOccurs="0" name="SearchXmlResult" nillable="true" type="q43:OrganizationQueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryOrganizationsJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element xmlns:q44="http://www.rapidwebdev.org/common" minOccurs="0" name="predicate" nillable="true" type="q44:WebServiceQueryPredicate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryOrganizationsJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://www.rapidwebdev.org/platform" minOccurs="0" name="QueryOrganizationsJsonResult" nillable="true" type="q45:OrganizationQueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryOrganizationsXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element xmlns:q46="http://www.rapidwebdev.org/common" minOccurs="0" name="predicate" nillable="true" type="q46:WebServiceQueryPredicate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryOrganizationsXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://www.rapidwebdev.org/platform" minOccurs="0" name="QueryOrganizationsXmlResult" nillable="true" type="q47:OrganizationQueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

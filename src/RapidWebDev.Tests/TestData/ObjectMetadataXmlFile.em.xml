@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ObjectMetadataXml xmlns="http://www.rapidwebdev.org/schemas/extensionmodel" Name="Employee" Category="Membership" Version="1">
+	<FieldMetadataXml>
+		<StringFieldMetadata Name="Name" IsRequired="true" MaxLength="32" MinLength="6" />
+	</FieldMetadataXml>
+	<FieldMetadataXml>
+		<DateTimeFieldMetadata Name="PhoneNo" IsRequired="true" />
+	</FieldMetadataXml>
+	<FieldMetadataXml>
+		<IntegerFieldMetadata Name="Height" />
+	</FieldMetadataXml>
+	<FieldMetadataXml>
+		<DecimalFieldMetadata Name="Salary" />
+	</FieldMetadataXml>
+	<FieldMetadataXml>
+		<HierarchyFieldMetadata Name="Position" SelectionMode="Single">
+			<Node Name="Director" Value="Director">
+				<Node Name="Manager" Value="Manager">
+					<Node Name="Leader" Value="Leader">
+						<Node Name="QA" Value="QA" />
+						<Node Name="Dev" Value="Dev" />
+						<Node Name="Designer" Value="Designer" />
+					</Node>
+				</Node>
+			</Node>
+		</HierarchyFieldMetadata>
+	</FieldMetadataXml>
+	<FieldMetadataXml>
+		<SelectionFieldMetadata Name="HuKou" ControlType="DropDownList">
+			<Items Name="ChengDu" Value="ChengDu" />
+			<Items Name="ShangHai" Value="ShangHai" />
+			<Items Name="BeiJin" Value="BeiJin" />
+		</SelectionFieldMetadata>
+	</FieldMetadataXml>
+</ObjectMetadataXml>

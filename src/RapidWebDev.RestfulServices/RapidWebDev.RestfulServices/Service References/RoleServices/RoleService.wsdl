@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://www.rapidwebdev.org/platform" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.rapidwebdev.org/platform/Imports">
+      <xsd:import schemaLocation="http://localhost:50682/Services/RoleService.svc?xsd=xsd0" namespace="http://www.rapidwebdev.org/platform" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/RoleService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/RoleService.svc?xsd=xsd2" namespace="http://www.rapidwebdev.org/common" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="RoleService_SaveJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_SaveJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_SaveXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_SaveXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_HardDeleteJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:HardDeleteJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_HardDeleteJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HardDeleteJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_HardDeleteXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:HardDeleteXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_HardDeleteXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HardDeleteXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_SetUserToRolesJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserToRolesJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_SetUserToRolesJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserToRolesJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_SetUserToRolesXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserToRolesXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_SetUserToRolesXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserToRolesXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_GetByNameJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByNameJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_GetByNameJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByNameJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_GetByNameXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByNameXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_GetByNameXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByNameXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_GetByIdJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_GetByIdJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_GetByIdXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_GetByIdXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_BulkGetJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:BulkGetJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_BulkGetJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BulkGetJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_BulkGetXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:BulkGetXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_BulkGetXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BulkGetXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindAllJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAllJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindAllJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAllJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindAllXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAllXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindAllXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAllXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByOrganizationIdJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByOrganizationIdJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByOrganizationIdJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByOrganizationIdJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByOrganizationIdXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByOrganizationIdXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByOrganizationIdXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByOrganizationIdXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByUserIdJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByUserIdJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByUserIdJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByUserIdJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByUserIdXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByUserIdXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByUserIdXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByUserIdXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByOrganizationTypeJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByOrganizationTypeJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByOrganizationTypeJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByOrganizationTypeJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByOrganizationTypeXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByOrganizationTypeXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByOrganizationTypeXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByOrganizationTypeXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByDomainJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByDomainJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByDomainJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByDomainJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByDomainXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindByDomainXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_FindByDomainXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindByDomainXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_IsUserInRoleByIdJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleByIdJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_IsUserInRoleByIdJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleByIdJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_IsUserInRoleByIdXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleByIdXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_IsUserInRoleByIdXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleByIdXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_IsUserInRoleByNameJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleByNameJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_IsUserInRoleByNameJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleByNameJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_IsUserInRoleByNameXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleByNameXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_IsUserInRoleByNameXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserInRoleByNameXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_QueryRolesJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryRolesJson" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_QueryRolesJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryRolesJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_QueryRolesXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryRolesXml" />
+  </wsdl:message>
+  <wsdl:message name="RoleService_QueryRolesXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryRolesXmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RoleService">
+    <wsdl:operation name="SaveJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/SaveJson" message="tns:RoleService_SaveJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/SaveJsonResponse" message="tns:RoleService_SaveJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/SaveXml" message="tns:RoleService_SaveXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/SaveXmlResponse" message="tns:RoleService_SaveXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HardDeleteJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/HardDeleteJson" message="tns:RoleService_HardDeleteJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/HardDeleteJsonResponse" message="tns:RoleService_HardDeleteJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HardDeleteXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/HardDeleteXml" message="tns:RoleService_HardDeleteXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/HardDeleteXmlResponse" message="tns:RoleService_HardDeleteXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserToRolesJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/SetUserToRolesJson" message="tns:RoleService_SetUserToRolesJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/SetUserToRolesJsonResponse" message="tns:RoleService_SetUserToRolesJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserToRolesXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/SetUserToRolesXml" message="tns:RoleService_SetUserToRolesXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/SetUserToRolesXmlResponse" message="tns:RoleService_SetUserToRolesXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByNameJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/GetByNameJson" message="tns:RoleService_GetByNameJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/GetByNameJsonResponse" message="tns:RoleService_GetByNameJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByNameXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/GetByNameXml" message="tns:RoleService_GetByNameXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/GetByNameXmlResponse" message="tns:RoleService_GetByNameXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByIdJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/GetByIdJson" message="tns:RoleService_GetByIdJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/GetByIdJsonResponse" message="tns:RoleService_GetByIdJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByIdXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/GetByIdXml" message="tns:RoleService_GetByIdXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/GetByIdXmlResponse" message="tns:RoleService_GetByIdXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BulkGetJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/BulkGetJson" message="tns:RoleService_BulkGetJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/BulkGetJsonResponse" message="tns:RoleService_BulkGetJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BulkGetXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/BulkGetXml" message="tns:RoleService_BulkGetXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/BulkGetXmlResponse" message="tns:RoleService_BulkGetXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAllJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindAllJson" message="tns:RoleService_FindAllJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindAllJsonResponse" message="tns:RoleService_FindAllJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAllXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindAllXml" message="tns:RoleService_FindAllXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindAllXmlResponse" message="tns:RoleService_FindAllXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByOrganizationIdJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByOrganizationIdJson" message="tns:RoleService_FindByOrganizationIdJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByOrganizationIdJsonResponse" message="tns:RoleService_FindByOrganizationIdJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByOrganizationIdXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByOrganizationIdXml" message="tns:RoleService_FindByOrganizationIdXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByOrganizationIdXmlResponse" message="tns:RoleService_FindByOrganizationIdXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByUserIdJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByUserIdJson" message="tns:RoleService_FindByUserIdJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByUserIdJsonResponse" message="tns:RoleService_FindByUserIdJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByUserIdXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByUserIdXml" message="tns:RoleService_FindByUserIdXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByUserIdXmlResponse" message="tns:RoleService_FindByUserIdXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByOrganizationTypeJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByOrganizationTypeJson" message="tns:RoleService_FindByOrganizationTypeJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByOrganizationTypeJsonResponse" message="tns:RoleService_FindByOrganizationTypeJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByOrganizationTypeXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByOrganizationTypeXml" message="tns:RoleService_FindByOrganizationTypeXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByOrganizationTypeXmlResponse" message="tns:RoleService_FindByOrganizationTypeXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByDomainJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByDomainJson" message="tns:RoleService_FindByDomainJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByDomainJsonResponse" message="tns:RoleService_FindByDomainJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindByDomainXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByDomainXml" message="tns:RoleService_FindByDomainXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/FindByDomainXmlResponse" message="tns:RoleService_FindByDomainXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRoleByIdJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/IsUserInRoleByIdJson" message="tns:RoleService_IsUserInRoleByIdJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/IsUserInRoleByIdJsonResponse" message="tns:RoleService_IsUserInRoleByIdJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRoleByIdXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/IsUserInRoleByIdXml" message="tns:RoleService_IsUserInRoleByIdXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/IsUserInRoleByIdXmlResponse" message="tns:RoleService_IsUserInRoleByIdXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRoleByNameJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/IsUserInRoleByNameJson" message="tns:RoleService_IsUserInRoleByNameJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/IsUserInRoleByNameJsonResponse" message="tns:RoleService_IsUserInRoleByNameJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInRoleByNameXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/IsUserInRoleByNameXml" message="tns:RoleService_IsUserInRoleByNameXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/IsUserInRoleByNameXmlResponse" message="tns:RoleService_IsUserInRoleByNameXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryRolesJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/QueryRolesJson" message="tns:RoleService_QueryRolesJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/QueryRolesJsonResponse" message="tns:RoleService_QueryRolesJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryRolesXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/QueryRolesXml" message="tns:RoleService_QueryRolesXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RoleService/QueryRolesXmlResponse" message="tns:RoleService_QueryRolesXml_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

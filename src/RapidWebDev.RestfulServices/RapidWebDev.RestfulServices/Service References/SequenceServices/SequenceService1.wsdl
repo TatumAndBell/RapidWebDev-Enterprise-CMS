@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://www.rapidwebdev.org/platform" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.rapidwebdev.org/platform/Imports">
+      <xsd:import schemaLocation="http://localhost:50682/Services/SequenceService.svc?xsd=xsd0" namespace="http://www.rapidwebdev.org/platform" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/SequenceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/SequenceService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SequenceService_CreateSingleJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSingleJson" />
+  </wsdl:message>
+  <wsdl:message name="SequenceService_CreateSingleJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSingleJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="SequenceService_CreateSingleXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSingleXml" />
+  </wsdl:message>
+  <wsdl:message name="SequenceService_CreateSingleXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSingleXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="SequenceService_CreateMultipleJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMultipleJson" />
+  </wsdl:message>
+  <wsdl:message name="SequenceService_CreateMultipleJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMultipleJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="SequenceService_CreateMultipleXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMultipleXml" />
+  </wsdl:message>
+  <wsdl:message name="SequenceService_CreateMultipleXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMultipleXmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SequenceService">
+    <wsdl:operation name="CreateSingleJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/SequenceService/CreateSingleJson" message="tns:SequenceService_CreateSingleJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/SequenceService/CreateSingleJsonResponse" message="tns:SequenceService_CreateSingleJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSingleXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/SequenceService/CreateSingleXml" message="tns:SequenceService_CreateSingleXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/SequenceService/CreateSingleXmlResponse" message="tns:SequenceService_CreateSingleXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMultipleJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/SequenceService/CreateMultipleJson" message="tns:SequenceService_CreateMultipleJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/SequenceService/CreateMultipleJsonResponse" message="tns:SequenceService_CreateMultipleJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMultipleXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/SequenceService/CreateMultipleXml" message="tns:SequenceService_CreateMultipleXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/SequenceService/CreateMultipleXmlResponse" message="tns:SequenceService_CreateMultipleXml_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,1100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RapidWebDev.Mocks</name>
+    </assembly>
+    <members>
+        <member name="T:RapidWebDev.Mocks.UIMocks.DynamicPageProxy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Mocks.UIMocks.DynamicComponentUtil">
+            <summary>
+            This class provides the utilities
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Mocks.UIMocks.DynamicComponentUtil.actual">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Mocks.UIMocks.DynamicComponentUtil.page">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DynamicComponentUtil.#ctor(System.Object)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="actual"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DynamicComponentUtil.Validate">
+            <summary>
+            Do the basic validation
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DynamicComponentUtil.Set(System.String,System.Web.UI.Control)">
+            <summary>
+            Set the web control programatically
+            </summary>
+            <param name="controlKey"></param>
+            <param name="controlValue"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DynamicComponentUtil.Get(System.String)">
+            <summary>
+            Get the web control programatically
+            </summary>
+            <param name="controlKey"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.Mocks.UIMocks.DynamicComponentUtil.ShowMessage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Mocks.UIMocks.DynamicComponentUtil.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Mocks.UIMocks.DynamicPageProxy.dynamicPageArgs">
+            <summary>
+             The event argument of detail panel page
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Mocks.UIMocks.DynamicPageProxy.setupArgs">
+            <summary>
+            Event argument to setup variables for the request context in dynamic/detail panel/aggregate panel pages.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Mocks.UIMocks.DynamicPageProxy.sender">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DynamicPageProxy.#ctor(RapidWebDev.UI.DynamicPages.IDynamicPage)">
+            <summary>
+            
+            </summary>
+            <param name="actual"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DynamicPageProxy.Query(RapidWebDev.UI.DynamicPages.QueryParameter)">
+            <summary>
+            
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DynamicPageProxy.Delete(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="entityId"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DynamicPageProxy.OnGridRowControlsBind(RapidWebDev.UI.DynamicPages.GridRowControlBindEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DynamicPageProxy.OnInit(RapidWebDev.UI.DynamicPages.IRequestHandler,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DynamicPageProxy.OnLoad(RapidWebDev.UI.DynamicPages.IRequestHandler,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DynamicPageProxy.OnPreRender(RapidWebDev.UI.DynamicPages.IRequestHandler,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DynamicPageProxy.SetupContextTempVariables(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.SetupApplicationContextVariablesEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:RapidWebDev.Mocks.UIMocks.RequestHandlerMock">
+            <summary>
+            Mock the IRequestHandler
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Mocks.UIMocks.RequestHandlerMock.isPostBack">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Mocks.UIMocks.RequestHandlerMock.isAsync">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Mocks.UIMocks.RequestHandlerMock.IsPostBack">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Mocks.UIMocks.RequestHandlerMock.IsAsynchronous">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Mocks.UIMocks.RequestHandlerMock.Parameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy">
+            <summary>
+            The proxy let user can test business logic which class inherit from IDetailPanelPage
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.detailPanelArgs">
+            <summary>
+             The event argument of detail panel page
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.setupArgs">
+            <summary>
+            Event argument to setup variables for the request context in dynamic/detail panel/aggregate panel pages.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.sender">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.#ctor(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="actual"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.Create">
+            <summary>
+            When User call Create method in IDetailPanelPage,
+            This method will be invoked, and help user do the pre-required conditions, setup parameters
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.Update(System.String)">
+            <summary>
+            When User call Update method in IDetailPanelPage,
+            This method will be invoked, and help user do the pre-required conditions, setup parameters
+            </summary>
+            <param name="entityId"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.Reset">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.LoadWritableEntity(System.String)">
+            <summary>
+            When User call LoadWritableEntity method in IDetailPanelPage,
+            This method will be invoked, and help user do the pre-required conditions, setup parameters
+            </summary>
+            <param name="entityId"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.LoadReadOnlyEntity(System.String)">
+            <summary>
+            When User call LoadReadOnlyEntity method in IDetailPanelPage,
+            This method will be invoked, and help user do the pre-required conditions, setup parameters
+            </summary>
+            <param name="entityId"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.OnPreRender(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.DetailPanelPageEventArgs)">
+            <summary>
+            When User call OnPreRender method in IDetailPanelPage,
+            This method will be invoked, and help user do the pre-required conditions, setup parameters
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.SetupContextTempVariables(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.SetupApplicationContextVariablesEventArgs)">
+            <summary>
+            When User call SetupContextTempVariables method in IDetailPanelPage,
+            This method will be invoked, and help user do the pre-required conditions, setup parameters
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.OnInit(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.DetailPanelPageEventArgs)">
+            <summary>
+            When User call OnInit method in IDetailPanelPage,
+            This method will be invoked, and help user do the pre-required conditions, setup parameters
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.DetailPanelPageProxy.OnLoad(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.DetailPanelPageEventArgs)">
+            <summary>
+            When User call OnLoad method in IDetailPanelPage,
+            This method will be invoked, and help user do the pre-required conditions, setup parameters
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:RapidWebDev.Mocks.UIMocks.AggregatePanelPageProxy">
+            <summary>
+            The proxy let user can test business logic which class inherit from IAggregatePanelPage
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.AggregatePanelPageProxy.#ctor(RapidWebDev.UI.DynamicPages.IAggregatePanelPage)">
+            <summary>
+            
+            </summary>
+            <param name="actual"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.AggregatePanelPageProxy.Save(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            When User call Save method in IAggregatePanelPage,
+            This method will be invoked, and help user do the pre-required conditions, setup parameters
+            </summary>
+            <param name="commandArgument"></param>
+            <param name="entityIdEnumerable"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.AggregatePanelPageProxy.OnInit(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.AggregatePanelPageEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.AggregatePanelPageProxy.OnLoad(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.AggregatePanelPageEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.AggregatePanelPageProxy.OnPreRender(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.AggregatePanelPageEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.AggregatePanelPageProxy.SetupContextTempVariables(RapidWebDev.UI.DynamicPages.IRequestHandler,RapidWebDev.UI.DynamicPages.SetupApplicationContextVariablesEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Subtext.TestLibrary.SimulatedHttpRequest">
+            <summary>
+            Used to simulate an HttpRequest.
+            </summary>
+        </member>
+        <member name="M:Subtext.TestLibrary.SimulatedHttpRequest.#ctor(System.String,System.String,System.String,System.String,System.String,System.IO.TextWriter,System.String,System.Int32,System.String)">
+            <summary>
+            Creates a new <see cref="T:Subtext.TestLibrary.SimulatedHttpRequest"/> instance.
+            </summary>
+            <param name="applicationPath">App virtual dir.</param>
+            <param name="physicalAppPath">Physical Path to the app.</param>
+            <param name="physicalFilePath">Physical Path to the file.</param>
+            <param name="page">The Part of the URL after the application.</param>
+            <param name="query">Query.</param>
+            <param name="output">Output.</param>
+            <param name="host">Host.</param>
+            <param name="port">Port to request.</param>
+            <param name="verb">The HTTP Verb to use.</param>
+        </member>
+        <member name="M:Subtext.TestLibrary.SimulatedHttpRequest.GetHttpVerbName">
+            <summary>
+            Returns the specified member of the request header.
+            </summary>
+            <returns>
+            The HTTP verb returned in the request
+            header.
+            </returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.SimulatedHttpRequest.GetServerName">
+            <summary>
+            Gets the name of the server.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.SimulatedHttpRequest.GetLocalPort">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Subtext.TestLibrary.SimulatedHttpRequest.headers">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Subtext.TestLibrary.SimulatedHttpRequest.GetUnknownRequestHeaders">
+            <summary>
+            Get all nonstandard HTTP header name-value pairs.
+            </summary>
+            <returns>An array of header name-value pairs.</returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.SimulatedHttpRequest.GetKnownRequestHeader(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.SimulatedHttpRequest.GetAppPath">
+            <summary>
+            Returns the virtual path to the currently executing
+            server application.
+            </summary>
+            <returns>
+            The virtual path of the current application.
+            </returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.SimulatedHttpRequest.GetAppPathTranslated">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.SimulatedHttpRequest.GetUriPath">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.SimulatedHttpRequest.GetFilePathTranslated">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.SimulatedHttpRequest.GetPreloadedEntityBody">
+            <summary>
+            Reads request data from the client (when not preloaded).
+            </summary>
+            <returns>The number of bytes read.</returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.SimulatedHttpRequest.IsEntireEntityBodyIsPreloaded">
+            <summary>
+            Returns a value indicating whether all request data
+            is available and no further reads from the client are required.
+            </summary>
+            <returns>
+            	<see langword="true"/> if all request data is available; otherwise,
+            <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="P:Subtext.TestLibrary.SimulatedHttpRequest.Headers">
+            <summary>
+            Gets the headers.
+            </summary>
+            <value>The headers.</value>
+        </member>
+        <member name="P:Subtext.TestLibrary.SimulatedHttpRequest.Form">
+            <summary>
+            Gets the format exception.
+            </summary>
+            <value>The format exception.</value>
+        </member>
+        <member name="T:Subtext.TestLibrary.ReflectionHelper">
+            <summary>
+            Helper class to simplify common reflection tasks.
+            </summary>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.GetStaticFieldValue``1(System.String,System.Type)">
+            <summary>
+            Returns the value of the private member specified.
+            </summary>
+            <param name="fieldName">Name of the member.</param>
+            /// <param name="type">Type of the member.</param>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.GetStaticFieldValue``1(System.String,System.String)">
+            <summary>
+            Returns the value of the private member specified.
+            </summary>
+            <param name="fieldName">Name of the member.</param>
+            <param name="typeName"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.SetStaticFieldValue``1(System.String,System.Type,``0)">
+            <summary>
+            Sets the value of the private static member.
+            </summary>
+            <param name="fieldName"></param>
+            <param name="type"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.SetStaticFieldValue``1(System.String,System.String,``0)">
+            <summary>
+            Sets the value of the private static member.
+            </summary>
+            <param name="fieldName"></param>
+            <param name="typeName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.GetPrivateInstanceFieldValue``1(System.String,System.Object)">
+            <summary>
+            Returns the value of the private member specified.
+            </summary>
+            <param name="fieldName">Name of the member.</param>
+            <param name="source">The object that contains the member.</param>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.SetPrivateInstanceFieldValue(System.String,System.Object,System.Object)">
+            <summary>
+            Returns the value of the private member specified.
+            </summary>
+            <param name="memberName">Name of the member.</param>
+            <param name="source">The object that contains the member.</param>
+            <param name="value">The value to set the member to.</param>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.Instantiate(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="typeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.Instantiate(System.String,System.Type[],System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="typeName"></param>
+            <param name="constructorArgumentTypes"></param>
+            <param name="constructorParameterValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.Instantiate(System.Type,System.Type[],System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="constructorArgumentTypes"></param>
+            <param name="constructorParameterValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.InvokeNonPublicMethod``1(System.Type,System.String,System.Object[])">
+            <summary>
+            Invokes a non-public static method.
+            </summary>
+            <typeparam name="TReturn"></typeparam>
+            <param name="type"></param>
+            <param name="methodName"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.InvokeNonPublicMethod``1(System.Object,System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="TReturn"></typeparam>
+            <param name="source"></param>
+            <param name="methodName"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.InvokeProperty``1(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TReturn"></typeparam>
+            <param name="source"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.InvokeNonPublicProperty``1(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TReturn"></typeparam>
+            <param name="source"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.ReflectionHelper.InvokeNonPublicProperty(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="source"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Mocks.HttpEnvironment">
+            <summary>
+            Let User can mock httpcontext
+            and set query string, form varibles ,etc
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Mocks.HttpEnvironment.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Mocks.HttpEnvironment.SetRequestUrl(System.String)">
+            <summary>
+            Set the request Uri
+            </summary>
+            <param name="uri"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.HttpEnvironment.SetFormParameters(System.String,System.String)">
+            <summary>
+            Set Post parameters 
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.HttpEnvironment.SetSessionParaemeter(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.HttpEnvironment.Dispose">
+            <summary>
+            inherit from IDispose
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Mocks.UIMocks.IDynamicPageUtils">
+            <summary>
+            This interface provides the methods let user can set/get the control of the dynamic page
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.IDynamicPageUtils.Set(System.String,System.Web.UI.Control)">
+            <summary>
+            
+            </summary>
+            <param name="controlKey"></param>
+            <param name="controlValue"></param>
+        </member>
+        <member name="M:RapidWebDev.Mocks.UIMocks.IDynamicPageUtils.Get(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="controlKey"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Subtext.TestLibrary.HttpVerb">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Subtext.TestLibrary.HttpVerb.GET">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Subtext.TestLibrary.HttpVerb.HEAD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Subtext.TestLibrary.HttpVerb.POST">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Subtext.TestLibrary.HttpVerb.PUT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Subtext.TestLibrary.HttpVerb.DELETE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Subtext.TestLibrary.HttpSimulator">
+            <summary>
+            Useful class for simulating the HttpContext. This does not actually 
+            make an HttpRequest, it merely simulates the state that your code 
+            would be in "as if" handling a request. Thus the HttpContext.Current 
+            property is populated.
+            </summary>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="applicationPath"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="applicationPath"></param>
+            <param name="physicalApplicationPath"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.SimulateRequest">
+            <summary>
+            Sets up the HttpContext objects to simulate a GET request.
+            </summary>
+            <remarks>
+            Simulates a request to http://localhost/
+            </remarks>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.SimulateRequest(System.Uri)">
+            <summary>
+            Sets up the HttpContext objects to simulate a GET request.
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.SimulateRequest(System.Uri,Subtext.TestLibrary.HttpVerb)">
+            <summary>
+            Sets up the HttpContext objects to simulate a request.
+            </summary>
+            <param name="url"></param>
+            <param name="httpVerb"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.SimulateRequest(System.Uri,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Sets up the HttpContext objects to simulate a POST request.
+            </summary>
+            <param name="url"></param>
+            <param name="formVariables"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.SimulateRequest(System.Uri,System.Collections.Specialized.NameValueCollection,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Sets up the HttpContext objects to simulate a POST request.
+            </summary>
+            <param name="url"></param>
+            <param name="formVariables"></param>
+            <param name="headers"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.SimulateRequest(System.Uri,Subtext.TestLibrary.HttpVerb,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Sets up the HttpContext objects to simulate a request.
+            </summary>
+            <param name="url"></param>
+            <param name="httpVerb"></param>
+            <param name="headers"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.SimulateRequest(System.Uri,Subtext.TestLibrary.HttpVerb,System.Collections.Specialized.NameValueCollection,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Sets up the HttpContext objects to simulate a request.
+            </summary>
+            <param name="url"></param>
+            <param name="httpVerb"></param>
+            <param name="formVariables"></param>
+            <param name="headers"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.InitializeApplication">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.InitializeSession">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.SetReferer(System.Uri)">
+            <summary>
+            Sets the referer for the request. Uses a fluent interface.
+            </summary>
+            <param name="referer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.SetFormVariable(System.String,System.String)">
+            <summary>
+            Sets a form variable.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.SetHeader(System.String,System.String)">
+            <summary>
+            Sets a header value.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Subtext.TestLibrary.HttpSimulator.host">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Subtext.TestLibrary.HttpSimulator.localPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Subtext.TestLibrary.HttpSimulator.workerRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.ExtractQueryStringPart(System.Uri)">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.GetHostingEnvironment">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.NormalizeSlashes(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.StripPrecedingSlashes(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.StripTrailingSlashes(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.StripTrailingBackSlashes(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.Host">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.LocalPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.Port">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.Page">
+            <summary>
+            Portion of the URL after the application.
+            </summary>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.ApplicationPath">
+            <summary>
+            The same thing as the IIS Virtual directory. It's 
+            what gets returned by Request.ApplicationPath.
+            </summary>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.PhysicalApplicationPath">
+            <summary>
+            Physical path to the application (used for simulation purposes).
+            </summary>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.PhysicalPath">
+            <summary>
+            Physical path to the requested file (used for simulation purposes).
+            </summary>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.ResponseWriter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.ResponseText">
+            <summary>
+            Returns the text from the response to the simulated request.
+            </summary>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.WorkerRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.Abandon">
+            <summary>
+            Ends the current session.
+            </summary>
+            
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.Add(System.String,System.Object)">
+            <summary>
+            Adds a new item to the session-state collection.
+            </summary>
+            
+            <param name="name">The name of the item to add to the session-state collection. </param>
+            <param name="value">The value of the item to add to the session-state collection. </param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.Remove(System.String)">
+            <summary>
+            Deletes an item from the session-state item collection.
+            </summary>
+            
+            <param name="name">The name of the item to delete from the session-state item collection. </param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.RemoveAt(System.Int32)">
+            <summary>
+            Deletes an item at a specified index from the session-state item collection.
+            </summary>
+            
+            <param name="index">The index of the item to remove from the session-state collection. </param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.Clear">
+            <summary>
+            Clears all values from the session-state item collection.
+            </summary>
+            
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.RemoveAll">
+            <summary>
+            Clears all values from the session-state item collection.
+            </summary>
+            
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the collection of session-state item values to a one-dimensional array, starting at the specified index in the array.
+            </summary>
+            
+            <param name="array">The <see cref="T:System.Array"></see> that receives the session values. </param>
+            <param name="index">The index in array where copying starts. </param>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.SessionID">
+            <summary>
+            Gets the unique session identifier for the session.
+            </summary>
+            
+            <returns>
+            The session ID.
+            </returns>
+            
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.Timeout">
+            <summary>
+            Gets and sets the time-out period (in minutes) allowed between requests before the session-state provider terminates the session.
+            </summary>
+            
+            <returns>
+            The time-out period, in minutes.
+            </returns>
+            
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.IsNewSession">
+            <summary>
+            Gets a value indicating whether the session was created with the current request.
+            </summary>
+            
+            <returns>
+            true if the session was created with the current request; otherwise, false.
+            </returns>
+            
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.Mode">
+            <summary>
+            Gets the current session-state mode.
+            </summary>
+            
+            <returns>
+            One of the <see cref="T:System.Web.SessionState.SessionStateMode"></see> values.
+            </returns>
+            
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.IsCookieless">
+            <summary>
+            Gets a value indicating whether the session ID is embedded in the URL or stored in an HTTP cookie.
+            </summary>
+            
+            <returns>
+            true if the session is embedded in the URL; otherwise, false.
+            </returns>
+            
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.CookieMode">
+            <summary>
+            Gets a value that indicates whether the application is configured for cookieless sessions.
+            </summary>
+            
+            <returns>
+            One of the <see cref="T:System.Web.HttpCookieMode"></see> values that indicate whether the application is configured for cookieless sessions. The default is <see cref="F:System.Web.HttpCookieMode.UseCookies"></see>.
+            </returns>
+            
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.LCID">
+            <summary>
+            Gets or sets the locale identifier (LCID) of the current session.
+            </summary>
+            
+            <returns>
+            A <see cref="T:System.Globalization.CultureInfo"></see> instance that specifies the culture of the current session.
+            </returns>
+            
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.CodePage">
+            <summary>
+            Gets or sets the code-page identifier for the current session.
+            </summary>
+            
+            <returns>
+            The code-page identifier for the current session.
+            </returns>
+            
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.StaticObjects">
+            <summary>
+            Gets a collection of objects declared by &lt;object Runat="Server" Scope="Session"/&gt; tags within the ASP.NET application file Global.asax.
+            </summary>
+            
+            <returns>
+            An <see cref="T:System.Web.HttpStaticObjectsCollection"></see> containing objects declared in the Global.asax file.
+            </returns>
+            
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.Item(System.String)">
+            <summary>
+            Gets or sets a session-state item value by name.
+            </summary>
+            
+            <returns>
+            The session-state item value specified in the name parameter.
+            </returns>
+            
+            <param name="name">The key name of the session-state item value. </param>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.Item(System.Int32)">
+            <summary>
+            Gets or sets a session-state item value by numerical index.
+            </summary>
+            
+            <returns>
+            The session-state item value specified in the index parameter.
+            </returns>
+            
+            <param name="index">The numerical index of the session-state item value. </param>
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the collection of session-state values.
+            </summary>
+            
+            <returns>
+            An object that can be used to synchronize access to the collection.
+            </returns>
+            
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to the collection of session-state values is synchronized (thread safe).
+            </summary>
+            <returns>
+            true if access to the collection is synchronized (thread safe); otherwise, false.
+            </returns>
+            
+        </member>
+        <member name="P:Subtext.TestLibrary.HttpSimulator.FakeHttpSessionState.System#Web#SessionState#IHttpSessionState#IsReadOnly">
+            <summary>
+            Gets a value indicating whether the session is read-only.
+            </summary>
+            
+            <returns>
+            true if the session is read-only; otherwise, false.
+            </returns>
+            
+        </member>
+        <member name="T:Subtext.TestLibrary.HttpSimulator.ConfigMapPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.ConfigMapPath.#ctor(Subtext.TestLibrary.HttpSimulator)">
+            <summary>
+            
+            </summary>
+            <param name="simulation"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.ConfigMapPath.GetMachineConfigFilename">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.ConfigMapPath.GetRootWebConfigFilename">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.ConfigMapPath.GetPathConfigFilename(System.String,System.String,System.String@,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="siteID"></param>
+            <param name="path"></param>
+            <param name="directory"></param>
+            <param name="baseName"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.ConfigMapPath.GetDefaultSiteNameAndID(System.String@,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="siteName"></param>
+            <param name="siteID"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.ConfigMapPath.ResolveSiteArgument(System.String,System.String@,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="siteArgument"></param>
+            <param name="siteName"></param>
+            <param name="siteID"></param>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.ConfigMapPath.MapPath(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="siteID"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Subtext.TestLibrary.HttpSimulator.ConfigMapPath.GetAppPathForPath(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="siteID"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

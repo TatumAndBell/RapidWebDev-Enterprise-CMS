@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://www.rapidwebdev.org/platform" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.rapidwebdev.org/platform/Imports">
+      <xsd:import schemaLocation="http://localhost:50682/Services/OrganizationService.svc?xsd=xsd0" namespace="http://www.rapidwebdev.org/platform" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/OrganizationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/OrganizationService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/OrganizationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/RapidWebDev.ExtensionModel" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/OrganizationService.svc?xsd=xsd4" namespace="http://www.rapidwebdev.org/extensionmodel" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/OrganizationService.svc?xsd=xsd5" namespace="http://www.rapidwebdev.org/common" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="OrganizationService_ListDomainsJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListDomainsJson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_ListDomainsJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListDomainsJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_ListDomainsXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListDomainsXml" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_ListDomainsXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListDomainsXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_SaveOrganizationTypeJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrganizationTypeJson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_SaveOrganizationTypeJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrganizationTypeJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_SaveOrganizationTypeXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrganizationTypeXml" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_SaveOrganizationTypeXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrganizationTypeXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationTypeByIdJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationTypeByIdJson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationTypeByIdJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationTypeByIdJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationTypeByIdXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationTypeByIdXml" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationTypeByIdXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationTypeByIdXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationTypeByNameJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationTypeByNameJson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationTypeByNameJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationTypeByNameJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationTypeByNameXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationTypeByNameXml" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationTypeByNameXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationTypeByNameXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_FindOrganizationTypesJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindOrganizationTypesJson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_FindOrganizationTypesJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindOrganizationTypesJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_FindOrganizationTypesXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindOrganizationTypesXml" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_FindOrganizationTypesXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindOrganizationTypesXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_SaveOrganizationJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrganizationJson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_SaveOrganizationJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrganizationJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_SaveOrganizationXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrganizationXml" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_SaveOrganizationXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrganizationXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationByIdJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByIdJson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationByIdJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByIdJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationByIdXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByIdXml" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationByIdXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByIdXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationByCodeJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByCodeJson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationByCodeJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByCodeJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationByCodeXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByCodeXml" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationByCodeXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByCodeXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationByNameJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByNameJson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationByNameJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByNameJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationByNameXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByNameXml" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_GetOrganizationByNameXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByNameXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_BulkGetOrganizationsByIdsJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:BulkGetOrganizationsByIdsJson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_BulkGetOrganizationsByIdsJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BulkGetOrganizationsByIdsJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_BulkGetOrganizationsByIdsXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:BulkGetOrganizationsByIdsXml" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_BulkGetOrganizationsByIdsXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BulkGetOrganizationsByIdsXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_SearchJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchJson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_SearchJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_SearchXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchXml" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_SearchXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_QueryOrganizationsJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryOrganizationsJson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_QueryOrganizationsJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryOrganizationsJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_QueryOrganizationsXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryOrganizationsXml" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationService_QueryOrganizationsXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryOrganizationsXmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OrganizationService">
+    <wsdl:operation name="ListDomainsJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/ListDomainsJson" message="tns:OrganizationService_ListDomainsJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/ListDomainsJsonResponse" message="tns:OrganizationService_ListDomainsJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListDomainsXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/ListDomainsXml" message="tns:OrganizationService_ListDomainsXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/ListDomainsXmlResponse" message="tns:OrganizationService_ListDomainsXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrganizationTypeJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/SaveOrganizationTypeJson" message="tns:OrganizationService_SaveOrganizationTypeJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/SaveOrganizationTypeJsonResponse" message="tns:OrganizationService_SaveOrganizationTypeJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrganizationTypeXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/SaveOrganizationTypeXml" message="tns:OrganizationService_SaveOrganizationTypeXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/SaveOrganizationTypeXmlResponse" message="tns:OrganizationService_SaveOrganizationTypeXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationTypeByIdJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationTypeByIdJson" message="tns:OrganizationService_GetOrganizationTypeByIdJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationTypeByIdJsonResponse" message="tns:OrganizationService_GetOrganizationTypeByIdJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationTypeByIdXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationTypeByIdXml" message="tns:OrganizationService_GetOrganizationTypeByIdXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationTypeByIdXmlResponse" message="tns:OrganizationService_GetOrganizationTypeByIdXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationTypeByNameJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationTypeByNameJson" message="tns:OrganizationService_GetOrganizationTypeByNameJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationTypeByNameJsonResponse" message="tns:OrganizationService_GetOrganizationTypeByNameJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationTypeByNameXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationTypeByNameXml" message="tns:OrganizationService_GetOrganizationTypeByNameXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationTypeByNameXmlResponse" message="tns:OrganizationService_GetOrganizationTypeByNameXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindOrganizationTypesJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/FindOrganizationTypesJson" message="tns:OrganizationService_FindOrganizationTypesJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/FindOrganizationTypesJsonResponse" message="tns:OrganizationService_FindOrganizationTypesJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindOrganizationTypesXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/FindOrganizationTypesXml" message="tns:OrganizationService_FindOrganizationTypesXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/FindOrganizationTypesXmlResponse" message="tns:OrganizationService_FindOrganizationTypesXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrganizationJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/SaveOrganizationJson" message="tns:OrganizationService_SaveOrganizationJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/SaveOrganizationJsonResponse" message="tns:OrganizationService_SaveOrganizationJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrganizationXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/SaveOrganizationXml" message="tns:OrganizationService_SaveOrganizationXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/SaveOrganizationXmlResponse" message="tns:OrganizationService_SaveOrganizationXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByIdJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationByIdJson" message="tns:OrganizationService_GetOrganizationByIdJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationByIdJsonResponse" message="tns:OrganizationService_GetOrganizationByIdJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByIdXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationByIdXml" message="tns:OrganizationService_GetOrganizationByIdXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationByIdXmlResponse" message="tns:OrganizationService_GetOrganizationByIdXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByCodeJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationByCodeJson" message="tns:OrganizationService_GetOrganizationByCodeJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationByCodeJsonResponse" message="tns:OrganizationService_GetOrganizationByCodeJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByCodeXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationByCodeXml" message="tns:OrganizationService_GetOrganizationByCodeXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationByCodeXmlResponse" message="tns:OrganizationService_GetOrganizationByCodeXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByNameJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationByNameJson" message="tns:OrganizationService_GetOrganizationByNameJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationByNameJsonResponse" message="tns:OrganizationService_GetOrganizationByNameJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByNameXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationByNameXml" message="tns:OrganizationService_GetOrganizationByNameXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/GetOrganizationByNameXmlResponse" message="tns:OrganizationService_GetOrganizationByNameXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BulkGetOrganizationsByIdsJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/BulkGetOrganizationsByIdsJson" message="tns:OrganizationService_BulkGetOrganizationsByIdsJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/BulkGetOrganizationsByIdsJsonResponse" message="tns:OrganizationService_BulkGetOrganizationsByIdsJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BulkGetOrganizationsByIdsXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/BulkGetOrganizationsByIdsXml" message="tns:OrganizationService_BulkGetOrganizationsByIdsXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/BulkGetOrganizationsByIdsXmlResponse" message="tns:OrganizationService_BulkGetOrganizationsByIdsXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/SearchJson" message="tns:OrganizationService_SearchJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/SearchJsonResponse" message="tns:OrganizationService_SearchJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/SearchXml" message="tns:OrganizationService_SearchXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/SearchXmlResponse" message="tns:OrganizationService_SearchXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryOrganizationsJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/QueryOrganizationsJson" message="tns:OrganizationService_QueryOrganizationsJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/QueryOrganizationsJsonResponse" message="tns:OrganizationService_QueryOrganizationsJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryOrganizationsXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/QueryOrganizationsXml" message="tns:OrganizationService_QueryOrganizationsXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/OrganizationService/QueryOrganizationsXmlResponse" message="tns:OrganizationService_QueryOrganizationsXml_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

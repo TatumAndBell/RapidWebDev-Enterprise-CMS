@@ -1,0 +1,2356 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RapidWebDev.Common</name>
+    </assembly>
+    <members>
+        <member name="T:RapidWebDev.Common.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.BadRequest">
+            <summary>
+              Looks up a localized string similar to Bad Request..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.ConnectionTypeInvalidIDbConnectionType">
+            <summary>
+              Looks up a localized string similar to Connection type {0} is invalid IDbConnection type..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.ConnectionTypeNotFound">
+            <summary>
+              Looks up a localized string similar to Connection type {0} is not found..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.ConvertTypeFailed">
+            <summary>
+              Looks up a localized string similar to Attemption to convert string value {0} to explicit type {1} failed..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.DateFormatString">
+            <summary>
+              Looks up a localized string similar to MMM d, yyyy.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.DateTimeFormatString">
+            <summary>
+              Looks up a localized string similar to MMM d, yyyy HH:mm.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.DeserializationFailMessage">
+            <summary>
+              Looks up a localized string similar to Bad Request. Deserialization failed. Please make sure the request document is well formed..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.ExcelDocumentNotExist">
+            <summary>
+              Looks up a localized string similar to Excel document doesn&apos;t exist..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.InternalServerErrorMessage">
+            <summary>
+              Looks up a localized string similar to The server encountered an error while processing the request. Refer to server logs for more details..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.InvalidExcelDocumentWithUnpredictableColunmNumber">
+            <summary>
+              Looks up a localized string similar to Invalid excel document due to unexpected columns number..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.InvalidExcelFormat">
+            <summary>
+              Looks up a localized string similar to Invalid excel format..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.InvalidFormatGlobalizationVariable">
+            <summary>
+              Looks up a localized string similar to The globalization variable &quot;{0}&quot; is invalid format to $NameSpace.Class.Property, AssemblyName$. .
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.NotFound">
+            <summary>
+              Looks up a localized string similar to Not Found..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.RestfulErrorMessage">
+            <summary>
+              Looks up a localized string similar to The server encountered an error while processing the request..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.TypeNotImplementedInDomain">
+            <summary>
+              Looks up a localized string similar to Type {0} is not implemented in current executing application domain..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.Unauthorized">
+            <summary>
+              Looks up a localized string similar to Unauthorized Request..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.WebServerTimeZoneName">
+            <summary>
+              Looks up a localized string similar to Unknown.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.XmlDocumentNotIncludeSpecifiedNamespace">
+            <summary>
+              Looks up a localized string similar to The specified xml document doesn&apos;t include namespace {0}..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Properties.Resources.XmlValidationFail">
+            <summary>
+              Looks up a localized string similar to The {0} is thrown at line {1}, postion {2} of specified xml file. The validation fails by \&quot;{3}\&quot;\r\n\r\n.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Web.SupportDocumentReadyPage">
+            <summary>
+            The base page type supports to flush javascripts added to document ready automatically.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.SupportDocumentReadyPage.OnPreRenderComplete(System.EventArgs)">
+            <summary>
+            Flush javascripts which are added to document ready automatically.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:RapidWebDev.Common.Web.Services.PermissionAttribute">
+            <summary>
+            The markup attribute for WCF operation contract, which indicates the request to the contract should be authorized.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Web.Services.XmlFileServicePermissionMapApi">
+            <summary>
+            Api to resolve the permission value for a WCF operation contract.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Web.Services.IServicePermissionMapApi">
+            <summary>
+            Api to resolve the permission value for a WCF operation contract.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.Services.IServicePermissionMapApi.GetPermissionValue(System.String,System.String)">
+            <summary>
+            Get permission value for the operation contract of service contract.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.Services.XmlFileServicePermissionMapApi.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="xmlFilePath"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.Services.XmlFileServicePermissionMapApi.GetPermissionValue(System.String,System.String)">
+            <summary>
+            Get permission value for the operation contract of service contract.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.Common.Web.Services.XmlFileServicePermissionMapApi.XmlFilePath">
+            <summary>
+            Gets xml file path.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Kit">
+            <summary>
+            A ton of common static methods.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.IsEmpty(System.Object)">
+            <summary>
+            Return true when argument is null or empty (after trimmed).
+            </summary>
+            <param name="arg">Input object</param>
+            <returns>True when argument is null or empty (after trimmed).</returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.TruncateHTML(System.String,System.Int32)">
+            <summary>
+            Truncate characters more than specified length in the HTML string ignoring HTML tags.
+            </summary>
+            <param name="input">input</param>
+            <param name="length">Number should be separated into</param>
+            <returns>Separated string.</returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.TruncateText(System.String,System.Int32)">
+            <summary>
+            Truncate characters more than max length in the string.
+            </summary>
+            <param name="s">Input string</param>
+            <param name="maxLength">The maximum lenght of output string.</param>
+            <returns>Return string with truncating the characters more than specified max length.</returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.NotNull(System.Object,System.String)">
+            <summary>
+            If arguement is null, it will throw ArgumentNullException
+            </summary>
+            <param name="arg">Input argument for checking.</param>
+            <param name="argumentName">Argument name in thrown exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.GetManifestFile(System.Type,System.String)">
+            <summary>
+            Get string content of manifest file in the assembly of type.
+            </summary>
+            <param name="type">Type</param>
+            <param name="fileName">Manifest file name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.GetManifestFile(System.Reflection.Assembly,System.String,System.String)">
+            <summary>
+            Get string content of manifest file in the assembly.
+            </summary>
+            <param name="assembly">The assembly which the manifest file locates.</param>
+            <param name="nameSpace">The name space which the manifest file locates.</param>
+            <param name="fileName">Manifest file name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.GetManifestFile(System.Reflection.Assembly,System.String)">
+            <summary>
+            Get string content of manifest file in the assembly.
+            </summary>
+            <param name="assembly">Assembly which includes manifest file.</param>
+            <param name="fullFileName">The full manifest file name locates in assembly.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.ValidateXml(System.Xml.Schema.XmlSchema,System.Xml.XmlDocument)">
+            <summary>
+            Validate XmlDocument using XmlSchema. Throw <see cref="T:System.Xml.Schema.XmlSchemaException"/> when validation fails.
+            </summary>
+            <param name="schema">XmlSchema instance</param>
+            <param name="xmldoc">XmlDocument instace is validated for.</param>
+            <exception cref="T:System.Xml.Schema.XmlSchemaException"/>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.XmlEncode(System.String)">
+            <summary>
+            Encode input xml string.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.XmlDecode(System.String)">
+            <summary>
+            Decode input encoded xml string.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.UrlEncode(System.String)">
+            <summary>
+            Encode url.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.UrlDecode(System.String)">
+            <summary>
+            Decode url.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.ToBool(System.Object,System.Boolean)">
+            <summary>
+            Cast the input object to bool value intelligently.
+            </summary>
+            <param name="arg"></param>
+            <param name="defaultValue">Default value if convertion failed.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.ConvertType(System.Object,System.Type)">
+            <summary>
+            Convert the input value to target type using different ways.
+            The attempts are 
+            1) convert explicitly. 
+            2) use Convert.ChangeType. 
+            3) Enumeration Parsing if the target type is an enumeration. 
+            4) Call Parse if the target type has the public static method.
+            5) Call constructor using the direct input value.
+            </summary>
+            <param name="refValue"></param>
+            <param name="targetType"></param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException">If all attempts of convertion are failed.</exception>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.ConvertType(System.String,System.Type)">
+            <summary>
+            Convert the input string to target type using different ways.
+            The attempts are 
+            1) convert explicitly. 
+            2) use Convert.ChangeType. 
+            3) Enumeration Parsing if the target type is an enumeration. 
+            4) Call Parse if the target type has the public static method.
+            5) Call constructor using the direct input value.
+            </summary>
+            <param name="stringValue"></param>
+            <param name="targetType"></param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException">If all attempts of convertion are failed.</exception>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.ConvertTypeInternal(System.String,System.Type)">
+            <summary>
+            Convert the input string to target type using different ways.
+            The attempts are 
+            1) convert explicitly. 
+            2) use Convert.ChangeType. 
+            3) Enumeration Parsing if the target type is an enumeration. 
+            4) Call Parse if the target type has the public static method.
+            5) Call constructor using the direct input value.
+            </summary>
+            <param name="stringValue"></param>
+            <param name="targetType"></param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException">If all attempts of convertion are failed.</exception>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.Concat(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Concat enumerable strings into a single string by separator "; ".
+            </summary>
+            <param name="inputStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.Concat(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Concat enumerable strings into a single string by the specified separator.
+            </summary>
+            <param name="inputStrings"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.GetType(System.String)">
+            <summary>
+            Get System.Type by assembly qualified name as "[Namespace].[Type], [Assembly]". 
+            This works around the exception thrown by System.Type.GetType() if an assembly is referenced and located in the executing application but not loaded at a moment.
+            </summary>
+            <param name="typeFullName"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException">when the specified type doesn't exist.</exception>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.ToAbsolutePath(System.String)">
+            <summary>
+            Convert specified path to local file system absolute path.
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Kit.ResolveAbsoluteUrl(System.String)">
+            <summary>
+            Resolve absolute page url.
+            </summary>
+            <param name="pageUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.Common.Kit.WebSiteBaseUrl">
+            <summary>
+            Get base url of current deployed web site.
+            </summary>
+        </member>
+        <member name="T:System.Linq.LinqPredicate">
+            <summary>
+            The class is used to merge string typed linq predicate with parameters.
+            </summary>
+        </member>
+        <member name="M:System.Linq.LinqPredicate.#ctor(System.String,System.Object[])">
+            <summary>
+            Constructor merger from an entry predicate.
+            </summary>
+            <param name="expression">linq predicate expression</param>
+            <param name="parameters">linq predicate parameters</param>
+        </member>
+        <member name="M:System.Linq.LinqPredicate.Add(System.String,System.Object[])">
+            <summary>
+            Merge other predicate expression with parameters into the current predicate.
+            </summary>
+            <param name="expression">linq predicate expression</param>
+            <param name="parameters">linq predicate parameters</param>
+        </member>
+        <member name="M:System.Linq.LinqPredicate.Add(System.Linq.LinqPredicate)">
+            <summary>
+            Merge other predicate expression with parameters into the current predicate.
+            </summary>
+            <param name="linqPredicate">linq predicate</param>
+        </member>
+        <member name="M:System.Linq.LinqPredicate.Concat(System.Linq.LinqPredicate,System.Linq.LinqPredicate)">
+            <summary>
+            Concat two linq predicates.
+            </summary>
+            <param name="predicate1"></param>
+            <param name="predicate2"></param>
+            <returns></returns>
+        </member>
+        <member name="P:System.Linq.LinqPredicate.Expression">
+            <summary>
+            New predicate expression after merged.
+            </summary>
+        </member>
+        <member name="P:System.Linq.LinqPredicate.Parameters">
+            <summary>
+            New predicate parameter array after merged.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.CommonException">
+            <summary>
+            The bad request exception.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.CommonException.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.CommonException.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="msg">Message to include in the exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.CommonException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="msg">Message to include in the exception.</param>
+            <param name="exception">Inner exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.CommonException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor used for serialization
+            </summary>
+            <param name="info">SerializationInfo object</param>
+            <param name="context">StreamingContext object</param>
+        </member>
+        <member name="T:RapidWebDev.Common.Caching.HttpRuntimeCache">
+            <summary>
+            Cache implementation bases on http runtime cache.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Caching.ICache">
+            <summary>
+            Interface of generic cache.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.ICache.Add(System.Object,System.Object,System.TimeSpan,RapidWebDev.Common.Caching.CachePriorityTypes)">
+            <summary>
+            Add object to cache container by specified expire sliding duration and callback.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="slidingDuration"></param>
+            <param name="cachePriorityType"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.ICache.Get(System.Object)">
+            <summary>
+            Get caching object by key.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.ICache.Remove(System.Object)">
+            <summary>
+            Remove caching object by key.
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="P:RapidWebDev.Common.Caching.ICache.Count">
+            <summary>
+            Gets caching object count.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.HttpRuntimeCache.Add(System.Object,System.Object,System.TimeSpan,RapidWebDev.Common.Caching.CachePriorityTypes)">
+            <summary>
+            Add object to cache container by specified expire sliding duration and priority type.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="slidingDuration"></param>
+            <param name="cachePriorityType"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.HttpRuntimeCache.Get(System.Object)">
+            <summary>
+            Get caching object by key.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.HttpRuntimeCache.Remove(System.Object)">
+            <summary>
+            Remove caching object by key.
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="P:RapidWebDev.Common.Caching.HttpRuntimeCache.Count">
+            <summary>
+            Gets caching object count.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Validation.ValidationManager">
+            <summary>
+            The class to manage validation scope in multiple threads.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationManager.Push(RapidWebDev.Common.Validation.ValidationScope)">
+            <summary>
+            Push an ValidationScope into current executing thread and return the total number of alive validation scopes in current executing thread.
+            </summary>
+            <param name="validationScope"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationManager.Pop">
+            <summary>
+            Pop the top ValidationScope reference in current executing thread. 
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationManager.Peek">
+            <summary>
+            Peek the top validation scope without removing it from the validation scope stack.
+            Returns null if there has no validation scope in the stack.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.Common.Validation.ValidationManager.Instance">
+            <summary>
+            Gets the singleton instance of validation manager.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.ResourceNotFoundException">
+            <summary>
+            The resource not found exception.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.ResourceNotFoundException.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.ResourceNotFoundException.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="msg">Message to include in the exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.ResourceNotFoundException.#ctor(System.Exception)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="exception">Inner exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.ResourceNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="msg">Message to include in the exception.</param>
+            <param name="exception">Inner exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.ResourceNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor used for serialization
+            </summary>
+            <param name="info">SerializationInfo object</param>
+            <param name="context">StreamingContext object</param>
+        </member>
+        <member name="T:RapidWebDev.Common.CodeDom.CompileException">
+            <summary>
+            Compile exception at runtime in ClassDecorator.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.CompileException.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.CompileException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.CompileException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.CompileException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:RapidWebDev.Common.WebServiceQueryPredicate">
+            <summary>
+            Web service query predicate which is used to execute query from web service client.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.WebServiceQueryPredicate.#ctor(System.String)">
+            <summary>
+            Construct predicate without parameters
+            </summary>
+            <param name="expression">Web service query predicate expression</param>
+        </member>
+        <member name="M:RapidWebDev.Common.WebServiceQueryPredicate.#ctor(System.String,System.Collections.ObjectModel.Collection{RapidWebDev.Common.WebServiceQueryPredicateParameter})">
+            <summary>
+            Construct predicate without parameters
+            </summary>
+            <param name="expression">Web service query predicate expression</param>
+            <param name="parameters">Web service query predicate expression parameters</param>
+        </member>
+        <member name="P:RapidWebDev.Common.WebServiceQueryPredicate.Expression">
+            <summary>
+            Query predicate expression.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.WebServiceQueryPredicate.Parameters">
+            <summary>
+            New predicate parameter array after merged.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.WebServiceQueryPredicateParameter">
+            <summary>
+            Web service query predicate parameter.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.WebServiceQueryPredicateParameter.#ctor(System.String)">
+            <summary>
+            Construct web service query predicate parameter.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.WebServiceQueryPredicateParameter.#ctor(System.String,RapidWebDev.Common.WebServiceQueryPredicateParameterTypes)">
+            <summary>
+            Construct web service query predicate parameter.
+            </summary>
+            <param name="name"></param>
+            <param name="parameterType"></param>
+        </member>
+        <member name="P:RapidWebDev.Common.WebServiceQueryPredicateParameter.Name">
+            <summary>
+            Parameter name
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.WebServiceQueryPredicateParameter.Type">
+            <summary>
+            Parameter type
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.WebServiceQueryPredicateParameter.Value">
+            <summary>
+            Parameter value
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.WebServiceQueryPredicateParameterTypes">
+            <summary>
+            Web service query predicate parameter types
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.WebServiceQueryPredicateParameterTypes.String">
+            <summary>
+            String
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.WebServiceQueryPredicateParameterTypes.DateTime">
+            <summary>
+            DateTime
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.WebServiceQueryPredicateParameterTypes.Guid">
+            <summary>
+            Guid
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.WebServiceQueryPredicateParameterTypes.Integer">
+            <summary>
+            Integer
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.WebServiceQueryPredicateParameterTypes.Decimal">
+            <summary>
+            Decimal
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.WebServiceQueryPredicateParameterTypes.Double">
+            <summary>
+            Double
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Validation.ValidationException">
+            <summary>
+            The default validation exception in RapidWebDev validation scope.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationException.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:RapidWebDev.Common.InvalidSaaSApplicationException">
+            <summary>
+            Exception when the SaaS application is unavailable.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.InvalidSaaSApplicationException.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.InvalidSaaSApplicationException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.InvalidSaaSApplicationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.InvalidSaaSApplicationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:RapidWebDev.Common.Globalization.DefaultClientTimeZoneLoader">
+            <summary>
+            The interface to get the timezone of the client.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Globalization.IClientTimeZoneLoader">
+            <summary>
+            The interface to get the timezone of the client.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.IClientTimeZoneLoader.Load">
+            <summary>
+            Load timezone of the client.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.DefaultClientTimeZoneLoader.Load">
+            <summary>
+            Load timezone of the client.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Common.XmlParser">
+            <summary>
+            Xml parser provides common methods to parse xml node inner text/attribute value to value in specified type.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.XmlParser.#ctor(System.Xml.XmlNamespaceManager,System.Xml.Schema.XmlSchema)">
+            <summary>
+            Constructor with xml namespace manager specified.
+            </summary>
+            <param name="xmlNamespaceManager"></param>
+            <param name="xmlSchema"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.XmlParser.ParseString(System.Xml.XmlNode,System.String)">
+            <summary>
+            Parse inner text/attribute value of specified xpath to string.
+            </summary>
+            <param name="parentNode"></param>
+            <param name="xpath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.XmlParser.ParseBoolean(System.Xml.XmlNode,System.String,System.Boolean)">
+            <summary>
+            Parse inner text/attribute value of specified xpath to boolean.
+            </summary>
+            <param name="parentNode"></param>
+            <param name="xpath"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.XmlParser.ParseInt(System.Xml.XmlNode,System.String,System.Int32)">
+            <summary>
+            Parse inner text/attribute value of specified xpath to integer.
+            </summary>
+            <param name="parentNode"></param>
+            <param name="xpath"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.XmlParser.ParseInt(System.Xml.XmlNode,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Parse inner text/attribute value of specified xpath to integer.
+            </summary>
+            <param name="parentNode"></param>
+            <param name="xpath"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.XmlParser.ParseDecimal(System.Xml.XmlNode,System.String,System.Nullable{System.Decimal})">
+            <summary>
+            Parse inner text/attribute value of specified xpath to decimal.
+            </summary>
+            <param name="parentNode"></param>
+            <param name="xpath"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.XmlParser.ParseDateTime(System.Xml.XmlNode,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Parse inner text/attribute value of specified xpath to datetime.
+            </summary>
+            <param name="parentNode"></param>
+            <param name="xpath"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.XmlParser.ParseUnit(System.Xml.XmlNode,System.String)">
+            <summary>
+            Parse inner text/attribute value of specified xpath to Unit.
+            </summary>
+            <param name="parentNode"></param>
+            <param name="xpath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.XmlParser.ParseEnum``1(System.Xml.XmlNode,System.String)">
+            <summary>
+            Parse inner text/attribute value of specified xpath to enumeration.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="parentNode"></param>
+            <param name="xpath"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.Common.XmlParser.Default">
+            <summary>
+            Get default xml parser without xml namespace manager and schema.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.XmlParser.NamespaceManager">
+            <summary>
+            Gets xml namespace manager instance.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.XmlParser.Schema">
+            <summary>
+            Get the xml schema instance to validate xml file.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Data.DataContextConfiguration">
+            <summary>
+            DataContext configuration which defines all data context used in platform.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DataContextConfiguration.DataContextSettings">
+            <summary>
+            Data Context Setting Collection
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DataContextConfiguration.EnabledMSDTC">
+            <summary>
+            Sets/gets true if MSDTC is started and transactions are allowed to use MSDTC potentially.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DataContextConfiguration.CommandTimeout">
+            <summary>
+            Sets/gets timeout in seconds of the underlying database command of data context.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Data.DataContextSettings">
+            <summary>
+            DataContextSetting configuration collection.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.DataContextSettings.CreateNewElement">
+            <summary>
+            When overridden in a derived class, creates a new System.Configuration.ConfigurationElement.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.DataContextSettings.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Gets the element key for a specified configuration element when overridden in a derived class.
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DataContextSettings.CollectionType">
+            <summary>
+            Gets the type of the System.Configuration.ConfigurationElementCollection.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DataContextSettings.ElementName">
+            <summary>
+            Gets the name used to identify this collection of elements in the configuration file when overridden in a derived class.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Data.DataContextSetting">
+            <summary>
+            DataContext setting class.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DataContextSetting.Name">
+            <summary>
+            Sets/gets data context name.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DataContextSetting.ConnectionType">
+            <summary>
+            Sets/gets data context type.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DataContextSetting.ConnectionStringName">
+            <summary>
+            Sets/gets database connection string name.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.CodeDom.PropertyDefinition">
+            <summary>
+            Config class indicates how to generate new property from original property in dynamic created decorate class.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.PropertyDefinition.#ctor(System.Type)">
+            <summary>
+            Construct property definition by specified the type of new property.
+            </summary>
+            <param name="newPropertyType"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.PropertyDefinition.#ctor(System.String)">
+            <summary>
+            Construct property definition by specified the original property name.
+            The new property type is same to original.
+            </summary>
+            <param name="originalPropertyName"></param>
+        </member>
+        <member name="P:RapidWebDev.Common.CodeDom.PropertyDefinition.PropertyName">
+            <summary>
+            Property name.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.CodeDom.PropertyDefinition.NewPropertyName">
+            <summary>
+            New property name.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.CodeDom.PropertyDefinition.NewPropertyType">
+            <summary>
+            New property type.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.CodeDom.PropertyDefinition.PropertyValueConvertCallback">
+            <summary>
+            Callback to convert property value from original type to new type. 
+            The platform uses Kit.ConvertType to convert property value by default if it's not specified.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Data.TransactionScopeOption">
+            <summary>
+            Provides additional options for creating a transaction scope.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.TransactionScopeOption.Required">
+            <summary>
+            A transaction is required by the scope. 
+            It uses an ambient transaction if one already exists. 
+            Otherwise, it creates a new transaction before entering the scope. 
+            This is the default value.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.TransactionScopeOption.RequiresNew">
+            <summary>
+            A new transaction is always created for the scope.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.TransactionScopeOption.Suppress">
+            <summary>
+            The ambient transaction context is suppressed when creating the scope. 
+            All operations within the scope are done without an ambient transaction context.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Caching.CacheExpiredEventArgs">
+            <summary>
+            Event argument when cached object expired.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.CacheExpiredEventArgs.#ctor(System.Object,System.Object,System.Web.Caching.CacheItemRemovedReason)">
+            <summary>
+            Construct cache expire event argument.
+            </summary>
+            <param name="cacheKey">caching key</param>
+            <param name="cacheValue">caching value</param>
+            <param name="reason">cached object removed reason</param>
+        </member>
+        <member name="P:RapidWebDev.Common.Caching.CacheExpiredEventArgs.Key">
+            <summary>
+            Gets caching key.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Caching.CacheExpiredEventArgs.Value">
+            <summary>
+            Gets caching value.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Caching.CacheExpiredEventArgs.Reason">
+            <summary>
+            Gets the reason of caching object been removed.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Caching.CacheRemovedReason">
+            <summary>
+            Specifies the reason an item was removed from the cache.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Caching.CacheRemovedReason.Removed">
+            <summary>
+            The item is removed from the cache by a System.Web.Caching.Cache.Remove(System.String)
+            method call or by an System.Web.Caching.Cache.Insert(System.String,System.Object)
+            method call that specified the same key.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Caching.CacheRemovedReason.Expired">
+            <summary>
+            The item is removed from the cache because it expired.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Caching.CacheRemovedReason.Underused">
+            <summary>
+            The item is removed from the cache because the system removed it to free memory.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Caching.CacheRemovedReason.DependencyChanged">
+            <summary>
+            The item is removed from the cache because the cache dependency associated with it changed.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Globalization.GlobalizationUtility">
+            <summary>
+            Globalization toolkit
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.GlobalizationUtility.ReplaceGlobalizationVariables(System.String)">
+            <summary>
+            Replace globalization variables in input string.
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Common.Data.IsolationLevel">
+            <summary>
+            Specifies the isolation level of a transaction.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.IsolationLevel.Serializable">
+            <summary>
+            Volatile data can be read but not modified, and no new data can be added during the transaction.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.IsolationLevel.RepeatableRead">
+            <summary>
+            Volatile data can be read but not modified during the transaction. New data can be added during the transaction.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.IsolationLevel.ReadCommitted">
+            <summary>
+            Volatile data cannot be read during the transaction, but can be modified.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.IsolationLevel.ReadUncommitted">
+            <summary>
+            Volatile data can be read and modified during the transaction.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.IsolationLevel.Snapshot">
+            <summary>
+            Volatile data can be read. 
+            Before a transaction modifies data, it verifies if another transaction has changed the data after it was initially read.
+            If the data has been updated, an error is raised. This allows a transaction to get to the previously committed value of the data.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.IsolationLevel.Chaos">
+            <summary>
+            The pending changes from more highly isolated transactions cannot be overwritten.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.IsolationLevel.Unspecified">
+            <summary>
+            A different isolation level than the one specified is being used, but the level cannot be determined. 
+            An exception is thrown if this value is set.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Caching.CachableApi">
+            <summary>
+            Provide base methods to support cache of api.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.CachableApi.#ctor">
+            <summary>
+            Constructor for non-SAAS architect application.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.CachableApi.#ctor(RapidWebDev.Common.IApplicationContext)">
+            <summary>
+            Constructor for SAAS architect application.
+            </summary>
+            <param name="applicationContext">Sets application context to support caching for different applications in SAAS architect.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.CachableApi.AddCache(System.Object,System.Object)">
+            <summary>
+            Add caching object. 
+            The caching object overwrites existed one if specified key existed in cache.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.CachableApi.RemoveCache(System.Object)">
+            <summary>
+            Remove caching object.
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.CachableApi.GetCacheObject``1(System.Object)">
+            <summary>
+            Gets cached object. Returns null if the object is unavailable in cache.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Caching.CachableApi.FormatCacheKey(System.Object)">
+            <summary>
+            By default, this method formats cache key by combining this.GetType().FullName and provided key.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.Common.Caching.CachableApi.Cache">
+            <summary>
+            Sets/gets cache instance
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Caching.CachableApi.CachePriorityType">
+            <summary>
+            Sets/gets cache priority.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Caching.CachableApi.CacheDuration">
+            <summary>
+            Sets/gets caching duration.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Globalization.LocalizationUtility">
+            <summary>
+            Globalization convert methods.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.LocalizationUtility.ToDateString(System.DateTime,System.DateTime)">
+            <summary>
+            Convert input date to string without time segment.
+            </summary>
+            <param name="dateTime"></param>
+            <param name="emptyStringWhenEarlierEqualThanDate">Returns empty string when specified date is earlier/equal than this argument.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.LocalizationUtility.ToDateString(System.DateTime)">
+            <summary>
+            Convert input date to string without time segment.
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.LocalizationUtility.ToDateTimeString(System.DateTime,System.DateTime)">
+            <summary>
+            Convert input date/time to string
+            </summary>
+            <param name="dateTime"></param>
+            <param name="emptyStringWhenEarlierEqualThanDate">Returns empty string when specified date is earlier/equal than this argument.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.LocalizationUtility.ToDateTimeString(System.DateTime)">
+            <summary>
+            Convert input date/time to string
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.LocalizationUtility.ConvertServerTimeToUtcTime(System.DateTime)">
+            <summary>
+            Convert server time to Utc time.
+            </summary>
+            <param name="serverDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.LocalizationUtility.ConvertClientTimeToUtcTime(System.DateTime)">
+            <summary>
+            Convert client time to Utc time.
+            </summary>
+            <param name="clientDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.LocalizationUtility.ConvertClientTimeToUtcTime(System.Nullable{System.DateTime})">
+            <summary>
+            Convert client time to Utc time.
+            </summary>
+            <param name="clientDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.LocalizationUtility.ConvertUtcTimeToClientTime(System.DateTime)">
+            <summary>
+            Convert Utc time to the client time. 
+            </summary>
+            <param name="utcDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.LocalizationUtility.ConvertUtcTimeToClientTime(System.Nullable{System.DateTime})">
+            <summary>
+            Convert Utc time to the client time. 
+            </summary>
+            <param name="utcDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Common.Data.TransactionScope">
+            <summary>
+            Rapid web development provided transaction scope which integrates .NET TransactionScope to support transactional caching. 
+            The facing problem before is that the cache for an individual API cannot be controlled by transaction scope.
+            When we developed APIs with transaction which also need to interact with cache. 
+            In each individual API, it interacts with cache after its own transaction committed. 
+            But in a business operation it needs an unique transaction wraps a series of APIs'. 
+            In this case, the business operation's transaction becomes the real transaction which decides a series of API calls being successful or failed. 
+            We can imagine that there should not have any data been changed if the whole transaction rollback although an individual API's transaction committed.
+            The problem is that an individual API interacts with cache after commited its smaller transaction. And the cache cannot be rollback after the outside transaction rollback. 
+            Finally somewhere depends on the cache will be inconsistent to the database. 
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionScope.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionScope.#ctor(RapidWebDev.Common.Data.IsolationLevel)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="isolationLevel">the isolation level of the transaction.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionScope.#ctor(RapidWebDev.Common.Data.IsolationLevel,System.TimeSpan)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="isolationLevel">the isolation level of the transaction.</param>
+            <param name="timeout">the timeout period for the transaction.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionScope.#ctor(RapidWebDev.Common.Data.TransactionScopeOption)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="transactionScopeOption">An instance of the System.Transactions.TransactionScopeOption enumeration that describes the transaction requirements associated with this transaction scope.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionScope.#ctor(RapidWebDev.Common.Data.TransactionScopeOption,RapidWebDev.Common.Data.IsolationLevel)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="transactionScopeOption">An instance of the System.Transactions.TransactionScopeOption enumeration that describes the transaction requirements associated with this transaction scope.</param>
+            <param name="isolationLevel">the isolation level of the transaction.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionScope.#ctor(RapidWebDev.Common.Data.TransactionScopeOption,RapidWebDev.Common.Data.IsolationLevel,System.TimeSpan)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="transactionScopeOption">An instance of the System.Transactions.TransactionScopeOption enumeration that describes the transaction requirements associated with this transaction scope.</param>
+            <param name="isolationLevel">the isolation level of the transaction.</param>
+            <param name="timeout">the timeout period for the transaction.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionScope.Complete">
+            <summary>
+             Indicates that all operations within the scope are completed successfully.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionScope.Dispose(System.Boolean)">
+            <summary>
+            The dispose method
+            </summary>
+            <param name="disposing">called from Dispose?</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionScope.Dispose">
+            <summary>
+            The dispose method
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.SpringContext">
+            <summary>
+            Sprint.NET application context which helps to resolve objects configured in IoC container easily and it supports to resolve generic objects by specifying generic type.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.SpringContext.GetObject``1(Spring.Context.IApplicationContext)">
+            <summary>
+            Get object in Spring IoC by generic type name. 
+            If specified generic type is a interface with name starts with "I", "I" will be removed from type name prior to retrieve from IoC.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="applicationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.SpringContext.GetObject``1(Spring.Context.IApplicationContext,System.String)">
+            <summary>
+            Get object in Spring IoC by specified object id and return it in generic type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="applicationContext"></param>
+            <param name="objectId"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.Common.SpringContext.Current">
+            <summary>
+            Get current Sprint.NET application context.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Data.DataContextProxyFactory">
+            <summary>
+            DataContext proxy factory.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.DataContextProxyFactory.Create``1(System.Data.IDbConnection)">
+            <summary>
+            Create an instance of the generic data context type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.DataContextProxyFactory.CreateProxyType``1">
+            <summary>
+            Create proxy type which inherited from specified data context type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.DataContextProxyFactory.AddConstructors(System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            Create 4 constructors for DataContext.
+            </summary>
+            <param name="dataContextProxyTypeDeclaration"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.DataContextProxyFactory.CompileCodeTypeDeclaration``1(System.CodeDom.CodeNamespace)">
+            <summary>
+            Compile CodeTypeDeclaration into runtime C# type.
+            </summary>
+            <param name="dataContextNamespace"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Common.Data.PredicateBuilder">
+            <summary>
+            Predicate builder for Linq expressions. 
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.PredicateBuilder.Or``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Add a OR predicate to the target expression.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expr1"></param>
+            <param name="expr2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.PredicateBuilder.And``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Add a AND predicate to the target expression.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expr1"></param>
+            <param name="expr2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Common.Data.TransactionScopeContext">
+            <summary>
+            Transaction scope context which can be registered callback on transaction events.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.TransactionScopeContext.AfterNewTransactionStarted">
+            <summary>
+            The callback will be invoked after a new transaction for current executing thread been started.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.TransactionScopeContext.AfterTransactionCommitted">
+            <summary>
+            The callback will be invoked after the transaction for current executing thread been committed.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Data.TransactionScopeContext.AfterTransactionRollback">
+            <summary>
+            The callback will be invoked after the transaction for current executing thread been rolled back.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionScopeContext.Increase">
+            <summary>
+            Increase the transaction reference for current executing thread.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionScopeContext.Decrease">
+            <summary>
+            Decrease the transaction reference for current executing thread. 
+            The callback "" will be invoked when the reference decreased to zero.
+            </summary>
+            <exception cref="T:System.InvalidProgramException">If there is no transaction available for current executing thread.</exception>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionScopeContext.Rollback">
+            <summary>
+            Rollback the transaction for current executing thread.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.TransactionScopeContext.HasTransaction">
+            <summary>
+            Gets whether the executing thread is in a transaction.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Common.Data.TransactionalCache">
+            <summary>
+            Transactional cache which decorates a physical cache passed into the constructor and make it being in the transaction scope. 
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionalCache.#ctor(RapidWebDev.Common.Caching.ICache)">
+            <summary>
+            Transactional cache which decorates a physical cache passed into the constructor and make it being in the transaction scope. 
+            </summary>
+            <param name="cache"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionalCache.Add(System.Object,System.Object,System.TimeSpan,RapidWebDev.Common.Caching.CachePriorityTypes)">
+            <summary>
+            Add object to cache container by specified expire sliding duration and priority type.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="slidingDuration"></param>
+            <param name="cachePriorityType"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionalCache.Get(System.Object)">
+            <summary>
+            Get caching object by key.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.TransactionalCache.Remove(System.Object)">
+            <summary>
+            Remove caching object by key.
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.TransactionalCache.Count">
+            <summary>
+            Gets caching object count includes not committed cache item in transaction.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.TransactionalCache.CacheCommand.Type">
+            <summary>
+            caching command type - add/remove a cache item
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.TransactionalCache.CacheCommand.Item">
+            <summary>
+            cache item
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.TransactionalCache.CacheItem.Key">
+            <summary>
+            cache key
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.TransactionalCache.CacheItem.Value">
+            <summary>
+            cache value
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.TransactionalCache.CacheItem.SlidingDuration">
+            <summary>
+            caching sliding duration
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Data.TransactionalCache.CacheItem.CachePriorityType">
+            <summary>
+            caching priority type.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.ComponentInfo">
+            <summary>
+            Assembly information of RapidWebDev projects.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.ComponentInfo.Assembly">
+            <summary>
+            Assembly Number
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.ComponentInfo.File">
+            <summary>
+            File Version
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.ComponentInfo.ProductName">
+            <summary>
+            RapidWebDev
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.ComponentInfo.Copyright">
+            <summary>
+            Copyright
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.ComponentInfo.Company">
+            <summary>
+            Company
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.ComponentInfo.Culture">
+            <summary>
+            Culture
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.UnauthorizedException">
+            <summary>
+            The unauthorized exception.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.UnauthorizedException.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.UnauthorizedException.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="msg">Message to include in the exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.UnauthorizedException.#ctor(System.Exception)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="exception">Inner exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.UnauthorizedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="msg">Message to include in the exception.</param>
+            <param name="exception">Inner exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.UnauthorizedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor used for serialization
+            </summary>
+            <param name="info">SerializationInfo object</param>
+            <param name="context">StreamingContext object</param>
+        </member>
+        <member name="T:RapidWebDev.Common.BadRequestException">
+            <summary>
+            The bad request exception.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.BadRequestException.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.BadRequestException.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="msg">Message to include in the exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.BadRequestException.#ctor(System.Exception)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="exception">Inner exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.BadRequestException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="msg">Message to include in the exception.</param>
+            <param name="exception">Inner exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.BadRequestException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor used for serialization
+            </summary>
+            <param name="info">SerializationInfo object</param>
+            <param name="context">StreamingContext object</param>
+        </member>
+        <member name="T:RapidWebDev.Common.Web.Services.WCFLookupResult">
+            <summary>
+            WCF lookup result which includes the accessing service contract and operation contract.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.Services.WCFLookupResult.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="serviceContractName"></param>
+            <param name="operationContractName"></param>
+        </member>
+        <member name="P:RapidWebDev.Common.Web.Services.WCFLookupResult.ServiceContractName">
+            <summary>
+            Service contract name.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Web.Services.WCFLookupResult.OperationContractName">
+            <summary>
+            Operation contract name.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.CodeDom.ClassDecorator">
+            <summary>
+            Utility class to create dynamic decorate class at runtime for any classes (especially anonymous classes).
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.ClassDecorator.CreateDecorateType(System.String,System.Collections.Generic.IEnumerable{RapidWebDev.Common.CodeDom.PropertyDefinition})">
+            <summary>
+            Create decorate type for input type on specified properties or all properties.
+            If no properties specified, there creates all properties of original class into decorate class.
+            The method is useful to create WCF data contract type dynamically with properties supporting both SET/GET, DataContract attribute on class level and DataMember attribute on property level.
+            </summary>
+            <param name="newTypeName"></param>
+            <param name="propertiesToDecorate"></param>
+            <returns></returns>
+            <exception cref="T:RapidWebDev.Common.CodeDom.CompileException">Exception when the specified properties configuration is incorrect.</exception>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.ClassDecorator.CreateDecorateObjects(System.Collections.IEnumerable,System.Collections.Generic.IEnumerable{RapidWebDev.Common.CodeDom.PropertyDefinition})">
+            <summary>
+            Create decorate object for input object by CodeDom. 
+            The decorate object has both SET/GET accessors on all properties with WCF attributes. 
+            It's quite helpful on changing/convert/serialize property values for anonymous object. 
+            </summary>
+            <param name="inputObjects"></param>
+            <param name="propertiesToDecorate"></param>
+            <returns></returns>
+            <exception cref="T:RapidWebDev.Common.CodeDom.CompileException">Exception when the specified properties configuration is incorrect.</exception>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.ClassDecorator.FilterIllegalCharacters(System.String)">
+            <summary>
+            Get legal name by removing non-alphabet/chinese characters from input name. 
+            Here only allows characters in [0-9] | [a-z] | [A-Z] | _ | \u4e00-\u9fa5 (Chinese Characters)
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.ClassDecorator.CompileCodeTypeDeclaration(System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            Compile CodeTypeDeclaration into runtime C# type.
+            </summary>
+            <param name="decorateTypeDeclaration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.ClassDecorator.AddDecorateProperty(System.CodeDom.CodeTypeDeclaration,System.String,System.Type)">
+            <summary>
+            Create a dynamic property mapping to original PropertyInfo into decorate type with WCF DataMember attribute.
+            </summary>
+            <param name="decorateType"></param>
+            <param name="propertyName"></param>
+            <param name="originalPropertyType"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.ClassDecorator.GenerateDecorateTypeKey(System.Type,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Generate key for dynamic created decorate class type.
+            </summary>
+            <param name="inputType"></param>
+            <param name="propertiesToDecorate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.ClassDecorator.GenerateDecorateTypeKey(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Generate key for dynamic created decorate class type.
+            </summary>
+            <param name="typeName"></param>
+            <param name="propertiesToDecorate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.ClassDecorator.GenerateDecorateClassName(System.Type,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Generate class name for decorate class by input type and decorating properties.
+            </summary>
+            <param name="inputType"></param>
+            <param name="propertiesToDecorate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.ClassDecorator.GenerateDecorateClassName(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Generate class name for decorate class by input type and decorating properties.
+            </summary>
+            <param name="typeName"></param>
+            <param name="propertiesToDecorate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.ClassDecorator.GeneratePropertySnapshot(System.String)">
+            <summary>
+            Generate snapshot for the property.
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.CodeDom.ClassDecorator.GetPropertyInfoByType(System.Type)">
+            <summary>
+            Get all property info of specified type using caching.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Common.ServiceNamespaces">
+            <summary>
+            Indicate version of all application framework assemblies.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.ServiceNamespaces.Common">
+            <summary>
+            Namespace of Common WCF services
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.ServiceNamespaces.Platform">
+            <summary>
+            Namespace of Platform WCF services
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.ServiceNamespaces.ExtensionModel">
+            <summary>
+            Namespace of Extension Model DataContract
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.ServiceNamespaces.FileManagement">
+            <summary>
+            Namespace of File Management DataContract
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.ServiceNamespaces.Statistics">
+            <summary>
+            Namespace of Statistics DataContract
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Web.Services.WCFOperationContextUtility">
+            <summary>
+            Utility for WCF operation context to get the accessing service and operation contract.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.Services.WCFOperationContextUtility.ResolvePermissionAttribute(System.ServiceModel.OperationContext)">
+            <summary>
+            Resolve the accessing service and operation contract.
+            </summary>
+            <param name="operationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Common.CloneableDictionary`2">
+            <summary>
+            Cloneable dictionary which supports to get a deep copy with all cloned contained keys and values.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:RapidWebDev.Common.CloneableDictionary`2.System#ICloneable#Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="M:RapidWebDev.Common.CloneableDictionary`2.Clone">
+            <summary>
+            Get a deep copy of current dictionary instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Common.Logger">
+            <summary>
+            The Common Logging wrapper class which helps to resolve a instance for logging easily. 
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Logger.Instance(System.String)">
+            <summary>
+            Get Common Logging instance by logger name.
+            </summary>
+            <param name="loggerName">logger name.</param>
+            <returns>Returns logger instance.</returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Logger.Instance(System.Type)">
+            <summary>
+            Get Common Logging instance by calling application type.
+            </summary>
+            <param name="type">caller type.</param>
+            <returns>Returns logger instance.</returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Logger.Instance(System.Object)">
+            <summary>
+            Get Common Logging instance by calling instance.
+            </summary>
+            <param name="instance">calling instance.</param>
+            <returns>Returns logger instance.</returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Logger.InfoFormat(Common.Logging.ILog,System.String,System.Object[])">
+            <summary>
+            Logging info with formatting message by parameters.
+            </summary>
+            <param name="log"></param>
+            <param name="messageFormat"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Logger.DebugFormat(Common.Logging.ILog,System.String,System.Object[])">
+            <summary>
+            Logging debug with formatting message by parameters.
+            </summary>
+            <param name="log"></param>
+            <param name="messageFormat"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Logger.WarnFormat(Common.Logging.ILog,System.String,System.Object[])">
+            <summary>
+            Logging warning with formatting message by parameters.
+            </summary>
+            <param name="log"></param>
+            <param name="messageFormat"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Logger.ErrorFormat(Common.Logging.ILog,System.String,System.Object[])">
+            <summary>
+            Logging error with formatting message by parameters.
+            </summary>
+            <param name="log"></param>
+            <param name="messageFormat"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Logger.FatalFormat(Common.Logging.ILog,System.String,System.Object[])">
+            <summary>
+            Logging fatal with formatting message by parameters.
+            </summary>
+            <param name="log"></param>
+            <param name="messageFormat"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:RapidWebDev.Common.Data.DataContextFactory">
+            <summary>
+            DataContextFactory is used to create linq2sql/EF data context. 
+            The extreme case why we need it but not directly construct data context by constructor is, 
+            when we have multiple DataContext defined for different business focus but they're mapping to a same database, 
+            it's a bit trouble on managing connection string or configuration files generated by linq2sql/EF GUI.
+            With DataContextFactory, we can easily and better understand to share the connection string between data contexts by the default "connectionString" segment in application configuration file.
+            And the factory also provides the event for any data contexts created so that we can register callback on post-process before it's returned out.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.DataContextFactory.Create``1">
+            <summary>
+            Create a DataContext instance with db connection (the connection state depends on EnabledMSDTC setting in application configuration file) for the generic data context.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.DataContextFactory.Dispose(System.Data.Linq.DataContext)">
+            <summary>
+            Dispose dataContext by removing its dbconnection reference in pool.
+            </summary>
+            <param name="dataContext"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.DataContextFactory.ResolveDbConnectionReferences">
+            <summary>
+            Resolve dictionary of DbConnectionReference by connection string name for current executing thread.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Data.DbConnectionReference.#ctor(System.Data.IDbConnection)">
+            <summary />
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DbConnectionReference.RefCount">
+            <summary />
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DbConnectionReference.Connection">
+            <summary />
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DbConnectionReference.Transaction">
+            <summary />
+        </member>
+        <member name="M:RapidWebDev.Common.Data.DbTransactionReference.#ctor(System.Data.IDbTransaction)">
+            <summary />
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DbTransactionReference.RefCount">
+            <summary />
+        </member>
+        <member name="P:RapidWebDev.Common.Data.DbTransactionReference.Transaction">
+            <summary />
+        </member>
+        <member name="T:RapidWebDev.Common.Globalization.IDateTimeLocalizer">
+            <summary>
+            The interface to localize date time.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.IDateTimeLocalizer.ToDateString(System.DateTime)">
+            <summary>
+            Localize input date to string without time segment.
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.IDateTimeLocalizer.ToDateTimeString(System.DateTime)">
+            <summary>
+            Localize input date/time to string
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.IDateTimeLocalizer.ConvertServerTimeToUtcTime(System.DateTime)">
+            <summary>
+            Convert server time to Utc time.
+            </summary>
+            <param name="serverDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.IDateTimeLocalizer.ConvertClientTimeToUtcTime(System.DateTime)">
+            <summary>
+            Convert client time to Utc time.
+            </summary>
+            <param name="clientDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.IDateTimeLocalizer.ConvertUtcTimeToClientTime(System.DateTime)">
+            <summary>
+            Convert Utc time to the client time. 
+            </summary>
+            <param name="utcDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Common.IApplicationContext">
+            <summary>
+            The interface is used to isolate logic applications in RapidWebDev. 
+            With this interface, developers can know which application is in current execution context 
+            and access Session and Temporary Variables (By Request) without coupling to ASP.NET HttpContext.Current.Session and HttpContext.Current.Items.
+            And developers also can get basic authentication from this interface.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.IApplicationContext.ApplicationId">
+            <summary>
+            Gets current running application id.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.IApplicationContext.Session">
+            <summary>
+            gets context value by name. 
+            It likes HttpSessionState which creates context among requests from a signed-on client.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.Common.IApplicationContext.TempVariables">
+            <summary>
+            Gets temporary variables likes HttpContext.Current.Items
+            The variables stored will be disposed after a request is completed so that developers can share variables in a request in web applications.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.IApplicationContext.Identity">
+            <summary>
+            Get current authenticated identity instance.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.IApplicationContext.ClientIPAddress">
+            <summary>
+            Get the client IP address.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Validation.ValidationScope">
+            <summary>
+            ValidationScope is used to setup error messages in validation and feedback users with all error messages at a time. <br/>
+            When developers write validation code for submitted forms or other posted data from client, the best user experience is to feedback users with all errors at a time. 
+            With ValidationScope, the developers only need to declare the using-block as "using (ValidationScope scope = new ValidationScope()) { ... }" and set the errors into the variable scope. 
+            Then ValidationScope throws an exception in disposing intelligently if there are errors logged. <br/>
+            ValidationScope supports nesting. A nested ValidationScope doesn't throw an exception in disposing although there are errors logged unless the developers specify "ForceToThrowExceptionIfHasErrorsWhenDisposing=true" in constructor.
+            But the errors logged in the nested ValidationScope are used in its outside ValidationScope.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationScope.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationScope.#ctor(System.Type)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="thrownExceptionType">Gets the exception type which be thrown in disposing if there are errors logged in the scope.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationScope.#ctor(System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="forceToThrowExceptionIfHasErrorsWhenDisposing">
+            Force to throw exception if there are errors in current validation scope in disposing however there still exists validation scope reference in current thread.
+            </param>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationScope.#ctor(System.Boolean,System.Type)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="forceToThrowExceptionIfHasErrorsWhenDisposing">
+            Force to throw exception if there are errors in current validation scope in disposing however there still exists validation scope reference in current thread.
+            </param>
+            <param name="thrownExceptionType">
+            Gets the exception type which be thrown in disposing if there are errors logged in the scope.
+            </param>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationScope.Error(System.String)">
+            <summary>
+            Log an error message in current validation scope.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationScope.Error(System.String,System.Object[])">
+            <summary>
+            Log an error message in current validation scope.
+            </summary>
+            <param name="messageFomat"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationScope.Throw">
+            <summary>
+            Force to throw an exception if there are errors logged in current validation scope or its nested scopes however it is also nested in another.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Validation.ValidationScope.Dispose">
+            <summary>
+            Dispose current validation scope.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Validation.ValidationScope.ThrownExceptionType">
+            <summary>
+            Gets the exception type which be thrown in disposing if there are errors logged in the scope.
+            Defaults to ValidationException.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Validation.ValidationScope.ForceToThrowExceptionIfHasErrorsWhenDisposing">
+            <summary>
+            True to force to throw exception if there are errors in current validation scope in disposing however there still exists validation scope reference in current thread.
+            Defaults to false.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Validation.ValidationScope.ErrorMessages">
+            <summary>
+            Gets all error messages logged.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.InternalServerErrorException">
+            <summary>
+            The internal server error exception.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.InternalServerErrorException.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.InternalServerErrorException.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="msg">Message to include in the exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.InternalServerErrorException.#ctor(System.Exception)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="exception">Inner exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.InternalServerErrorException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="msg">Message to include in the exception.</param>
+            <param name="exception">Inner exception.</param>
+        </member>
+        <member name="M:RapidWebDev.Common.InternalServerErrorException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor used for serialization
+            </summary>
+            <param name="info">SerializationInfo object</param>
+            <param name="context">StreamingContext object</param>
+        </member>
+        <member name="T:RapidWebDev.Common.Caching.CachePriorityTypes">
+            <summary>
+            Caching priority types
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Caching.CachePriorityTypes.Low">
+            <summary>
+            Cache items with this priority level are the most likely to be deleted from
+                the cache as the server frees system memory.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Caching.CachePriorityTypes.BelowNormal">
+            <summary>
+            Cache items with this priority level are more likely to be deleted from the
+                cache as the server frees system memory than items assigned a System.Web.Caching.CacheItemPriority.Normal
+                priority.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Caching.CachePriorityTypes.Normal">
+            <summary>
+            Cache items with this priority level are likely to be deleted from the cache
+                as the server frees system memory only after those items with System.Web.Caching.CacheItemPriority.Low
+                or System.Web.Caching.CacheItemPriority.BelowNormal priority. This is the
+                default.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Caching.CachePriorityTypes.Default">
+            <summary>
+            The default value for a cached item's priority is System.Web.Caching.CacheItemPriority.Normal.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Caching.CachePriorityTypes.AboveNormal">
+            <summary>
+            Cache items with this priority level are less likely to be deleted as the
+                server frees system memory than those assigned a System.Web.Caching.CacheItemPriority.Normal
+                priority.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Caching.CachePriorityTypes.High">
+            <summary>
+            Cache items with this priority level are the least likely to be deleted from
+                the cache as the server frees system memory.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Caching.CachePriorityTypes.NotRemovable">
+            <summary>
+             The cache items with this priority level will not be automatically deleted
+                from the cache as the server frees system memory. However, items with this
+                priority level are removed along with other items according to the item's
+                absolute or sliding expiration time.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Globalization.DefaultDateTimeLocalizer">
+            <summary>
+            The simple implementation to convert date time without considering localization.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.DefaultDateTimeLocalizer.#ctor(RapidWebDev.Common.Globalization.IClientTimeZoneLoader)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="clientTimeZoneLoader"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.DefaultDateTimeLocalizer.ToDateString(System.DateTime)">
+            <summary>
+            Localize input date to string without time segment.
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.DefaultDateTimeLocalizer.ToDateTimeString(System.DateTime)">
+            <summary>
+            Localize input date/time to string
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.DefaultDateTimeLocalizer.ConvertServerTimeToUtcTime(System.DateTime)">
+            <summary>
+            Convert server time to Utc time.
+            </summary>
+            <param name="serverDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.DefaultDateTimeLocalizer.ConvertClientTimeToUtcTime(System.DateTime)">
+            <summary>
+            Convert client time to Utc time.
+            </summary>
+            <param name="clientDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.Common.Globalization.DefaultDateTimeLocalizer.ConvertUtcTimeToClientTime(System.DateTime)">
+            <summary>
+            Convert Utc time to the client time. 
+            </summary>
+            <param name="utcDateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Common.Globalization.TimeZoneSetting">
+            <summary>
+            The class presents the timezone setting.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Globalization.TimeZoneSetting.UtcOffset">
+            <summary>
+            The offset from UTC by hours.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.Common.Globalization.TimeZoneSetting.Name">
+            <summary>
+            The timezone name.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.CloneableList`1">
+            <summary>
+            Cloneable list which supports to get a deep copy with all cloned contained objects.
+            </summary>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:RapidWebDev.Common.CloneableList`1.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.CloneableList`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="inputObjects"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.CloneableList`1.System#ICloneable#Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>A new object that is a copy of this instance.</returns>
+        </member>
+        <member name="M:RapidWebDev.Common.CloneableList`1.Clone">
+            <summary>
+            Get a deep copy of current dictionary instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.Common.Web.ClientScripts">
+            <summary>
+            Helpful methods on client scripts registration.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.ClientScripts.RegisterHeaderStyleInclude(System.String)">
+            <summary>
+            Register style reference into page header section. 
+            The method does nothing in asynchronous post.
+            </summary>
+            <param name="styleFileUrl"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.ClientScripts.RegisterHeaderScriptInclude(System.String)">
+            <summary>
+            Register script reference into page header section. 
+            The method does nothing in asynchronous post.
+            </summary>
+            <param name="scriptFileUrl"></param>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.ClientScripts.RegisterBodyScriptInclude(System.String)">
+            <summary>
+            Register script reference block at the beginning of page body. 
+            The method doesn't work in ScriptManager asynchronous callback. 
+            We have to call this method to register javascript reference in OnInit event or before.
+            </summary>
+            <param name="scriptFileUrl">Script file URL</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.ClientScripts.RegisterScriptBlock(System.String)">
+            <summary>
+            Register javascript block at the begining of page body.
+            The method will use ScriptManager for registration if post in asynchronous way, otherwise it uses Page.ClientScript for registration.
+            </summary>
+            <param name="scriptBlock">javascript block</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.ClientScripts.RegisterStartupScript(System.String)">
+            <summary>
+            Register javascript block at the end of page body.
+            The method will use ScriptManager for registration if post in asynchronous way, otherwise it uses Page.ClientScript for registration.
+            </summary>
+            <param name="scriptBlock"></param>
+        </member>
+        <member name="P:RapidWebDev.Common.Web.ClientScripts.OnDocumentReady">
+            <summary>
+            Add javascript block to the client which will be executed only when the document is on ready.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Web.OnDocumentReady">
+            <summary>
+            Register JavaScript block into "$(document).onReady(function(){ ... });" block of client so that the javascript block will only be executed when the dom is ready.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.OnDocumentReady.#ctor">
+            <summary>
+            Protected constructor
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.OnDocumentReady.Add2BeginOfBody(System.String)">
+            <summary>
+            Add script block to the begin of document body with Normal priority.
+            </summary>
+            <param name="scriptBlock">javascript block</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.OnDocumentReady.Add2BeginOfBody(System.String,RapidWebDev.Common.Web.JavaScriptPriority)">
+            <summary>
+            Add script block to the begin of document body with Normal priority.
+            </summary>
+            <param name="scriptBlock">javascript block</param>
+            <param name="priority">javascript executing priority</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.OnDocumentReady.Add2EndOfBody(System.String)">
+            <summary>
+            Add script block to the end of document body with Normal priority.
+            </summary>
+            <param name="scriptBlock">javascript block</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.OnDocumentReady.Add2EndOfBody(System.String,RapidWebDev.Common.Web.JavaScriptPriority)">
+            <summary>
+            Add script block to the end of document body with Normal priority.
+            </summary>
+            <param name="scriptBlock">javascript block</param>
+            <param name="priority">javascript executing priority</param>
+        </member>
+        <member name="M:RapidWebDev.Common.Web.OnDocumentReady.Flush">
+            <summary>
+            Flush added javascript blocks to clients.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Web.JavaScriptPriority">
+            <summary>
+            JavaScript execute priority.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Web.JavaScriptPriority.Low">
+            <summary>
+            Low
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Web.JavaScriptPriority.Normal">
+            <summary>
+            Normal
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Web.JavaScriptPriority.High">
+            <summary>
+            Hight
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.Common.Web.JavaScriptPosition">
+            <summary>
+            The position where JavaScript render to.
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Web.JavaScriptPosition.BeginOfBody">
+            <summary>
+            Begin of body
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.Common.Web.JavaScriptPosition.EndOfBody">
+            <summary>
+            End of body
+            </summary>
+        </member>
+    </members>
+</doc>

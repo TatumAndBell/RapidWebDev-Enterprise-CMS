@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://www.rapidwebdev.org/platform" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://www.rapidwebdev.org/platform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.rapidwebdev.org/platform/Imports">
+      <xsd:import schemaLocation="http://localhost:50682/Services/RelationshipService.svc?xsd=xsd0" namespace="http://www.rapidwebdev.org/platform" />
+      <xsd:import schemaLocation="http://localhost:50682/Services/RelationshipService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="RelationshipService_SaveJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveJson" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_SaveJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_SaveXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveXml" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_SaveXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_RemoveJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveJson" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_RemoveJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_RemoveXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveXml" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_RemoveXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_GetOneToOneJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneToOneJson" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_GetOneToOneJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneToOneJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_GetOneToOneXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneToOneXml" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_GetOneToOneXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneToOneXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_GetManyToOneJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManyToOneJson" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_GetManyToOneJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManyToOneJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_GetManyToOneXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManyToOneXml" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_GetManyToOneXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManyToOneXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_GetOneToManyJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneToManyJson" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_GetOneToManyJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneToManyJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_GetOneToManyXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneToManyXml" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_GetOneToManyXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneToManyXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_FindAllRelationshipJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAllRelationshipJson" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_FindAllRelationshipJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAllRelationshipJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_FindAllRelationshipXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAllRelationshipXml" />
+  </wsdl:message>
+  <wsdl:message name="RelationshipService_FindAllRelationshipXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAllRelationshipXmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RelationshipService">
+    <wsdl:operation name="SaveJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/SaveJson" message="tns:RelationshipService_SaveJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/SaveJsonResponse" message="tns:RelationshipService_SaveJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/SaveXml" message="tns:RelationshipService_SaveXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/SaveXmlResponse" message="tns:RelationshipService_SaveXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/RemoveJson" message="tns:RelationshipService_RemoveJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/RemoveJsonResponse" message="tns:RelationshipService_RemoveJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/RemoveXml" message="tns:RelationshipService_RemoveXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/RemoveXmlResponse" message="tns:RelationshipService_RemoveXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneToOneJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/GetOneToOneJson" message="tns:RelationshipService_GetOneToOneJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/GetOneToOneJsonResponse" message="tns:RelationshipService_GetOneToOneJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneToOneXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/GetOneToOneXml" message="tns:RelationshipService_GetOneToOneXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/GetOneToOneXmlResponse" message="tns:RelationshipService_GetOneToOneXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManyToOneJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/GetManyToOneJson" message="tns:RelationshipService_GetManyToOneJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/GetManyToOneJsonResponse" message="tns:RelationshipService_GetManyToOneJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManyToOneXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/GetManyToOneXml" message="tns:RelationshipService_GetManyToOneXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/GetManyToOneXmlResponse" message="tns:RelationshipService_GetManyToOneXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneToManyJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/GetOneToManyJson" message="tns:RelationshipService_GetOneToManyJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/GetOneToManyJsonResponse" message="tns:RelationshipService_GetOneToManyJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneToManyXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/GetOneToManyXml" message="tns:RelationshipService_GetOneToManyXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/GetOneToManyXmlResponse" message="tns:RelationshipService_GetOneToManyXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAllRelationshipJson">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/FindAllRelationshipJson" message="tns:RelationshipService_FindAllRelationshipJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/FindAllRelationshipJsonResponse" message="tns:RelationshipService_FindAllRelationshipJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAllRelationshipXml">
+      <wsdl:input wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/FindAllRelationshipXml" message="tns:RelationshipService_FindAllRelationshipXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.rapidwebdev.org/platform/RelationshipService/FindAllRelationshipXmlResponse" message="tns:RelationshipService_FindAllRelationshipXml_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

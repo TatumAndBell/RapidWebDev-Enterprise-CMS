@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7C763C9-B2A6-4A3E-852F-BCFD8E08890B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RapidWebDev.RestfulServices</RootNamespace>
+    <AssemblyName>RapidWebDev.RestfulServices</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ConcreteDataServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HierarchyServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MembershipServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OrganizationServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PermissionServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RelationshipServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RoleServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SequenceServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConcreteDataServices\ConcreteDataService.wsdl" />
+    <None Include="Service References\ConcreteDataServices\ConcreteDataService.xsd" />
+    <None Include="Service References\ConcreteDataServices\ConcreteDataService1.wsdl" />
+    <None Include="Service References\ConcreteDataServices\ConcreteDataService1.xsd" />
+    <None Include="Service References\ConcreteDataServices\ConcreteDataService2.xsd" />
+    <None Include="Service References\ConcreteDataServices\ConcreteDataService3.xsd" />
+    <None Include="Service References\ConcreteDataServices\ConcreteDataService4.xsd" />
+    <None Include="Service References\ConcreteDataServices\ConcreteDataService5.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ConcreteDataServices\" />
+    <WCFMetadataStorage Include="Service References\HierarchyServices\" />
+    <WCFMetadataStorage Include="Service References\MembershipServices\" />
+    <WCFMetadataStorage Include="Service References\OrganizationServices\" />
+    <WCFMetadataStorage Include="Service References\PermissionServices\" />
+    <WCFMetadataStorage Include="Service References\RelationshipServices\" />
+    <WCFMetadataStorage Include="Service References\RoleServices\" />
+    <WCFMetadataStorage Include="Service References\SequenceServices\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConcreteDataServices\ConcreteDataService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConcreteDataServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConcreteDataServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConcreteDataServices\RapidWebDev.RestfulServices.ConcreteDataServices.ConcreteDataObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConcreteDataServices\RapidWebDev.RestfulServices.ConcreteDataServices.ConcreteDataQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConcreteDataServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HierarchyServices\HierarchyService.xsd" />
+    <None Include="Service References\HierarchyServices\HierarchyService1.xsd" />
+    <None Include="Service References\HierarchyServices\HierarchyService2.xsd" />
+    <None Include="Service References\HierarchyServices\HierarchyService3.xsd" />
+    <None Include="Service References\HierarchyServices\HierarchyService4.xsd" />
+    <None Include="Service References\HierarchyServices\HierarchyService5.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HierarchyServices\HierarchyService.disco" />
+    <None Include="Service References\HierarchyServices\HierarchyService.wsdl" />
+    <None Include="Service References\HierarchyServices\HierarchyService1.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HierarchyServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HierarchyServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HierarchyServices\RapidWebDev.RestfulServices.HierarchyServices.HierarchyDataObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HierarchyServices\RapidWebDev.RestfulServices.HierarchyServices.HierarchyDataQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HierarchyServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RoleServices\RoleService.wsdl" />
+    <None Include="Service References\RoleServices\RoleService.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RoleServices\RoleService.disco" />
+    <None Include="Service References\RoleServices\RoleService1.wsdl" />
+    <None Include="Service References\RoleServices\RoleService2.xsd" />
+    <None Include="Service References\RoleServices\RoleService3.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RoleServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RoleServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MembershipServices\MembershipService.xsd" />
+    <None Include="Service References\MembershipServices\MembershipService1.xsd" />
+    <None Include="Service References\MembershipServices\MembershipService2.xsd" />
+    <None Include="Service References\RoleServices\RapidWebDev.RestfulServices.RoleServices.RoleObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RoleServices\RapidWebDev.RestfulServices.RoleServices.RoleQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RoleServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MembershipServices\MembershipService.disco" />
+    <None Include="Service References\MembershipServices\MembershipService.wsdl" />
+    <None Include="Service References\MembershipServices\MembershipService1.wsdl" />
+    <None Include="Service References\MembershipServices\MembershipService3.xsd" />
+    <None Include="Service References\MembershipServices\MembershipService4.xsd" />
+    <None Include="Service References\MembershipServices\MembershipService5.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MembershipServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MembershipServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MembershipServices\RapidWebDev.RestfulServices.MembershipServices.UserObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MembershipServices\RapidWebDev.RestfulServices.MembershipServices.UserQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MembershipServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\OrganizationServices\OrganizationService.wsdl" />
+    <None Include="Service References\OrganizationServices\OrganizationService.xsd" />
+    <None Include="Service References\OrganizationServices\OrganizationService1.xsd" />
+    <None Include="Service References\OrganizationServices\OrganizationService2.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrganizationServices\OrganizationService.disco" />
+    <None Include="Service References\OrganizationServices\OrganizationService1.wsdl" />
+    <None Include="Service References\OrganizationServices\OrganizationService3.xsd" />
+    <None Include="Service References\OrganizationServices\OrganizationService4.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrganizationServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrganizationServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrganizationServices\RapidWebDev.RestfulServices.OrganizationServices.OrganizationDomainObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrganizationServices\RapidWebDev.RestfulServices.OrganizationServices.OrganizationObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrganizationServices\RapidWebDev.RestfulServices.OrganizationServices.OrganizationTypeObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrganizationServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PermissionServices\PermissionService.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PermissionServices\PermissionService.disco" />
+    <None Include="Service References\PermissionServices\PermissionService.wsdl" />
+    <None Include="Service References\PermissionServices\PermissionService1.wsdl" />
+    <None Include="Service References\PermissionServices\PermissionService1.xsd" />
+    <None Include="Service References\PermissionServices\PermissionService2.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PermissionServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PermissionServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PermissionServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RelationshipServices\RelationshipService.wsdl" />
+    <None Include="Service References\RelationshipServices\RelationshipService.xsd" />
+    <None Include="Service References\RelationshipServices\RelationshipService1.wsdl" />
+    <None Include="Service References\RelationshipServices\RelationshipService1.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RelationshipServices\RelationshipService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RelationshipServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RelationshipServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RelationshipServices\RapidWebDev.RestfulServices.RelationshipServices.RelationshipObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RelationshipServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SequenceServices\SequenceService.wsdl" />
+    <None Include="Service References\SequenceServices\SequenceService.xsd" />
+    <None Include="Service References\SequenceServices\SequenceService1.wsdl" />
+    <None Include="Service References\SequenceServices\SequenceService1.xsd" />
+    <None Include="Service References\SequenceServices\SequenceService2.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SequenceServices\SequenceService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SequenceServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SequenceServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrganizationServices\OrganizationService5.xsd" />
+    <None Include="Service References\OrganizationServices\RapidWebDev.RestfulServices.OrganizationServices.OrganizationQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SequenceServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

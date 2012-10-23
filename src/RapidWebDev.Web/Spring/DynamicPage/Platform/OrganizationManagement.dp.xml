@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://www.rapidwebdev.org/schemas/dynamicpage" ObjectId="OrganizationManagement" Type="RapidWebDev.Platform.Web.DynamicPage.OrganizationManagement, RapidWebDev.Platform">
+	<Title>$Domain.Text$ $Resources.Membership.Management, RapidWebDev.Web$</Title>
+	<PermissionValue>$Domain.Value$Management</PermissionValue>
+	<Panels>
+		<QueryPanel Id="$Domain.Value$" HeaderText="$Resources.Membership.Query, RapidWebDev.Web$ $Domain.Text$">
+			<TextBox FieldName="OrganizationCode" Label="$Resources.Membership.OrganizationCode, RapidWebDev.Web$: " />
+			<TextBox FieldName="OrganizationName" Label="$Resources.Membership.OrganizationName, RapidWebDev.Web$: " />
+			<ComboBox FieldName="OrganizationTypeId" Editable="false" FieldValueType="System.Guid" ForceSelection="true" Label="$Resources.Membership.OrganizationTypeShortDesc, RapidWebDev.Web$: ">
+				<DynamicDataSource TextField="Name" ValueField="OrganizationTypeId" Url="/Services/OrganizationService.svc/json/FindOrganizationTypes/$Domain.Value$" />
+			</ComboBox>
+			<CheckBoxGroup FieldName="Status" Label="$Resources.Membership.Status, RapidWebDev.Web$: " FieldValueType="RapidWebDev.Platform.OrganizationStatus, RapidWebDev.Platform">
+				<Item Checked="true" Text="$Resources.Membership.Enabled, RapidWebDev.Web$" Value="Enabled" />
+				<Item Text="$Resources.Membership.Pending, RapidWebDev.Web$" Value="Pending" />
+				<Item Text="$Resources.Membership.Disabled, RapidWebDev.Web$" Value="Disabled" />
+			</CheckBoxGroup>
+		</QueryPanel>
+
+		<ButtonPanel Id="$Domain.Value$" ButtonAlignment="Left">
+			<Button CommandArgument="New" Type="NewImage" ToolTip="$Resources.Membership.Add, RapidWebDev.Web$" />
+		</ButtonPanel>
+
+		
+		<GridViewPanel Id="$Domain.Value$"
+			HeaderText="$Resources.Membership.QueryResults, RapidWebDev.Web$"
+			EntityName="$Domain.Text$"
+			EnabledCheckBoxField="true"
+			PageSize="25"
+			PrimaryKeyFieldName="OrganizationId"
+			DefaultSortField="LastUpdatedDate"
+			DefaultSortDirection="DESC">
+			<ViewButton />
+			<EditButton />
+			<DeleteButton />
+			<Fields>
+				<Field FieldName="OrganizationCode" HeaderText="$Resources.Membership.OrganizationCode, RapidWebDev.Web$" Width="80" />
+				<Field FieldName="OrganizationName" HeaderText="$Resources.Membership.OrganizationName, RapidWebDev.Web$" Width="120" />
+				<Field FieldName="OrganizationTypeName" SortingFieldName="OrganizationType.Name" HeaderText="$Resources.Membership.OrganizationTypeShortDesc, RapidWebDev.Web$" Width="120" />
+				<Field FieldName="Properties[&quot;Contact&quot;]" HeaderText="$Resources.Membership.Contact, RapidWebDev.Web$" Align="Center" Sortable="false" Hidden="true" />
+				<Field FieldName="Properties[&quot;PhoneNo&quot;]" HeaderText="$Resources.Membership.PhoneNo, RapidWebDev.Web$" Align="Center" Sortable="false" Hidden="true" />
+				<Field FieldName="Status" HeaderText="$Resources.Membership.Status, RapidWebDev.Web$" Width="60">
+					<Transform-Switch>
+						<Case Value="Enabled">&lt;span style='color:green'&gt;$Resources.Membership.Enabled, RapidWebDev.Web$&lt;/span&gt;</Case>
+						<Case Value="Pending">$Resources.Membership.Pending, RapidWebDev.Web$</Case>
+						<Case Value="Disabled">&lt;span style='color:red'&gt;$Resources.Membership.Disabled, RapidWebDev.Web$&lt;/span&gt;</Case>
+					</Transform-Switch>
+				</Field>
+				<Field FieldName="LastUpdatedBy" HeaderText="$Resources.Membership.ModifiedBy, RapidWebDev.Web$" Align="Center" Hidden="true">
+					<Transform-Callback Type="RapidWebDev.Platform.Web.DynamicPage.GridViewFieldValueTransformCallback.ShowUserDisplayName, RapidWebDev.Platform"/>
+				</Field>
+				<Field FieldName="LastUpdatedDate" HeaderText="$Resources.Membership.ModifiedOn, RapidWebDev.Web$" Align="Center" Width="150" />
+				<RowView FieldName="Description" />
+			</Fields>
+		</GridViewPanel>
+
+		<DetailPanel Id="$Domain.Value$" HeaderText="$Domain.Text$ $Resources.Membership.Profile, RapidWebDev.Web$" ShowMessageAfterSavedSuccessfully="false">
+			<Type>RapidWebDev.Platform.Web.DynamicPage.OrganizationDetailPanel, RapidWebDev.Platform</Type>
+			<SkinPath>~/Templates/Platform/Organization.ascx</SkinPath>
+			<SaveAndAddAnotherButton />
+			<SaveAndCloseButton />
+			<CancelButton />
+		</DetailPanel>
+	</Panels>
+</Page>

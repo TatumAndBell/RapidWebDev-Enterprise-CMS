@@ -1,0 +1,1726 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RapidWebDev.ExtensionModel</name>
+    </assembly>
+    <members>
+        <member name="T:RapidWebDev.ExtensionModel.IExtensionObject">
+            <summary>
+            Extendable Object Interface.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IExtensionObject.GetFieldEnumerator">
+            <summary>
+            Gets the dynamic field enumerator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IExtensionObject.RemoveAllExtensionFields">
+            <summary>
+            Clear all existed extension fields.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IExtensionObject.ExtensionDataTypeId">
+            <summary>
+            Gets or sets the extension data type id.
+            </summary>
+            <value>The extension data type id.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IExtensionObject.ExtensionData">
+            <summary>
+            Gets or sets the extension data.
+            </summary>
+            <value>The extension data.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IExtensionObject.HasChanged">
+            <summary>
+            Gets a value indicating whether this extension properties has changed.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has changed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IExtensionObject.Item(System.String)">
+            <summary>
+            Gets or sets the property's value with the specified name.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.ObjectMetadataTypes">
+            <summary>
+            Extension type's metadata type
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.ObjectMetadataTypes.System">
+            <summary>
+            System Integration
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.ObjectMetadataTypes.Custom">
+            <summary>
+            Customized
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.ObjectMetadataImpl">
+            <summary>
+            Extension type's Metadata
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.IObjectMetadata">
+            <summary>
+            Extension type's metadata
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IObjectMetadata.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IObjectMetadata.Category">
+            <summary>
+            Gets or sets the category.
+            </summary>
+            <value>The category.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IObjectMetadata.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IObjectMetadata.LastUpdatedOn">
+            <summary>
+            Gets or sets the last updated time.
+            </summary>
+            <value>The last updated on.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IObjectMetadata.ParentObjectMetadataId">
+            <summary>
+            Gets or sets the parent object metadata id.
+            </summary>
+            <value>The parent object metadata id.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IObjectMetadata.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>The id.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IObjectMetadata.IsGlobalObjectMetadata">
+            <summary>
+            Gets or sets a value indicating whether this instance is global object metadata.
+            A global object metadata means the definition doesn't belong to any special applications in SAAS architect but all applications can share it.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is global object metadata; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.ObjectMetadataImpl.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.ObjectMetadataImpl.Category">
+            <summary>
+            Gets or sets the category.
+            </summary>
+            <value>The category.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.ObjectMetadataImpl.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.ObjectMetadataImpl.LastUpdatedOn">
+            <summary>
+            Gets or sets the last updated time.
+            </summary>
+            <value>The last updated on.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.ObjectMetadataImpl.ParentObjectMetadataId">
+            <summary>
+            Gets or sets the parent object metadata id.
+            </summary>
+            <value>The parent object metadata id.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.ObjectMetadataImpl.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>The id.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.ObjectMetadataImpl.IsGlobalObjectMetadata">
+            <summary>
+            Gets or sets a value indicating whether this instance is global object metadata.
+            A global object metadata means the definition doesn't belong to any special applications in SAAS architect but all applications can share it.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is global object metadata; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Linq.ExtensionDataContext">
+            <summary>
+            Extended Linq DataContext which intercepts changes on submitted entities which implement the interface <see cref="T:RapidWebDev.ExtensionModel.IExtensionObject"/>. 
+            The interception serializes dynamic properties of entities into xml string and saves to the property ExtensionData of the entities.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.ExtensionDataContext.#ctor(System.Data.IDbConnection)">
+            <summary>
+            Initializes a new instance of the System.Data.Linq.DataContext class by referencing the connection used by the .NET Framework.
+            </summary>
+            <param name="connection">The connection used by the .NET Framework.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.ExtensionDataContext.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the System.Data.Linq.DataContext class by referencing a file source.
+            </summary>
+            <param name="fileOrServerOrConnection">
+            This argument can be any one of the following: The name of a file where a SQL Server Express database resides.
+            The name of a server where a database is present.
+            In this case the provider uses the default database for a user.
+            A complete connection string. LINQ to SQL just passes the string to the provider without modification.
+            </param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.ExtensionDataContext.#ctor(System.Data.IDbConnection,System.Data.Linq.Mapping.MappingSource)">
+            <summary>
+            Initializes a new instance of the System.Data.Linq.DataContext class by referencing a connection and a mapping source.
+            </summary>
+            <param name="connection">The connection used by the .NET Framework.</param>
+            <param name="mapping">The System.Data.Linq.Mapping.MappingSource.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.ExtensionDataContext.#ctor(System.String,System.Data.Linq.Mapping.MappingSource)">
+            <summary>
+            Initializes a new instance of the System.Data.Linq.DataContext class by referencing a file source and a mapping source.
+            </summary>
+            <param name="fileOrServerOrConnection">
+            This argument can be any one of the following: The name of a file where a SQL Server Express database resides.
+            The name of a server where a database is present.
+            In this case the provider uses the default database for a user.
+            A complete connection string. LINQ to SQL just passes the string to the provider without modification.
+            </param>
+            <param name="mapping">The System.Data.Linq.Mapping.MappingSource.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.ExtensionDataContext.SubmitChanges(System.Data.Linq.ConflictMode)">
+            <summary>
+            Sends changes that were made to retrieved objects to the underlying database, and specifies the action to be taken if the submission fails.
+            </summary>
+            <param name="failureMode">The action to be taken if the submission fails.</param>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.IExtensionBizObject">
+            <summary>
+            Extension type's business abstract interface
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IExtensionBizObject.GetFieldEnumerator">
+            <summary>
+            Gets the field enumerator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IExtensionBizObject.ExtensionDataTypeId">
+            <summary>
+            Gets / sets extension data type id.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IExtensionBizObject.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:System.Object"/> with the specified property name.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.AbstractExtensionBizObject">
+            <summary>
+            Extension type's business abstract class
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.AbstractExtensionBizObject.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.AbstractExtensionBizObject"/> class.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.AbstractExtensionBizObject.GetFieldEnumerator">
+            <summary>
+            Gets the field enumerator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.AbstractExtensionBizObject.ParseExtensionPropertiesFrom(RapidWebDev.ExtensionModel.IExtensionObject)">
+            <summary>
+            Parse extension properties of extensionObject into current extension object.
+            </summary>
+            <param name="extensionObject"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.AbstractExtensionBizObject.ClonePropertiesTo(RapidWebDev.ExtensionModel.AbstractExtensionBizObject)">
+            <summary>
+            Clone the properties of this instance to the specified biz object.
+            </summary>
+            <param name="bizObject"></param>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.AbstractExtensionBizObject.ExtensionDataTypeId">
+            <summary>
+            Gets / sets extension data type id.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.AbstractExtensionBizObject.Properties">
+            <summary>
+            Extension fields
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.AbstractExtensionBizObject.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:System.Object"/> with the specified property name.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.ExtensionObjectSerializer">
+            <summary>
+            Support extension field's value and extension field convert operations.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.IExtensionObjectSerializer">
+            <summary>
+            Support extension field's value and extension field convert operations.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IExtensionObjectSerializer.Deserialize(RapidWebDev.ExtensionModel.IExtensionObject)">
+            <summary>
+            Parse out extension field collection from extension object's extension field (ExtensionData).
+            </summary>
+            <param name="extensionObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IExtensionObjectSerializer.Serialize(RapidWebDev.ExtensionModel.IExtensionObject)">
+            <summary>
+            Save extension field serilized into extension field (ExtensionData)
+            </summary>
+            <param name="extensionObject"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.ExtensionObjectSerializer.#ctor(RapidWebDev.ExtensionModel.IMetadataApi)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.ExtensionObjectSerializer"/> class.
+            </summary>
+            <param name="metadataApi">The metadata API.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.ExtensionObjectSerializer.Deserialize(RapidWebDev.ExtensionModel.IExtensionObject)">
+            <summary>
+            Parse out extension field collection from extension object's extension field (ExtensionData).
+            </summary>
+            <param name="extensionObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.ExtensionObjectSerializer.Serialize(RapidWebDev.ExtensionModel.IExtensionObject)">
+            <summary>
+            Save extension field serilized into extension field (ExtensionData)
+            </summary>
+            <param name="extensionObject"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.ExtensionObjectSerializer.ConvertToFieldValueInterface(System.Guid,System.String,System.Object)">
+            <summary>
+            Convert propertyValue to IFieldValue interface
+            </summary>
+            <param name="extensionDataTypeId"></param>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param>
+            <returns>IFieldValue interface</returns>
+            <exception cref="T:System.NotSupportedException">when propertyValue's type is not supported</exception>
+            <exception cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException">When property's value is invalid</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.ExtensionObjectSerializer.ConvertToFieldValueInterface(RapidWebDev.ExtensionModel.IFieldMetadata,System.String,System.Object)">
+            <summary>
+            Convert propertyValue to IFieldValue interface
+            </summary>
+            <param name="fieldMetadata">The field metadata of specified property name.</param>
+            <param name="propertyName">Property name.</param>
+            <param name="propertyValue">Property value.</param>
+            <returns>IFieldValue interface</returns>
+            <exception cref="T:System.NotSupportedException">When propertyValue's type is not supported</exception>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.DecimalFieldMetadata">
+            <summary>
+            Decimal type field's metadata
+            </summary>
+            <remarks/>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.FieldMetadataBase">
+            <remarks/>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.FieldMetadataBase.#ctor">
+            <summary />
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.FieldMetadataBase.Name">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.FieldMetadataBase.FieldGroup">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.FieldMetadataBase.IsRequired">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.FieldMetadataBase.Ordinal">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.FieldMetadataBase.Priviledge">
+            <remarks/>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.IFieldMetadata">
+            <summary>
+            Extension property metadata
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IFieldMetadata.Validate(RapidWebDev.ExtensionModel.IFieldValue)">
+            <summary>
+            Validate this field.
+            </summary>
+            <param name="value">Value of field</param>
+            <exception cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException">This extension field's value is invalid</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IFieldMetadata.GetDefaultValue">
+            <summary>
+            Get default field value
+            </summary>
+            <returns>if no default value, return null</returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IFieldMetadata.Id">
+            <summary>
+            Gets or sets id.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IFieldMetadata.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IFieldMetadata.FieldGroup">
+            <summary>
+            Gets or sets field group.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IFieldMetadata.Priviledge">
+            <summary>
+            Gets or sets field priviledge.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IFieldMetadata.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IFieldMetadata.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IFieldMetadata.IsRequired">
+            <summary>
+            Gets or sets a value indicating whether this extension property is required.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is required; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IFieldMetadata.Ordinal">
+            <summary>
+            Order of this extension property in class
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IFieldMetadata.Inherited">
+            <summary>
+            True indicates the field is inherited from parent object metadata.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DecimalFieldMetadata.Validate(RapidWebDev.ExtensionModel.IFieldValue)">
+            <summary>
+            Validate this field's value.
+            </summary>
+            <param name="value">Value of field</param>
+            <exception cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException">This extension field's value is invalid</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DecimalFieldMetadata.GetDefaultValue">
+            <summary>
+            Get default field value
+            </summary>
+            <returns>if no default value, return null</returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DecimalFieldMetadata.Id">
+            <summary>
+            Gets or sets id.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DecimalFieldMetadata.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DecimalFieldMetadata.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DecimalFieldMetadata.Inherited">
+            <summary>
+            True indicates the field is inherited from parent object metadata.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DecimalFieldMetadata.MaxValue">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DecimalFieldMetadata.MaxValueSpecified">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DecimalFieldMetadata.MinValue">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DecimalFieldMetadata.MinValueSpecified">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DecimalFieldMetadata.Default">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DecimalFieldMetadata.DefaultSpecified">
+            <remarks/>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.ConfigFileOfExtensionTypeIsInvalid">
+            <summary>
+              Looks up a localized string similar to The config file {0} of extension type is invalid!.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.Contains">
+            <summary>
+              Looks up a localized string similar to contains.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.ExtensionTypeExist">
+            <summary>
+              Looks up a localized string similar to Extension type {0} has existed..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.ExtensionTypeInputFromConfigFile">
+            <summary>
+              Looks up a localized string similar to Import extension type from config file {0} automatically at {1}.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.FieldNotSupportSpecifiedValueType">
+            <summary>
+              Looks up a localized string similar to The field {0} doesn&apos;t support value type {1}..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.FieldValueCannotBeNull">
+            <summary>
+              Looks up a localized string similar to The value of field {0} cannot be null..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.FieldValueGreaterThanMaximalLength">
+            <summary>
+              Looks up a localized string similar to The value of field {0} is greater than maximal length {1}..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.FieldValueGreaterThanMaximalValue">
+            <summary>
+              Looks up a localized string similar to The value of field {0} is greater than the maximal value {1}..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.FieldValueLessThanMinimalValue">
+            <summary>
+              Looks up a localized string similar to The value of field {0} is less than the minimal value {1}..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.FieldValueLessThanMinimumLength">
+            <summary>
+              Looks up a localized string similar to The value of field {0} is less than minimal length {1}..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.FieldValueNotAnswerForPreconcertedFormat">
+            <summary>
+              Looks up a localized string similar to The value of field {0} doesn&apos;t match the format {1}..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.IDofSpecifiedParentExtensionTypeIsInvalid">
+            <summary>
+              Looks up a localized string similar to The parent ID {0} of specified extension type is invalid!.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.InvalidValueForSpecifiedField">
+            <summary>
+              Looks up a localized string similar to The value of field {0} is invalid..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.NoteValueNotDefinedInHierarchy">
+            <summary>
+              Looks up a localized string similar to Hierarchy node value {0} isn&apos;t defined in metadata..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.NotSpecifiedDate">
+            <summary>
+              Looks up a localized string similar to DataTimeValue is set to customed, but there is no specified date..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.OnlySupportSingleSelectForSpecifiedField">
+            <summary>
+              Looks up a localized string similar to Field {0} only supports single selection..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.OptionNotDefined">
+            <summary>
+              Looks up a localized string similar to The option value {0} is not defined in metadata..
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.Properties.Resources.SpecifiedExtensionTypeHasBeenReferenced">
+            <summary>
+              Looks up a localized string similar to This extension type cannot be deleted due to it&apos;s been referenced as a parent..
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.PrimitiveTypeExtensions">
+            <summary>
+            Extend to data type related with value of IFieldValue
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.PrimitiveTypeExtensions.FieldValue(System.String)">
+            <summary>
+            Convert to StringFieldValue
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.PrimitiveTypeExtensions.FieldValue(System.Nullable{System.DateTime})">
+            <summary>
+            Convert to DateTimeFieldValue
+            </summary>
+            <param name="dateTime">if dateTime is null，return null</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.PrimitiveTypeExtensions.FieldValue(System.DateTime)">
+            <summary>
+            Convert to DateTimeFieldValue
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.PrimitiveTypeExtensions.FieldValue(System.Nullable{System.Decimal})">
+            <summary>
+            Convert Decimal to DecimalFieldValue
+            </summary>
+            <param name="value">if value is null，return null</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.PrimitiveTypeExtensions.FieldValue(System.Decimal)">
+            <summary>
+            Convert decimal value to DecimalFieldValue
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.PrimitiveTypeExtensions.FieldValue(System.Nullable{System.Int32})">
+            <summary>
+            Convert Integer to IntegerFieldValue
+            </summary>
+            <param name="value">if value is null，return null</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.PrimitiveTypeExtensions.FieldValue(System.Int32)">
+            <summary>
+            Convert Integer to IntegerFieldValue
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.PrimitiveTypeExtensions.FieldValue(RapidWebDev.ExtensionModel.HierarchyNodeValueCollection)">
+            <summary>
+            Convert HierarchyNodeCollection to HierarchyFieldValue
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.PrimitiveTypeExtensions.FieldValue(RapidWebDev.ExtensionModel.EnumerationValueCollection)">
+            <summary>
+            Convert SelectionCollection to SelectionFieldValue
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.IntegerFieldMetadata">
+            <summary>
+            Integer type field's Metadata
+            </summary>
+            <remarks/>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IntegerFieldMetadata.Validate(RapidWebDev.ExtensionModel.IFieldValue)">
+            <summary>
+            Validate this field.
+            </summary>
+            <param name="value">Value of field</param>
+            <exception cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException">This extension field's value is invalid</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IntegerFieldMetadata.GetDefaultValue">
+            <summary>
+            Get default field value
+            </summary>
+            <returns>if no default value, return null</returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IntegerFieldMetadata.Id">
+            <summary>
+            Gets or sets id.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IntegerFieldMetadata.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IntegerFieldMetadata.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IntegerFieldMetadata.Inherited">
+            <summary>
+            True indicates the field is inherited from parent object metadata.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IntegerFieldMetadata.MaxValue">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IntegerFieldMetadata.MaxValueSpecified">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IntegerFieldMetadata.MinValue">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IntegerFieldMetadata.MinValueSpecified">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IntegerFieldMetadata.Default">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IntegerFieldMetadata.DefaultSpecified">
+            <remarks/>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.IMetadataApi">
+            <summary>
+            Extension model metadata's Api Interface.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IMetadataApi.AddType(System.String,System.String,System.String,RapidWebDev.ExtensionModel.ObjectMetadataTypes,System.Boolean,System.Nullable{System.Guid})">
+            <summary>
+            Create current application's extension type metadata.
+            </summary>
+            <param name="name"></param>
+            <param name="category"></param>
+            <param name="description"></param>
+            <param name="objectMetadataType"></param>
+            <param name="isGlobal"></param>
+            <param name="parentObjectMetadataId"></param>
+            <returns>created extension type id</returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IMetadataApi.AddType(System.String,System.String,System.String,RapidWebDev.ExtensionModel.ObjectMetadataTypes,System.Boolean,System.Nullable{System.Guid},System.Int32)">
+            <summary>
+            Create current application's extension type metadata.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="category">The category.</param>
+            <param name="description">The description.</param>
+            <param name="objectMetadataType">Type of the object metadata.</param>
+            <param name="isGlobal">if set to <c>true</c> [is global].</param>
+            <param name="parentObjectMetadataId">The parent object metadata id.</param>
+            <param name="version">The version.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IMetadataApi.UpdateType(System.Guid,System.String,System.String,System.String,System.Nullable{System.Guid})">
+            <summary>
+            Update extension type metadata's description.
+            </summary>
+            <param name="objectMetadataId"></param>
+            <param name="name"></param>
+            <param name="category"></param>
+            <param name="description"></param>
+            <param name="parentObjectMetadataId"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IMetadataApi.DeleteType(System.Guid)">
+            <summary>
+            Delete extension type metadata
+            </summary>
+            <param name="objectMetadataId"></param>
+            <exception cref="T:RapidWebDev.Common.Validation.ValidationException">Derived type cannot be deleted</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IMetadataApi.GetType(System.Guid)">
+            <summary>
+            Get extension type metadata
+            </summary>
+            <param name="objectMetadataId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IMetadataApi.GetType(System.String)">
+            <summary>
+            Get extension type metadata,first get from current domain, then get from global, if both cannot find, return null.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IMetadataApi.SaveField(System.Guid,RapidWebDev.ExtensionModel.IFieldMetadata)">
+            <summary>
+            Saves the extension type metadata
+            </summary>
+            <param name="objectMetadataId">The object metadata id.</param>
+            <param name="fieldMetadata">The field metadata.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IMetadataApi.DeleteField(System.Guid,System.String)">
+            <summary>
+            delete specified attribute's metadata
+            </summary>
+            <param name="objectMetadataId"></param>
+            <param name="fieldName"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IMetadataApi.GetField(System.Guid,System.String)">
+            <summary>
+            Get extension type's specified attribute's metadata.
+            </summary>
+            <param name="objectMetadataId"></param>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IMetadataApi.GetField(System.Guid,System.Guid)">
+            <summary>
+            Get extension type's specified attribute's metadata.
+            </summary>
+            <param name="objectMetadataId"></param>
+            <param name="fieldId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IMetadataApi.GetFields(System.Guid)">
+            <summary>
+            Get all attribute of extension type, ordered by Ordinal property.
+            </summary>
+            <param name="objectMetadataId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.EnumerationFieldValue">
+            <summary>
+            Enumeration field's value
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.IFieldValue">
+            <summary>
+            Property's value interface
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IFieldValue.Value">
+            <summary>
+            Gets or sets the value of property.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IFieldValue.Type">
+            <summary>
+            type
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.EnumerationFieldValue.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.EnumerationFieldValue.#ctor(RapidWebDev.ExtensionModel.EnumerationValueCollection)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.EnumerationFieldValue.op_Implicit(RapidWebDev.ExtensionModel.EnumerationFieldValue)~RapidWebDev.ExtensionModel.EnumerationValueCollection">
+            <summary>
+            Convert Selection field value to Selection data
+            </summary>
+            <param name="fieldValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.EnumerationFieldValue.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.EnumerationFieldValue.Value">
+            <summary>
+            Gets or sets the value of property.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.EnumerationValueCollection">
+            <summary>
+            Enumeration values collection
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.AbstractExtensionObject">
+            <summary>
+            Extendible Object
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.AbstractExtensionObject.GetFieldEnumerator">
+            <summary>
+            Gets the dynamic field enumerator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.AbstractExtensionObject.RemoveAllExtensionFields">
+            <summary>
+            Clear all existed extension fields.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.AbstractExtensionObject.FieldValue``1(System.String)">
+            <summary>
+            Get property's value, if it is null or this property is not exist, return default(T)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.AbstractExtensionObject.ParseExtensionPropertiesFrom(RapidWebDev.ExtensionModel.IExtensionBizObject)">
+            <summary>
+            Parses the extension properties  to current Object.
+            </summary>
+            <param name="extensionBizObject">The extension biz object.</param>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.AbstractExtensionObject.ExtensionDataTypeId">
+            <summary>
+            Gets or sets the extension data type id.
+            </summary>
+            <value>The extension data type id.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.AbstractExtensionObject.ExtensionData">
+            <summary>
+            Gets or sets the extension data.
+            </summary>
+            <value>The extension data.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.AbstractExtensionObject.RapidWebDev#ExtensionModel#IExtensionObject#HasChanged">
+            <summary>
+            Gets a value indicating whether this extension properties has changed.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has changed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.AbstractExtensionObject.Item(System.String)">
+            <summary>
+            Gets or sets the property's value with the specified name. if property is not exist, return null.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.HierarchyFieldValue">
+            <summary>
+            Hierarchy field's value
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.HierarchyFieldValue.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.HierarchyFieldValue"/> class.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.HierarchyFieldValue.#ctor(RapidWebDev.ExtensionModel.HierarchyNodeValueCollection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.HierarchyFieldValue"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.HierarchyFieldValue.op_Implicit(RapidWebDev.ExtensionModel.HierarchyFieldValue)~RapidWebDev.ExtensionModel.HierarchyNodeValueCollection">
+            <summary>
+            Convert Hierarchy field 's value to Hierarchy data.
+            </summary>
+            <param name="fieldValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.HierarchyFieldValue.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.HierarchyFieldValue.Value">
+            <summary>
+            Gets or sets the value of property.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.HierarchyNodeValueCollection">
+            <summary>
+            Hierarchy node's Value collection
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi">
+            <summary>
+            Based on DLinq's metadata api
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.#ctor(RapidWebDev.Common.IApplicationContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi"/> class.
+            </summary>
+            <param name="applicationContext">The application context.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.AddType(System.String,System.String,System.String,RapidWebDev.ExtensionModel.ObjectMetadataTypes,System.Boolean,System.Nullable{System.Guid})">
+            <summary>
+            Create current application's extension type metadata.
+            </summary>
+            <param name="name"></param>
+            <param name="category"></param>
+            <param name="description"></param>
+            <param name="objectMetadataType"></param>
+            <param name="isGlobal"></param>
+            <param name="parentObjectMetadataId"></param>
+            <returns>created extension type id</returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.AddType(System.String,System.String,System.String,RapidWebDev.ExtensionModel.ObjectMetadataTypes,System.Boolean,System.Nullable{System.Guid},System.Int32)">
+            <summary>
+            Create current application's extension type metadata.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="category">The category.</param>
+            <param name="description">The description.</param>
+            <param name="objectMetadataType">Type of the object metadata.</param>
+            <param name="isGlobal">if set to <c>true</c> [is global].</param>
+            <param name="parentObjectMetadataId">The parent object metadata id.</param>
+            <param name="version">The version.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.UpdateType(System.Guid,System.String,System.String,System.String,System.Nullable{System.Guid})">
+            <summary>
+            Update extension type metadata's description.
+            </summary>
+            <param name="objectMetadataId"></param>
+            <param name="name"></param>
+            <param name="category"></param>
+            <param name="description"></param>
+            <param name="parentObjectMetadataId"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.DeleteType(System.Guid)">
+            <summary>
+            Delete extension type metadata
+            </summary>
+            <param name="objectMetadataId"></param>
+            <exception cref="T:RapidWebDev.Common.Validation.ValidationException">Derived type cannot be deleted</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.GetType(System.Guid)">
+            <summary>
+            Get extension type metadata
+            </summary>
+            <param name="objectMetadataId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.GetType(System.String)">
+            <summary>
+            Get extension type metadata,first get from current domain, then get from global, if both cannot find, return null.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.SaveField(System.Guid,RapidWebDev.ExtensionModel.IFieldMetadata)">
+            <summary>
+            Saves the extension type metadata
+            </summary>
+            <param name="objectMetadataId">The object metadata id.</param>
+            <param name="fieldMetadata">The field metadata.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.DeleteField(System.Guid,System.String)">
+            <summary>
+            Delete a field of specified object.
+            </summary>
+            <param name="objectMetadataId"></param>
+            <param name="fieldName"></param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.GetField(System.Guid,System.String)">
+            <summary>
+            Get extension type's specified attribute's metadata.
+            </summary>
+            <param name="objectMetadataId"></param>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.GetField(System.Guid,System.Guid)">
+            <summary>
+            Get extension type's specified attribute's metadata.
+            </summary>
+            <param name="objectMetadataId"></param>
+            <param name="fieldId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.Linq.DLinqMetadataApi.GetFields(System.Guid)">
+            <summary>
+            Get all attribute of extension type, ordered by Ordinal property.
+            </summary>
+            <param name="objectMetadataId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.FieldType">
+            <summary>
+            Extension field type
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.FieldType.String">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.FieldType.DateTime">
+            <summary>
+            DateTime
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.FieldType.Decimal">
+            <summary>
+            Decimal
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.FieldType.Integer">
+            <summary>
+            Integer
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.FieldType.Hierarchy">
+            <summary>
+            Hierarchy
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.FieldType.Enumeration">
+            <summary>
+            Enumeration
+            </summary>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.FieldType.Date">
+            <summary>
+            Date
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.DateTimeFieldValue">
+            <summary>
+            DateTime field' value
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DateTimeFieldValue.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.DateTimeFieldValue"/> class.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DateTimeFieldValue.#ctor(System.DateTime)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.DateTimeFieldValue"/> class.
+            </summary>
+            <param name="dateTime">The date time.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DateTimeFieldValue.op_Implicit(RapidWebDev.ExtensionModel.DateTimeFieldValue)~System.DateTime">
+            <summary>
+             Convert DateTime field's value to DateTime data.
+            </summary>
+            <param name="dateTimeFieldValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DateTimeFieldValue.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateTimeFieldValue.Value">
+            <summary>
+            Get current DateTime field's value
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.DateFieldMetadata">
+            <summary>
+            Data field metadata
+            </summary>
+            <remarks/>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DateFieldMetadata.Validate(RapidWebDev.ExtensionModel.IFieldValue)">
+            <summary>
+            Validate this field.
+            </summary>
+            <param name="value">Value of field</param>
+            <exception cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException">This extension field's value is invalid</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DateFieldMetadata.GetDefaultValue">
+            <summary>
+            Get default field value
+            </summary>
+            <returns>if no default value, return null</returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateFieldMetadata.Id">
+            <summary>
+            Gets or sets id.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateFieldMetadata.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateFieldMetadata.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateFieldMetadata.Inherited">
+            <summary>
+            True indicates the field is inherited from parent object metadata.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateFieldMetadata.DefaultValue">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateFieldMetadata.MaxValue">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateFieldMetadata.MinValue">
+            <remarks/>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.InvalidFieldValueException">
+            <summary>
+            Invalid extension propery exception
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.InvalidFieldValueException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException"/> class.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.InvalidFieldValueException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.InvalidFieldValueException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="inner">The inner.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.InvalidFieldValueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.</param>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="info"/> parameter is null.
+            </exception>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">
+            The class name is null or <see cref="P:System.Exception.HResult"/> is zero (0).
+            </exception>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.HierarchyFieldMetadata">
+            <summary>
+            Hierarchy type property's metadata
+            </summary>
+            <remarks/>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.HierarchyFieldMetadata.Validate(RapidWebDev.ExtensionModel.IFieldValue)">
+            <summary>
+            Validate this field.
+            </summary>
+            <param name="value">Value of field</param>
+            <exception cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException">This extension field's value is invalid</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.HierarchyFieldMetadata.GetDefaultValue">
+            <summary>
+            Get default field value
+            </summary>
+            <returns>if no default value, return null</returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.HierarchyFieldMetadata.#ctor">
+            <summary />
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.HierarchyFieldMetadata.Id">
+            <summary>
+            Gets or sets id.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.HierarchyFieldMetadata.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.HierarchyFieldMetadata.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.HierarchyFieldMetadata.Inherited">
+            <summary>
+            True indicates the field is inherited from parent object metadata.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.HierarchyFieldMetadata.Node">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.HierarchyFieldMetadata.SelectionMode">
+            <remarks/>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.StringFieldMetadata">
+            <remarks/>
+            <summary>
+            String type's Metadata
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.StringFieldMetadata.Validate(RapidWebDev.ExtensionModel.IFieldValue)">
+            <summary>
+            Validate this field.
+            </summary>
+            <param name="value">Value of field</param>
+            <exception cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException">This extension field's value is invalid</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.StringFieldMetadata.GetDefaultValue">
+            <summary>
+            Get default field value
+            </summary>
+            <returns>if no default value, return null</returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.StringFieldMetadata.MaxLength">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.StringFieldMetadata.MaxLengthSpecified">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.StringFieldMetadata.MinLength">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.StringFieldMetadata.MinLengthSpecified">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.StringFieldMetadata.Regex">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.StringFieldMetadata.Default">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.StringFieldMetadata.Id">
+            <summary>
+            Gets or sets id.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.StringFieldMetadata.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.StringFieldMetadata.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.StringFieldMetadata.Inherited">
+            <summary>
+            True indicates the field is inherited from parent object metadata.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.FieldPriviledges">
+            <remarks/>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.FieldPriviledges.Public">
+            <remarks/>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.FieldPriviledges.EditProtectedOnly">
+            <remarks/>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.FieldPriviledges.BothEditAndViewProtected">
+            <remarks/>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.HierarchyNode">
+            <remarks/>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.HierarchyNode.#ctor">
+            <summary />
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.HierarchyNode.Node">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.HierarchyNode.Name">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.HierarchyNode.Value">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.HierarchyNode.Selected">
+            <remarks/>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.SelectionItem">
+            <remarks/>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.SelectionItem.#ctor">
+            <summary />
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.SelectionItem.Name">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.SelectionItem.Value">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.SelectionItem.Selected">
+            <remarks/>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.DateTimeValue">
+            <remarks/>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DateTimeValue.#ctor">
+            <summary />
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateTimeValue.Value">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateTimeValue.ValueSpecified">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateTimeValue.DateTimeValueType">
+            <remarks/>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.DateTimeValueTypes">
+            <remarks/>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.DateTimeValueTypes.Now">
+            <remarks/>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.DateTimeValueTypes.Custom">
+            <remarks/>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.DateTimeValueTypes.FirstDayOfThisYear">
+            <remarks/>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.DateTimeValueTypes.FirstDayOfThisMonth">
+            <remarks/>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.DateTimeValueTypes.FirstDayOfThisWeek">
+            <remarks/>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.DateTimeFieldMetadata">
+            <remarks/>
+            <summary>
+            DataTime field metadata
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DateTimeFieldMetadata.Validate(RapidWebDev.ExtensionModel.IFieldValue)">
+            <summary>
+            Validate this field.
+            </summary>
+            <param name="value">Value of field</param>
+            <exception cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException">This extension field's value is invalid</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DateTimeFieldMetadata.GetDefaultValue">
+            <summary>
+            Get default field value
+            </summary>
+            <returns>if no default value, return null</returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateTimeFieldMetadata.DefaultValue">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateTimeFieldMetadata.MaxValue">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateTimeFieldMetadata.MinValue">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateTimeFieldMetadata.Id">
+            <summary>
+            Gets or sets id.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateTimeFieldMetadata.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateTimeFieldMetadata.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DateTimeFieldMetadata.Inherited">
+            <summary>
+            True indicates the field is inherited from parent object metadata.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.EnumerationFieldMetadata">
+            <remarks/>
+            <summary>
+            Selection type field's Metadata
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.EnumerationFieldMetadata.#ctor">
+            <summary />
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.EnumerationFieldMetadata.Validate(RapidWebDev.ExtensionModel.IFieldValue)">
+            <summary>
+            Validate this field.
+            </summary>
+            <param name="value">Value of field</param>
+            <exception cref="T:RapidWebDev.ExtensionModel.InvalidFieldValueException">This extension field's value is invalid</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.EnumerationFieldMetadata.GetDefaultValue">
+            <summary>
+            Get default field value
+            </summary>
+            <returns>if no default value, return null</returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.EnumerationFieldMetadata.Items">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.EnumerationFieldMetadata.SelectionMode">
+            <remarks/>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.EnumerationFieldMetadata.Id">
+            <summary>
+            Gets or sets id.
+            </summary>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.EnumerationFieldMetadata.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.EnumerationFieldMetadata.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.EnumerationFieldMetadata.Inherited">
+            <summary>
+            True indicates the field is inherited from parent object metadata.
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.SelectionModes">
+            <remarks/>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.SelectionModes.Multiple">
+            <remarks/>
+        </member>
+        <member name="F:RapidWebDev.ExtensionModel.SelectionModes.Single">
+            <remarks/>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.FieldCollection">
+            <summary>
+            Field collection
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.FieldNameValuePair">
+            <summary>
+            Field name and value pair
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.FieldNameValuePair.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.FieldNameValuePair"/> class.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.FieldNameValuePair.#ctor(System.String,RapidWebDev.ExtensionModel.IFieldValue)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.FieldNameValuePair"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.FieldNameValuePair.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.FieldNameValuePair.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.FieldNameValuePair.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.StringFieldValue">
+            <summary>
+            String type field's value
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.StringFieldValue.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.StringFieldValue"/> class.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.StringFieldValue.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.StringFieldValue"/> class.
+            </summary>
+            <param name="s">The s.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.StringFieldValue.op_Implicit(RapidWebDev.ExtensionModel.StringFieldValue)~System.String">
+            <summary>
+            Convert string field value to string
+            </summary>
+            <param name="stringFieldValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.StringFieldValue.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.StringFieldValue.Value">
+            <summary>
+            Gets or sets the value of property.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.DecimalFieldValue">
+            <summary>
+            Decimal field's value
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DecimalFieldValue.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.DecimalFieldValue"/> class.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DecimalFieldValue.#ctor(System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.DecimalFieldValue"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DecimalFieldValue.op_Implicit(RapidWebDev.ExtensionModel.DecimalFieldValue)~System.Decimal">
+            <summary>
+            Convert Decimal field's value to Decimal data
+            </summary>
+            <param name="fieldValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.DecimalFieldValue.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.DecimalFieldValue.Value">
+            <summary>
+            Get Decimal field's value
+            </summary>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.ExtensionObjectFactory">
+            <summary>
+            The factory of extension type object instance. When you create instance object, this structure can automatically set instance's related extension type's id (ExtensionDataTypeId).
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.ExtensionObjectFactory.Create``1">
+            <summary>
+            Create extension type's instance. 
+            The method intends to resolve extension type from metadata by the generic type name.
+            </summary>
+            <typeparam name="T">Implement IExtensionObject interface</typeparam>
+            <returns></returns>
+            <exception cref="T:System.InvalidProgramException">Cannot find extension type which has same name with T</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.ExtensionObjectFactory.Create``1(System.Guid)">
+            <summary>
+            Create extension type's instance. 
+            The method intends to resolve extension type from metadata by the generic type name if the specified data type id is Empty.
+            </summary>
+            <param name="extensionDataTypeId">Extension data type id</param>
+            <typeparam name="T">Implement IExtensionObject interface</typeparam>
+            <returns></returns>
+            <exception cref="T:System.InvalidProgramException">Cannot find extension type which has same name with T</exception>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.ExtensionObjectFactory.Create``1(RapidWebDev.ExtensionModel.IExtensionBizObject)">
+            <summary>
+            Create extension type's instance. 
+            The method intends to resolve extension type from metadata by the generic type name if the property "ExtensionDataTypeId" of specified extension biz object is Empty.
+            </summary>
+            <param name="extensionBizObject"></param>
+            <typeparam name="T">Implement IExtensionObject interface</typeparam>
+            <returns></returns>
+            <exception cref="T:System.InvalidProgramException">Cannot find extension type which has same name with T</exception>
+        </member>
+        <member name="T:RapidWebDev.ExtensionModel.IntegerFieldValue">
+            <summary>
+            Integer field's value
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IntegerFieldValue.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.IntegerFieldValue"/> class.
+            </summary>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IntegerFieldValue.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RapidWebDev.ExtensionModel.IntegerFieldValue"/> class.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IntegerFieldValue.op_Implicit(RapidWebDev.ExtensionModel.IntegerFieldValue)~System.Int32">
+            <summary>
+            Convert Decimal field's value to Decimal data
+            </summary>
+            <param name="fieldValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RapidWebDev.ExtensionModel.IntegerFieldValue.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="P:RapidWebDev.ExtensionModel.IntegerFieldValue.Value">
+            <summary>
+            Gets or sets the value of property.
+            </summary>
+            <value>The value.</value>
+        </member>
+    </members>
+</doc>

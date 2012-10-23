@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://www.rapidwebdev.org/schemas/dynamicpage" ObjectId="UserManagement" Type="RapidWebDev.Platform.Web.DynamicPage.UserManagement, RapidWebDev.Platform">
+	<Title>$Domain.Text$ $Resources.Membership.User, RapidWebDev.Web$ $Resources.Membership.Management, RapidWebDev.Web$</Title>
+	<PermissionValue>$Domain.Value$.UserManagement</PermissionValue>
+	<Panels>
+		<QueryPanel Id="$Domain.Value$" HeaderText="$Resources.Membership.Query, RapidWebDev.Web$ $Domain.Text$ $Resources.Membership.User, RapidWebDev.Web$">
+			<TextBox FieldName="UserName" Label="$Resources.Membership.User_Name, RapidWebDev.Web$: " />
+			<TextBox FieldName="DisplayName" Label="$Resources.Membership.User_DisplayName, RapidWebDev.Web$: " />
+			<CheckBoxGroup FieldName="Membership.IsApproved" FieldValueType="System.Boolean" Label="$Resources.Membership.User_Approved, RapidWebDev.Web$: " Occupation="1">
+				<Item Text="&lt;span style='color:green'&gt;$Resources.Membership.Yes, RapidWebDev.Web$&lt;/span&gt;" Value="true" Checked="true" />
+				<Item Text="&lt;span style='color:red'&gt;$Resources.Membership.No, RapidWebDev.Web$&lt;/span&gt;" Value="false" />
+			</CheckBoxGroup>
+			<DateTime FieldName="CreatedDate" Label="Created: " />
+		</QueryPanel>
+		
+		<ButtonPanel Id="$Domain.Value$" ButtonAlignment="Left">
+			<Button CommandArgument="New" Type="NewImage" ToolTip="$Resources.Membership.Add, RapidWebDev.Web$" />
+		</ButtonPanel>
+		
+		<GridViewPanel Id="$Domain.Value$"
+			HeaderText="$Resources.Membership.QueryResults, RapidWebDev.Web$"
+			EntityName="$Domain.Text$ $Resources.Membership.User, RapidWebDev.Web$"
+			EnabledCheckBoxField="true"
+			PageSize="25"
+			PrimaryKeyFieldName="UserId"
+			DefaultSortField="LastUpdatedDate"
+			DefaultSortDirection="DESC">
+			<ViewButton />
+			<EditButton />
+			<DeleteButton />
+			<Fields>
+				<Field FieldName="UserName" HeaderText="$Resources.Membership.User_Name, RapidWebDev.Web$" />
+				<Field FieldName="DisplayName" HeaderText="$Resources.Membership.User_DisplayName, RapidWebDev.Web$" />
+				<Field FieldName="OrganizationId" HeaderText="$Resources.Membership.Organization, RapidWebDev.Web$" SortingFieldName="Organization.OrganizationName">
+					<Transform-Callback Type="RapidWebDev.Platform.Web.DynamicPage.GridViewFieldValueTransformCallback.ShowOrganizationName, RapidWebDev.Platform"/>
+				</Field>
+				<Field FieldName="UserId" HeaderText="$Resources.Membership.Role, RapidWebDev.Web$">
+					<Transform-Callback Type="RapidWebDev.Platform.Web.DynamicPage.GridViewFieldValueTransformCallback.ShowUserInRoles, RapidWebDev.Platform"/>
+				</Field>
+				<Field FieldName="MobilePin" HeaderText="$Resources.Membership.Mobile, RapidWebDev.Web$" SortingFieldName="Membership.MobilePIN" />
+				<Field FieldName="Email" HeaderText="$Resources.Membership.Email, RapidWebDev.Web$" SortingFieldName="Membership.Email" Hidden="true" />
+				<Field FieldName="IsApproved" HeaderText="$Resources.Membership.User_Approved, RapidWebDev.Web$" SortingFieldName="Membership.IsApproved">
+					<Transform-Switch>
+						<Case Value="True">&lt;span style='color:green'&gt;$Resources.Membership.Yes, RapidWebDev.Web$&lt;/span&gt;</Case>
+						<Case Value="False">&lt;span style='color:red'&gt;$Resources.Membership.No, RapidWebDev.Web$&lt;/span&gt;</Case>
+					</Transform-Switch>
+				</Field>
+				<Field FieldName="IsLockedOut" HeaderText="$Resources.Membership.User_LockStatus, RapidWebDev.Web$" SortingFieldName="Membership.IsLockedOut">
+					<Transform-Switch>
+						<Case Value="True">&lt;span style='color:green'&gt;$Resources.Membership.Yes, RapidWebDev.Web$&lt;/span&gt;</Case>
+						<Case Value="False">&lt;span style='color:red'&gt;$Resources.Membership.No, RapidWebDev.Web$&lt;/span&gt;</Case>
+					</Transform-Switch>
+				</Field>
+				<Field FieldName="LastUpdatedDate" HeaderText="$Resources.Membership.ModifiedOn, RapidWebDev.Web$" Align="Center" Width="150" />
+				<RowView FieldName="Comment" />
+			</Fields>
+		</GridViewPanel>
+		
+		<DetailPanel Id="$Domain.Value$" HeaderText="$Domain.Text$ $Resources.Membership.User, RapidWebDev.Web$ $Resources.Membership.Profile, RapidWebDev.Web$" ShowMessageAfterSavedSuccessfully="false">
+			<Type>RapidWebDev.Platform.Web.DynamicPage.UserDetailPanel, RapidWebDev.Platform</Type>
+			<SkinPath>~/Templates/Platform/User.ascx</SkinPath>
+			<SaveAndAddAnotherButton IsFormDefaultButton="true" />
+			<SaveAndCloseButton />
+			<CancelButton />
+		</DetailPanel>
+	</Panels>
+</Page>
